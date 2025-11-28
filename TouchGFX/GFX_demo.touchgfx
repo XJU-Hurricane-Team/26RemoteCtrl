@@ -1,0 +1,432 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "CanvasBufferSize": 2400,
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage3",
+            "X": 1,
+            "Width": 160,
+            "Height": 128,
+            "Filename": "PixPin_2025-11-26_21-33-12.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 124,
+            "Y": 2,
+            "Width": 37,
+            "Height": 36,
+            "Filename": "ky50_50.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "Width": 158,
+            "Height": 43,
+            "Components": [
+              {
+                "Type": "Line",
+                "Name": "line2",
+                "X": 118,
+                "Y": 1,
+                "Width": 6,
+                "Height": 38,
+                "Color": {
+                  "Red": 27,
+                  "Green": 199,
+                  "Blue": 222
+                },
+                "StartX": 3.0,
+                "EndX": 3.0,
+                "EndY": 40.0,
+                "LineWidth": 1.0,
+                "LineEndingStyle": "Butt"
+              },
+              {
+                "Type": "Line",
+                "Name": "line1",
+                "Y": 36,
+                "Width": 162,
+                "Height": 8,
+                "Color": {
+                  "Red": 27,
+                  "Green": 199,
+                  "Blue": 222
+                },
+                "StartY": 4.0,
+                "EndX": 162.0,
+                "EndY": 4.0,
+                "LineWidth": 1.0,
+                "LineEndingStyle": "Butt"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 30,
+                "Y": 2,
+                "Width": 88,
+                "Height": 36,
+                "TextId": "team_name",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2",
+                "X": 1,
+                "Y": 1,
+                "Width": 30,
+                "Height": 38,
+                "Filename": "__generated\\alternate_theme_images_logos_touchgfx.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container2",
+            "Y": 71,
+            "Width": 158,
+            "Height": 57,
+            "Components": [
+              {
+                "Type": "TextArea",
+                "Name": "textArea2",
+                "Y": 1,
+                "Width": 78,
+                "Height": 27,
+                "TextId": "Rock1",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "LX",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "Wildcard2": {
+                  "TextId": "LY",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "WideTextAction": 1
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3",
+                "X": 80,
+                "Width": 78,
+                "Height": 28,
+                "TextId": "Rock2",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "RX",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "Wildcard2": {
+                  "TextId": "RY",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "WideTextAction": 2
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea4",
+                "Y": 42,
+                "Width": 156,
+                "Height": 15,
+                "TextId": "KeyNum",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ChangeScreen1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 3
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ActionComponent": "Screen2"
+            }
+          },
+          {
+            "InteractionName": "InfoUpdate1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 20
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "InfoUpdate1"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "CanvasBufferSize": 2400,
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "Width": 160,
+            "Height": 128,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "Y": 84,
+            "Width": 160,
+            "Height": 44,
+            "Components": [
+              {
+                "Type": "QRCode",
+                "Name": "qrCode1",
+                "Y": 6,
+                "Width": 37,
+                "Height": 37,
+                "QRVersion": 5,
+                "Scale": 1,
+                "Text": "xju-hurricane-team.github.io",
+                "BackgroundColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 38,
+                "Y": 6,
+                "Width": 84,
+                "Height": 37,
+                "TextId": "__SingleUse_GIIA",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1",
+                "X": 121,
+                "Y": 6,
+                "Width": 39,
+                "Height": 37,
+                "Filename": "ky50_50.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "Line",
+                "Name": "line1",
+                "Width": 160,
+                "Height": 15,
+                "Color": {
+                  "Red": 60,
+                  "Green": 213,
+                  "Blue": 240
+                },
+                "StartY": 5.0,
+                "EndX": 160.0,
+                "EndY": 5.0,
+                "LineWidth": 2.0,
+                "LineEndingStyle": "Butt"
+              }
+            ]
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock1",
+            "Width": 160,
+            "Height": 15,
+            "TextId": "__SingleUse_Y67B",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "dynamicGraph1",
+            "Y": 16,
+            "Width": 160,
+            "Height": 68,
+            "DataSeed": -270652044,
+            "NumberOfValues": 100,
+            "MaxY": 100.0,
+            "Precision": "1",
+            "LastIndex": 99,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
+                }
+              }
+            ],
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 10.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 62,
+                "Green": 75,
+                "Blue": 79
+              },
+              "TextId": "Time",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 10.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 62,
+                "Green": 75,
+                "Blue": 79
+              },
+              "TextId": "Speed",
+              "TextRotation": "0",
+              "Position": "Left"
+            }
+          },
+          {
+            "Type": "Line",
+            "Name": "line2",
+            "Y": 14,
+            "Width": 160,
+            "Height": 4,
+            "Color": {
+              "Red": 60,
+              "Green": 213,
+              "Blue": 240
+            },
+            "StartY": 2.0,
+            "EndX": 160.0,
+            "EndY": 2.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ChangeScreen2",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 3
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "CustomContainer1",
+        "Width": 161,
+        "Height": 34,
+        "Components": [],
+        "Interactions": []
+      }
+    ],
+    "Name": "GFX_demo",
+    "Resolution": {
+      "Width": 128,
+      "Height": 160
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 128,
+        "Height": 160
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": false
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "CMake",
+    "Platform": "m4",
+    "ProjectFile": "../GFX_demo.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.26.0"
+}
