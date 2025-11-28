@@ -16,7 +16,7 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // verdana_40_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[1]);
     case Typography::SMALL:
-        // verdana_12_4bpp
+        // verdana_16_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     case Typography::TYPOGRAPHY1:
         // verdanai_10_4bpp

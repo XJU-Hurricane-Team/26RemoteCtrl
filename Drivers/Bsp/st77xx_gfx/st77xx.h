@@ -57,10 +57,10 @@ typedef struct {
 /*************************************************************************************************/
 /* 显示设置 */
 
-#define ST77xx_XSTART        2 /*!<显示区域设置 */
-#define ST77xx_YSTART        1
-#define ST77xx_WIDTH         128 /* 横向分辨率 */
-#define ST77xx_HEIGHT        160 /* 纵向分辨率 */
+#define ST77xx_XSTART        0 /*!<显示区域设置 */
+#define ST77xx_YSTART        0
+#define ST77xx_WIDTH         240 /* 横向分辨率 */
+#define ST77xx_HEIGHT        320 /* 纵向分辨率 */
 #define ST77xx_MAX_WIDTH                                                       \
     ((ST77xx_WIDTH) > (ST77xx_HEIGHT) ? (ST77xx_WIDTH) : (ST77xx_HEIGHT))
 

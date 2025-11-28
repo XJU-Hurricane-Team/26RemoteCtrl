@@ -82,10 +82,15 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
     HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
     if (HAL_SPI_Transmit_DMA(&ST77xx_SPI_INSTANCE, (uint8_t *)bitmap,
                              (uint16_t)(sizex * sizey)) != HAL_OK) {
+        /* DMA failed to start. Clear busy flag and restore SPI to 8-bit mode
+         * to avoid TouchGFX waiting forever. Also notify the framework that
+         * the transfer is 'complete' (even though nothing was sent) so the
+         * GUI can continue. */
         IsTransmittingBlock_ = 0;
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
         ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
+        DisplayDriver_TransferCompleteCallback();
     }
 }
 

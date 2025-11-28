@@ -10,15 +10,15 @@
     },
     "AvailableResolutions": [
       {
-        "Width": 128,
-        "Height": 160
+        "Width": 240,
+        "Height": 320
       }
     ],
     "PostGenerateTargetCommand": "touchgfx update_project",
     "Family": "STM32F4",
     "SubFamily": "STM32F429/439",
     "Platform": "m4",
-    "Toolchain": "CMake",
+    "Toolchain": "STM32CubeIDE",
     "ProjectFile": "../GFX_demo.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [

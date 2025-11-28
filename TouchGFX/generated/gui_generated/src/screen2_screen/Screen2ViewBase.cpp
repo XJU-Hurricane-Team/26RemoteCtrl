@@ -11,46 +11,46 @@ Screen2ViewBase::Screen2ViewBase()
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
-    __background.setPosition(0, 0, 160, 128);
+    __background.setPosition(0, 0, 320, 240);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    boxWithBorder1.setPosition(0, 0, 160, 128);
+    boxWithBorder1.setPosition(0, 0, 320, 240);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(0);
     add(boxWithBorder1);
 
-    container1.setPosition(0, 84, 160, 44);
+    container1.setPosition(0, 196, 320, 44);
     qrCode1.setXY(0, 6);
     qrCode1.setBuffers(qrBuffer_qrCode1, qrScratchBuffer_qrCode1);
     qrCode1.setQRCodeVersion(5);
     qrCode1.convertStringToQRCode("xju-hurricane-team.github.io");
     container1.add(qrCode1);
 
-    textArea1.setPosition(38, 6, 84, 37);
+    textArea1.setPosition(38, 6, 243, 35);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GIIA));
     container1.add(textArea1);
 
     scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_KY50_50_ID));
-    scalableImage1.setPosition(121, 6, 39, 37);
+    scalableImage1.setPosition(281, 4, 39, 37);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     container1.add(scalableImage1);
 
-    line1.setPosition(0, 0, 160, 15);
+    line1.setPosition(0, 0, 320, 15);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(60, 213, 240));
     line1.setPainter(line1Painter);
     line1.setStart(0, 5);
-    line1.setEnd(160, 5);
+    line1.setEnd(320, 5);
     line1.setLineWidth(2);
     line1.setLineEndingStyle(touchgfx::Line::BUTT_CAP_ENDING);
     container1.add(line1);
 
     add(container1);
 
-    digitalClock1.setPosition(0, 0, 160, 15);
+    digitalClock1.setPosition(0, 0, 320, 15);
     digitalClock1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     digitalClock1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y67B));
     digitalClock1.displayLeadingZeroForHourIndicator(true);
@@ -58,7 +58,7 @@ Screen2ViewBase::Screen2ViewBase()
     digitalClock1.setTime24Hour(0, 0, 0);
     add(digitalClock1);
 
-    dynamicGraph1.setPosition(0, 16, 160, 68);
+    dynamicGraph1.setPosition(0, 16, 320, 180);
     dynamicGraph1.setScale(1);
     dynamicGraph1.setGraphAreaMargin(0, 0, 0, 0);
     dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
@@ -183,11 +183,11 @@ Screen2ViewBase::Screen2ViewBase()
     dynamicGraph1.addDataPoint(45.59072f);
     add(dynamicGraph1);
 
-    line2.setPosition(0, 14, 160, 4);
+    line2.setPosition(0, 14, 320, 15);
     line2Painter.setColor(touchgfx::Color::getColorFromRGB(60, 213, 240));
     line2.setPainter(line2Painter);
     line2.setStart(0, 2);
-    line2.setEnd(160, 2);
+    line2.setEnd(320, 2);
     line2.setLineWidth(2);
     line2.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     add(line2);

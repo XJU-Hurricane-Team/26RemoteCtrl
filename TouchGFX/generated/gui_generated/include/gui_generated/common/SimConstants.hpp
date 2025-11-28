@@ -4,8 +4,8 @@
 #ifndef SIMCONSTANTS_HPP
 #define SIMCONSTANTS_HPP
 
-static unsigned short SIM_WIDTH = 128;
-static unsigned short SIM_HEIGHT = 160;
+static unsigned short SIM_WIDTH = 240;
+static unsigned short SIM_HEIGHT = 320;
 #define SIM_TITLE "GFX_demo"
 
 #endif // SIMCONSTANTS_HPP

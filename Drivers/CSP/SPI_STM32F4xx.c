@@ -20,7 +20,7 @@
 
 SPI_HandleTypeDef spi1_handle = {
     .Instance = SPI1,
-    .Init = {.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4,
+    .Init = {.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2,
              .Direction = SPI_DIRECTION_2LINES,
              .TIMode = SPI_TIMODE_DISABLE,
              .CRCCalculation = SPI_CRCCALCULATION_DISABLE,

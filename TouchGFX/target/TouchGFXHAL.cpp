@@ -60,7 +60,7 @@ void TouchGFXHAL::initialize() {
     // and implement the needed functionality here.
     // Please note, HAL::initialize() must be called to initialize the framework.
     // touchgfx::OSWrappers::initialize();
-    ST77xx_Init(2, ST7735);
+    ST77xx_Init(2, ST7789);
     HAL::setButtonController(&bc);
     TouchGFXGeneratedHAL::initialize();
     /* 定时器初始化要放在UI抽象层初始化之后 */
@@ -180,17 +180,6 @@ void TouchGFXHAL::endFrame() {
     TouchGFXGeneratedHAL::endFrame();
     if (tearingEffectCount > 0) {
         touchgfx::HAL::getInstance()->vSync();
-    }
-
-    // Poll external button controller (if set) and forward key events to application
-    if (HAL::getInstance() && HAL::getInstance()->getButtonController()) {
-        uint8_t key = 0;
-        if (HAL::getInstance()->getButtonController()->sample(key)) {
-            // Forward to TouchGFX application (will call current screen's handleKeyEvent)
-            if (Application::getInstance()) {
-                Application::getInstance()->handleKeyEvent(key);
-            }
-        }
     }
 }
 

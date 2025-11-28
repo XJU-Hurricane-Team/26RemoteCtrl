@@ -3,40 +3,41 @@
     "Screens": [
       {
         "Name": "Screen1",
-        "CanvasBufferSize": 2400,
+        "CanvasBufferSize": 4800,
         "Components": [
           {
             "Type": "ScalableImage",
             "Name": "scalableImage3",
             "X": 1,
-            "Width": 160,
-            "Height": 128,
+            "Width": 319,
+            "Height": 240,
             "Filename": "PixPin_2025-11-26_21-33-12.png",
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
             "Type": "ScalableImage",
             "Name": "scalableImage1",
-            "X": 124,
+            "X": 264,
             "Y": 2,
-            "Width": 37,
-            "Height": 36,
+            "Width": 56,
+            "Height": 50,
             "Filename": "ky50_50.png",
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
             "Type": "Container",
             "Name": "container1",
-            "Width": 158,
-            "Height": 43,
+            "X": 1,
+            "Y": -1,
+            "Width": 319,
+            "Height": 60,
             "Components": [
               {
                 "Type": "Line",
                 "Name": "line2",
-                "X": 118,
-                "Y": 1,
-                "Width": 6,
-                "Height": 38,
+                "X": 243,
+                "Width": 20,
+                "Height": 60,
                 "Color": {
                   "Red": 27,
                   "Green": 199,
@@ -44,23 +45,23 @@
                 },
                 "StartX": 3.0,
                 "EndX": 3.0,
-                "EndY": 40.0,
+                "EndY": 57.0,
                 "LineWidth": 1.0,
                 "LineEndingStyle": "Butt"
               },
               {
                 "Type": "Line",
                 "Name": "line1",
-                "Y": 36,
-                "Width": 162,
-                "Height": 8,
+                "Y": 53,
+                "Width": 318,
+                "Height": 15,
                 "Color": {
                   "Red": 27,
                   "Green": 199,
                   "Blue": 222
                 },
                 "StartY": 4.0,
-                "EndX": 162.0,
+                "EndX": 320.0,
                 "EndY": 4.0,
                 "LineWidth": 1.0,
                 "LineEndingStyle": "Butt"
@@ -68,10 +69,10 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
-                "X": 30,
+                "X": 52,
                 "Y": 2,
-                "Width": 88,
-                "Height": 36,
+                "Width": 211,
+                "Height": 51,
                 "TextId": "team_name",
                 "TextRotation": "0",
                 "Color": {
@@ -85,8 +86,8 @@
                 "Name": "scalableImage2",
                 "X": 1,
                 "Y": 1,
-                "Width": 30,
-                "Height": 38,
+                "Width": 39,
+                "Height": 52,
                 "Filename": "__generated\\alternate_theme_images_logos_touchgfx.png",
                 "ScalingAlgorithm": "Nearest-neighbor"
               }
@@ -95,16 +96,17 @@
           {
             "Type": "Container",
             "Name": "container2",
-            "Y": 71,
-            "Width": 158,
-            "Height": 57,
+            "X": 1,
+            "Y": 139,
+            "Width": 319,
+            "Height": 101,
             "Components": [
               {
                 "Type": "TextArea",
                 "Name": "textArea2",
-                "Y": 1,
-                "Width": 78,
-                "Height": 27,
+                "X": 30,
+                "Width": 117,
+                "Height": 42,
                 "TextId": "Rock1",
                 "TextRotation": "0",
                 "Color": {
@@ -127,9 +129,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea3",
-                "X": 80,
+                "X": 204,
                 "Width": 78,
-                "Height": 28,
+                "Height": 42,
                 "TextId": "Rock2",
                 "TextRotation": "0",
                 "Color": {
@@ -152,9 +154,10 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea4",
-                "Y": 42,
-                "Width": 156,
-                "Height": 15,
+                "X": -1,
+                "Y": 67,
+                "Width": 319,
+                "Height": 23,
                 "TextId": "KeyNum",
                 "TextRotation": "0",
                 "Color": {
@@ -173,9 +176,9 @@
             "Type": "TextArea",
             "Name": "textArea5",
             "X": 2,
-            "Y": 44,
-            "Width": 154,
-            "Height": 25,
+            "Y": 67,
+            "Width": 317,
+            "Height": 26,
             "TextId": "__SingleUse_D8J1",
             "TextRotation": "0",
             "Color": {
@@ -213,13 +216,13 @@
       },
       {
         "Name": "Screen2",
-        "CanvasBufferSize": 2400,
+        "CanvasBufferSize": 4800,
         "Components": [
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder1",
-            "Width": 160,
-            "Height": 128,
+            "Width": 320,
+            "Height": 240,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -229,8 +232,8 @@
           {
             "Type": "Container",
             "Name": "container1",
-            "Y": 84,
-            "Width": 160,
+            "Y": 196,
+            "Width": 320,
             "Height": 44,
             "Components": [
               {
@@ -253,16 +256,16 @@
                 "Name": "textArea1",
                 "X": 38,
                 "Y": 6,
-                "Width": 84,
-                "Height": 37,
+                "Width": 243,
+                "Height": 35,
                 "TextId": "__SingleUse_GIIA",
                 "TextRotation": "0"
               },
               {
                 "Type": "ScalableImage",
                 "Name": "scalableImage1",
-                "X": 121,
-                "Y": 6,
+                "X": 281,
+                "Y": 4,
                 "Width": 39,
                 "Height": 37,
                 "Filename": "ky50_50.png",
@@ -271,7 +274,7 @@
               {
                 "Type": "Line",
                 "Name": "line1",
-                "Width": 160,
+                "Width": 320,
                 "Height": 15,
                 "Color": {
                   "Red": 60,
@@ -279,7 +282,7 @@
                   "Blue": 240
                 },
                 "StartY": 5.0,
-                "EndX": 160.0,
+                "EndX": 320.0,
                 "EndY": 5.0,
                 "LineWidth": 2.0,
                 "LineEndingStyle": "Butt"
@@ -289,7 +292,7 @@
           {
             "Type": "DigitalClock",
             "Name": "digitalClock1",
-            "Width": 160,
+            "Width": 320,
             "Height": 15,
             "TextId": "__SingleUse_Y67B",
             "DisplaySeconds": true,
@@ -299,8 +302,8 @@
             "Type": "DynamicGraph",
             "Name": "dynamicGraph1",
             "Y": 16,
-            "Width": 160,
-            "Height": 68,
+            "Width": 320,
+            "Height": 180,
             "DataSeed": -270652044,
             "NumberOfValues": 100,
             "MaxY": 100.0,
@@ -352,15 +355,15 @@
             "Type": "Line",
             "Name": "line2",
             "Y": 14,
-            "Width": 160,
-            "Height": 4,
+            "Width": 320,
+            "Height": 15,
             "Color": {
               "Red": 60,
               "Green": 213,
               "Blue": 240
             },
             "StartY": 2.0,
-            "EndX": 160.0,
+            "EndX": 320.0,
             "EndY": 2.0,
             "LineWidth": 2.0,
             "LineEndingStyle": "Round"
@@ -393,8 +396,8 @@
     ],
     "Name": "GFX_demo",
     "Resolution": {
-      "Width": 128,
-      "Height": 160
+      "Width": 240,
+      "Height": 320
     },
     "SelectedColorDepth": 16,
     "StartupScreenName": "Screen1",
@@ -413,8 +416,8 @@
     ],
     "AvailableResolutions": [
       {
-        "Width": 128,
-        "Height": 160
+        "Width": 240,
+        "Height": 320
       }
     ],
     "PhysicalButtons": [],
@@ -436,7 +439,7 @@
     "DisplayOrientation": "Landscape",
     "Family": "STM32F4",
     "SubFamily": "STM32F429/439",
-    "Toolchain": "CMake",
+    "Toolchain": "STM32CubeIDE",
     "Platform": "m4",
     "ProjectFile": "../GFX_demo.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
