@@ -45,7 +45,7 @@ Screen1ViewBase::Screen1ViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::BUTT_CAP_ENDING);
     container1.add(line1);
 
-    textArea1.setPosition(52, 2, 211, 51);
+    textArea1.setPosition(42, 3, 211, 51);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_TEAM_NAME));
@@ -92,7 +92,7 @@ Screen1ViewBase::Screen1ViewBase() :
     add(container2);
 
     textArea5.setPosition(2, 67, 317, 26);
-    textArea5.setColor(touchgfx::Color::getColorFromRGB(49, 204, 191));
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
     textArea5.setLinespacing(0);
     textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8J1));
     add(textArea5);

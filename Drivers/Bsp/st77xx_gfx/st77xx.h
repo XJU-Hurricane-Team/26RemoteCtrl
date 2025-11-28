@@ -37,15 +37,6 @@ typedef struct {
 /*************************************************************************************************/
 /* 引脚定义 */
 
-// #define ST77xx_CS_Pin        LL_GPIO_PIN_0 /*!<片选引脚 */
-// #define ST77xx_CS_GPIO_Port  GPIOE
-// #define ST77xx_RST_Pin       LL_GPIO_PIN_1 /*!<硬件复位引脚 */
-// #define ST77xx_RST_GPIO_Port GPIOE
-// #define ST77xx_DC_Pin        LL_GPIO_PIN_2 /*!<数据(1)/命令(0)选择引脚 */
-// #define ST77xx_DC_GPIO_Port  GPIOE
-// #define ST77xx_BL_Pin        LL_GPIO_PIN_3 /*!<背光引脚 */
-// #define ST77xx_BL_GPIO_Port  GPIOE
-
 #define LCD_CS_Pin GPIO_PIN_12
 #define LCD_CS_GPIO_Port GPIOB
 #define LCD_DC_Pin GPIO_PIN_13

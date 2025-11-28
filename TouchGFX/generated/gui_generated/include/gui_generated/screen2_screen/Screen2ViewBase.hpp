@@ -17,8 +17,8 @@
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
 #include <touchgfx/widgets/graph/GraphScroll.hpp>
-#include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
 {
@@ -47,7 +47,8 @@ protected:
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::DigitalClock digitalClock1;
-    touchgfx::GraphScroll<100> dynamicGraph1;
+    touchgfx::GraphScroll<90> dynamicGraph1;
+    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
     touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
     touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
     touchgfx::GraphElementLine dynamicGraph1Line1;

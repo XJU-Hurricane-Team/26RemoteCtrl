@@ -11,6 +11,7 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     49,  // T_TEAM_NAME: "Hurricane\nUI design"
+    37,  // T_V: "<>"
     69,  // T___SINGLEUSE_D8J1: "Ctrl Information"
     100, // T_KEYNUM: "KeyNum:<>"
     109, // T_RY: "0"

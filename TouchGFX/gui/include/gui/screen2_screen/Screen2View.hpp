@@ -14,10 +14,10 @@ public:
     virtual void handleTickEvent();
 protected:
     int tickCounter;
-    int digitalHours;
+    int digitalHours; /* 毫秒时间戳，用于基于系统毫秒计时（HAL_GetTick）实现稳定的秒钟 */ 
     int digitalMinutes;
     int digitalSeconds;
-    // 毫秒时间戳，用于基于系统毫秒计时（HAL_GetTick）实现稳定的秒钟
+    float graphValue;
 };
 
 #endif // SCREEN2VIEW_HPP

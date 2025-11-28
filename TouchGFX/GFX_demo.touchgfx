@@ -69,8 +69,8 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
-                "X": 52,
-                "Y": 2,
+                "X": 42,
+                "Y": 3,
                 "Width": 211,
                 "Height": 51,
                 "TextId": "team_name",
@@ -182,9 +182,9 @@
             "TextId": "__SingleUse_D8J1",
             "TextRotation": "0",
             "Color": {
-              "Red": 49,
+              "Red": 51,
               "Green": 204,
-              "Blue": 191
+              "Blue": 181
             }
           }
         ],
@@ -232,18 +232,18 @@
           {
             "Type": "Container",
             "Name": "container1",
-            "Y": 196,
+            "Y": 161,
             "Width": 320,
-            "Height": 44,
+            "Height": 79,
             "Components": [
               {
                 "Type": "QRCode",
                 "Name": "qrCode1",
                 "Y": 6,
-                "Width": 37,
-                "Height": 37,
+                "Width": 74,
+                "Height": 74,
                 "QRVersion": 5,
-                "Scale": 1,
+                "Scale": 2,
                 "Text": "xju-hurricane-team.github.io",
                 "BackgroundColor": {
                   "Red": 255,
@@ -254,26 +254,27 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
-                "X": 38,
+                "X": 74,
                 "Y": 6,
-                "Width": 243,
-                "Height": 35,
+                "Width": 166,
+                "Height": 74,
                 "TextId": "__SingleUse_GIIA",
                 "TextRotation": "0"
               },
               {
                 "Type": "ScalableImage",
                 "Name": "scalableImage1",
-                "X": 281,
+                "X": 240,
                 "Y": 4,
-                "Width": 39,
-                "Height": 37,
+                "Width": 80,
+                "Height": 75,
                 "Filename": "ky50_50.png",
                 "ScalingAlgorithm": "Nearest-neighbor"
               },
               {
                 "Type": "Line",
                 "Name": "line1",
+                "Y": -1,
                 "Width": 320,
                 "Height": 15,
                 "Color": {
@@ -293,7 +294,7 @@
             "Type": "DigitalClock",
             "Name": "digitalClock1",
             "Width": 320,
-            "Height": 15,
+            "Height": 28,
             "TextId": "__SingleUse_Y67B",
             "DisplaySeconds": true,
             "DisplayLeadingZeroForHourIndicator": true
@@ -301,14 +302,14 @@
           {
             "Type": "DynamicGraph",
             "Name": "dynamicGraph1",
-            "Y": 16,
+            "Y": 35,
             "Width": 320,
-            "Height": 180,
+            "Height": 126,
             "DataSeed": -270652044,
-            "NumberOfValues": 100,
+            "NumberOfValues": 90,
             "MaxY": 100.0,
             "Precision": "1",
-            "LastIndex": 99,
+            "LastIndex": 89,
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
             "GraphType": "GraphScroll",
@@ -324,14 +325,24 @@
                 }
               }
             ],
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 109,
+                "Green": 235,
+                "Blue": 87
+              },
+              "Interval": 10.0,
+              "LineWidth": 1
+            },
             "XAxisLabel": {
               "Type": "GraphLabel",
               "Interval": 10.0,
               "DecimalSeparator": "Point",
               "TextColor": {
-                "Red": 62,
-                "Green": 75,
-                "Blue": 79
+                "Red": 13,
+                "Green": 38,
+                "Blue": 46
               },
               "TextId": "Time",
               "TextRotation": "0",
@@ -342,11 +353,11 @@
               "Interval": 10.0,
               "DecimalSeparator": "Point",
               "TextColor": {
-                "Red": 62,
-                "Green": 75,
-                "Blue": 79
+                "Red": 9,
+                "Green": 25,
+                "Blue": 31
               },
-              "TextId": "Speed",
+              "TextId": "V",
               "TextRotation": "0",
               "Position": "Left"
             }
@@ -354,7 +365,7 @@
           {
             "Type": "Line",
             "Name": "line2",
-            "Y": 14,
+            "Y": 28,
             "Width": 320,
             "Height": 15,
             "Color": {

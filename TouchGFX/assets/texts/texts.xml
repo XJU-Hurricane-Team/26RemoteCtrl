@@ -10,6 +10,9 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="V" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_D8J1" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Ctrl Information</Translation>
       </Text>
@@ -35,7 +38,7 @@
         <Translation Language="GB">LX:&lt;value&gt; &#10;LY:&lt;value&gt;</Translation>
       </Text>
       <Text Id="Speed" Alignment="Right" TypographyId="Typography1">
-        <Translation Language="GB">&lt;&gt;</Translation>
+        <Translation Language="GB">&lt;V&gt;</Translation>
       </Text>
       <Text Id="Time" Alignment="Left" TypographyId="Typography1">
         <Translation Language="GB">&lt;&gt;</Translation>
@@ -49,10 +52,10 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="19" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="23" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-,+" WildcardCharacterRanges="0-9" />
-    <Typography Id="Typography1" Font="verdanai.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM-.," />
-    <Typography Id="Typography2" Font="verdanai.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography1" Font="verdanai.ttf" Size="19" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM-.," />
+    <Typography Id="Typography2" Font="verdanai.ttf" Size="21" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>
