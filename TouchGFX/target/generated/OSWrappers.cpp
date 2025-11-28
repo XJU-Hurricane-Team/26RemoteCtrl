@@ -39,6 +39,7 @@ void OSWrappers::initialize()
 {
     // Create a queue of length 1
     frame_buffer_sem = xSemaphoreCreateBinary();
+    /* 二值信号量创建之后需要手动释放 */
     xSemaphoreGive(frame_buffer_sem); 
     assert((frame_buffer_sem != NULL) && "Creation of framebuffer semaphore failed");
 

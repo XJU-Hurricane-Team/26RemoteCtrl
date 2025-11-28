@@ -10,6 +10,9 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_D8J1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Ctrl Information</Translation>
+      </Text>
       <Text Id="KeyNum" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">KeyNum:&lt;d&gt;</Translation>
       </Text>
@@ -46,7 +49,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="19" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="12" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-,+" WildcardCharacterRanges="0-9" />
     <Typography Id="Typography1" Font="verdanai.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM-.," />

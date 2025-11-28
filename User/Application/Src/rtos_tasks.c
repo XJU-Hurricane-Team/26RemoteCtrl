@@ -46,7 +46,7 @@ void start_task(void *pvParameters) {
     MX_TouchGFX_PreOSInit();
     taskENTER_CRITICAL();
 
-    xTaskCreate(UiTask, "task1", 1024 * 8, NULL, 2, &UiTask_handle);
+    xTaskCreate(UiTask, "UiTask", 1024 * 8, NULL, 2, &UiTask_handle);
     xTaskCreate(task2, "task2", 128, NULL, 2, &task2_handle);
     xTaskCreate(task3, "task3", 128, NULL, 2, &task3_handle);
 

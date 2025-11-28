@@ -54,6 +54,7 @@ protected:
     touchgfx::TextAreaWithTwoWildcards textArea2;
     touchgfx::TextAreaWithTwoWildcards textArea3;
     touchgfx::TextAreaWithOneWildcard textArea4;
+    touchgfx::TextArea textArea5;
 
     /*
      * Wildcard Buffers

@@ -90,6 +90,12 @@ Screen1ViewBase::Screen1ViewBase() :
     container2.add(textArea4);
 
     add(container2);
+
+    textArea5.setPosition(2, 44, 154, 25);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(49, 204, 191));
+    textArea5.setLinespacing(0);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8J1));
+    add(textArea5);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
