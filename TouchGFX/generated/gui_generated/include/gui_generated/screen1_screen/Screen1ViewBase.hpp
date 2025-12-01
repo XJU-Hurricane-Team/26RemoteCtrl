@@ -42,19 +42,17 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::ScalableImage scalableImage3;
-    touchgfx::ScalableImage scalableImage1;
     touchgfx::Container container1;
-    touchgfx::Line line2;
-    touchgfx::PainterRGB565 line2Painter;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea1;
-    touchgfx::ScalableImage scalableImage2;
+    touchgfx::ScalableImage scalableImage4;
+    touchgfx::ScalableImage scalableImage1;
     touchgfx::Container container2;
     touchgfx::TextAreaWithTwoWildcards textArea2;
     touchgfx::TextAreaWithTwoWildcards textArea3;
     touchgfx::TextAreaWithOneWildcard textArea4;
-    touchgfx::TextArea textArea5;
+    touchgfx::TextAreaWithOneWildcard textArea5;
 
     /*
      * Wildcard Buffers
@@ -67,8 +65,10 @@ protected:
     touchgfx::Unicode::UnicodeChar textArea3Buffer1[TEXTAREA3BUFFER1_SIZE];
     static const uint16_t TEXTAREA3BUFFER2_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea3Buffer2[TEXTAREA3BUFFER2_SIZE];
-    static const uint16_t TEXTAREA4_SIZE = 10;
+    static const uint16_t TEXTAREA4_SIZE = 15;
     touchgfx::Unicode::UnicodeChar textArea4Buffer[TEXTAREA4_SIZE];
+    static const uint16_t TEXTAREA5_SIZE = 15;
+    touchgfx::Unicode::UnicodeChar textArea5Buffer[TEXTAREA5_SIZE];
 
 private:
 
@@ -81,7 +81,7 @@ private:
     /*
      * Tick Counter Declarations
      */
-    static const uint32_t TICK_INFOUPDATE1_INTERVAL = 20;
+    static const uint32_t TICK_INFOUPDATE1_INTERVAL = 3;
     uint32_t frameCountInfoUpdate1Interval;
 
 };

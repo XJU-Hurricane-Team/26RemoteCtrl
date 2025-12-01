@@ -60,7 +60,7 @@ void TouchGFXHAL::initialize() {
     // and implement the needed functionality here.
     // Please note, HAL::initialize() must be called to initialize the framework.
     // touchgfx::OSWrappers::initialize();
-    ST77xx_Init(2, ST7789);
+    ST77xx_Init(0, ST7789);
     HAL::setButtonController(&bc);
     TouchGFXGeneratedHAL::initialize();
     /* 定时器初始化要放在UI抽象层初始化之后 */

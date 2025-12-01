@@ -590,13 +590,13 @@
 
 // <e> UART4 (Universal synchronous asynchronous receiver transmitter)
 
-#define UART4_ENABLE 0 
+#define UART4_ENABLE 1
 
 #if UART4_ENABLE
 
 //   <o> UART4_TX Pin
 //       <0=>Not Used <1=>PA0 <2=>PA12 <3=>PD1 <4=>PD10 <5=>PC10 
-#define UART4_TX_ID 0
+#define UART4_TX_ID 5
 
 #if (UART4_TX_ID == 0)
 #define UART4_TX 0
@@ -626,7 +626,7 @@
 
 //   <o> UART4_RX Pin
 //       <0=>Not Used <1=>PA1 <2=>PA11 <3=>PC11 <4=>PD0 
-#define UART4_RX_ID 0
+#define UART4_RX_ID 3
 
 #if (UART4_RX_ID == 0)
 #define UART4_RX 0
@@ -679,7 +679,7 @@
 #endif  /* UART4_RTS_ID */
 
 //   <e> Enable UART4 Interrupt
-#define UART4_IT_ENABLE 0
+#define UART4_IT_ENABLE 1
 
 #if UART4_IT_ENABLE
 
@@ -694,7 +694,7 @@
 #endif /* UART4_IT_ENABLE */
 
 //   <e> Enable UART4 DMA RX
-#define UART4_RX_DMA             0
+#define UART4_RX_DMA             1
 
 #if UART4_RX_DMA
 
@@ -742,7 +742,7 @@
 #endif  /* UART4_RX_DMA */
 
 //   <e> Enable UART4 DMA TX
-#define UART4_TX_DMA             0
+#define UART4_TX_DMA             1
 
 #if UART4_TX_DMA
 
@@ -2828,13 +2828,13 @@
 // </e>
 
 // <e> SPI4 (Serial Peripheral Interface)
-#define SPI4_ENABLE  0
+#define SPI4_ENABLE  1
 
 #if SPI4_ENABLE
 
 //   <o> SPI4_MISO Pin
 //       <0=>Not Used <1=>PE5 <2=>PE13 <3=>PA11 <4=>PD0 <5=>PG12 
-#define SPI4_MISO_ID 0
+#define SPI4_MISO_ID 1
 
 #if (SPI4_MISO_ID == 0)
 #define SPI4_MISO 0
@@ -2864,7 +2864,7 @@
 
 //   <o> SPI4_MOSI Pin
 //       <0=>Not Used <1=>PE6 <2=>PE14 <3=>PA1 <4=>PG13 
-#define SPI4_MOSI_ID 0
+#define SPI4_MOSI_ID 1
 
 #if (SPI4_MOSI_ID == 0)
 #define SPI4_MOSI 0
@@ -2890,7 +2890,7 @@
 
 //   <o> SPI4_NSS Pin
 //       <0=>Not Used <1=>PE4 <2=>PE11 <3=>PB12 <4=>PG14 
-#define SPI4_NSS_ID 0
+#define SPI4_NSS_ID 1
 
 #if (SPI4_NSS_ID == 0)
 #define SPI4_NSS 0
@@ -2990,7 +2990,7 @@
 #endif  /* SPI4_RX_DMA */
 
 //   <e> Enable SPI4 DMA TX
-#define SPI4_TX_DMA             0
+#define SPI4_TX_DMA             1
 
 #if SPI4_TX_DMA
 
@@ -3019,11 +3019,11 @@
 
 //     <o> DMA TX Interrupt Priority <0-15>
 //     <i>  The Interrupt Priority of DMA Rx
-#define SPI4_TX_DMA_IT_PRIORITY 2
+#define SPI4_TX_DMA_IT_PRIORITY 5
 
 //     <o> DMA TX Interrupt SubPriority <0-15>
 //     <i>  The Interrupt SubPriority of DMA Rx
-#define SPI4_TX_DMA_IT_SUB      2
+#define SPI4_TX_DMA_IT_SUB      5
 
 //   </e>
 

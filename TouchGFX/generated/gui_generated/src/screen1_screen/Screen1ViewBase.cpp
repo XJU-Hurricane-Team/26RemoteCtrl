@@ -21,46 +21,37 @@ Screen1ViewBase::Screen1ViewBase() :
     scalableImage3.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(scalableImage3);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_KY50_50_ID));
-    scalableImage1.setPosition(264, 2, 56, 50);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    add(scalableImage1);
-
-    container1.setPosition(1, -1, 319, 60);
-    line2.setPosition(243, 0, 20, 60);
-    line2Painter.setColor(touchgfx::Color::getColorFromRGB(27, 199, 222));
-    line2.setPainter(line2Painter);
-    line2.setStart(3, 0);
-    line2.setEnd(3, 57);
-    line2.setLineWidth(1);
-    line2.setLineEndingStyle(touchgfx::Line::BUTT_CAP_ENDING);
-    container1.add(line2);
-
-    line1.setPosition(0, 53, 318, 15);
+    container1.setPosition(1, -1, 319, 94);
+    line1.setPosition(0, 66, 318, 15);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(27, 199, 222));
     line1.setPainter(line1Painter);
     line1.setStart(0, 4);
     line1.setEnd(320, 4);
-    line1.setLineWidth(1);
+    line1.setLineWidth(4);
     line1.setLineEndingStyle(touchgfx::Line::BUTT_CAP_ENDING);
     container1.add(line1);
 
-    textArea1.setPosition(42, 3, 211, 51);
+    textArea1.setPosition(89, 13, 140, 53);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_TEAM_NAME));
     container1.add(textArea1);
 
-    scalableImage2.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_LOGOS_TOUCHGFX_ID));
-    scalableImage2.setPosition(1, 1, 39, 52);
-    scalableImage2.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    container1.add(scalableImage2);
+    scalableImage4.setBitmap(touchgfx::Bitmap(BITMAP_XINJIANG_UNIVERSITY_LOGO_50PX_ID));
+    scalableImage4.setPosition(9, 2, 72, 65);
+    scalableImage4.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    container1.add(scalableImage4);
+
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_KY50_50_ID));
+    scalableImage1.setPosition(243, 3, 66, 63);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    container1.add(scalableImage1);
 
     add(container1);
 
-    container2.setPosition(1, 139, 319, 101);
-    textArea2.setPosition(30, 0, 117, 42);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    container2.setPosition(1, 75, 319, 165);
+    textArea2.setPosition(31, 45, 117, 59);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(246, 250, 165));
     textArea2.setLinespacing(0);
     textArea2.setWideTextAction(WIDE_TEXT_WORDWRAP);
     touchgfx::Unicode::snprintf(textArea2Buffer1, TEXTAREA2BUFFER1_SIZE, "%s", touchgfx::TypedText(T_LX).getText());
@@ -70,8 +61,8 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea2.setTypedText(touchgfx::TypedText(T_ROCK1));
     container2.add(textArea2);
 
-    textArea3.setPosition(204, 0, 78, 42);
-    textArea3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea3.setPosition(168, 45, 122, 59);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(246, 250, 165));
     textArea3.setLinespacing(0);
     textArea3.setWideTextAction(WIDE_TEXT_WORDWRAP_ELLIPSIS);
     touchgfx::Unicode::snprintf(textArea3Buffer1, TEXTAREA3BUFFER1_SIZE, "%s", touchgfx::TypedText(T_RX).getText());
@@ -81,21 +72,23 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea3.setTypedText(touchgfx::TypedText(T_ROCK2));
     container2.add(textArea3);
 
-    textArea4.setPosition(-1, 67, 319, 23);
-    textArea4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea4.setPosition(65, 119, 188, 34);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
     textArea4.setLinespacing(0);
-    textArea4Buffer[0] = 0;
+    Unicode::snprintf(textArea4Buffer, TEXTAREA4_SIZE, "%s", touchgfx::TypedText(T_KEY_NUM).getText());
     textArea4.setWildcard(textArea4Buffer);
     textArea4.setTypedText(touchgfx::TypedText(T_KEYNUM));
     container2.add(textArea4);
 
-    add(container2);
-
-    textArea5.setPosition(2, 67, 317, 26);
-    textArea5.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
+    textArea5.setPosition(65, 0, 190, 36);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     textArea5.setLinespacing(0);
+    Unicode::snprintf(textArea5Buffer, TEXTAREA5_SIZE, "%s", touchgfx::TypedText(T_10V).getText());
+    textArea5.setWildcard(textArea5Buffer);
     textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8J1));
-    add(textArea5);
+    container2.add(textArea5);
+
+    add(container2);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -110,10 +103,10 @@ void Screen1ViewBase::setupScreen()
 
 void Screen1ViewBase::handleKeyEvent(uint8_t key)
 {
-    if(3 == key)
+    if(17 == key)
     {
         //ChangeScreen1
-        //When hardware button 3 clicked change screen to Screen2
+        //When hardware button 17 clicked change screen to Screen2
         //Go to Screen2 with block transition
         application().gotoScreen2ScreenBlockTransition();
     

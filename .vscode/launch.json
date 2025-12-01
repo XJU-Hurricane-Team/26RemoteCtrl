@@ -3,6 +3,28 @@
     "configurations": [
         {
             "cwd": "${workspaceRoot}",
+            "executable": "build/Debug/26RemoteCtrl.elf",
+            "name": "Debug with OpenOCD",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "STM32F429VE",
+            "svdFile": ".pack/Keil/STM32F4xx_DFP.2.14.0/CMSIS/SVD/STM32F429x.svd",
+            "interface": "swd",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f4x.cfg"
+            ],
+            "searchDir": [],
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 1000
+            }
+        },
+        {
+            "cwd": "${workspaceRoot}",
             "type": "cortex-debug",
             "request": "launch",
             "name": "Debug: JLINK",

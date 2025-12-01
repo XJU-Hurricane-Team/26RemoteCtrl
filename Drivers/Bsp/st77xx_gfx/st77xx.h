@@ -37,13 +37,13 @@ typedef struct {
 /*************************************************************************************************/
 /* 引脚定义 */
 
-#define LCD_CS_Pin GPIO_PIN_12
-#define LCD_CS_GPIO_Port GPIOB
-#define LCD_DC_Pin GPIO_PIN_13
-#define LCD_DC_GPIO_Port GPIOB
-#define LCD_RST_Pin GPIO_PIN_14
-#define LCD_RST_GPIO_Port GPIOB
-#define ST77xx_SPI_INSTANCE  spi1_handle
+#define LCD_CS_Pin GPIO_PIN_4
+#define LCD_CS_GPIO_Port GPIOE
+#define LCD_DC_Pin GPIO_PIN_0
+#define LCD_DC_GPIO_Port GPIOE
+// #define LCD_RST_Pin GPIO_PIN_1
+// #define LCD_RST_GPIO_Port GPIOE
+#define ST77xx_SPI_INSTANCE  spi4_handle
 
 /*************************************************************************************************/
 /* 显示设置 */

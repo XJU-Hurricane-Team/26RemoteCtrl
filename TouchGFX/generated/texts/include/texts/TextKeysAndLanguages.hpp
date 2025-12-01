@@ -13,6 +13,8 @@ enum LANGUAGES
 enum TEXTS
 {
     T_TEAM_NAME,
+    T_10V,
+    T_KEY_NUM,
     T_V,
     T___SINGLEUSE_D8J1,
     T_KEYNUM,

@@ -15,13 +15,8 @@ void start_task(void *pvParameters);
 static TaskHandle_t UiTask_handle;
 void UiTask(void *pvParameters);
 
-static TaskHandle_t task2_handle;
-void task2(void *pvParameters);
-
-static TaskHandle_t task3_handle;
-void task3(void *pvParameters);
-
-QueueHandle_t SampleQueue;
+static TaskHandle_t message_polling_task_handle;
+void message_polling_task(void *pvParameters);
 
 /*****************************************************************************/
 
@@ -44,13 +39,18 @@ void start_task(void *pvParameters) {
     MX_TouchGFX_Init();
     /* Call PreOsInit function */
     MX_TouchGFX_PreOSInit();
+    // BEEP_ON();
+    // delay_ms(40);
+    // BEEP_OFF();
+    remote_send_init(&uart4_handle); /* 创建 */
+    message_register_polling_uart(MSG_TO_MASTER, &uart4_handle, 100, 512);
+    message_register_recv_callback(MSG_TO_MASTER, remote_report_msg_callback);
     taskENTER_CRITICAL();
 
     xTaskCreate(UiTask, "UiTask", 1024 * 12, NULL, 2, &UiTask_handle);
-    xTaskCreate(task2, "task2", 128, NULL, 2, &task2_handle);
-    xTaskCreate(task3, "task3", 128, NULL, 2, &task3_handle);
+    xTaskCreate(message_polling_task, "message_polling_task", 128, NULL, 2, &message_polling_task_handle);
 
-    SampleQueue = xQueueCreate(1, sizeof(uint8_t));
+    SampleQueue = xQueueCreate(1, sizeof (int8_t)*6);
 
     vTaskDelete(start_task_handle);
     taskEXIT_CRITICAL();
@@ -70,43 +70,17 @@ void UiTask(void *pvParameters) {
 }
 
 /**
- * @brief Task2: print running time.
+ * @brief message_polling_task 指定串口轮询数据函数
  *
- * @param pvParameters Start parameters.
+ * @param pvParameters
  */
-void task2(void *pvParameters) {
-    UNUSED(pvParameters);
-    LED0_OFF();
-    while (1) {
-        LED0_TOGGLE();
-        printf("STM32F4xx FreeRTOS project template. Running time: %u ms. \n",
-               xTaskGetTickCount());
-        vTaskDelay(1000);
-    }
-}
-
-/**
- * @brief Task3: 信息采集。
- *
- * @param pvParameters Start parameters.
- */
-void task3(void *pvParameters) {
+void message_polling_task(void *pvParameters) {
     UNUSED(pvParameters);
 
-    uint8_t key = KEY_NO_PRESS;
-    uint32_t prevTick = HAL_GetTick();
-
-    LED1_ON();
     while (1) {
-        key = key_scan(0);
-        if (key != KEY_NO_PRESS) {
-            xQueueOverwrite(SampleQueue, &key);
-        }
-        if (HAL_GetTick() - prevTick >= 500) {
-            prevTick = HAL_GetTick();
-            LED1_TOGGLE();
-        }
-        vTaskDelay(10);
+
+        message_polling_data();
+        vTaskDelay(5);
     }
 }
 

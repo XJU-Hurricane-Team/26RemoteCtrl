@@ -6,17 +6,23 @@
   <Texts>
     <TextGroup Id="default">
       <Text Id="team_name" Alignment="Center" TypographyId="Typography2">
-        <Translation Language="GB">Hurricane&#10;UI design</Translation>
+        <Translation Language="GB">Hurricane&#10;Ctrl Info</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="10V" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="key_num" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
       <Text Id="V" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_D8J1" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Ctrl Information</Translation>
+      <Text Id="__SingleUse_D8J1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Battery:&lt;value&gt;</Translation>
       </Text>
-      <Text Id="KeyNum" Alignment="Center" TypographyId="Small">
+      <Text Id="KeyNum" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">KeyNum:&lt;d&gt;</Translation>
       </Text>
       <Text Id="RY" Alignment="Left" TypographyId="Small">
@@ -31,11 +37,11 @@
       <Text Id="LX" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="Rock2" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">RX:&lt;value&gt;&#10;RY:&lt;value&gt;</Translation>
+      <Text Id="Rock2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">R_X:&lt;value&gt;&#10;R_Y:&lt;value&gt;</Translation>
       </Text>
-      <Text Id="Rock1" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">LX:&lt;value&gt; &#10;LY:&lt;value&gt;</Translation>
+      <Text Id="Rock1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">L_X:&lt;value&gt; &#10;L_Y:&lt;value&gt;</Translation>
       </Text>
       <Text Id="Speed" Alignment="Right" TypographyId="Typography1">
         <Translation Language="GB">&lt;V&gt;</Translation>
@@ -56,6 +62,6 @@
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-,+" WildcardCharacterRanges="0-9" />
     <Typography Id="Typography1" Font="verdanai.ttf" Size="19" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM-.," />
-    <Typography Id="Typography2" Font="verdanai.ttf" Size="21" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography2" Font="verdanai.ttf" Size="23" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

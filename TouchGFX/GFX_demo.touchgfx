@@ -15,44 +15,17 @@
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
-            "Type": "ScalableImage",
-            "Name": "scalableImage1",
-            "X": 264,
-            "Y": 2,
-            "Width": 56,
-            "Height": 50,
-            "Filename": "ky50_50.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
             "Type": "Container",
             "Name": "container1",
             "X": 1,
             "Y": -1,
             "Width": 319,
-            "Height": 60,
+            "Height": 94,
             "Components": [
               {
                 "Type": "Line",
-                "Name": "line2",
-                "X": 243,
-                "Width": 20,
-                "Height": 60,
-                "Color": {
-                  "Red": 27,
-                  "Green": 199,
-                  "Blue": 222
-                },
-                "StartX": 3.0,
-                "EndX": 3.0,
-                "EndY": 57.0,
-                "LineWidth": 1.0,
-                "LineEndingStyle": "Butt"
-              },
-              {
-                "Type": "Line",
                 "Name": "line1",
-                "Y": 53,
+                "Y": 66,
                 "Width": 318,
                 "Height": 15,
                 "Color": {
@@ -63,16 +36,16 @@
                 "StartY": 4.0,
                 "EndX": 320.0,
                 "EndY": 4.0,
-                "LineWidth": 1.0,
+                "LineWidth": 4.0,
                 "LineEndingStyle": "Butt"
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
-                "X": 42,
-                "Y": 3,
-                "Width": 211,
-                "Height": 51,
+                "X": 89,
+                "Y": 13,
+                "Width": 140,
+                "Height": 53,
                 "TextId": "team_name",
                 "TextRotation": "0",
                 "Color": {
@@ -83,12 +56,22 @@
               },
               {
                 "Type": "ScalableImage",
-                "Name": "scalableImage2",
-                "X": 1,
-                "Y": 1,
-                "Width": 39,
-                "Height": 52,
-                "Filename": "__generated\\alternate_theme_images_logos_touchgfx.png",
+                "Name": "scalableImage4",
+                "X": 9,
+                "Y": 2,
+                "Width": 72,
+                "Height": 65,
+                "Filename": "xinjiang-university-logo-50px.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage1",
+                "X": 243,
+                "Y": 3,
+                "Width": 66,
+                "Height": 63,
+                "Filename": "ky50_50.png",
                 "ScalingAlgorithm": "Nearest-neighbor"
               }
             ]
@@ -97,22 +80,23 @@
             "Type": "Container",
             "Name": "container2",
             "X": 1,
-            "Y": 139,
+            "Y": 75,
             "Width": 319,
-            "Height": 101,
+            "Height": 165,
             "Components": [
               {
                 "Type": "TextArea",
                 "Name": "textArea2",
-                "X": 30,
+                "X": 31,
+                "Y": 45,
                 "Width": 117,
-                "Height": 42,
+                "Height": 59,
                 "TextId": "Rock1",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 246,
+                  "Green": 250,
+                  "Blue": 165
                 },
                 "Wildcard1": {
                   "TextId": "LX",
@@ -129,15 +113,16 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea3",
-                "X": 204,
-                "Width": 78,
-                "Height": 42,
+                "X": 168,
+                "Y": 45,
+                "Width": 122,
+                "Height": 59,
                 "TextId": "Rock2",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 246,
+                  "Green": 250,
+                  "Blue": 165
                 },
                 "Wildcard1": {
                   "TextId": "RX",
@@ -154,38 +139,43 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea4",
-                "X": -1,
-                "Y": 67,
-                "Width": 319,
-                "Height": 23,
+                "X": 65,
+                "Y": 119,
+                "Width": 188,
+                "Height": 34,
                 "TextId": "KeyNum",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
+                  "Red": 51,
+                  "Green": 204,
+                  "Blue": 181
                 },
                 "Wildcard1": {
+                  "TextId": "key_num",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 15
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea5",
+                "X": 65,
+                "Width": 190,
+                "Height": 36,
+                "TextId": "__SingleUse_D8J1",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 167,
+                  "Green": 247,
+                  "Blue": 124
+                },
+                "Wildcard1": {
+                  "TextId": "10V",
+                  "UseBuffer": true,
+                  "BufferSize": 15
                 }
               }
             ]
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea5",
-            "X": 2,
-            "Y": 67,
-            "Width": 317,
-            "Height": 26,
-            "TextId": "__SingleUse_D8J1",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 51,
-              "Green": 204,
-              "Blue": 181
-            }
           }
         ],
         "Interactions": [
@@ -193,7 +183,7 @@
             "InteractionName": "ChangeScreen1",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked",
-              "ButtonKey": 3
+              "ButtonKey": 17
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -205,7 +195,7 @@
             "InteractionName": "InfoUpdate1",
             "Trigger": {
               "Type": "TriggerOnEveryTick",
-              "TickCount": 20
+              "TickCount": 3
             },
             "Action": {
               "Type": "ActionCustom",

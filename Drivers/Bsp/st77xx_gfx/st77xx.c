@@ -15,12 +15,12 @@
 lcd_dev_t lcd_dev;
 volatile uint16_t tearingEffectCount = 0;
 
-void ST77xx_Reset(void) {
-    HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_RESET);
-    HAL_Delay(100);
-    HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_SET);
-    HAL_Delay(100);
-}
+// void ST77xx_Reset(void) {
+//     HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_RESET);
+//     HAL_Delay(100);
+//     HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_SET);
+//     HAL_Delay(100);
+// }
 
 void ST77xx_WriteCommand(uint8_t cmd) {
     HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_RESET);
@@ -181,11 +181,12 @@ void ST77xx_Init(uint8_t dir, ic_type_t st77xx) {
 
     __HAL_RCC_GPIOB_CLK_ENABLE();
 
-    GPIO_InitStruct.Pin = LCD_CS_Pin | LCD_DC_Pin | LCD_RST_Pin;
+    // GPIO_InitStruct.Pin = LCD_CS_Pin | LCD_DC_Pin | LCD_RST_Pin;
+    GPIO_InitStruct.Pin = LCD_CS_Pin | LCD_DC_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
     HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_RESET);
 
     lcd_dev.dir = dir;
@@ -195,7 +196,7 @@ void ST77xx_Init(uint8_t dir, ic_type_t st77xx) {
 
     if (lcd_dev.id == ST7735) {
         /* 屏幕初始化 */
-        ST77xx_Reset();
+        // ST77xx_Reset();
         ST77xx_WriteCommand(ST7735_SLPOUT);
         HAL_Delay(120);
         ST77xx_SetRotation(lcd_dev.dir);
@@ -286,7 +287,7 @@ void ST77xx_Init(uint8_t dir, ic_type_t st77xx) {
         HAL_Delay(10);
 
     } else if (lcd_dev.id == ST7789) {
-        ST77xx_Reset();
+        // ST77xx_Reset();
         ST77xx_WriteCommand(ST7789_SLPOUT);
         HAL_Delay(120);
         ST77xx_SetRotation(lcd_dev.dir);

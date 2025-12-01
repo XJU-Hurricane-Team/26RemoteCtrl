@@ -14,10 +14,14 @@ public:
     virtual void handleTickEvent();
     virtual void tearDownScreen();
     virtual void InfoUpdate1();
-    uint8_t KeyState;
+    int8_t keyState;
+    int8_t voltage;
+    int8_t rsL_x;
+    int8_t rsL_y;
+    int8_t rsR_x;
+    int8_t rsR_y;
     
 protected:
-    int myCounter;
 };
 
 #endif // SCREEN1VIEW_HPP

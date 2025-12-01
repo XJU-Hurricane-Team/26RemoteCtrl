@@ -15,18 +15,25 @@ virtualFolder:
         - path: Drivers/Bsp/core/core_delay.c
         - path: Drivers/Bsp/core/retarget_io.c
         - path: Drivers/Bsp/key/key.c
-        - path: Drivers/Bsp/led/led.c
         - path: Drivers/Bsp/bsp.c
         - path: Drivers/Bsp/dma2d/dma2d.c
         - path: Drivers/Bsp/crc/crc.c
         - path: Drivers/Bsp/time/tim.c
         - path: Drivers/Bsp/st77xx_gfx/st77xx.c
+        - path: Drivers/Bsp/adc/adc.c
+        - path: Drivers/Bsp/ads868x/ads868x.c
+        - path: Drivers/Bsp/keyboard/keyboard.c
+        - path: Drivers/Bsp/beep/beep.c
+        - path: Drivers/Bsp/led/led.c
+        - path: Drivers/Bsp/w25qxx/w25qxx.c
       folders: []
     - name: Application
       files:
         - path: User/Application/Src/main.c
         - path: User/Application/Src/stm32f4xx_it.c
         - path: User/Application/Src/rtos_tasks.c
+        - path: User/Application/Src/remote_ctrl.c
+        - path: User/Application/Src/report_data.c
       folders: []
     - name: Drivers
       files: []
@@ -118,6 +125,11 @@ virtualFolder:
     - name: Utils
       files:
         - path: User/Utils/ring_fifo/ring_fifo.c
+        - path: User/Utils/calc_crc/calc_crc.c
+      folders: []
+    - name: Modules
+      files:
+        - path: Modules/msg_protocol.c
       folders: []
 dependenceList: []
 outDir: build
@@ -246,7 +258,12 @@ targets:
           vendor: ST
         otherCmds: ""
         proType: 1
-        speed: 8000
+        speed: 4000
+      OpenOCD:
+        baseAddr: "0x08000000"
+        bin: ""
+        interface: stlink
+        target: stm32f4x
       STLink:
         address: "0x08000000"
         bin: ""

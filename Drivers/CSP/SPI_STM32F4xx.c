@@ -136,15 +136,13 @@ uint8_t spi1_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
 #endif /* SPI1_RX_DMA */
 
 #if SPI1_TX_DMA
-    // if (data_size == SPI_DATASIZE_8BIT) {
-    //     spi1_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
-    //     spi1_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-    // } else if (data_size == SPI_DATASIZE_16BIT) {
-    //     spi1_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-    //     spi1_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
-    // }
-    spi1_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-    spi1_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    if (data_size == SPI_DATASIZE_8BIT) {
+        spi1_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+        spi1_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    } else if (data_size == SPI_DATASIZE_16BIT) {
+        spi1_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+        spi1_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    }
 
     CSP_DMA_CLK_ENABLE(SPI1_TX_DMA_NUMBER);
 
@@ -924,13 +922,16 @@ uint8_t spi4_init(uint32_t mode, spi_clk_mode_t clk_mode, uint32_t data_size,
 #endif /* SPI4_RX_DMA */
 
 #if SPI4_TX_DMA
-    if (data_size == SPI_DATASIZE_8BIT) {
-        spi4_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
-        spi4_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-    } else if (data_size == SPI_DATASIZE_16BIT) {
-        spi4_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
-        spi4_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
-    }
+    // if (data_size == SPI_DATASIZE_8BIT) {
+    //     spi4_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    //     spi4_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    // } else if (data_size == SPI_DATASIZE_16BIT) {
+    //     spi4_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    //     spi4_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
+    // }
+
+    spi4_dmatx_handle.Init.MemDataAlignment = DMA_MDATAALIGN_HALFWORD;
+    spi4_dmatx_handle.Init.PeriphDataAlignment = DMA_PDATAALIGN_HALFWORD;
 
     CSP_DMA_CLK_ENABLE(SPI4_TX_DMA_NUMBER);
 

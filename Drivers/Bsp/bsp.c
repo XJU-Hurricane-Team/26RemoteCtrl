@@ -16,10 +16,17 @@ void bsp_init(void) {
     HAL_Init();
     system_clock_config();
     delay_init(180);
+    uart4_init(38400);
     usart1_init(115200);
     led_init();
     key_init();
-    spi1_init(SPI_MODE_MASTER, SPI_CLK_MODE0, SPI_DATASIZE_8BIT,
+    beep_init();
+    keyboard_init();
+    ads868x_gpio_init();
+    ads868x_Mult_ch_Init(0x06);
+    // spi1_init(SPI_MODE_MASTER, SPI_CLK_MODE0, SPI_DATASIZE_8BIT,
+    //           SPI_FIRSTBIT_MSB);
+    spi4_init(SPI_MODE_MASTER, SPI_CLK_MODE0, SPI_DATASIZE_8BIT,
               SPI_FIRSTBIT_MSB);
     MX_CRC_Init();
     MX_DMA2D_Init();
