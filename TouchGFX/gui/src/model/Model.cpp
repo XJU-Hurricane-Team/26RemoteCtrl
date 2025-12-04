@@ -18,7 +18,6 @@ void Model::tick()
         BaseType_t st = xQueueReceive(SampleQueue, &msg, 0U);
         if (st == pdPASS)
         {
-            modelListener->onKeyValueChanged(keyValue);
             voltage = msg[0];
             rsR_x = msg[1];
             rsR_y = msg[2];

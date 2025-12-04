@@ -20,6 +20,8 @@ public:
     int8_t rsL_y;
     int8_t rsR_x;
     int8_t rsR_y;
+    float graphValue;
+    int tickCounter;
     
 protected:
 };

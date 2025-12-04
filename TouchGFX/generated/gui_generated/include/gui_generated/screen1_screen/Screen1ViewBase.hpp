@@ -14,6 +14,9 @@
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/graph/GraphScroll.hpp>
+#include <touchgfx/widgets/graph/GraphElements.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -46,17 +49,27 @@ protected:
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea textArea1;
-    touchgfx::ScalableImage scalableImage4;
     touchgfx::ScalableImage scalableImage1;
+    touchgfx::TextAreaWithOneWildcard textArea5;
+    touchgfx::TextAreaWithOneWildcard textArea4;
     touchgfx::Container container2;
     touchgfx::TextAreaWithTwoWildcards textArea2;
     touchgfx::TextAreaWithTwoWildcards textArea3;
-    touchgfx::TextAreaWithOneWildcard textArea4;
-    touchgfx::TextAreaWithOneWildcard textArea5;
+    touchgfx::GraphScroll<100> dynamicGraph1;
+    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
+    touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
+    touchgfx::GraphElementLine dynamicGraph1Line1;
+    touchgfx::PainterRGB565 dynamicGraph1Line1Painter;
+    touchgfx::Line line2;
+    touchgfx::PainterRGB565 line2Painter;
 
     /*
      * Wildcard Buffers
      */
+    static const uint16_t TEXTAREA5_SIZE = 15;
+    touchgfx::Unicode::UnicodeChar textArea5Buffer[TEXTAREA5_SIZE];
+    static const uint16_t TEXTAREA4_SIZE = 15;
+    touchgfx::Unicode::UnicodeChar textArea4Buffer[TEXTAREA4_SIZE];
     static const uint16_t TEXTAREA2BUFFER1_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea2Buffer1[TEXTAREA2BUFFER1_SIZE];
     static const uint16_t TEXTAREA2BUFFER2_SIZE = 10;
@@ -65,10 +78,6 @@ protected:
     touchgfx::Unicode::UnicodeChar textArea3Buffer1[TEXTAREA3BUFFER1_SIZE];
     static const uint16_t TEXTAREA3BUFFER2_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textArea3Buffer2[TEXTAREA3BUFFER2_SIZE];
-    static const uint16_t TEXTAREA4_SIZE = 15;
-    touchgfx::Unicode::UnicodeChar textArea4Buffer[TEXTAREA4_SIZE];
-    static const uint16_t TEXTAREA5_SIZE = 15;
-    touchgfx::Unicode::UnicodeChar textArea5Buffer[TEXTAREA5_SIZE];
 
 private:
 

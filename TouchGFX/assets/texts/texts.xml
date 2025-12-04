@@ -10,20 +10,23 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_Y67B" Alignment="Center" TypographyId="Typography1">
+        <Translation Language="GB">RunningTime:&lt;&gt;</Translation>
+      </Text>
       <Text Id="10V" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="key_num" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="V" Alignment="Right" TypographyId="Default">
+      <Text Id="V" Alignment="Right" TypographyId="Label">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_D8J1" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Battery:&lt;value&gt;</Translation>
       </Text>
       <Text Id="KeyNum" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">KeyNum:&lt;d&gt;</Translation>
+        <Translation Language="GB">Key:&lt;d&gt;</Translation>
       </Text>
       <Text Id="RY" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">0</Translation>
@@ -49,19 +52,17 @@
       <Text Id="Time" Alignment="Left" TypographyId="Typography1">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_Y67B" Alignment="Center" TypographyId="Typography1">
-        <Translation Language="GB">RunningTime:&lt;&gt;</Translation>
-      </Text>
       <Text Id="__SingleUse_GIIA" Alignment="Center" TypographyId="Typography1">
-        <Translation Language="GB">information&#10;aout&#10;remotcrtl.</Translation>
+        <Translation Language="GB">more info&#10;aout&#10;remotcrtl.</Translation>
       </Text>
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="23" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="21" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-+" WildcardCharacterRanges="0-9" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-., 0123456789" />
     <Typography Id="Small" Font="verdana.ttf" Size="16" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-,+" WildcardCharacterRanges="0-9" />
-    <Typography Id="Typography1" Font="verdanai.ttf" Size="19" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM-.," />
+    <Typography Id="Typography1" Font="verdanai.ttf" Size="19" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
     <Typography Id="Typography2" Font="verdanai.ttf" Size="23" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Label" Font="verdana.ttf" Size="9" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="-., 0123456789" />
   </Typographies>
 </TextDatabase>

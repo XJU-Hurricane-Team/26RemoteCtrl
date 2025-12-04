@@ -22,7 +22,7 @@ void Screen2View::tearDownScreen()
 
 void Screen2View::handleTickEvent()
 {
-    tickCounter++;
+    // tickCounter++;
 
     uint32_t now = HAL_GetTick();
     uint32_t totalSeconds =  now / 1000u;
@@ -36,19 +36,19 @@ void Screen2View::handleTickEvent()
     digitalClock1.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
 
  
-    if (graphValue < 0)
-    {
-        graphValue = 0;
-    }
-    else if (graphValue > 100)
-    {
-        graphValue = 100;
-    }
-    if (tickCounter % 20 == 0)
-    {
-    graphValue = (rand() % 100) - 0.5f; // Random walk
-      // Insert data point
-      dynamicGraph1.addDataPoint(graphValue);
-    }
+    // if (graphValue < 0)
+    // {
+    //     graphValue = 0;
+    // }
+    // else if (graphValue > 100)
+    // {
+    //     graphValue = 100;
+    // }
+    // if (tickCounter % 5 == 0)
+    // {
+    // graphValue = (rand() % 100) - 0.5f; // Random walk
+    //   // Insert data point
+    //   dynamicGraph1.addDataPoint(graphValue);
+    // }
     
 }

@@ -74,8 +74,10 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
     ST77xx_SetAddressWindow(posx, posy, posx + sizex - 1, posy + sizey - 1);
     ST77xx_WriteCommand(ST7735_RAMWR);
     /* 将spi发送长度配置为16bit */
-    while (((ST77xx_SPI_INSTANCE.Instance->SR) & SPI_FLAG_BSY) != RESET) {}
+    while (ST77xx_SPI_INSTANCE.Instance->SR & SPI_FLAG_BSY) {}
     __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
+    // 更新 HAL 的配置表明现在是 16-bit
+    ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_16BIT;
     ST77xx_SPI_INSTANCE.Instance->CR1 |= SPI_DATASIZE_16BIT;
     __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
 
@@ -92,6 +94,32 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
         DisplayDriver_TransferCompleteCallback();
     }
+
+    // if (HAL_SPI_Transmit_IT(&ST77xx_SPI_INSTANCE, (uint8_t *)bitmap,
+    //                      (uint16_t)(sizex * sizey)) != HAL_OK) {
+    //     IsTransmittingBlock_ = 0;
+    //     __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
+    //     ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
+    //     __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
+    //     DisplayDriver_TransferCompleteCallback();
+    // }
+
+    //     if (HAL_SPI_Transmit(&ST77xx_SPI_INSTANCE, (uint8_t *)bitmap,
+    //                      (uint16_t)(sizex * sizey), 1000) != HAL_OK) {
+    //     IsTransmittingBlock_ = 0;
+    //     __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
+    //     ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
+    //     __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
+    //     DisplayDriver_TransferCompleteCallback();
+    // }
+    //     IsTransmittingBlock_ = 0;
+    //     while (((ST77xx_SPI_INSTANCE.Instance->SR) & SPI_FLAG_BSY) != RESET) {}
+    //     __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
+    //     ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
+    //     ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
+    //     __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
+    //     // Signal Transfer Complete to TouchGFX
+    //     DisplayDriver_TransferCompleteCallback();
 }
 
 int touchgfxDisplayDriverTransmitActive(void) {
@@ -109,7 +137,7 @@ int touchgfxDisplayDriverShouldTransferBlock(uint16_t bottom) {
     // tearingEffectCount > 0;
 
     /* 这里由于没有te信号所以无法同步所以一直返回1 */
-    return 1; 
+    return 1;
 }
 
 //Signal TE interrupt to TouchGFX
@@ -120,9 +148,17 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
         IsTransmittingBlock_ = 0;
         while (((ST77xx_SPI_INSTANCE.Instance->SR) & SPI_FLAG_BSY) != RESET) {}
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
+        ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
         ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
         // Signal Transfer Complete to TouchGFX
+        DisplayDriver_TransferCompleteCallback();
+    }
+}
+
+void HAL_DMA_ErrorCallback(DMA_HandleTypeDef *hdma) {
+    if (hdma == ST77xx_SPI_INSTANCE.hdmatx) {
+        IsTransmittingBlock_ = 0;
         DisplayDriver_TransferCompleteCallback();
     }
 }
@@ -347,5 +383,8 @@ void ST77xx_Init(uint8_t dir, ic_type_t st77xx) {
         ST77xx_WriteCommand(ST7789_INVON);
         ST77xx_WriteCommand(ST7789_DISPON);
         HAL_Delay(10);
+        HAL_DMA_RegisterCallback(&ST77xx_SPI_INSTANCE.hdmatx,
+                                 HAL_DMA_XFER_ERROR_CB_ID,
+                                 HAL_DMA_ErrorCallback);
     }
 }

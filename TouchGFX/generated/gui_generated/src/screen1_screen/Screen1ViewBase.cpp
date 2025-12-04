@@ -22,35 +22,46 @@ Screen1ViewBase::Screen1ViewBase() :
     add(scalableImage3);
 
     container1.setPosition(1, -1, 319, 94);
-    line1.setPosition(0, 66, 318, 15);
+    line1.setPosition(0, 66, 318, 10);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(27, 199, 222));
     line1.setPainter(line1Painter);
     line1.setStart(0, 4);
     line1.setEnd(320, 4);
-    line1.setLineWidth(4);
+    line1.setLineWidth(2);
     line1.setLineEndingStyle(touchgfx::Line::BUTT_CAP_ENDING);
     container1.add(line1);
 
-    textArea1.setPosition(89, 13, 140, 53);
+    textArea1.setPosition(65, 7, 119, 59);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T_TEAM_NAME));
     container1.add(textArea1);
 
-    scalableImage4.setBitmap(touchgfx::Bitmap(BITMAP_XINJIANG_UNIVERSITY_LOGO_50PX_ID));
-    scalableImage4.setPosition(9, 2, 72, 65);
-    scalableImage4.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    container1.add(scalableImage4);
-
     scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_KY50_50_ID));
-    scalableImage1.setPosition(243, 3, 66, 63);
+    scalableImage1.setPosition(0, 3, 66, 63);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     container1.add(scalableImage1);
+
+    textArea5.setPosition(192, 3, 123, 31);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
+    textArea5.setLinespacing(0);
+    Unicode::snprintf(textArea5Buffer, TEXTAREA5_SIZE, "%s", touchgfx::TypedText(T_10V).getText());
+    textArea5.setWildcard(textArea5Buffer);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8J1));
+    container1.add(textArea5);
+
+    textArea4.setPosition(192, 34, 124, 32);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
+    textArea4.setLinespacing(0);
+    Unicode::snprintf(textArea4Buffer, TEXTAREA4_SIZE, "%s", touchgfx::TypedText(T_KEY_NUM).getText());
+    textArea4.setWildcard(textArea4Buffer);
+    textArea4.setTypedText(touchgfx::TypedText(T_KEYNUM));
+    container1.add(textArea4);
 
     add(container1);
 
     container2.setPosition(1, 75, 319, 165);
-    textArea2.setPosition(31, 45, 117, 59);
+    textArea2.setPosition(-1, 0, 91, 51);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(246, 250, 165));
     textArea2.setLinespacing(0);
     textArea2.setWideTextAction(WIDE_TEXT_WORDWRAP);
@@ -61,7 +72,7 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea2.setTypedText(touchgfx::TypedText(T_ROCK1));
     container2.add(textArea2);
 
-    textArea3.setPosition(168, 45, 122, 59);
+    textArea3.setPosition(92, 0, 99, 51);
     textArea3.setColor(touchgfx::Color::getColorFromRGB(246, 250, 165));
     textArea3.setLinespacing(0);
     textArea3.setWideTextAction(WIDE_TEXT_WORDWRAP_ELLIPSIS);
@@ -72,23 +83,41 @@ Screen1ViewBase::Screen1ViewBase() :
     textArea3.setTypedText(touchgfx::TypedText(T_ROCK2));
     container2.add(textArea3);
 
-    textArea4.setPosition(65, 119, 188, 34);
-    textArea4.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
-    textArea4.setLinespacing(0);
-    Unicode::snprintf(textArea4Buffer, TEXTAREA4_SIZE, "%s", touchgfx::TypedText(T_KEY_NUM).getText());
-    textArea4.setWildcard(textArea4Buffer);
-    textArea4.setTypedText(touchgfx::TypedText(T_KEYNUM));
-    container2.add(textArea4);
+    dynamicGraph1.setPosition(0, 57, 191, 108);
+    dynamicGraph1.setScale(1);
+    dynamicGraph1.setGraphAreaMargin(4, 18, 7, 6);
+    dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
+    dynamicGraph1.setGraphRangeY(0, 100);
+    dynamicGraph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    dynamicGraph1MajorYAxisGrid.setInterval(10);
+    dynamicGraph1MajorYAxisGrid.setLineWidth(1);
+    dynamicGraph1MajorYAxisGrid.setScale(1);
+    dynamicGraph1.addGraphElement(dynamicGraph1MajorYAxisGrid);
 
-    textArea5.setPosition(65, 0, 190, 36);
-    textArea5.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
-    textArea5.setLinespacing(0);
-    Unicode::snprintf(textArea5Buffer, TEXTAREA5_SIZE, "%s", touchgfx::TypedText(T_10V).getText());
-    textArea5.setWildcard(textArea5Buffer);
-    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8J1));
-    container2.add(textArea5);
+    dynamicGraph1MajorYAxisLabel.setInterval(10);
+    dynamicGraph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T_V));
+    dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(110, 237, 71));
+    dynamicGraph1MajorYAxisLabel.setScale(1);
+    dynamicGraph1.addLeftElement(dynamicGraph1MajorYAxisLabel);
+
+    dynamicGraph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(195, 245, 32));
+    dynamicGraph1Line1.setPainter(dynamicGraph1Line1Painter);
+    dynamicGraph1Line1.setLineWidth(2);
+    dynamicGraph1.addGraphElement(dynamicGraph1Line1);
+
+
+    container2.add(dynamicGraph1);
 
     add(container2);
+
+    line2.setPosition(185, 0, 15, 240);
+    line2Painter.setColor(touchgfx::Color::getColorFromRGB(27, 199, 222));
+    line2.setPainter(line2Painter);
+    line2.setStart(5, 0);
+    line2.setEnd(5, 240);
+    line2.setLineWidth(2);
+    line2.setLineEndingStyle(touchgfx::Line::SQUARE_CAP_ENDING);
+    add(line2);
 }
 
 Screen1ViewBase::~Screen1ViewBase()
@@ -103,12 +132,12 @@ void Screen1ViewBase::setupScreen()
 
 void Screen1ViewBase::handleKeyEvent(uint8_t key)
 {
-    if(17 == key)
+    if(1 == key)
     {
         //ChangeScreen1
-        //When hardware button 17 clicked change screen to Screen2
-        //Go to Screen2 with block transition
-        application().gotoScreen2ScreenBlockTransition();
+        //When hardware button 1 clicked change screen to Screen2
+        //Go to Screen2 with screen transition towards East
+        application().gotoScreen2ScreenSlideTransitionEast();
     
     }
 }

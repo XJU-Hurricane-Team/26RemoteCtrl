@@ -2941,10 +2941,10 @@
 
 //   <o> SPI4 Interrupt Priority <0-15>
 //   <i> The Interrupt Priority of SPI4
-#define SPI4_IT_PRIORITY        2
+#define SPI4_IT_PRIORITY        5
 //   <o> SPI4 Interrupt SubPriority <0-15>
 //   <i> The Interrupt SubPriority of SPI4
-#define SPI4_IT_SUB             3
+#define SPI4_IT_SUB             5
 
 //   </e>
 #endif /* SPI4_IT_ENABLE */

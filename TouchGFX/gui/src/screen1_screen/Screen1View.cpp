@@ -37,4 +37,18 @@ void Screen1View::InfoUpdate1()
     textArea3.invalidate();
     textArea4.invalidate();
     textArea5.invalidate();
+
+    if (graphValue < 0)
+    {
+        graphValue = 0;
+    }
+    else if (graphValue > 100)
+    {
+        graphValue = 100;
+    }
+
+    graphValue = (rand() % 100) - 0.5f; // Random walk
+      // Insert data point
+      dynamicGraph1.addDataPoint(graphValue);
+
 }

@@ -4,8 +4,8 @@
 #include <gui_generated/screen2_screen/Screen2ViewBase.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Screen2ViewBase::Screen2ViewBase()
 {
@@ -21,16 +21,22 @@ Screen2ViewBase::Screen2ViewBase()
     boxWithBorder1.setBorderSize(0);
     add(boxWithBorder1);
 
+    scalableImage2.setBitmap(touchgfx::Bitmap(BITMAP_PIXPIN_2025_11_26_21_33_12_ID));
+    scalableImage2.setPosition(0, 0, 320, 240);
+    scalableImage2.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(scalableImage2);
+
     container1.setPosition(0, 161, 320, 79);
     qrCode1.setXY(0, 6);
     qrCode1.setBuffers(qrBuffer_qrCode1, qrScratchBuffer_qrCode1);
     qrCode1.setQRCodeVersion(5);
     qrCode1.setScale(2);
+    qrCode1.setColors(touchgfx::Color::getColorFromRGB(184, 209, 206), touchgfx::Color::getColorFromRGB(44, 72, 94));
     qrCode1.convertStringToQRCode("xju-hurricane-team.github.io");
     container1.add(qrCode1);
 
     textArea1.setPosition(74, 6, 166, 74);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(246, 250, 165));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GIIA));
     container1.add(textArea1);
@@ -52,133 +58,12 @@ Screen2ViewBase::Screen2ViewBase()
     add(container1);
 
     digitalClock1.setPosition(0, 0, 320, 28);
-    digitalClock1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    digitalClock1.setColor(touchgfx::Color::getColorFromRGB(246, 250, 165));
     digitalClock1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y67B));
     digitalClock1.displayLeadingZeroForHourIndicator(true);
     digitalClock1.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
     digitalClock1.setTime24Hour(0, 0, 0);
     add(digitalClock1);
-
-    dynamicGraph1.setPosition(0, 35, 320, 126);
-    dynamicGraph1.setScale(1);
-    dynamicGraph1.setGraphAreaMargin(0, 0, 0, 0);
-    dynamicGraph1.setGraphAreaPadding(0, 0, 0, 0);
-    dynamicGraph1.setGraphRangeY(0, 100);
-    dynamicGraph1MajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(109, 235, 87));
-    dynamicGraph1MajorYAxisGrid.setInterval(10);
-    dynamicGraph1MajorYAxisGrid.setLineWidth(1);
-    dynamicGraph1MajorYAxisGrid.setScale(1);
-    dynamicGraph1.addGraphElement(dynamicGraph1MajorYAxisGrid);
-
-    dynamicGraph1MajorXAxisLabel.setInterval(10);
-    dynamicGraph1MajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T_TIME));
-    dynamicGraph1MajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(13, 38, 46));
-    dynamicGraph1MajorXAxisLabel.setScale(1);
-    dynamicGraph1.addBottomElement(dynamicGraph1MajorXAxisLabel);
-
-    dynamicGraph1MajorYAxisLabel.setInterval(10);
-    dynamicGraph1MajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T_V));
-    dynamicGraph1MajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(9, 25, 31));
-    dynamicGraph1MajorYAxisLabel.setScale(1);
-    dynamicGraph1.addLeftElement(dynamicGraph1MajorYAxisLabel);
-
-    dynamicGraph1Line1Painter.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
-    dynamicGraph1Line1.setPainter(dynamicGraph1Line1Painter);
-    dynamicGraph1Line1.setLineWidth(2);
-    dynamicGraph1.addGraphElement(dynamicGraph1Line1);
-
-
-    dynamicGraph1.addDataPoint(84.57353f);
-    dynamicGraph1.addDataPoint(90.6737f);
-    dynamicGraph1.addDataPoint(88.57382f);
-    dynamicGraph1.addDataPoint(79.87001f);
-    dynamicGraph1.addDataPoint(67.89891f);
-    dynamicGraph1.addDataPoint(56.69875f);
-    dynamicGraph1.addDataPoint(49.77319f);
-    dynamicGraph1.addDataPoint(49.03084f);
-    dynamicGraph1.addDataPoint(54.21975f);
-    dynamicGraph1.addDataPoint(63.02658f);
-    dynamicGraph1.addDataPoint(71.80944f);
-    dynamicGraph1.addDataPoint(76.7421f);
-    dynamicGraph1.addDataPoint(75.02317f);
-    dynamicGraph1.addDataPoint(65.78351f);
-    dynamicGraph1.addDataPoint(50.41577f);
-    dynamicGraph1.addDataPoint(32.22378f);
-    dynamicGraph1.addDataPoint(15.49358f);
-    dynamicGraph1.addDataPoint(4.2626f);
-    dynamicGraph1.addDataPoint(1.15417f);
-    dynamicGraph1.addDataPoint(6.6256f);
-    dynamicGraph1.addDataPoint(18.85408f);
-    dynamicGraph1.addDataPoint(34.29372f);
-    dynamicGraph1.addDataPoint(48.73554f);
-    dynamicGraph1.addDataPoint(58.55212f);
-    dynamicGraph1.addDataPoint(61.75339f);
-    dynamicGraph1.addDataPoint(58.53792f);
-    dynamicGraph1.addDataPoint(51.17603f);
-    dynamicGraph1.addDataPoint(43.26287f);
-    dynamicGraph1.addDataPoint(38.56908f);
-    dynamicGraph1.addDataPoint(39.83834f);
-    dynamicGraph1.addDataPoint(47.89652f);
-    dynamicGraph1.addDataPoint(61.34396f);
-    dynamicGraph1.addDataPoint(76.92604f);
-    dynamicGraph1.addDataPoint(90.4733f);
-    dynamicGraph1.addDataPoint(98.13009f);
-    dynamicGraph1.addDataPoint(97.5035f);
-    dynamicGraph1.addDataPoint(88.38756f);
-    dynamicGraph1.addDataPoint(72.84457f);
-    dynamicGraph1.addDataPoint(54.61822f);
-    dynamicGraph1.addDataPoint(38.05334f);
-    dynamicGraph1.addDataPoint(26.84501f);
-    dynamicGraph1.addDataPoint(22.99042f);
-    dynamicGraph1.addDataPoint(26.25572f);
-    dynamicGraph1.addDataPoint(34.31491f);
-    dynamicGraph1.addDataPoint(43.51552f);
-    dynamicGraph1.addDataPoint(50.03766f);
-    dynamicGraph1.addDataPoint(51.09471f);
-    dynamicGraph1.addDataPoint(45.81211f);
-    dynamicGraph1.addDataPoint(35.51774f);
-    dynamicGraph1.addDataPoint(23.35538f);
-    dynamicGraph1.addDataPoint(13.33676f);
-    dynamicGraph1.addDataPoint(9.11754f);
-    dynamicGraph1.addDataPoint(12.86611f);
-    dynamicGraph1.addDataPoint(24.5672f);
-    dynamicGraph1.addDataPoint(41.97171f);
-    dynamicGraph1.addDataPoint(61.21079f);
-    dynamicGraph1.addDataPoint(77.89231f);
-    dynamicGraph1.addDataPoint(88.35333f);
-    dynamicGraph1.addDataPoint(90.69531f);
-    dynamicGraph1.addDataPoint(85.29371f);
-    dynamicGraph1.addDataPoint(74.632f);
-    dynamicGraph1.addDataPoint(62.51242f);
-    dynamicGraph1.addDataPoint(52.88302f);
-    dynamicGraph1.addDataPoint(48.63532f);
-    dynamicGraph1.addDataPoint(50.73476f);
-    dynamicGraph1.addDataPoint(57.9457f);
-    dynamicGraph1.addDataPoint(67.2328f);
-    dynamicGraph1.addDataPoint(74.71657f);
-    dynamicGraph1.addDataPoint(76.89373f);
-    dynamicGraph1.addDataPoint(71.7525f);
-    dynamicGraph1.addDataPoint(59.44445f);
-    dynamicGraph1.addDataPoint(42.30751f);
-    dynamicGraph1.addDataPoint(24.22983f);
-    dynamicGraph1.addDataPoint(9.5426f);
-    dynamicGraph1.addDataPoint(1.77167f);
-    dynamicGraph1.addDataPoint(2.62088f);
-    dynamicGraph1.addDataPoint(11.49078f);
-    dynamicGraph1.addDataPoint(25.67578f);
-    dynamicGraph1.addDataPoint(41.17988f);
-    dynamicGraph1.addDataPoint(53.90523f);
-    dynamicGraph1.addDataPoint(60.85693f);
-    dynamicGraph1.addDataPoint(61.00288f);
-    dynamicGraph1.addDataPoint(55.53215f);
-    dynamicGraph1.addDataPoint(47.43671f);
-    dynamicGraph1.addDataPoint(40.54521f);
-    dynamicGraph1.addDataPoint(38.30292f);
-    dynamicGraph1.addDataPoint(42.66789f);
-    dynamicGraph1.addDataPoint(53.4589f);
-    dynamicGraph1.addDataPoint(68.3543f);
-    dynamicGraph1.addDataPoint(83.54488f);
-    add(dynamicGraph1);
 
     line2.setPosition(0, 28, 320, 15);
     line2Painter.setColor(touchgfx::Color::getColorFromRGB(60, 213, 240));
@@ -202,12 +87,12 @@ void Screen2ViewBase::setupScreen()
 
 void Screen2ViewBase::handleKeyEvent(uint8_t key)
 {
-    if(3 == key)
+    if(2 == key)
     {
         //ChangeScreen2
-        //When hardware button 3 clicked change screen to Screen1
-        //Go to Screen1 with block transition
-        application().gotoScreen1ScreenBlockTransition();
+        //When hardware button 2 clicked change screen to Screen1
+        //Go to Screen1 with screen transition towards East
+        application().gotoScreen1ScreenSlideTransitionEast();
     
     }
 }

@@ -10,6 +10,7 @@
 
 #include <string.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #if MSG_ENABLE_CRC8
 #include "calc_crc/calc_crc.h"

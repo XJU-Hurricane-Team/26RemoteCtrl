@@ -13,6 +13,7 @@ enum LANGUAGES
 enum TEXTS
 {
     T_TEAM_NAME,
+    T___SINGLEUSE_Y67B,
     T_10V,
     T_KEY_NUM,
     T_V,
@@ -26,7 +27,6 @@ enum TEXTS
     T_ROCK1,
     T_SPEED,
     T_TIME,
-    T___SINGLEUSE_Y67B,
     T___SINGLEUSE_GIIA,
     NUMBER_OF_TEXT_KEYS
 };

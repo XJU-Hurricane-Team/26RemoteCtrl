@@ -806,7 +806,7 @@ uint8_t spi3_deinit(void) {
 
 SPI_HandleTypeDef spi4_handle = {
     .Instance = SPI4,
-    .Init = {.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8,
+    .Init = {.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2,
              .Direction = SPI_DIRECTION_2LINES,
              .TIMode = SPI_TIMODE_DISABLE,
              .CRCCalculation = SPI_CRCCALCULATION_DISABLE,
@@ -830,6 +830,9 @@ static DMA_HandleTypeDef spi4_dmatx_handle = {
     .Instance = CSP_DMA_STREAM(SPI4_TX_DMA_NUMBER, SPI4_TX_DMA_STREAM),
     .Init = {.Channel = CSP_DMA_CHANNEL(SPI4_TX_DMA_CHANNEL),
              .FIFOMode = DMA_FIFOMODE_DISABLE,
+            //  .FIFOMode = DMA_FIFOMODE_ENABLE,
+            //  .FIFOThreshold = DMA_FIFO_THRESHOLD_3QUARTERSFULL,
+            //  .MemBurst = DMA_MBURST_INC4,
              .Direction = DMA_MEMORY_TO_PERIPH,
              .PeriphInc = DMA_PINC_DISABLE,
              .MemInc = DMA_MINC_ENABLE,

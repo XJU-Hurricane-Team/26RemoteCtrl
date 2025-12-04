@@ -44,6 +44,8 @@ typedef enum {
     ORIGIN_SET_OUT   /*!< 退出原点设置  */
 } origin_key_t;
 
+extern TaskHandle_t UiTask_handle;
+
 /**
  * @brief 遥控器键盘回调函数
  * 

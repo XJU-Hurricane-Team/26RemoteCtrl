@@ -12,7 +12,7 @@
 static TaskHandle_t start_task_handle;
 void start_task(void *pvParameters);
 
-static TaskHandle_t UiTask_handle;
+TaskHandle_t UiTask_handle;
 void UiTask(void *pvParameters);
 
 static TaskHandle_t message_polling_task_handle;
@@ -39,15 +39,15 @@ void start_task(void *pvParameters) {
     MX_TouchGFX_Init();
     /* Call PreOsInit function */
     MX_TouchGFX_PreOSInit();
-    // BEEP_ON();
-    // delay_ms(40);
-    // BEEP_OFF();
+    BEEP_ON();
+    delay_ms(40);
+    BEEP_OFF();
     remote_send_init(&uart4_handle); /* 创建 */
     message_register_polling_uart(MSG_TO_MASTER, &uart4_handle, 100, 512);
     message_register_recv_callback(MSG_TO_MASTER, remote_report_msg_callback);
     taskENTER_CRITICAL();
 
-    xTaskCreate(UiTask, "UiTask", 1024 * 12, NULL, 2, &UiTask_handle);
+    xTaskCreate(UiTask, "UiTask", 1024 * 14, NULL, 2, &UiTask_handle);
     xTaskCreate(message_polling_task, "message_polling_task", 128, NULL, 2, &message_polling_task_handle);
 
     SampleQueue = xQueueCreate(1, sizeof (int8_t)*6);
@@ -63,10 +63,7 @@ void start_task(void *pvParameters) {
  */
 void UiTask(void *pvParameters) {
     UNUSED(pvParameters);
-
-    while (1) {
-        MX_TouchGFX_Process();
-    }
+    MX_TouchGFX_Process();
 }
 
 /**

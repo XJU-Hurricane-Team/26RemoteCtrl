@@ -18,16 +18,18 @@ struct Typography
     static const touchgfx::FontId SMALL = 2;
     static const touchgfx::FontId TYPOGRAPHY1 = 3;
     static const touchgfx::FontId TYPOGRAPHY2 = 4;
+    static const touchgfx::FontId LABEL = 5;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId DEFAULT = 0;     // verdana_23_4bpp
+    static const touchgfx::FontId DEFAULT = 0;     // verdana_21_4bpp
     static const touchgfx::FontId LARGE = 1;       // verdana_40_4bpp
     static const touchgfx::FontId SMALL = 2;       // verdana_16_4bpp
     static const touchgfx::FontId TYPOGRAPHY1 = 3; // verdanai_19_4bpp
     static const touchgfx::FontId TYPOGRAPHY2 = 4; // verdanai_23_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 5;
+    static const touchgfx::FontId LABEL = 5;       // verdana_9_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 6;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

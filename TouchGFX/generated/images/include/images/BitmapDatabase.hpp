@@ -8,7 +8,6 @@
 
 const uint16_t BITMAP_KY50_50_ID = 0;
 const uint16_t BITMAP_PIXPIN_2025_11_26_21_33_12_ID = 1;
-const uint16_t BITMAP_XINJIANG_UNIVERSITY_LOGO_50PX_ID = 2;
 
 namespace BitmapDatabase
 {

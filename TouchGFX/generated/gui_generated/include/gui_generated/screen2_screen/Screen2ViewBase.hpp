@@ -9,16 +9,14 @@
 #include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/QRCode.hpp>
+#include <touchgfx/mixins/Draggable.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
-#include <touchgfx/widgets/graph/GraphScroll.hpp>
-#include <touchgfx/widgets/graph/GraphElements.hpp>
-#include <touchgfx/widgets/graph/GraphLabels.hpp>
 
 class Screen2ViewBase : public touchgfx::View<Screen2Presenter>
 {
@@ -38,21 +36,16 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::BoxWithBorder boxWithBorder1;
+    touchgfx::ScalableImage scalableImage2;
     touchgfx::Container container1;
     uint8_t qrBuffer_qrCode1[QRCODE_BUFFER_SIZE(5)];
     uint8_t qrScratchBuffer_qrCode1[QRCODE_BUFFER_SIZE(5)];
-    touchgfx::QRCode qrCode1;
+    touchgfx::Draggable< touchgfx::QRCode > qrCode1;
     touchgfx::TextArea textArea1;
     touchgfx::ScalableImage scalableImage1;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::DigitalClock digitalClock1;
-    touchgfx::GraphScroll<90> dynamicGraph1;
-    touchgfx::GraphElementGridY dynamicGraph1MajorYAxisGrid;
-    touchgfx::GraphLabelsX dynamicGraph1MajorXAxisLabel;
-    touchgfx::GraphLabelsY dynamicGraph1MajorYAxisLabel;
-    touchgfx::GraphElementLine dynamicGraph1Line1;
-    touchgfx::PainterRGB565 dynamicGraph1Line1Painter;
     touchgfx::Line line2;
     touchgfx::PainterRGB565 line2Painter;
 

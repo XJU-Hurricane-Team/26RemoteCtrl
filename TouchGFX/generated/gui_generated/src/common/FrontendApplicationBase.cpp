@@ -42,26 +42,26 @@ void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
     touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-void FrontendApplicationBase::gotoScreen1ScreenBlockTransition()
+void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen1ScreenBlockTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoScreen1ScreenBlockTransitionImpl()
+void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Screen2
 
-void FrontendApplicationBase::gotoScreen2ScreenBlockTransition()
+void FrontendApplicationBase::gotoScreen2ScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen2ScreenBlockTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoScreen2ScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoScreen2ScreenBlockTransitionImpl()
+void FrontendApplicationBase::gotoScreen2ScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<Screen2View, Screen2Presenter, touchgfx::BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<Screen2View, Screen2Presenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

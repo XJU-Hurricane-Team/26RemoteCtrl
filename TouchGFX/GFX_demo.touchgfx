@@ -27,7 +27,7 @@
                 "Name": "line1",
                 "Y": 66,
                 "Width": 318,
-                "Height": 15,
+                "Height": 10,
                 "Color": {
                   "Red": 27,
                   "Green": 199,
@@ -36,16 +36,16 @@
                 "StartY": 4.0,
                 "EndX": 320.0,
                 "EndY": 4.0,
-                "LineWidth": 4.0,
+                "LineWidth": 2.0,
                 "LineEndingStyle": "Butt"
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea1",
-                "X": 89,
-                "Y": 13,
-                "Width": 140,
-                "Height": 53,
+                "X": 65,
+                "Y": 7,
+                "Width": 119,
+                "Height": 59,
                 "TextId": "team_name",
                 "TextRotation": "0",
                 "Color": {
@@ -56,23 +56,52 @@
               },
               {
                 "Type": "ScalableImage",
-                "Name": "scalableImage4",
-                "X": 9,
-                "Y": 2,
-                "Width": 72,
-                "Height": 65,
-                "Filename": "xinjiang-university-logo-50px.png",
-                "ScalingAlgorithm": "Nearest-neighbor"
-              },
-              {
-                "Type": "ScalableImage",
                 "Name": "scalableImage1",
-                "X": 243,
                 "Y": 3,
                 "Width": 66,
                 "Height": 63,
                 "Filename": "ky50_50.png",
                 "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea5",
+                "X": 192,
+                "Y": 3,
+                "Width": 123,
+                "Height": 31,
+                "TextId": "__SingleUse_D8J1",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 167,
+                  "Green": 247,
+                  "Blue": 124
+                },
+                "Wildcard1": {
+                  "TextId": "10V",
+                  "UseBuffer": true,
+                  "BufferSize": 15
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea4",
+                "X": 192,
+                "Y": 34,
+                "Width": 124,
+                "Height": 32,
+                "TextId": "KeyNum",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 51,
+                  "Green": 204,
+                  "Blue": 181
+                },
+                "Wildcard1": {
+                  "TextId": "key_num",
+                  "UseBuffer": true,
+                  "BufferSize": 15
+                }
               }
             ]
           },
@@ -87,10 +116,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea2",
-                "X": 31,
-                "Y": 45,
-                "Width": 117,
-                "Height": 59,
+                "X": -1,
+                "Width": 91,
+                "Height": 51,
                 "TextId": "Rock1",
                 "TextRotation": "0",
                 "Color": {
@@ -113,10 +141,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea3",
-                "X": 168,
-                "Y": 45,
-                "Width": 122,
-                "Height": 59,
+                "X": 92,
+                "Width": 99,
+                "Height": 51,
                 "TextId": "Rock2",
                 "TextRotation": "0",
                 "Color": {
@@ -137,45 +164,76 @@
                 "WideTextAction": 2
               },
               {
-                "Type": "TextArea",
-                "Name": "textArea4",
-                "X": 65,
-                "Y": 119,
-                "Width": 188,
-                "Height": 34,
-                "TextId": "KeyNum",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 51,
-                  "Green": 204,
-                  "Blue": 181
+                "Type": "DynamicGraph",
+                "Name": "dynamicGraph1",
+                "Y": 57,
+                "Width": 191,
+                "Height": 108,
+                "DataSeed": 1471325972,
+                "NumberOfValues": 100,
+                "MaxY": 100.0,
+                "Precision": "1",
+                "LastIndex": 99,
+                "XAxisScale": 1.0,
+                "LabelSizeTop": 4,
+                "LabelSizeBottom": 6,
+                "LabelSizeLeft": 18,
+                "LabelSizeRight": 7,
+                "GraphType": "GraphScroll",
+                "GraphDrawers": [
+                  {
+                    "Type": "LineDrawer",
+                    "LineWidth": 2,
+                    "FileNameImage": "",
+                    "Color": {
+                      "Red": 195,
+                      "Green": 245,
+                      "Blue": 32
+                    }
+                  }
+                ],
+                "YAxisGrid": {
+                  "Type": "GraphGrid",
+                  "Color": {
+                    "Red": 20,
+                    "Green": 151,
+                    "Blue": 197
+                  },
+                  "Interval": 10.0,
+                  "LineWidth": 1
                 },
-                "Wildcard1": {
-                  "TextId": "key_num",
-                  "UseBuffer": true,
-                  "BufferSize": 15
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea5",
-                "X": 65,
-                "Width": 190,
-                "Height": 36,
-                "TextId": "__SingleUse_D8J1",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 167,
-                  "Green": 247,
-                  "Blue": 124
-                },
-                "Wildcard1": {
-                  "TextId": "10V",
-                  "UseBuffer": true,
-                  "BufferSize": 15
+                "YAxisLabel": {
+                  "Type": "GraphLabel",
+                  "Interval": 10.0,
+                  "DecimalSeparator": "Point",
+                  "TextColor": {
+                    "Red": 110,
+                    "Green": 237,
+                    "Blue": 71
+                  },
+                  "TextId": "V",
+                  "TextRotation": "0",
+                  "Position": "Left"
                 }
               }
             ]
+          },
+          {
+            "Type": "Line",
+            "Name": "line2",
+            "X": 185,
+            "Width": 15,
+            "Height": 240,
+            "Color": {
+              "Red": 27,
+              "Green": 199,
+              "Blue": 222
+            },
+            "StartX": 5.0,
+            "EndX": 5.0,
+            "EndY": 240.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Square"
           }
         ],
         "Interactions": [
@@ -183,11 +241,12 @@
             "InteractionName": "ChangeScreen1",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked",
-              "ButtonKey": 17
+              "ButtonKey": 1
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Screen2"
             }
           },
@@ -220,6 +279,14 @@
             }
           },
           {
+            "Type": "ScalableImage",
+            "Name": "scalableImage2",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "PixPin_2025-11-26_21-33-12.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
             "Type": "Container",
             "Name": "container1",
             "Y": 161,
@@ -235,11 +302,17 @@
                 "QRVersion": 5,
                 "Scale": 2,
                 "Text": "xju-hurricane-team.github.io",
+                "ForegroundColor": {
+                  "Red": 184,
+                  "Green": 209,
+                  "Blue": 206
+                },
                 "BackgroundColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                }
+                  "Red": 44,
+                  "Green": 72,
+                  "Blue": 94
+                },
+                "Draggable": true
               },
               {
                 "Type": "TextArea",
@@ -249,7 +322,12 @@
                 "Width": 166,
                 "Height": 74,
                 "TextId": "__SingleUse_GIIA",
-                "TextRotation": "0"
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 246,
+                  "Green": 250,
+                  "Blue": 165
+                }
               },
               {
                 "Type": "ScalableImage",
@@ -285,72 +363,14 @@
             "Name": "digitalClock1",
             "Width": 320,
             "Height": 28,
+            "TextColor": {
+              "Red": 246,
+              "Green": 250,
+              "Blue": 165
+            },
             "TextId": "__SingleUse_Y67B",
             "DisplaySeconds": true,
             "DisplayLeadingZeroForHourIndicator": true
-          },
-          {
-            "Type": "DynamicGraph",
-            "Name": "dynamicGraph1",
-            "Y": 35,
-            "Width": 320,
-            "Height": 126,
-            "DataSeed": -270652044,
-            "NumberOfValues": 90,
-            "MaxY": 100.0,
-            "Precision": "1",
-            "LastIndex": 89,
-            "XAxisScale": 1.0,
-            "InsertRandomValues": true,
-            "GraphType": "GraphScroll",
-            "GraphDrawers": [
-              {
-                "Type": "LineDrawer",
-                "LineWidth": 2,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 20,
-                  "Green": 151,
-                  "Blue": 197
-                }
-              }
-            ],
-            "YAxisGrid": {
-              "Type": "GraphGrid",
-              "Color": {
-                "Red": 109,
-                "Green": 235,
-                "Blue": 87
-              },
-              "Interval": 10.0,
-              "LineWidth": 1
-            },
-            "XAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 10.0,
-              "DecimalSeparator": "Point",
-              "TextColor": {
-                "Red": 13,
-                "Green": 38,
-                "Blue": 46
-              },
-              "TextId": "Time",
-              "TextRotation": "0",
-              "Position": "Bottom"
-            },
-            "YAxisLabel": {
-              "Type": "GraphLabel",
-              "Interval": 10.0,
-              "DecimalSeparator": "Point",
-              "TextColor": {
-                "Red": 9,
-                "Green": 25,
-                "Blue": 31
-              },
-              "TextId": "V",
-              "TextRotation": "0",
-              "Position": "Left"
-            }
           },
           {
             "Type": "Line",
@@ -375,26 +395,19 @@
             "InteractionName": "ChangeScreen2",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked",
-              "ButtonKey": 3
+              "ButtonKey": 2
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Screen1"
             }
           }
         ]
       }
     ],
-    "CustomContainerDefinitions": [
-      {
-        "Name": "CustomContainer1",
-        "Width": 161,
-        "Height": 34,
-        "Components": [],
-        "Interactions": []
-      }
-    ],
+    "CustomContainerDefinitions": [],
     "Name": "GFX_demo",
     "Resolution": {
       "Width": 240,

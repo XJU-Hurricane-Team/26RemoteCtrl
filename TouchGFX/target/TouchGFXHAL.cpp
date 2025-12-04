@@ -27,22 +27,41 @@
 #include <touchgfx/hal/OSWrappers.hpp>
 #include <platform/driver/button/ButtonController.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
-#include "bsp.h"
+#include "includes.h"
 
 extern "C" volatile uint16_t tearingEffectCount;
 using namespace touchgfx;
 
 class SwitchScreen : public touchgfx::ButtonController {
-    virtual void init() {}
+    virtual void init() {
+            /* IO初始化 */
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    __HAL_RCC_GPIOE_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+
+    GPIO_InitStruct.Pin = GPIO_PIN_15;
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT ;
+    GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    GPIO_InitStruct.Pin = GPIO_PIN_3;
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+    }
     virtual bool sample(uint8_t &key) {
         static uint8_t key_up = 1; /* The flag of key released. */
-        if (key_up && WK_UP == 0) {
+        if (key_up && HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0 || HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) == 0) {
             key_up = 0;
-            if (WK_UP == 0) {
-                key = 3;
+            if (HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) == 0) {
+                key = 2;
+                return true;
+            }else if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 0) {
+                key = 1;
                 return true;
             }
-        } else if (WK_UP == 1) {
+        } else if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15) == 1 && HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) == 1
+    
+    ) {
             key_up = 1;
         }
         return false;
@@ -181,6 +200,12 @@ void TouchGFXHAL::endFrame() {
     if (tearingEffectCount > 0) {
         touchgfx::HAL::getInstance()->vSync();
     }
+}
+
+void FrameBufferAllocatorWaitOnTransfer()
+{
+    printf("no free block\r\n");
+    vTaskDelay(500);
 }
 
 /* USER CODE END TouchGFXHAL.cpp */

@@ -10,7 +10,7 @@
 
 /* 发送的数据 */
 static struct __packed {
-    int8_t key;  /*!< 按键值 */
+    int8_t key;   /*!< 按键值 */
     int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
 } remote_send_data;
 
@@ -25,7 +25,7 @@ static remote_key_callback_t key_callback[18][REMOTE_KEY_EVENT_NUM];
 
 #define KEY_EVENT_CB(key, event)                                               \
     do {                                                                       \
-        if ((key <= 18) && key_callback[key - 1][event]) {                      \
+        if ((key <= 18) && key_callback[key - 1][event]) {                     \
             key_callback[key - 1][event](key, event);                          \
         }                                                                      \
     } while (0)
@@ -42,12 +42,14 @@ static void remote_send_task(void *pvParameters) {
     uint32_t keyboard_value;
     uint32_t rs_z_value;
     uint8_t last_key = 0;
-    double mV;    /*!< 电压*/
+    uint8_t mV; /*!< 电压 */
+    uint8_t reinitspi_flag = 1;
 
     uint8_t key_times = 0;
     TickType_t last_wake_time = xTaskGetTickCount();
     while (1) {
         keyboard_value = keyboard_scan();
+
         rs_z_value = rs_get_z();
         rs_get_value(rs_adc_buf, 10, 40);
 
@@ -58,17 +60,16 @@ static void remote_send_task(void *pvParameters) {
         /* 摇杆的按键优先级高于普通按键, 左边为 17, 右边为 18. 没有任何按键按下是 0 */
         remote_send_data.key = (uint8_t)keyboard_value;
         /* 右 x */
-        remote_send_data.rs[0] = -(uint8_t)rs_adc_buf[0]+20;
+        remote_send_data.rs[0] = -(uint8_t)rs_adc_buf[0] + 20;
         /* 右 y */
-        remote_send_data.rs[1] = -(uint8_t)rs_adc_buf[1]+20;
+        remote_send_data.rs[1] = -(uint8_t)rs_adc_buf[1] + 20;
         /* 左 x */
-        remote_send_data.rs[2] = -(uint8_t)rs_adc_buf[2]+20;
+        remote_send_data.rs[2] = -(uint8_t)rs_adc_buf[2] + 20;
         /* 左 y */
-        remote_send_data.rs[3] = -(uint8_t)rs_adc_buf[3]+20;
+        remote_send_data.rs[3] = -(uint8_t)rs_adc_buf[3] + 20;
         /* 电压 */
-        mV = rs_adc_buf[4];
+        mV = (uint8_t)(rs_adc_buf[4] & 0xFF);
 
-        // printf("1:%d 2:%d 3:%d 4:%d 5:%d\n",&remote_send_data.key,&remote_send_data.rs[1],&remote_send_data.rs[2],&remote_send_data.rs[3],&remote_send_data.rs[4]);
         message_send_data(MSG_TO_MASTER, MSG_DATA_UINT8,
                           (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
@@ -100,14 +101,25 @@ static void remote_send_task(void *pvParameters) {
             }
         }
         /* 显示按键，按键非零变化后才会显示 */
-        if(remote_send_data.key != 0){
-            if(remote_send_data.key != key_times){
+        if (remote_send_data.key != 0) {
+            if (remote_send_data.key != key_times) {
                 key_times = remote_send_data.key;
             }
         }
         last_key = remote_send_data.key;
 
         vTaskDelayUntil(&last_wake_time, REMOTE_SEND_PERIOD);
+        /* 出新初始化spi用于防止屏幕卡死 */
+        if (reinitspi_flag) {
+            reinitspi_flag = 0;
+
+            vTaskSuspend(UiTask_handle);
+            spi4_deinit();
+            vTaskDelay(100);
+            spi4_init(SPI_MODE_MASTER, SPI_CLK_MODE0, SPI_DATASIZE_8BIT,
+                      SPI_FIRSTBIT_MSB);
+            vTaskResume(UiTask_handle);
+        }
     }
 }
 
