@@ -20,10 +20,10 @@ extern "C" {
 #include "semphr.h"
 #include "queue.h"
 
-#include "./Modules/msg_protocol.h"
-#include <math.h>
+#include "app_touchgfx.h"
 
 #include <stdio.h>
+#include <string.h>
 
 /**
  * @brief 遥控器键盘事件
@@ -43,8 +43,6 @@ typedef enum {
     ORIGIN_SET_DIRECTION,
     ORIGIN_SET_OUT   /*!< 退出原点设置  */
 } origin_key_t;
-
-extern TaskHandle_t UiTask_handle;
 
 /**
  * @brief 遥控器键盘回调函数
@@ -71,8 +69,12 @@ typedef struct __packed {
     uint8_t chassis_status;
 } speed_data_t;
 
+
+
+extern TaskHandle_t TouchGFX_Task_handle;
 extern QueueHandle_t SampleQueue;
 extern QueueHandle_t speed_data_queue;
+
 
 /* 遥控器数据发送任务API */
 void remote_send_init(UART_HandleTypeDef *send_uart);
@@ -81,9 +83,6 @@ void remote_report_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
 void remote_register_key_callback(uint8_t key, remote_key_event_t event,
                                   remote_key_callback_t callback);
 void remote_unregister_key_callback(uint8_t key, remote_key_event_t event);
-
-
-void freertos_start(void);
 
 #ifdef __cplusplus
 }

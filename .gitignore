@@ -24,12 +24,3 @@ __MACOSX__
 *.uvgui
 *.uvgui.*
 *.uvguix.*
-
-# 禁止 TouchGFX 生成的临时以及仿真文件
-/TouchGFX/build
-/TouchGFX/config
-/TouchGFX/generated/fonts/cache
-/TouchGFX/generated/simulator
-/TouchGFX/generated/texts/cache
-/TouchGFX/simulator
-

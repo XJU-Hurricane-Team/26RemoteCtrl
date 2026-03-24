@@ -7,13 +7,15 @@
  */
 
 #include "includes.h"
-#include "app_touchgfx.h"
 
 static TaskHandle_t start_task_handle;
 void start_task(void *pvParameters);
 
-TaskHandle_t UiTask_handle;
-void UiTask(void *pvParameters);
+static TaskHandle_t task1_handle;
+void task1(void *pvParameters);
+
+TaskHandle_t TouchGFX_Task_handle;
+void TouchGFX_Task(void *pvParameters);
 
 static TaskHandle_t message_polling_task_handle;
 void message_polling_task(void *pvParameters);
@@ -36,34 +38,59 @@ void freertos_start(void) {
  */
 void start_task(void *pvParameters) {
     UNUSED(pvParameters);
-    MX_TouchGFX_Init();
-    /* Call PreOsInit function */
-    MX_TouchGFX_PreOSInit();
-    BEEP_ON();
-    delay_ms(40);
-    BEEP_OFF();
-    remote_send_init(&uart4_handle); /* 创建 */
-    message_register_polling_uart(MSG_TO_MASTER, &uart4_handle, 100, 512);
-    message_register_recv_callback(MSG_TO_MASTER, remote_report_msg_callback);
+    BaseType_t ret;
     taskENTER_CRITICAL();
 
-    xTaskCreate(UiTask, "UiTask", 1024 * 14, NULL, 2, &UiTask_handle);
-    xTaskCreate(message_polling_task, "message_polling_task", 128, NULL, 2, &message_polling_task_handle);
+    ret = xTaskCreate(task1, "task1", 128, NULL, 2, &task1_handle);
+    if (ret != pdPASS) {
+        taskEXIT_CRITICAL();
+        while (1) {}
+    }
 
-    SampleQueue = xQueueCreate(1, sizeof (int8_t)*6);
+    ret = xTaskCreate(TouchGFX_Task, "TouchGFX_Task", 4096, NULL, 2,
+                      &TouchGFX_Task_handle);
+    if (ret != pdPASS) {
+        taskEXIT_CRITICAL();
+        while (1) {}
+    }
+
+    ret = xTaskCreate(message_polling_task, "message_polling_task", 128, NULL,
+                      2, &message_polling_task_handle);
+    if (ret != pdPASS) {
+        taskEXIT_CRITICAL();
+        while (1) {}
+    }
 
     vTaskDelete(start_task_handle);
     taskEXIT_CRITICAL();
 }
 
 /**
- * @brief UiTask: UI processing task.
+ * @brief Task1: Blink.
  *
  * @param pvParameters Start parameters.
  */
-void UiTask(void *pvParameters) {
+void task1(void *pvParameters) {
+    UNUSED(pvParameters);
+    LED0_OFF();
+    LED1_ON();
+
+    while (1) {
+        LED0_TOGGLE();
+        LED1_TOGGLE();
+        vTaskDelay(1000);
+    }
+}
+
+/**
+ * @brief TouchGFX_Task: TouchGFX processing task.
+ *
+ * @param pvParameters Start parameters.
+ */
+void TouchGFX_Task(void *pvParameters) {
     UNUSED(pvParameters);
     MX_TouchGFX_Process();
+    vTaskDelay(5);
 }
 
 /**
@@ -73,11 +100,16 @@ void UiTask(void *pvParameters) {
  */
 void message_polling_task(void *pvParameters) {
     UNUSED(pvParameters);
+    /* 创建发送任务 */
+    remote_send_init(&huart1);
+
+    /* 注册接收回调函数 */
+    message_register_recv_callback(MSG_TO_MASTER, remote_report_msg_callback);
+    message_register_polling_uart(MSG_TO_MASTER, &huart1, 128, 512);
 
     while (1) {
-
         message_polling_data();
-        vTaskDelay(5);
+        vTaskDelay(10);
     }
 }
 

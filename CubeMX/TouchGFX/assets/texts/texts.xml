@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.26.1">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Screen1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_V51Z" Alignment="Center" TypographyId="Typography1">
+        <Translation Language="GB">R2State</Translation>
+      </Text>
+      <Text Id="__SingleUse_K1VO" Alignment="Center" TypographyId="Typography1">
+        <Translation Language="GB">R1State</Translation>
+      </Text>
+      <Text Id="__SingleUse_O8EP" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">Hurricane Ctrl Info</Translation>
+      </Text>
+      <Text Id="Key" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="V" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="RY" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="RX" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="LY" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="LX" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_NMGM" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">RunningTime&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_PKSR" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">R_X:&lt;value&gt;&#10;R_Y:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5TK6" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">L_X:&lt;value&gt; &#10;L_Y:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="KeyNum" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">Key:&lt;d&gt;</Translation>
+      </Text>
+      <Text Id="Battery" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">V:&lt;value&gt;</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography1" Font="verdanai.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Info" Font="verdanab.ttf" Size="20" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="-+!*()key" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Typography2" Font="verdanai.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789 :APM" />
+    <Typography Id="Typography3" Font="verdanaz.ttf" Size="22" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

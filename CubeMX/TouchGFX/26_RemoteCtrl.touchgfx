@@ -1,0 +1,293 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "screen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "Width": 320,
+            "Height": 240,
+            "Filename": "PixPin_2025-11-26_21-33-12.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "Y": 120,
+            "Width": 320,
+            "Height": 120,
+            "Components": [
+              {
+                "Type": "Line",
+                "Name": "line1",
+                "Width": 320,
+                "Height": 10,
+                "Color": {
+                  "Red": 43,
+                  "Green": 171,
+                  "Blue": 217
+                },
+                "StartY": 5.0,
+                "EndX": 320.0,
+                "EndY": 5.0,
+                "LineWidth": 3.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "line2",
+                "X": 155,
+                "Y": 4,
+                "Width": 10,
+                "Height": 115,
+                "Color": {
+                  "Red": 43,
+                  "Green": 171,
+                  "Blue": 217
+                },
+                "StartX": 5.0,
+                "EndX": 5.0,
+                "EndY": 240.0,
+                "LineWidth": 3.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3",
+                "X": 160,
+                "Y": 6,
+                "Width": 160,
+                "Height": 22,
+                "TextId": "__SingleUse_V51Z",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea2",
+                "Y": 5,
+                "Width": 155,
+                "Height": 24,
+                "TextId": "__SingleUse_K1VO",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container2",
+            "Width": 320,
+            "Height": 114,
+            "Components": [
+              {
+                "Type": "TextArea",
+                "Name": "Battery",
+                "X": 160,
+                "Y": 45,
+                "Width": 87,
+                "Height": 23,
+                "TextId": "Battery",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 167,
+                  "Green": 247,
+                  "Blue": 124
+                },
+                "Wildcard1": {
+                  "TextId": "V",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "KeyNum",
+                "Y": 46,
+                "Width": 160,
+                "Height": 23,
+                "TextId": "KeyNum",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 51,
+                  "Green": 204,
+                  "Blue": 181
+                },
+                "Wildcard1": {
+                  "TextId": "Key",
+                  "UseBuffer": true,
+                  "BufferSize": 15
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "RockL",
+                "Y": 67,
+                "Width": 160,
+                "Height": 51,
+                "TextId": "__SingleUse_5TK6",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 219,
+                  "Green": 125,
+                  "Blue": 42
+                },
+                "Wildcard1": {
+                  "TextId": "LX",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "Wildcard2": {
+                  "TextId": "LY",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "RockR",
+                "X": 160,
+                "Y": 67,
+                "Width": 160,
+                "Height": 51,
+                "TextId": "__SingleUse_PKSR",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 219,
+                  "Green": 125,
+                  "Blue": 42
+                },
+                "Wildcard1": {
+                  "TextId": "RX",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "Wildcard2": {
+                  "TextId": "RY",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "DigitalClock",
+                "Name": "RunningTime",
+                "Y": 27,
+                "Width": 247,
+                "Height": 18,
+                "TextColor": {
+                  "Red": 246,
+                  "Green": 250,
+                  "Blue": 165
+                },
+                "TextId": "__SingleUse_NMGM",
+                "DisplaySeconds": true,
+                "DisplayLeadingZeroForHourIndicator": true,
+                "InitialHour": 10,
+                "InitialMinute": 10
+              },
+              {
+                "Type": "ScalableImage",
+                "Name": "scalableImage2",
+                "X": 247,
+                "Width": 73,
+                "Height": 67,
+                "Filename": "ky50_50.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "Width": 247,
+                "Height": 27,
+                "TextId": "__SingleUse_O8EP",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "InfoUpdate1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 3
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "InfoUpdate1"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "26_RemoteCtrl",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "screen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": false
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "MDK-ARM V5.32",
+    "Platform": "m4",
+    "ProjectFile": "../26RemoteCtrl.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.26.1"
+}

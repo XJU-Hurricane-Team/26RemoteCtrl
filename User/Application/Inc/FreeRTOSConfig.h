@@ -148,7 +148,7 @@ extern uint32_t SystemCoreClock;
 //  <i> 当堆栈溢出时, 调用vApplicationStackOverflowHook钩子函数
 //  <i> 不同方式区别参照FreeRTOS官方文档
 //  <i> 默认: 0
-#define configCHECK_FOR_STACK_OVERFLOW            0
+#define configCHECK_FOR_STACK_OVERFLOW            2
 
 //  <q>启用定时器服务Startup钩子函数
 //  <i> 在定时器服务首次执行前调用vApplicationDaemonTaskStartupHook钩子函数
@@ -158,7 +158,7 @@ extern uint32_t SystemCoreClock;
 //  <q>使用动态内存分配失败钩子函数
 //  <i> 在动态内存分配失败时调用vApplicationMallocFailedHook钩子函数
 //  <i> 默认: 0
-#define configUSE_MALLOC_FAILED_HOOK              0
+#define configUSE_MALLOC_FAILED_HOOK              1
 
 // </h>
 
@@ -252,10 +252,10 @@ extern uint32_t FreeRTOSRunTimeTicks;
 #define configMAX_API_CALL_INTERRUPT_PRIORITY                                  \
     configMAX_SYSCALL_INTERRUPT_PRIORITY
 
-/* 断言 */
-#define configASSERT(x)                                                        \
-    if ((x) == 0)                                                              \
-    vAssertCalled(__FILE__, __LINE__)
+// /* 断言 */
+// #define configASSERT(x)                                                        \
+//     if ((x) == 0)                                                              \
+//     vAssertCalled(__FILE__, __LINE__)
 
 #ifdef configASSERT
 extern void vAssertCalled(const char *pcFile, unsigned int ulLine);
