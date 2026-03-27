@@ -18,6 +18,17 @@ class screenView : public screenViewBase {
     int8_t rsL_y;
     int8_t rsR_x;
     int8_t rsR_y;
+
+    int16_t r1_x_speed;
+    int16_t r1_y_speed;
+    int16_t r1_angle;
+    uint8_t r1_status;
+
+    int16_t r2_x_speed;
+    int16_t r2_y_speed;
+    int16_t r2_angle;
+    uint8_t r2_status;
+
     float graphValue;
     int tickCounter;
 

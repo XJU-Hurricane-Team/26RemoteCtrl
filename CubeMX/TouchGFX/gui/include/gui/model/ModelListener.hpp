@@ -6,7 +6,7 @@
 class ModelListener
 {
 public:
-    ModelListener() : model(0) {}
+    ModelListener() : model(nullptr) {}
     
     virtual ~ModelListener() {}
 
@@ -14,9 +14,11 @@ public:
     {
         model = m;
     }
-    virtual void onKeyValueChanged(int8_t keyValue) {};
-    virtual void onVoltageChanged(int8_t voltage) {};
-    virtual void onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x, int8_t rsR_y) {};
+    virtual void onKeyValueChanged(int8_t) {}
+    virtual void onVoltageChanged(int8_t) {}
+    virtual void onJoystickChanged(int8_t, int8_t, int8_t, int8_t) {}
+    virtual void onR1StateChanged(int16_t, int16_t, int16_t, uint8_t) {}
+    virtual void onR2StateChanged(int16_t, int16_t, int16_t, uint8_t) {}
 protected:
     Model* model;
 };

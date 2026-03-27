@@ -7,6 +7,27 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Screen1" />
     <TextGroup Id="Unsorted">
+      <Text Id="R1state" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_2J9Y" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">State:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="r1yaw" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_C9E6" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">Yaw:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JQKN" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">V_y:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="R1Speedya" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_I0DT" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">V_x:&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_V51Z" Alignment="Center" TypographyId="Typography1">
         <Translation Language="GB">R2State</Translation>
       </Text>

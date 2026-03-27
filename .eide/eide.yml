@@ -24,8 +24,7 @@ virtualFolder:
     - name: Application
       files:
         - path: User/Application/Src/rtos_tasks.c
-        - path: User/Application/Src/send_data.c
-        - path: User/Application/Src/recv_data.c
+        - path: User/Application/Src/rc_msg_process.c
       folders: []
     - name: Middlewares
       files: []
@@ -135,6 +134,7 @@ targets:
       - CubeMX/TouchGFX/generated/videos
       - CubeMX/TouchGFX/generated/simulator
       - CubeMX/TouchGFX/simulator
+      - <virtual_root>/Application/recv_data.c
     toolchain: AC6
     toolchainConfigMap:
       AC6:

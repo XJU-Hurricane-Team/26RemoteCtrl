@@ -29,6 +29,8 @@ public:
     virtual void onKeyValueChanged(int8_t key);
     virtual void onVoltageChanged(int8_t voltage);
     virtual void onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x, int8_t rsR_y);
+    virtual void onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle, uint8_t status);
+    virtual void onR2StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle, uint8_t status);
 
 private:
     screenPresenter();

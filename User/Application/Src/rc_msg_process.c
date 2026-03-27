@@ -1,5 +1,5 @@
 /**
- * @file    send_data.c
+ * @file    rc_msg_process.c
  * @author  PickingChip,KkarinL15
  * @brief   遥控器数据处理并发送
  * @version 0.1
@@ -10,8 +10,12 @@
 
 /* 发送时间间隔, 单位: ms */
 #define REMOTE_SEND_PERIOD 10
+
+/* UI 消息队列深度 */
+#define UI_MSG_QUEUE_LEN   8
+
 /* 遥控器触发回调按键数量 */
-#define REMOTE_KEY_NUM 18
+#define REMOTE_KEY_NUM     18
 
 #define KEY_EVENT_CB(key, event)                                               \
     do {                                                                       \
@@ -27,6 +31,26 @@ static TaskHandle_t remote_send_task_handle;
 QueueHandle_t ui_msg_queue = NULL;
 /* 按键回调函数数组 */
 static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
+/* UI 消息序列号 */
+static uint32_t ui_msg_seq = 0;
+
+/**
+ * @brief UI 消息发布函数
+ * 
+ * @param msg 
+ */
+static void ui_publish_msg(const ui_msg_t *msg) {
+    if ((ui_msg_queue == NULL) || (msg == NULL)) {
+        return;
+    }
+
+    if (xQueueSend(ui_msg_queue, msg, 0U) != pdPASS) {
+        ui_msg_t dropped = {0};
+        /* 满了就读取最旧的存入最新的 */
+        (void)xQueueReceive(ui_msg_queue, &dropped, 0U);
+        (void)xQueueSend(ui_msg_queue, msg, 0U);
+    }
+}
 
 /**
  * @brief 遥感值修正函数
@@ -61,13 +85,12 @@ static void remote_send_task(void *pvParameters) {
     uint32_t rs_adc_buf[5] = {0};
 
     remote_send_data_t remote_send_data = {0};
-    remote_ctrl_msg_t remote_ctrl_msg = {0};
     ui_msg_t ui_msg = {0};
 
     TickType_t last_wake_time = xTaskGetTickCount(); /*!< 保证发送周期固定 */
     TickType_t led_time = xTaskGetTickCount();       /*!< 控制 LED 闪烁频率 */
 
-    ui_msg_queue = xQueueCreate(1, sizeof(ui_msg_t));
+    ui_msg_queue = xQueueCreate(UI_MSG_QUEUE_LEN, sizeof(ui_msg_t));
     if (ui_msg_queue == NULL) {
         vTaskDelete(NULL);
     }
@@ -83,29 +106,24 @@ static void remote_send_task(void *pvParameters) {
             keyboard_value = 16 + ctrl_key;
         }
 
-        /* 电压 */
-        mV = (uint8_t)(rs_adc_buf[4] & 0xFF);
+        mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
+        
         /* 控制按键有更高的优先级 */
         remote_send_data.key = (uint8_t)keyboard_value;
-        /* 右 x */
-        remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]);
-        /* 右 y */
-        remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]);
-        /* 左 x */
-        remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]);
-        /* 左 y */
-        remote_send_data.rs[1] = joystick_set_value(rs_adc_buf[3]);
+        remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
+        remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
+        remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */
+        remote_send_data.rs[1] = joystick_set_value(rs_adc_buf[3]); /* 左 y */
 
         message_send_data(MSG_TO_MASTER, MSG_DATA_UINT8,
                           (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
 
-        remote_ctrl_msg.voltage = mV;
-        remote_ctrl_msg.data = &remote_send_data;
         ui_msg.type = UI_REMOTE_CTRL;
-        ui_msg.data = &remote_ctrl_msg;
-
-        xQueueOverwrite(ui_msg_queue, &ui_msg);
+        ui_msg.seq = ++ui_msg_seq;
+        ui_msg.payload.remote_ctrl.voltage = mV;
+        ui_msg.payload.remote_ctrl.data = remote_send_data;
+        ui_publish_msg(&ui_msg);
 
         /* 判断按键状态并触发按键回调 */
         uint8_t current_key = remote_send_data.key;
@@ -188,4 +206,51 @@ void remote_unregister_key_callback(uint8_t key, remote_key_event_t event) {
     }
 
     key_callback[key - 1][event] = NULL;
+}
+
+/**
+ * @brief 主板接收数据回调函数
+ * 
+ * @param msg_length 消息帧长度
+ * @param msg_id_type 消息 ID 和数据类型 (高四位为 ID, 低四位为数据类型)
+ * @param[in] msg_data 消息数据接收区
+ */
+void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
+                              uint8_t *msg_data) {
+    UNUSED(msg_length);
+    static uint32_t led_time = 0; /*!< 控制 LED 闪烁频率 */
+    ui_msg_t ui_msg = {0};
+
+    if ((msg_data == NULL) || (ui_msg_queue == NULL)) {
+        return;
+    }
+
+    if ((msg_id_type >> 4) != MSG_TO_REMOTE) {
+        return;
+    }
+
+    switch (msg_data[0]) {
+        case UI_R1_STATE: {
+            ui_msg.type = UI_R1_STATE;
+            ui_msg.seq = ++ui_msg_seq;
+            memcpy(&ui_msg.payload.r1_state, &msg_data[1], sizeof(r1_data_t));
+            ui_publish_msg(&ui_msg);
+        } break;
+
+        case UI_R2_STATE: {
+            ui_msg.type = UI_R2_STATE;
+            ui_msg.seq = ++ui_msg_seq;
+            memcpy(&ui_msg.payload.r2_state, &msg_data[1], sizeof(r2_data_t));
+            ui_publish_msg(&ui_msg);
+        } break;
+
+        default:
+            return;
+    }
+
+    /* LED3 闪烁判断消息接收是否正常 */
+    if (HAL_GetTick() - led_time > 200) {
+        led_time = HAL_GetTick();
+        LED3_TOGGLE();
+    }
 }

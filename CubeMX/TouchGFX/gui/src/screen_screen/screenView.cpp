@@ -3,32 +3,26 @@
 #include "stm32f4xx_hal.h"
 #include <stdlib.h>
 
-screenView::screenView()
-{
+screenView::screenView() {}
 
-}
-
-void screenView::setupScreen()
-{
+void screenView::setupScreen() {
     screenViewBase::setupScreen();
 }
 
-void screenView::tearDownScreen()
-{
+void screenView::tearDownScreen() {
     screenViewBase::tearDownScreen();
 }
 
 /**
  * @brief Handles the tick event for the screen
  */
-void screenView::handleTickEvent()
-{
+void screenView::handleTickEvent() {
     screenViewBase::handleTickEvent();
 
     // tickCounter++;
 
     uint32_t now = HAL_GetTick();
-    uint32_t totalSeconds =  now / 1000u;
+    uint32_t totalSeconds = now / 1000u;
     totalSeconds %= (24u * 3600u);
 
     digitalHours = totalSeconds / 3600u;
@@ -37,15 +31,13 @@ void screenView::handleTickEvent()
 
     // Update the clock display
     RunningTime.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
-
 }
 
 /**
  * @brief Updates the information displayed on the screen
  * 
  */
-void screenView::InfoUpdate1()
-{
+void screenView::InfoUpdate1() {
     // 使用每个 wildcard 对应的缓冲区大小常量，避免写越界
     // 更新按键显示并刷新所有被修改的 text areas
     touchgfx::Unicode::snprintf(RockLBuffer1, ROCKLBUFFER1_SIZE, "%d", rsL_x);
@@ -54,9 +46,13 @@ void screenView::InfoUpdate1()
     touchgfx::Unicode::snprintf(RockRBuffer2, ROCKRBUFFER2_SIZE, "%d", rsR_y);
     touchgfx::Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "Key%d", keyState);
     touchgfx::Unicode::snprintf(BatteryBuffer, BATTERY_SIZE, "%d", voltage);
+
+    touchgfx::Unicode::snprintf(R1V_xBuffer, R1V_X_SIZE, "%d", r1_x_speed);
+    touchgfx::Unicode::snprintf(R1V_yBuffer, R1V_Y_SIZE, "%d", r1_y_speed);
+    touchgfx::Unicode::snprintf(R1YawBuffer, R1YAW_SIZE, "%d", r1_angle);
+    touchgfx::Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%s", r1_status);
     RockL.invalidate();
     RockR.invalidate();
     KeyNum.invalidate();
     Battery.invalidate();
-
 }

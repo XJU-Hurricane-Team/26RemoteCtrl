@@ -72,6 +72,20 @@ typedef struct __packed {
     uint8_t r1_status;
 } r1_data_t;
 
+/**
+ * @brief R2 状态数据
+ */
+typedef struct __packed {
+    int16_t x_speed; /*!< x 坐标 */
+    int16_t y_speed; /*!< y 坐标 */
+    int16_t angle;   /*!< yaw 坐标 */
+
+    /*!< R2 状态
+     * bit[7:0] 保留, 后续按协议扩展
+     */
+    uint8_t r2_status;
+} r2_data_t;
+
 /* 遥控器发送数据结构 */
 typedef struct __packed {
     int8_t key;   /*!< 按键值 */
@@ -80,24 +94,26 @@ typedef struct __packed {
 
 /* 遥控器控制消息结构 */
 typedef struct {
-    uint8_t voltage;          /*!< 电压值 */
-    remote_send_data_t *data; /*!< 遥控器发送数据指针 */
+    uint8_t voltage;         /*!< 电压值 */
+    remote_send_data_t data; /*!< 遥控器发送数据 */
 } remote_ctrl_msg_t;
 
-/* R1 状态消息结构 */
-typedef struct{
-    r1_data_t *data;
-} r1_state_msg_t;
+/* UI 消息载荷 */
+typedef union {
+    remote_ctrl_msg_t remote_ctrl;
+    r1_data_t r1_state;
+    r2_data_t r2_state;
+} ui_msg_payload_t;
 
 typedef struct {
-    ui_msg_type_t type;          /*!< 消息类型 */
-    void *data;              /*!< 消息数据指针 */
+    ui_msg_type_t type;      /*!< 消息类型 */
+    uint32_t seq;            /*!< 发布序号, 用于调试丢包与乱序 */
+    ui_msg_payload_t payload; /*!< 消息数据 */
 } ui_msg_t;
 
 
 
 extern QueueHandle_t ui_msg_queue;
-extern QueueHandle_t speed_data_queue;
 
 /* 遥控器数据发送任务API */
 void remote_send_init(UART_HandleTypeDef *send_uart);

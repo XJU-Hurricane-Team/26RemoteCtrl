@@ -2,41 +2,74 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
-Model::Model() : modelListener(0), keyValue(0) {}
+Model::Model()
+    : modelListener(nullptr), keyValue(0), voltage(0), rsL_x(0), rsL_y(0), rsR_x(0),
+      rsR_y(0), r1_x_speed(0), r1_y_speed(0), r1_angle(0), r1_status(0),
+      r2_x_speed(0), r2_y_speed(0), r2_angle(0), r2_status(0) {}
 
 void Model::tick() {
     /* UI在这里进行数据采集，为了不阻塞UI渲染通过消息队列进行通信 */
-    if ((ui_msg_queue != NULL) && (modelListener != 0)) {
+    if ((ui_msg_queue != NULL) && (modelListener != nullptr)) {
         ui_msg_t msg = {};
-        BaseType_t st = xQueueReceive(ui_msg_queue, &msg, 0U);
-        if (st == pdPASS) {
+        bool remote_changed = false;
+        bool r1_changed = false;
+        bool r2_changed = false;
+
+        while (xQueueReceive(ui_msg_queue, &msg, 0U) == pdPASS) {
             switch (msg.type) {
                 case UI_REMOTE_CTRL: {
-                    remote_ctrl_msg_t *ctrl_msg = (remote_ctrl_msg_t *)msg.data;
-                    /*! 更新数据 */
+                    const remote_ctrl_msg_t *ctrl_msg = &msg.payload.remote_ctrl;
                     voltage = ctrl_msg->voltage;
-                    rsR_x = ctrl_msg->data->rs[2];
-                    rsR_y = ctrl_msg->data->rs[3];
-                    rsL_x = ctrl_msg->data->rs[0];
-                    rsL_y = ctrl_msg->data->rs[1];
-                    int8_t k = ctrl_msg->data->key;
+                    rsR_x = ctrl_msg->data.rs[2];
+                    rsR_y = ctrl_msg->data.rs[3];
+                    rsL_x = ctrl_msg->data.rs[0];
+                    rsL_y = ctrl_msg->data.rs[1];
 
-                    /*! 更新按键值*/
-                    if (k != keyValue) {
-                        keyValue = k;
+                    if (ctrl_msg->data.key != keyValue) {
+                        keyValue = ctrl_msg->data.key;
                         modelListener->onKeyValueChanged(keyValue);
                     }
 
-                    /*! 更新电压值*/
-                    modelListener->onVoltageChanged(voltage);
-                    /*! 更新摇杆值*/
-                    modelListener->onJoystickChanged(rsL_x, rsL_y, rsR_x,
-                                                     rsR_y);
+                    remote_changed = true;
+                } break;
+
+                case UI_R1_STATE: {
+                    const r1_data_t *r1_msg = &msg.payload.r1_state;
+                    r1_x_speed = r1_msg->x_speed;
+                    r1_y_speed = r1_msg->y_speed;
+                    r1_angle = r1_msg->angle;
+                    r1_status = r1_msg->r1_status;
+                    r1_changed = true;
+                } break;
+
+                case UI_R2_STATE: {
+                    const r2_data_t *r2_msg = &msg.payload.r2_state;
+                    r2_x_speed = r2_msg->x_speed;
+                    r2_y_speed = r2_msg->y_speed;
+                    r2_angle = r2_msg->angle;
+                    r2_status = r2_msg->r2_status;
+                    r2_changed = true;
                 } break;
 
                 default:
                     break;
             }
+        }
+
+        if (remote_changed) {
+            modelListener->onVoltageChanged(voltage);
+            modelListener->onJoystickChanged(rsL_x, rsL_y, rsR_x, rsR_y);
+            remote_changed = false;
+        }
+        if (r1_changed) {
+            modelListener->onR1StateChanged(r1_x_speed, r1_y_speed, r1_angle,
+                                            r1_status);
+            r1_changed = false;
+        }
+        if (r2_changed) {
+            modelListener->onR2StateChanged(r2_x_speed, r2_y_speed, r2_angle,
+                                            r2_status);
+            r2_changed = false;
         }
     }
 }
