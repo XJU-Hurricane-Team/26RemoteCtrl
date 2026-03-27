@@ -1,40 +1,40 @@
 /**
- * @file    remote_ctrl.c
- * @author  Deadline039
+ * @file    send_data.c
+ * @author  PickingChip,KkarinL15
  * @brief   遥控器数据处理并发送
  * @version 0.1
- * @date    2025-04-22
+ * @date    2026-03-27
  */
 
 #include "includes.h"
 
 /* 发送时间间隔, 单位: ms */
 #define REMOTE_SEND_PERIOD 10
+/* 遥控器触发回调按键数量 */
+#define REMOTE_KEY_NUM 18
 
 #define KEY_EVENT_CB(key, event)                                               \
     do {                                                                       \
-        if ((key <= 18) && key_callback[key - 1][event]) {                     \
+        if ((key >= 1) && (key <= REMOTE_KEY_NUM) &&                           \
+            key_callback[key - 1][event]) {                                    \
             key_callback[key - 1][event](key, event);                          \
         }                                                                      \
     } while (0)
 
-/* 发送的数据 */
-static struct __packed {
-    int8_t key;   /*!< 按键值 */
-    int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
-} remote_send_data;
-
 /* 发送任务句柄 */
 static TaskHandle_t remote_send_task_handle;
 /* 传递给屏幕的消息队列 */
-QueueHandle_t SampleQueue = NULL;
-/* 18 个按键, 3 个事件 */
-static remote_key_callback_t key_callback[18][REMOTE_KEY_EVENT_NUM];
-/* 发送UI数据的缓冲区 */
-int8_t sendUI_buf[6] = {0};
+QueueHandle_t ui_msg_queue = NULL;
+/* 按键回调函数数组 */
+static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 
-static int8_t joystick_value_to_ui(uint32_t adc_value)
-{
+/**
+ * @brief 遥感值修正函数
+ * 
+ * @param adc_value ADC 读取值
+ * @return int8_t 
+ */
+static int8_t joystick_set_value(uint32_t adc_value) {
     int32_t value = 20 - (int32_t)adc_value;
 
     if (value > 20) {
@@ -47,22 +47,28 @@ static int8_t joystick_value_to_ui(uint32_t adc_value)
 }
 
 /**
- * @brief 遥控器发送任务同时调用相应按键回调
+ * @brief 负责将数据发送到主控和UI
  * 
  * @param pvParameters 
  */
 static void remote_send_task(void *pvParameters) {
     UNUSED(pvParameters);
 
-    uint32_t rs_adc_buf[5];
-    uint32_t keyboard_value;
-    key_press_t ctrl_key;
-    uint8_t last_key = 0;
     uint8_t mV = 0;
-    uint8_t key_times = 0;
-    TickType_t last_wake_time = xTaskGetTickCount();
-    SampleQueue = xQueueCreate(1, sizeof(int8_t) * 6);
-    if (SampleQueue == NULL) {
+    uint8_t last_key = 0;
+    uint8_t ctrl_key = 0;
+    uint8_t keyboard_value = 0;
+    uint32_t rs_adc_buf[5] = {0};
+
+    remote_send_data_t remote_send_data = {0};
+    remote_ctrl_msg_t remote_ctrl_msg = {0};
+    ui_msg_t ui_msg = {0};
+
+    TickType_t last_wake_time = xTaskGetTickCount(); /*!< 保证发送周期固定 */
+    TickType_t led_time = xTaskGetTickCount();       /*!< 控制 LED 闪烁频率 */
+
+    ui_msg_queue = xQueueCreate(1, sizeof(ui_msg_t));
+    if (ui_msg_queue == NULL) {
         vTaskDelete(NULL);
     }
 
@@ -77,57 +83,54 @@ static void remote_send_task(void *pvParameters) {
             keyboard_value = 16 + ctrl_key;
         }
 
-        /* 摇杆的按键优先级高于普通按键, 左边为 17, 右边为 18. 没有任何按键按下是 0 */
-        remote_send_data.key = (uint8_t)keyboard_value;
-        /* 右 x */
-        remote_send_data.rs[2] = joystick_value_to_ui(rs_adc_buf[0]);
-        /* 右 y */
-        remote_send_data.rs[3] = joystick_value_to_ui(rs_adc_buf[1]);
-        /* 左 x */
-        remote_send_data.rs[0] = joystick_value_to_ui(rs_adc_buf[2]);
-        /* 左 y */
-        remote_send_data.rs[1] = joystick_value_to_ui(rs_adc_buf[3]);
         /* 电压 */
         mV = (uint8_t)(rs_adc_buf[4] & 0xFF);
+        /* 控制按键有更高的优先级 */
+        remote_send_data.key = (uint8_t)keyboard_value;
+        /* 右 x */
+        remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]);
+        /* 右 y */
+        remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]);
+        /* 左 x */
+        remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]);
+        /* 左 y */
+        remote_send_data.rs[1] = joystick_set_value(rs_adc_buf[3]);
 
         message_send_data(MSG_TO_MASTER, MSG_DATA_UINT8,
                           (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
 
-        sendUI_buf[0] = mV;
-        sendUI_buf[1] = remote_send_data.rs[2];
-        sendUI_buf[2] = remote_send_data.rs[3];
-        sendUI_buf[3] = remote_send_data.rs[0];
-        sendUI_buf[4] = remote_send_data.rs[1];
-        sendUI_buf[5] = remote_send_data.key;
-        xQueueOverwrite(SampleQueue, sendUI_buf);
+        remote_ctrl_msg.voltage = mV;
+        remote_ctrl_msg.data = &remote_send_data;
+        ui_msg.type = UI_REMOTE_CTRL;
+        ui_msg.data = &remote_ctrl_msg;
 
-        /* 按键回调执行 */
-        if (last_key != 0) {
-            if (remote_send_data.key == 0) {
-                /* 按键抬起 */
+        xQueueOverwrite(ui_msg_queue, &ui_msg);
+
+        /* 判断按键状态并触发按键回调 */
+        uint8_t current_key = remote_send_data.key;
+        if (current_key != last_key) {
+            if (last_key != 0) {
+                /* 上一个按键抬起 */
                 KEY_EVENT_CB(last_key, REMOTE_KEY_PRESS_UP);
-            } else if (remote_send_data.key == last_key) {
-                /* 长按 */
-                KEY_EVENT_CB(remote_send_data.key, REMOTE_KEY_PRESSING);
-            } else {
-                /* 抬起一个按键, 按下另一个按键 */
-                KEY_EVENT_CB(last_key, REMOTE_KEY_PRESS_UP);
-                KEY_EVENT_CB(remote_send_data.key, REMOTE_KEY_PRESS_DOWN);
+            }
+            if (current_key != 0) {
+                /* 当前按键按下 */
+                KEY_EVENT_CB(current_key, REMOTE_KEY_PRESS_DOWN);
             }
         } else {
-            if (remote_send_data.key != 0) {
-                /* 按键按下 */
-                KEY_EVENT_CB(remote_send_data.key, REMOTE_KEY_PRESS_DOWN);
+            if (current_key != 0) {
+                /* 当前按键长按 */
+                KEY_EVENT_CB(current_key, REMOTE_KEY_PRESSING);
             }
         }
-        /* 显示按键，按键非零变化后才会显示 */
-        if (remote_send_data.key != 0) {
-            if (remote_send_data.key != key_times) {
-                key_times = remote_send_data.key;
-            }
+        last_key = current_key;
+
+        /* LED2 绿色灯闪烁判断消息发送是否正常 */
+        if (xTaskGetTickCount() - led_time > 200) {
+            led_time = xTaskGetTickCount();
+            LED2_TOGGLE();
         }
-        last_key = remote_send_data.key;
 
         vTaskDelayUntil(&last_wake_time, REMOTE_SEND_PERIOD);
     }

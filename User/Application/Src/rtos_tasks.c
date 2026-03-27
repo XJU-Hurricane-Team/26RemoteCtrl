@@ -72,12 +72,8 @@ void start_task(void *pvParameters) {
  */
 void task1(void *pvParameters) {
     UNUSED(pvParameters);
-    LED0_OFF();
-    LED1_ON();
-
     while (1) {
         LED0_TOGGLE();
-        LED1_TOGGLE();
         vTaskDelay(1000);
     }
 }
@@ -90,7 +86,7 @@ void task1(void *pvParameters) {
 void TouchGFX_Task(void *pvParameters) {
     UNUSED(pvParameters);
     MX_TouchGFX_Process();
-    vTaskDelay(5);
+    vTaskDelay(10);
 }
 
 /**
@@ -104,8 +100,8 @@ void message_polling_task(void *pvParameters) {
     remote_send_init(&huart1);
 
     /* 注册接收回调函数 */
-    message_register_recv_callback(MSG_TO_MASTER, remote_report_msg_callback);
-    message_register_polling_uart(MSG_TO_MASTER, &huart1, 128, 512);
+    message_register_recv_callback(MSG_TO_REMOTE, remote_recv_msg_callback);
+    message_register_polling_uart(MSG_TO_REMOTE, &huart1, 128, 512);
 
     while (1) {
         message_polling_data();

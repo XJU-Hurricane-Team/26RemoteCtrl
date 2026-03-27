@@ -67,13 +67,9 @@
  * @brief 数据含义
  */
 typedef enum {
-    MSG_TO_MASTER,
-    // MSG_ID_1, /*!< demo 1, TX2->RX3 */
-    // MSG_ID_2, /*!< demo 2, TX3->RX4 */
-    // MSG_ID_3, /*!< demo 3, TX4->RX5 */
-    // MSG_ID_4, /*!< demo 4, TX5->RX2 */
-
-    MSG_ID_RESERVE_LEN, /*!< 保留位, 用于定义数据长度 */
+    MSG_TO_MASTER = 0x00U, /*!< 消息发送到主控板 */
+    MSG_TO_REMOTE,         /*!< 消息发送到遥控器 */
+    MSG_ID_RESERVE_LEN,    /*!< 保留位, 用于定义数据长度 */
 } msg_id_t;
 
 /**

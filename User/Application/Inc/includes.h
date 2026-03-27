@@ -36,13 +36,16 @@ typedef enum {
     REMOTE_KEY_EVENT_NUM   /*!< 保留长度 */
 } remote_key_event_t;
 
+/**
+ * @brief 上报给UI的消息类型
+ * 
+ */
 typedef enum {
-    ORIGIN_SET_INT = 1, /*!< 进入原点设置 */
-    ORIGIN_SET_LAST,
-    ORIGIN_SET_NEXT, /*!< 下一个原点 */
-    ORIGIN_SET_DIRECTION,
-    ORIGIN_SET_OUT   /*!< 退出原点设置  */
-} origin_key_t;
+    UI_REMOTE_CTRL = 0x00U, /*!< 遥控器控制消息 */
+    UI_R1_STATE,            /*!< R1 状态消息 */
+    UI_R2_STATE,            /*!< R2 状态消息 */
+    MSG_TYPE_NUM             /*!< 保留长度 */
+} ui_msg_type_t;
 
 /**
  * @brief 遥控器键盘回调函数
@@ -53,33 +56,53 @@ typedef enum {
 typedef void (*remote_key_callback_t)(uint8_t key, remote_key_event_t event);
 
 /**
- * @brief 底盘速度队列数据
+ * @brief R1 状态数据
  * 
  */
 typedef struct __packed {
-    int16_t x_speed;     /*!< x 坐标 */
-    int16_t y_speed;     /*!< y 坐标 */
-    int16_t angle; /*!< yaw 坐标 */
+    int16_t x_speed; /*!< x 坐标 */
+    int16_t y_speed; /*!< y 坐标 */
+    int16_t angle;   /*!< yaw 坐标 */
 
-    /*!< 底盘状态 
+    /*!< R1 状态 
      * bit[7:2] 保留
      * bit[1]   是否在自瞄状态
      * bit[0]   是否世界坐标系
      */
-    uint8_t chassis_status;
-} speed_data_t;
+    uint8_t r1_status;
+} r1_data_t;
+
+/* 遥控器发送数据结构 */
+typedef struct __packed {
+    int8_t key;   /*!< 按键值 */
+    int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
+} remote_send_data_t;
+
+/* 遥控器控制消息结构 */
+typedef struct {
+    uint8_t voltage;          /*!< 电压值 */
+    remote_send_data_t *data; /*!< 遥控器发送数据指针 */
+} remote_ctrl_msg_t;
+
+/* R1 状态消息结构 */
+typedef struct{
+    r1_data_t *data;
+} r1_state_msg_t;
+
+typedef struct {
+    ui_msg_type_t type;          /*!< 消息类型 */
+    void *data;              /*!< 消息数据指针 */
+} ui_msg_t;
 
 
 
-extern TaskHandle_t TouchGFX_Task_handle;
-extern QueueHandle_t SampleQueue;
+extern QueueHandle_t ui_msg_queue;
 extern QueueHandle_t speed_data_queue;
-
 
 /* 遥控器数据发送任务API */
 void remote_send_init(UART_HandleTypeDef *send_uart);
-void remote_report_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
-                                uint8_t *msg_data);
+void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
+                              uint8_t *msg_data);
 void remote_register_key_callback(uint8_t key, remote_key_event_t event,
                                   remote_key_callback_t callback);
 void remote_unregister_key_callback(uint8_t key, remote_key_event_t event);
