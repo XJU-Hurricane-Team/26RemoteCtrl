@@ -43,6 +43,9 @@ protected:
     touchgfx::Box __background;
     touchgfx::ScalableImage scalableImage1;
     touchgfx::Container container1;
+    touchgfx::TextAreaWithOneWildcard R2State;
+    touchgfx::TextAreaWithOneWildcard R2Yaw;
+    touchgfx::TextAreaWithOneWildcard R2V_y;
     touchgfx::TextAreaWithOneWildcard R1Yaw;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
@@ -53,6 +56,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard R1V_x;
     touchgfx::TextAreaWithOneWildcard R1V_y;
     touchgfx::TextAreaWithOneWildcard R1State;
+    touchgfx::TextAreaWithOneWildcard R2V_x;
     touchgfx::Container container2;
     touchgfx::TextAreaWithOneWildcard Battery;
     touchgfx::TextAreaWithOneWildcard KeyNum;
@@ -65,6 +69,12 @@ protected:
     /*
      * Wildcard Buffers
      */
+    static const uint16_t R2STATE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar R2StateBuffer[R2STATE_SIZE];
+    static const uint16_t R2YAW_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar R2YawBuffer[R2YAW_SIZE];
+    static const uint16_t R2V_Y_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar R2V_yBuffer[R2V_Y_SIZE];
     static const uint16_t R1YAW_SIZE = 10;
     touchgfx::Unicode::UnicodeChar R1YawBuffer[R1YAW_SIZE];
     static const uint16_t R1V_X_SIZE = 10;
@@ -73,6 +83,8 @@ protected:
     touchgfx::Unicode::UnicodeChar R1V_yBuffer[R1V_Y_SIZE];
     static const uint16_t R1STATE_SIZE = 10;
     touchgfx::Unicode::UnicodeChar R1StateBuffer[R1STATE_SIZE];
+    static const uint16_t R2V_X_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar R2V_xBuffer[R2V_X_SIZE];
     static const uint16_t BATTERY_SIZE = 10;
     touchgfx::Unicode::UnicodeChar BatteryBuffer[BATTERY_SIZE];
     static const uint16_t KEYNUM_SIZE = 15;

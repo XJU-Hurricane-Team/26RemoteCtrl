@@ -3,7 +3,11 @@
 #include "stm32f4xx_hal.h"
 #include <stdlib.h>
 
-screenView::screenView() {}
+screenView::screenView()
+        : keyState(0), voltage(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
+            r1_x_speed(0), r1_y_speed(0), r1_angle(0), r1_status(0),
+            r2_x_speed(0), r2_y_speed(0), r2_angle(0), r2_status(0), graphValue(0.0f),
+            tickCounter(0), digitalHours(0), digitalMinutes(0), digitalSeconds(0) {}
 
 void screenView::setupScreen() {
     screenViewBase::setupScreen();
@@ -50,9 +54,27 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(R1V_xBuffer, R1V_X_SIZE, "%d", r1_x_speed);
     touchgfx::Unicode::snprintf(R1V_yBuffer, R1V_Y_SIZE, "%d", r1_y_speed);
     touchgfx::Unicode::snprintf(R1YawBuffer, R1YAW_SIZE, "%d", r1_angle);
-    touchgfx::Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%s", r1_status);
+    touchgfx::Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%u",
+                                (unsigned int)r1_status);
+
+    touchgfx::Unicode::snprintf(R2V_xBuffer, R2V_X_SIZE, "%d", r2_x_speed);
+    touchgfx::Unicode::snprintf(R2V_yBuffer, R2V_Y_SIZE, "%d", r2_y_speed);
+    touchgfx::Unicode::snprintf(R2YawBuffer, R2YAW_SIZE, "%d", r2_angle);
+    touchgfx::Unicode::snprintf(R2StateBuffer, R2STATE_SIZE, "%u",
+                                (unsigned int)r2_status);
+
     RockL.invalidate();
     RockR.invalidate();
     KeyNum.invalidate();
     Battery.invalidate();
+
+    R1V_x.invalidate();
+    R1V_y.invalidate();
+    R1Yaw.invalidate();
+    R1State.invalidate();
+
+    R2V_x.invalidate();
+    R2V_y.invalidate();
+    R2Yaw.invalidate();
+    R2State.invalidate();
 }

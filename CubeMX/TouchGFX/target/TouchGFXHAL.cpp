@@ -26,6 +26,38 @@
 #include "includes.h"
 using namespace touchgfx;
 
+static SemaphoreHandle_t g_touchgfxTransferSem = NULL;
+
+namespace touchgfx {
+void FrameBufferAllocatorWaitOnTransfer() {
+    if (g_touchgfxTransferSem != NULL) {
+        (void)xSemaphoreTake(g_touchgfxTransferSem, portMAX_DELAY);
+    } else {
+        taskYIELD();
+    }
+}
+
+void FrameBufferAllocatorSignalBlockDrawn() {
+    /* Block transfer start is handled by generated HAL logic.
+     * This hook is kept to satisfy the partial framebuffer contract. */
+}
+} // namespace touchgfx
+
+extern "C" void touchgfxNotifyBlockTransferDone(void) {
+    if (g_touchgfxTransferSem != NULL) {
+        (void)xSemaphoreGive(g_touchgfxTransferSem);
+    }
+}
+
+extern "C" void touchgfxNotifyBlockTransferDoneFromISR(void) {
+    if (g_touchgfxTransferSem != NULL) {
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+        (void)xSemaphoreGiveFromISR(g_touchgfxTransferSem,
+                                    &xHigherPriorityTaskWoken);
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    }
+}
+
 /* ******************************************************
  * Functions required by Partial Frame Buffer Strategy
  * ******************************************************
@@ -38,17 +70,16 @@ using namespace touchgfx;
  *  E.g. if using DMA to transfer the block, this could be called in the "Transfer Completed" interrupt handler.
  *
  */
-#warning                                                                       \
-    "A user must call touchgfx::startNewTransfer(); once touchgfxDisplayDriverTransmitBlock() has succesfully sent a block."
-#warning                                                                       \
-    "A user must implement C-methods touchgfxDisplayDriverTransmitActive() and touchgfxDisplayDriverTransmitBlock() used by the Partial Framebuffer Strategy."
-
 void TouchGFXHAL::initialize() {
     // Calling parent implementation of initialize().
     //
     // To overwrite the generated implementation, omit the call to the parent function
     // and implement the needed functionality here.
     // Please note, HAL::initialize() must be called to initialize the framework.
+
+    if (g_touchgfxTransferSem == NULL) {
+        g_touchgfxTransferSem = xSemaphoreCreateCounting(8, 0);
+    }
 
     ST77xx_Init(0, ST7789);             // 初始化屏幕
     TouchGFXGeneratedHAL::initialize(); //初始化UI框架

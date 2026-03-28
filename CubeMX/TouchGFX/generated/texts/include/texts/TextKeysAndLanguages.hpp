@@ -12,6 +12,14 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T_R2_YAW,
+    T_R2STATE,
+    T___SINGLEUSE_QWN1,
+    T___SINGLEUSE_B9HS,
+    T_R2_VY,
+    T___SINGLEUSE_BDBH,
+    T_R2SPEED,
+    T___SINGLEUSE_ECEO,
     T_R1STATE,
     T___SINGLEUSE_2J9Y,
     T_R1YAW,

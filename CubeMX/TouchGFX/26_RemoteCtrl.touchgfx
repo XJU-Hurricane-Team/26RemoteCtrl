@@ -16,10 +16,71 @@
           {
             "Type": "Container",
             "Name": "container1",
-            "Y": 120,
+            "Y": 118,
             "Width": 320,
             "Height": 120,
             "Components": [
+              {
+                "Type": "TextArea",
+                "Name": "R2State",
+                "X": 163,
+                "Y": 71,
+                "Width": 155,
+                "Height": 20,
+                "TextId": "__SingleUse_QWN1",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 245,
+                  "Green": 2,
+                  "Blue": 2
+                },
+                "Wildcard1": {
+                  "TextId": "R2state",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "R2Yaw",
+                "X": 165,
+                "Y": 52,
+                "Width": 47,
+                "Height": 18,
+                "TextId": "__SingleUse_B9HS",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 167,
+                  "Green": 247,
+                  "Blue": 124
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "R2_yaw",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "R2V_y",
+                "X": 240,
+                "Y": 28,
+                "Width": 75,
+                "Height": 20,
+                "TextId": "__SingleUse_BDBH",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 167,
+                  "Green": 247,
+                  "Blue": 124
+                },
+                "Wildcard1": {
+                  "TextId": "R2_vy",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
               {
                 "Type": "TextArea",
                 "Name": "R1Yaw",
@@ -144,7 +205,8 @@
               {
                 "Type": "TextArea",
                 "Name": "R1State",
-                "Y": 70,
+                "X": 1,
+                "Y": 71,
                 "Width": 155,
                 "Height": 20,
                 "TextId": "__SingleUse_2J9Y",
@@ -156,6 +218,26 @@
                 },
                 "Wildcard1": {
                   "TextId": "R1state",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "R2V_x",
+                "X": 165,
+                "Y": 29,
+                "Width": 75,
+                "Height": 20,
+                "TextId": "__SingleUse_ECEO",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 167,
+                  "Green": 247,
+                  "Blue": 124
+                },
+                "Wildcard1": {
+                  "TextId": "R2speed",
                   "UseBuffer": true,
                   "BufferSize": 10
                 }

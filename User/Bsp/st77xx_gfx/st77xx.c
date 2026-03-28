@@ -12,6 +12,9 @@
 #include "st77xx.h"
 #include <stdint.h>
 
+extern void touchgfxNotifyBlockTransferDone(void);
+extern void touchgfxNotifyBlockTransferDoneFromISR(void);
+
 lcd_dev_t lcd_dev;
 volatile uint16_t tearingEffectCount = 0;
 
@@ -92,16 +95,15 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
     HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
     if (HAL_SPI_Transmit_DMA(&ST77xx_SPI_INSTANCE, (uint8_t *)bitmap,
                              (uint16_t)(sizex * sizey)) != HAL_OK) {
-        /* DMA failed to start. Clear busy flag and restore SPI to 8-bit mode
-         * to avoid TouchGFX waiting forever. Also notify the framework that
-         * the transfer is 'complete' (even though nothing was sent) so the
-         * GUI can continue. */
+        /* DMA start failed, restore peripheral state and finish this block
+         * in allocator state machine to avoid desynchronization/deadlock. */
         IsTransmittingBlock_ = 0;
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
         ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
         ST77XX_CS_HIGH();
         DisplayDriver_TransferCompleteCallback();
+        touchgfxNotifyBlockTransferDone();
     }
 }
 
@@ -128,6 +130,10 @@ void touchgfxSignalVSync(void);
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
     if (hspi->Instance == ST77xx_SPI_INSTANCE.Instance) {
+        if (IsTransmittingBlock_ == 0U) {
+            return;
+        }
+
         IsTransmittingBlock_ = 0;
         while (((ST77xx_SPI_INSTANCE.Instance->SR) & SPI_FLAG_BSY) != RESET) {}
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
@@ -137,11 +143,16 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
         ST77XX_CS_HIGH();
         // Signal Transfer Complete to TouchGFX
         DisplayDriver_TransferCompleteCallback();
+        touchgfxNotifyBlockTransferDoneFromISR();
     }
 }
 
 void HAL_DMA_ErrorCallback(DMA_HandleTypeDef *hdma) {
     if (hdma == ST77xx_SPI_INSTANCE.hdmatx) {
+        if (IsTransmittingBlock_ == 0U) {
+            return;
+        }
+
         IsTransmittingBlock_ = 0;
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
         ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
@@ -149,6 +160,7 @@ void HAL_DMA_ErrorCallback(DMA_HandleTypeDef *hdma) {
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
         ST77XX_CS_HIGH();
         DisplayDriver_TransferCompleteCallback();
+        touchgfxNotifyBlockTransferDoneFromISR();
     }
 }
 

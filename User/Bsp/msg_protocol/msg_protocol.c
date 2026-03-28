@@ -25,7 +25,6 @@
 #pragma GCC diagnostic ignored "-Wzero-length-array"
 #endif /* __GNUC__ */
 
-uint8_t i_data[20] = "";
  
 /**
  * @brief 判断是否是 2 的幂次方
@@ -285,9 +284,6 @@ void message_send_data(msg_id_t msg_id, msg_type_t data_type, uint8_t *data,
     send_buf[buf_idx] = MSG_EOF;
     ++buf_idx;
     
-    memcpy(i_data,send_buf,buf_idx);
-    printf("%s", i_data);
-
     if (msg->send_uart->hdmatx != NULL) {
         uart_dmatx_write(msg->send_uart, send_buf, buf_idx);
         uart_dmatx_send(msg->send_uart);

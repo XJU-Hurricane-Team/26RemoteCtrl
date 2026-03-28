@@ -60,9 +60,9 @@ typedef void (*remote_key_callback_t)(uint8_t key, remote_key_event_t event);
  * 
  */
 typedef struct __packed {
-    int16_t x_speed; /*!< x 坐标 */
-    int16_t y_speed; /*!< y 坐标 */
-    int16_t angle;   /*!< yaw 坐标 */
+    int16_t x_speed; /*!< x 方向速度 */
+    int16_t y_speed; /*!< y 方向速度 */
+    int16_t angle;   /*!< yaw 大小 */
 
     /*!< R1 状态 
      * bit[7:2] 保留
@@ -76,15 +76,24 @@ typedef struct __packed {
  * @brief R2 状态数据
  */
 typedef struct __packed {
-    int16_t x_speed; /*!< x 坐标 */
-    int16_t y_speed; /*!< y 坐标 */
-    int16_t angle;   /*!< yaw 坐标 */
+    int16_t x_speed; /*!< x 方向速度 */
+    int16_t y_speed; /*!< y 方向速度 */
+    int16_t angle;   /*!< yaw 大小 */
 
     /*!< R2 状态
      * bit[7:0] 保留, 后续按协议扩展
      */
     uint8_t r2_status;
 } r2_data_t;
+
+/**
+ * @brief 上报的数据包
+ * 
+ */
+typedef struct __packed {
+    r1_data_t r1_state;
+    r2_data_t r2_state;
+} report_data_t;
 
 /* 遥控器发送数据结构 */
 typedef struct __packed {
