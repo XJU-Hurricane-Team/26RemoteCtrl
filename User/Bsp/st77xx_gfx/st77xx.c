@@ -15,6 +15,18 @@
 extern void touchgfxNotifyBlockTransferDone(void);
 extern void touchgfxNotifyBlockTransferDoneFromISR(void);
 
+static inline uint8_t st77xx_in_isr_context(void) {
+    return (__get_IPSR() != 0U) ? 1U : 0U;
+}
+
+static inline void st77xx_notify_transfer_done(void) {
+    if (st77xx_in_isr_context()) {
+        touchgfxNotifyBlockTransferDoneFromISR();
+    } else {
+        touchgfxNotifyBlockTransferDone();
+    }
+}
+
 lcd_dev_t lcd_dev;
 volatile uint16_t tearingEffectCount = 0;
 
@@ -103,7 +115,7 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
         ST77XX_CS_HIGH();
         DisplayDriver_TransferCompleteCallback();
-        touchgfxNotifyBlockTransferDone();
+        st77xx_notify_transfer_done();
     }
 }
 

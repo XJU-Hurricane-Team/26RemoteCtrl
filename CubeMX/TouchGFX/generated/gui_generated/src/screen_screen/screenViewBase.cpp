@@ -47,7 +47,7 @@ screenViewBase::screenViewBase() :
     R2V_y.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BDBH));
     container1.add(R2V_y);
 
-    R1Yaw.setPosition(0, 51, 76, 19);
+    R1Yaw.setPosition(0, 51, 155, 19);
     R1Yaw.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     R1Yaw.setLinespacing(0);
     Unicode::snprintf(R1YawBuffer, R1YAW_SIZE, "%s", touchgfx::TypedText(T_R1YAW).getText());

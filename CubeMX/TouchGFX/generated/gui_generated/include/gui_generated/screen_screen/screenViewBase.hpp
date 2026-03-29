@@ -75,11 +75,11 @@ protected:
     touchgfx::Unicode::UnicodeChar R2YawBuffer[R2YAW_SIZE];
     static const uint16_t R2V_Y_SIZE = 10;
     touchgfx::Unicode::UnicodeChar R2V_yBuffer[R2V_Y_SIZE];
-    static const uint16_t R1YAW_SIZE = 10;
+    static const uint16_t R1YAW_SIZE = 15;
     touchgfx::Unicode::UnicodeChar R1YawBuffer[R1YAW_SIZE];
-    static const uint16_t R1V_X_SIZE = 10;
+    static const uint16_t R1V_X_SIZE = 15;
     touchgfx::Unicode::UnicodeChar R1V_xBuffer[R1V_X_SIZE];
-    static const uint16_t R1V_Y_SIZE = 10;
+    static const uint16_t R1V_Y_SIZE = 15;
     touchgfx::Unicode::UnicodeChar R1V_yBuffer[R1V_Y_SIZE];
     static const uint16_t R1STATE_SIZE = 10;
     touchgfx::Unicode::UnicodeChar R1StateBuffer[R1STATE_SIZE];

@@ -85,7 +85,7 @@
                 "Type": "TextArea",
                 "Name": "R1Yaw",
                 "Y": 51,
-                "Width": 76,
+                "Width": 155,
                 "Height": 19,
                 "TextId": "__SingleUse_C9E6",
                 "TextRotation": "0",
@@ -97,7 +97,7 @@
                 "Wildcard1": {
                   "TextId": "r1yaw",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 15
                 }
               },
               {
@@ -179,7 +179,7 @@
                 "Wildcard1": {
                   "TextId": "R1Speedya",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 15
                 }
               },
               {
@@ -199,7 +199,7 @@
                 "Wildcard1": {
                   "TextId": "R1Speedya",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 15
                 }
               },
               {
