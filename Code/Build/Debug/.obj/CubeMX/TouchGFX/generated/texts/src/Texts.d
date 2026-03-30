@@ -1,0 +1,35 @@
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/texts/src/Texts.o: \
+  CubeMX\TouchGFX\generated\texts\src\Texts.cpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\TextProvider.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Font.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Unicode.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\Types.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\Config.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Texts.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\TypedText.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\HAL.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\platform\core\MCUInstrumentation.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\platform\driver\button\ButtonController.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\platform\driver\touch\TouchController.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Bitmap.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Drawable.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\events\ClickEvent.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Event.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\events\DragEvent.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\events\GestureEvent.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\BlitOp.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\DMA.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\Atomic.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\FrameBufferAllocator.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\FrameBufferListener.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\Gestures.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\UIEventListener.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\lcd\LCD.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\TextureMapTypes.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\VectorFontRenderer.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\VectorRenderer.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Matrix3x3.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\hal\VGData.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\Widget.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\lcd\DebugPrinter.hpp \
+  CubeMX\TouchGFX\generated\texts\include\texts\TypedTextDatabase.hpp

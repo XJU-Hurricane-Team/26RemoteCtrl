@@ -1,0 +1,6 @@
+r
+halt
+loadfile "d:\Workspace\26RemoteCtrl\Code\Build\Debug\26RemoteCtrl.hex"
+r
+go
+exit

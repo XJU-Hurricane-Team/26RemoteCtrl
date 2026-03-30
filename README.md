@@ -8,7 +8,7 @@
 
 ### 开发环境
 
-工程基于[战队模板搭建](https://github.com/XJU-Hurricane-Team/STM32-Template)，使用VScode EIDE插件组织，AC6编译。
+工程基于[战队模板搭建](https://github.com/XJU-Hurricane-Team/STM32-Template)，使用 CubeMX 生成底层驱动，VScode EIDE 插件组织，AC6 编译。
 
 
 
