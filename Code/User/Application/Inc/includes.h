@@ -24,6 +24,8 @@ extern "C" {
 
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
+#include <stdint.h>
 
 /**
  * @brief 遥控器键盘事件
@@ -44,7 +46,7 @@ typedef enum {
     UI_REMOTE_CTRL = 0x00U, /*!< 遥控器控制消息 */
     UI_R1_STATE,            /*!< R1 状态消息 */
     UI_R2_STATE,            /*!< R2 状态消息 */
-    MSG_TYPE_NUM             /*!< 保留长度 */
+    MSG_TYPE_NUM            /*!< 保留长度 */
 } ui_msg_type_t;
 
 /**
@@ -62,14 +64,12 @@ typedef void (*remote_key_callback_t)(uint8_t key, remote_key_event_t event);
 typedef struct __packed {
     int16_t x_speed; /*!< x 方向速度 */
     int16_t y_speed; /*!< y 方向速度 */
-    int16_t angle;   /*!< yaw 大小 */
-
-    /*!< R1 状态 
-     * bit[7:2] 保留
-     * bit[1]   是否在自瞄状态
-     * bit[0]   是否世界坐标系
-     */
-    uint8_t r1_status;
+    int16_t w_speed; /*!< 角速度 */
+    uint8_t r1_chassis_status;
+    float left_pos;    /*!< 左侧抬升高度 */
+    float right_pos;   /*!< 右侧抬升高度 */
+    bool left_adsorbed;  /*!< 左侧是否吸住 */
+    bool right_adsorbed; /*!< 右侧是否吸住 */
 } r1_data_t;
 
 /**
@@ -115,12 +115,10 @@ typedef union {
 } ui_msg_payload_t;
 
 typedef struct {
-    ui_msg_type_t type;      /*!< 消息类型 */
-    uint32_t seq;            /*!< 发布序号, 用于调试丢包与乱序 */
+    ui_msg_type_t type;       /*!< 消息类型 */
+    uint32_t seq;             /*!< 发布序号, 用于调试丢包与乱序 */
     ui_msg_payload_t payload; /*!< 消息数据 */
 } ui_msg_t;
-
-
 
 extern QueueHandle_t ui_msg_queue;
 

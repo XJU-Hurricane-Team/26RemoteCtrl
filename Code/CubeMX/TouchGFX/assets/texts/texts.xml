@@ -7,6 +7,21 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Screen1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_CLN1" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">R_A:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_I2OW" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">L_A:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3OW3" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">R_P:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="ra" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_IDUM" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">L_P:&lt;value&gt;</Translation>
+      </Text>
       <Text Id="R2_yaw" Alignment="Left" TypographyId="Typography2">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -32,16 +47,16 @@
         <Translation Language="GB">V_x:&lt;value&gt;</Translation>
       </Text>
       <Text Id="R1state" Alignment="Left" TypographyId="Typography2">
-        <Translation Language="GB"></Translation>
+        <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="__SingleUse_2J9Y" Alignment="Left" TypographyId="Typography2">
-        <Translation Language="GB">State:&lt;value&gt;</Translation>
+        <Translation Language="GB">Halt:&lt;value&gt;</Translation>
       </Text>
       <Text Id="r1yaw" Alignment="Left" TypographyId="Typography2">
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_C9E6" Alignment="Left" TypographyId="Typography2">
-        <Translation Language="GB">Yaw:&lt;value&gt;</Translation>
+        <Translation Language="GB">V_w:&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_JQKN" Alignment="Left" TypographyId="Typography2">
         <Translation Language="GB">V_y:&lt;value&gt;</Translation>
@@ -101,8 +116,8 @@
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography1" Font="verdanai.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Info" Font="verdanab.ttf" Size="20" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="-+!*()key" WildcardCharacterRanges="0-9,a-z,A-Z" />
-    <Typography Id="Typography2" Font="verdanai.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-+!*()key" WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Info" Font="verdanab.ttf" Size="15" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="-+!*()key." WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Typography2" Font="verdanai.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-+!*()key." WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Typography3" Font="verdanaz.ttf" Size="22" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

@@ -32,11 +32,15 @@ void screenPresenter::onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x
     view.rsR_y = rsR_y;
 }
 
-void screenPresenter::onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle, uint8_t status){
+void screenPresenter::onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t wSpeed, uint8_t status, float leftPos, float rightPos, uint8_t leftAdsorbed, uint8_t rightAdsorbed){
     view.r1_x_speed = xSpeed;
     view.r1_y_speed = ySpeed;
-    view.r1_angle = angle;
+    view.r1_w_speed = wSpeed;
     view.r1_status = status;
+    view.r1_left_pos = leftPos;
+    view.r1_right_pos = rightPos;
+    view.r1_left_adsorbed = leftAdsorbed;
+    view.r1_right_adsorbed = rightAdsorbed;
 }
 
 void screenPresenter::onR2StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle, uint8_t status){

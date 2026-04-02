@@ -8,10 +8,9 @@ using namespace touchgfx;
 
 class screenView;
 
-class screenPresenter : public touchgfx::Presenter, public ModelListener
-{
-public:
-    screenPresenter(screenView& v);
+class screenPresenter : public touchgfx::Presenter, public ModelListener {
+  public:
+    screenPresenter(screenView &v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -28,14 +27,19 @@ public:
     virtual ~screenPresenter() {}
     virtual void onKeyValueChanged(int8_t key);
     virtual void onVoltageChanged(int8_t voltage);
-    virtual void onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x, int8_t rsR_y);
-    virtual void onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle, uint8_t status);
-    virtual void onR2StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle, uint8_t status);
+    virtual void onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x,
+                                   int8_t rsR_y);
+    virtual void onR1StateChanged(int16_t xSpeed, int16_t ySpeed,
+                                  int16_t wSpeed, uint8_t status, float leftPos,
+                                  float rightPos, uint8_t leftAdsorbed,
+                                  uint8_t rightAdsorbed);
+    virtual void onR2StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle,
+                                  uint8_t status);
 
-private:
+  private:
     screenPresenter();
 
-    screenView& view;
+    screenView &view;
 };
 
 #endif // SCREENPRESENTER_HPP

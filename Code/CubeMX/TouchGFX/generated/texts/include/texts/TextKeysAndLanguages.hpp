@@ -12,6 +12,11 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T___SINGLEUSE_CLN1,
+    T___SINGLEUSE_I2OW,
+    T___SINGLEUSE_3OW3,
+    T_RA,
+    T___SINGLEUSE_IDUM,
     T_R2_YAW,
     T_R2STATE,
     T___SINGLEUSE_QWN1,

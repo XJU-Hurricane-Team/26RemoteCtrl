@@ -672,9 +672,9 @@
               <FilePath>../touchgfx/generated/fonts/src/font_verdana_40_4bpp_0.cpp</FilePath>
             </File>
             <File>
-              <FileName>Font_verdanab_20_4bpp_0.cpp</FileName>
+              <FileName>Font_verdanab_15_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/font_verdanab_20_4bpp_0.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/font_verdanab_15_4bpp_0.cpp</FilePath>
             </File>
             <File>
               <FileName>Font_verdanai_15_4bpp_0.cpp</FileName>
@@ -732,9 +732,9 @@
               <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_40_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Kerning_verdanab_20_4bpp.cpp</FileName>
+              <FileName>Kerning_verdanab_15_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/kerning_verdanab_20_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_verdanab_15_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_verdanai_15_4bpp.cpp</FileName>
@@ -782,9 +782,9 @@
               <FilePath>../touchgfx/generated/fonts/src/table_verdana_40_4bpp.cpp</FilePath>
             </File>
             <File>
-              <FileName>Table_verdanab_20_4bpp.cpp</FileName>
+              <FileName>Table_verdanab_15_4bpp.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/fonts/src/table_verdanab_20_4bpp.cpp</FilePath>
+              <FilePath>../touchgfx/generated/fonts/src/table_verdanab_15_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_verdanai_15_4bpp.cpp</FileName>

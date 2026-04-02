@@ -38,7 +38,7 @@
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdana_10_4bpp_0.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdana_20_4bpp_0.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdana_40_4bpp_0.o
-./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdanab_20_4bpp_0.o
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdanab_15_4bpp_0.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdanai_15_4bpp_0.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdanai_20_4bpp_0.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Font_verdanaz_22_4bpp_0.o
@@ -46,14 +46,14 @@
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdana_10_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdana_20_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdana_40_4bpp.o
-./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdanab_20_4bpp.o
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdanab_15_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdanai_15_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdanai_20_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Kerning_verdanaz_22_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdana_10_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdana_20_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdana_40_4bpp.o
-./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdanab_20_4bpp.o
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdanab_15_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdanai_15_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdanai_20_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdanaz_22_4bpp.o

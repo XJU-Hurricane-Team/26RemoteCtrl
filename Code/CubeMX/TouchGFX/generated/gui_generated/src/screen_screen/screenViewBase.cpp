@@ -21,7 +21,31 @@ screenViewBase::screenViewBase() :
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(scalableImage1);
 
-    container1.setPosition(0, 118, 320, 120);
+    container1.setPosition(0, 105, 320, 133);
+    L_A.setPosition(0, 86, 77, 19);
+    L_A.setColor(touchgfx::Color::getColorFromRGB(250, 250, 60));
+    L_A.setLinespacing(0);
+    Unicode::snprintf(L_ABuffer, L_A_SIZE, "%s", touchgfx::TypedText(T_RA).getText());
+    L_A.setWildcard(L_ABuffer);
+    L_A.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I2OW));
+    container1.add(L_A);
+
+    R_A.setPosition(77, 86, 77, 19);
+    R_A.setColor(touchgfx::Color::getColorFromRGB(250, 250, 60));
+    R_A.setLinespacing(0);
+    Unicode::snprintf(R_ABuffer, R_A_SIZE, "%s", touchgfx::TypedText(T_RA).getText());
+    R_A.setWildcard(R_ABuffer);
+    R_A.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CLN1));
+    container1.add(R_A);
+
+    R_P.setPosition(79, 67, 77, 19);
+    R_P.setColor(touchgfx::Color::getColorFromRGB(250, 250, 60));
+    R_P.setLinespacing(0);
+    Unicode::snprintf(R_PBuffer, R_P_SIZE, "%s", touchgfx::TypedText(T_RA).getText());
+    R_P.setWildcard(R_PBuffer);
+    R_P.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3OW3));
+    container1.add(R_P);
+
     R2State.setPosition(163, 71, 155, 20);
     R2State.setColor(touchgfx::Color::getColorFromRGB(245, 2, 2));
     R2State.setLinespacing(0);
@@ -47,7 +71,7 @@ screenViewBase::screenViewBase() :
     R2V_y.setTypedText(touchgfx::TypedText(T___SINGLEUSE_BDBH));
     container1.add(R2V_y);
 
-    R1Yaw.setPosition(0, 51, 155, 19);
+    R1Yaw.setPosition(77, 29, 81, 20);
     R1Yaw.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     R1Yaw.setLinespacing(0);
     Unicode::snprintf(R1YawBuffer, R1YAW_SIZE, "%s", touchgfx::TypedText(T_R1YAW).getText());
@@ -55,7 +79,7 @@ screenViewBase::screenViewBase() :
     R1Yaw.setTypedText(touchgfx::TypedText(T___SINGLEUSE_C9E6));
     container1.add(R1Yaw);
 
-    line1.setPosition(0, 0, 320, 10);
+    line1.setPosition(0, 1, 320, 15);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(43, 171, 217));
     line1.setPainter(line1Painter);
     line1.setStart(0, 5);
@@ -64,11 +88,11 @@ screenViewBase::screenViewBase() :
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     container1.add(line1);
 
-    line2.setPosition(155, 4, 10, 115);
+    line2.setPosition(155, 6, 10, 130);
     line2Painter.setColor(touchgfx::Color::getColorFromRGB(43, 171, 217));
     line2.setPainter(line2Painter);
     line2.setStart(5, 0);
-    line2.setEnd(5, 240);
+    line2.setEnd(5, 245);
     line2.setLineWidth(3);
     line2.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
     container1.add(line2);
@@ -79,13 +103,13 @@ screenViewBase::screenViewBase() :
     textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_V51Z));
     container1.add(textArea3);
 
-    textArea2.setPosition(0, 5, 155, 24);
+    textArea2.setPosition(3, 6, 155, 24);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K1VO));
     container1.add(textArea2);
 
-    R1V_x.setPosition(0, 29, 77, 20);
+    R1V_x.setPosition(0, 47, 78, 20);
     R1V_x.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     R1V_x.setLinespacing(0);
     Unicode::snprintf(R1V_xBuffer, R1V_X_SIZE, "%s", touchgfx::TypedText(T_R1SPEEDYA).getText());
@@ -93,7 +117,7 @@ screenViewBase::screenViewBase() :
     R1V_x.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I0DT));
     container1.add(R1V_x);
 
-    R1V_y.setPosition(78, 29, 82, 20);
+    R1V_y.setPosition(78, 47, 80, 20);
     R1V_y.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     R1V_y.setLinespacing(0);
     Unicode::snprintf(R1V_yBuffer, R1V_Y_SIZE, "%s", touchgfx::TypedText(T_R1SPEEDYA).getText());
@@ -101,7 +125,7 @@ screenViewBase::screenViewBase() :
     R1V_y.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JQKN));
     container1.add(R1V_y);
 
-    R1State.setPosition(1, 71, 155, 20);
+    R1State.setPosition(0, 27, 77, 20);
     R1State.setColor(touchgfx::Color::getColorFromRGB(245, 2, 2));
     R1State.setLinespacing(0);
     Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%s", touchgfx::TypedText(T_R1STATE).getText());
@@ -117,10 +141,18 @@ screenViewBase::screenViewBase() :
     R2V_x.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ECEO));
     container1.add(R2V_x);
 
+    L_P.setPosition(0, 67, 77, 19);
+    L_P.setColor(touchgfx::Color::getColorFromRGB(250, 250, 60));
+    L_P.setLinespacing(0);
+    Unicode::snprintf(L_PBuffer, L_P_SIZE, "%s", touchgfx::TypedText(T_RA).getText());
+    L_P.setWildcard(L_PBuffer);
+    L_P.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IDUM));
+    container1.add(L_P);
+
     add(container1);
 
-    container2.setPosition(0, 0, 320, 114);
-    Battery.setPosition(160, 45, 87, 23);
+    container2.setPosition(0, 0, 320, 105);
+    Battery.setPosition(160, 45, 87, 22);
     Battery.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     Battery.setLinespacing(0);
     Unicode::snprintf(BatteryBuffer, BATTERY_SIZE, "%s", touchgfx::TypedText(T_V).getText());
@@ -128,7 +160,7 @@ screenViewBase::screenViewBase() :
     Battery.setTypedText(touchgfx::TypedText(T_BATTERY));
     container2.add(Battery);
 
-    KeyNum.setPosition(0, 46, 160, 23);
+    KeyNum.setPosition(0, 46, 158, 21);
     KeyNum.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
     KeyNum.setLinespacing(0);
     Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "%s", touchgfx::TypedText(T_KEY).getText());
@@ -136,7 +168,7 @@ screenViewBase::screenViewBase() :
     KeyNum.setTypedText(touchgfx::TypedText(T_KEYNUM));
     container2.add(KeyNum);
 
-    RockL.setPosition(0, 67, 160, 51);
+    RockL.setPosition(0, 67, 160, 38);
     RockL.setColor(touchgfx::Color::getColorFromRGB(219, 125, 42));
     RockL.setLinespacing(0);
     touchgfx::Unicode::snprintf(RockLBuffer1, ROCKLBUFFER1_SIZE, "%s", touchgfx::TypedText(T_LX).getText());
@@ -146,7 +178,7 @@ screenViewBase::screenViewBase() :
     RockL.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5TK6));
     container2.add(RockL);
 
-    RockR.setPosition(160, 67, 160, 51);
+    RockR.setPosition(160, 67, 160, 38);
     RockR.setColor(touchgfx::Color::getColorFromRGB(219, 125, 42));
     RockR.setLinespacing(0);
     touchgfx::Unicode::snprintf(RockRBuffer1, ROCKRBUFFER1_SIZE, "%s", touchgfx::TypedText(T_RX).getText());

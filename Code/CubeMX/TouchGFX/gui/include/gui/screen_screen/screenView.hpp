@@ -21,8 +21,12 @@ class screenView : public screenViewBase {
 
     int16_t r1_x_speed;
     int16_t r1_y_speed;
-    int16_t r1_angle;
+    int16_t r1_w_speed;
     uint8_t r1_status;
+    float r1_left_pos;
+    float r1_right_pos;
+    uint8_t r1_left_adsorbed;
+    uint8_t r1_right_adsorbed;
 
     int16_t r2_x_speed;
     int16_t r2_y_speed;

@@ -22,7 +22,7 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // verdanai_20_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
     case Typography::INFO:
-        // verdanab_20_4bpp
+        // verdanab_15_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[4]);
     case Typography::TYPOGRAPHY2:
         // verdanai_15_4bpp
