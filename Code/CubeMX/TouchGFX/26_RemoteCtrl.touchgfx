@@ -321,6 +321,46 @@
                   "UseBuffer": true,
                   "BufferSize": 10
                 }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "R1_MSG",
+                "X": 13,
+                "Y": 105,
+                "Width": 133,
+                "Height": 22,
+                "TextId": "__SingleUse_NKFY",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 178,
+                  "Blue": 221
+                },
+                "Wildcard1": {
+                  "TextId": "R2_send",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "R2_MSG",
+                "X": 175,
+                "Y": 105,
+                "Width": 130,
+                "Height": 22,
+                "TextId": "__SingleUse_PGE0",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 178,
+                  "Blue": 221
+                },
+                "Wildcard1": {
+                  "TextId": "R2_send",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
               }
             ]
           },

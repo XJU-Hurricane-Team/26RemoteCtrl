@@ -1,9 +1,10 @@
---cpu Cortex-M4.fp --scatter d:/Workspace/26RemoteCtrl/Code/Build/Debug/26RemoteCtrl.sct --diag_suppress=L6329 --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
+--cpu Cortex-M4.fp --scatter c:/Users/78680/Desktop/2026R1/26RemoteCtrl2.0/26RemoteCtrl/Code/Build/Debug/26RemoteCtrl.sct --diag_suppress=L6329 --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols --info sizes --info totals --info unused --info veneers
 --list ./Build/Debug/26RemoteCtrl.map
 ./Build/Debug/.obj/CubeMX/Core/Src/crc.o
 ./Build/Debug/.obj/CubeMX/Core/Src/dma.o
 ./Build/Debug/.obj/CubeMX/Core/Src/dma2d.o
 ./Build/Debug/.obj/CubeMX/Core/Src/gpio.o
+./Build/Debug/.obj/CubeMX/Core/Src/iwdg.o
 ./Build/Debug/.obj/CubeMX/Core/Src/main.o
 ./Build/Debug/.obj/CubeMX/Core/Src/spi.o
 ./Build/Debug/.obj/CubeMX/Core/Src/stm32f4xx_hal_msp.o
@@ -23,6 +24,7 @@
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o

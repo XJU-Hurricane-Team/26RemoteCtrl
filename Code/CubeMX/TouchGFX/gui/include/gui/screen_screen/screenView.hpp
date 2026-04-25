@@ -27,11 +27,13 @@ class screenView : public screenViewBase {
     float r1_right_pos;
     uint8_t r1_left_adsorbed;
     uint8_t r1_right_adsorbed;
+    uint8_t r1_send_msg;
 
     int16_t r2_x_speed;
     int16_t r2_y_speed;
     int16_t r2_angle;
     uint8_t r2_status;
+    uint8_t r2_send_msg;
 
     float graphValue;
     int tickCounter;

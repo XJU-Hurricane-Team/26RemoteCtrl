@@ -70,6 +70,7 @@ typedef struct __packed {
     float right_pos;   /*!< 右侧抬升高度 */
     bool left_adsorbed;  /*!< 左侧是否吸住 */
     bool right_adsorbed; /*!< 右侧是否吸住 */
+    uint8_t r1_send_msg; /*!< R1发送的消息 */
 } r1_data_t;
 
 /**
@@ -79,6 +80,7 @@ typedef struct __packed {
     int16_t x_speed; /*!< x 方向速度 */
     int16_t y_speed; /*!< y 方向速度 */
     int16_t angle;   /*!< yaw 大小 */
+    uint8_t r2_send_msg; /*!< R2发送的消息 */
 
     /*!< R2 状态
      * bit[7:0] 保留, 后续按协议扩展

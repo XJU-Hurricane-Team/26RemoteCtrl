@@ -23,6 +23,7 @@
   CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
   CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
   CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
+  CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_iwdg.h \
   CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
   CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
   CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
@@ -31,10 +32,12 @@
   CubeMX\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   CubeMX\Core\Inc\dma.h CubeMX\Core\Inc\dma2d.h CubeMX\Core\Inc\gpio.h \
   CubeMX\Core\Inc\RTE_Components.h CubeMX\Core\Inc\spi.h \
-  CubeMX\Core\Inc\stm32f4xx_it.h CubeMX\Core\Inc\tim.h \
-  CubeMX\Core\Inc\usart.h User\Bsp\.\core_delay\core_delay.h \
-  User\Bsp\.\usart_ex\usart_ex.h User\Bsp\.\ads868x\ads868x.h \
-  User\Bsp\.\st77xx_gfx\st77xx.h User\Bsp\.\msg_protocol\msg_protocol.h \
+  CubeMX\Core\Inc\stm32f4xx_hal_conf.h CubeMX\Core\Inc\stm32f4xx_it.h \
+  CubeMX\Core\Inc\tim.h CubeMX\Core\Inc\usart.h \
+  User\Bsp\.\core_delay\core_delay.h CubeMX\Core\Inc\main.h \
+  User\Bsp\.\usart_ex\usart_ex.h CubeMX\Core\Inc\usart.h \
+  User\Bsp\.\ads868x\ads868x.h User\Bsp\.\st77xx_gfx\st77xx.h \
+  User\Bsp\.\msg_protocol\msg_protocol.h \
   User\Middlewares\FreeRTOS\include\FreeRTOS.h \
   User\Application\Inc\FreeRTOSConfig.h \
   User\Middlewares\FreeRTOS\include\projdefs.h \
@@ -45,6 +48,8 @@
   User\Middlewares\FreeRTOS\include\task.h \
   User\Middlewares\FreeRTOS\include\list.h \
   User\Middlewares\FreeRTOS\include\semphr.h \
+  User\Middlewares\FreeRTOS\include\queue.h \
+  User\Middlewares\FreeRTOS\include\task.h \
   User\Middlewares\FreeRTOS\include\queue.h \
   CubeMX\TouchGFX\App\app_touchgfx.h \
   CubeMX\TouchGFX\gui\include\gui\model\Model.hpp \

@@ -32,9 +32,9 @@ class screenPresenter : public touchgfx::Presenter, public ModelListener {
     virtual void onR1StateChanged(int16_t xSpeed, int16_t ySpeed,
                                   int16_t wSpeed, uint8_t status, float leftPos,
                                   float rightPos, uint8_t leftAdsorbed,
-                                  uint8_t rightAdsorbed);
+                                  uint8_t rightAdsorbed, uint8_t sendMsg);
     virtual void onR2StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle,
-                                  uint8_t status);
+                                  uint8_t status, uint8_t sendMsg);
 
   private:
     screenPresenter();

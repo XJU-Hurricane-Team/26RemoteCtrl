@@ -107,6 +107,10 @@ static void remote_send_task(void *pvParameters) {
         }
 
         mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
+        if (mV <= 33)
+        {
+            BEEP_SWITCH(1);
+        }
 
         /* 控制按键有更高的优先级 */
         remote_send_data.key = (uint8_t)keyboard_value;
@@ -118,6 +122,8 @@ static void remote_send_task(void *pvParameters) {
         message_send_data(MSG_RC_TO_MASTER, MSG_DATA_UINT8,
                           (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
+
+        IWDG_Feed();//看门狗喂狗
 
         ui_msg.type = UI_REMOTE_CTRL;
         ui_msg.seq = ++ui_msg_seq;

@@ -149,6 +149,22 @@ screenViewBase::screenViewBase() :
     L_P.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IDUM));
     container1.add(L_P);
 
+    R1_MSG.setPosition(13, 105, 133, 22);
+    R1_MSG.setColor(touchgfx::Color::getColorFromRGB(255, 178, 221));
+    R1_MSG.setLinespacing(0);
+    Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "%s", touchgfx::TypedText(T_R2_SEND).getText());
+    R1_MSG.setWildcard(R1_MSGBuffer);
+    R1_MSG.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NKFY));
+    container1.add(R1_MSG);
+
+    R2_MSG.setPosition(175, 105, 130, 22);
+    R2_MSG.setColor(touchgfx::Color::getColorFromRGB(255, 178, 221));
+    R2_MSG.setLinespacing(0);
+    Unicode::snprintf(R2_MSGBuffer, R2_MSG_SIZE, "%s", touchgfx::TypedText(T_R2_SEND).getText());
+    R2_MSG.setWildcard(R2_MSGBuffer);
+    R2_MSG.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PGE0));
+    container1.add(R2_MSG);
+
     add(container1);
 
     container2.setPosition(0, 0, 320, 105);

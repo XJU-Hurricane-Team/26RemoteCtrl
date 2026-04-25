@@ -6,8 +6,8 @@ Model::Model()
     : modelListener(nullptr), keyValue(0), voltage(0), rsL_x(0), rsL_y(0),
       rsR_x(0), rsR_y(0), r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
-      r1_right_adsorbed(0), r1_chassis_status(1), r2_x_speed(0), r2_y_speed(0),
-      r2_angle(0), r2_status(0) {}
+      r1_right_adsorbed(0), r1_chassis_status(1), r1_send_msg(0), r2_x_speed(0), r2_y_speed(0),
+      r2_angle(0), r2_status(0), r2_send_msg(0) {}
 
 void Model::tick() {
     /* UI在这里进行数据采集，为了不阻塞UI渲染通过消息队列进行通信 */
@@ -46,6 +46,7 @@ void Model::tick() {
                     r1_left_adsorbed = r1_msg->left_adsorbed;
                     r1_right_adsorbed = r1_msg->right_adsorbed;
                     r1_chassis_status = r1_msg->r1_chassis_status;
+                    r1_send_msg = r1_msg->r1_send_msg;
                     r1_changed = true;
                 } break;
 
@@ -55,6 +56,7 @@ void Model::tick() {
                     r2_y_speed = r2_msg->y_speed;
                     r2_angle = r2_msg->angle;
                     r2_status = r2_msg->r2_status;
+                    r2_send_msg = r2_msg->r2_send_msg;
                     r2_changed = true;
                 } break;
 
@@ -71,12 +73,12 @@ void Model::tick() {
         if (r1_changed) {
             modelListener->onR1StateChanged(
                 r1_x_speed, r1_y_speed, r1_w_speed, r1_chassis_status,
-                r1_left_pos, r1_right_pos, r1_left_adsorbed, r1_right_adsorbed);
+                r1_left_pos, r1_right_pos, r1_left_adsorbed, r1_right_adsorbed, r1_send_msg);
             r1_changed = false;
         }
         if (r2_changed) {
             modelListener->onR2StateChanged(r2_x_speed, r2_y_speed, r2_angle,
-                                            r2_status);
+                                            r2_status, r2_send_msg);
             r2_changed = false;
         }
     }

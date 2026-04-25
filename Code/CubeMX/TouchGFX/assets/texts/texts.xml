@@ -7,6 +7,15 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Screen1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_PGE0" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">R2_send:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="R2_send" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Null</Translation>
+      </Text>
+      <Text Id="__SingleUse_NKFY" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">R1_send:&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_CLN1" Alignment="Left" TypographyId="Typography2">
         <Translation Language="GB">R_A:&lt;value&gt;</Translation>
       </Text>

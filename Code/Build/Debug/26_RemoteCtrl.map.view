@@ -1,6 +1,0 @@
-tool: AC6
-fileName: '26_RemoteCtrl.map'
-elfName: '26_RemoteCtrl.axf'
-compilerName: 'ARMCLANG 6'
-compilerFullName: 'ARMCLANG 6'
-compilerPath: 'E:\IDE\Keil\ARM\ARMCLANG\bin\armclang.exe'

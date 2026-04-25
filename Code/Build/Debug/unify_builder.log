@@ -1,86 +1,289 @@
-[2026-04-02 12:46:48]	[info] incremental build: 8 source files changed
+[2026-04-20 20:56:09]	[info] incremental build: 100 source files changed
 These source files will be recompiled
 ---
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\common\FrontendApplicationBase.cpp': dependence 'd:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\include\gui\screen_screen\screenPresenter.hpp' has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\screen_screen\screenViewBase.cpp': dependence 'd:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\include\gui\screen_screen\screenPresenter.hpp' has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenPresenter.cpp': object (.o) file not exist
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenView.cpp': object (.o) file not exist
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\TouchGFXConfiguration.cpp': dependence 'd:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\include\gui\screen_screen\screenPresenter.hpp' has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\TouchGFXGeneratedHAL.cpp': dependence 'd:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\include\gui\model\Model.hpp' has been changed.
-'d:\Workspace\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': dependence 'd:\Workspace\26RemoteCtrl\Code\User\Application\Inc\includes.h' has been changed.
-'d:\Workspace\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': dependence 'd:\Workspace\26RemoteCtrl\Code\User\Application\Inc\includes.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\crc.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\dma.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\dma2d.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\gpio.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\spi.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\stm32f4xx_hal_msp.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\stm32f4xx_it.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\system_stm32f4xx.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\tim.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\usart.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\CMSIS\Device\ST\STM32F4xx\Source\arm\startup_stm32f429xx.s': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_crc.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma2d.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\App\app_touchgfx.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\ApplicationFontProvider.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\CachedFont.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\CompressedFontCache.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\CompressedUnmappedFontCache.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\FontCache.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_10_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_20_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_40_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanab_15_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanai_15_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanai_20_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanaz_22_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\GeneratedFont.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_10_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_20_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_40_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanab_15_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanai_15_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanai_20_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanaz_22_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_10_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_20_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_40_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanab_15_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanai_15_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanai_20_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanaz_22_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\UnmappedDataFont.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\VectorFontRendererBuffers.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\common\FrontendApplicationBase.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\screen_screen\screenViewBase.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\images\src\BitmapDatabase.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\images\src\SVGDatabase.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\images\src\image_PixPin_2025-11-26_21-33-12.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\images\src\image_ky50_50.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\LanguageGb.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\Texts.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\TypedTextDatabase.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\common\FrontendApplication.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenPresenter.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenView.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\OSWrappers.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\STM32TouchController.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXGPIO.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\STM32DMA.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\TouchGFXConfiguration.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\TouchGFXGeneratedHAL.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\ads868x\ads868x.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\core_delay\core_delay.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\syscalls\syscalls.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\usart_ex\usart_ex.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\croutine.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\event_groups.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\list.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\portable\GCC\ARM_CM4F\port.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\portable\MemMang\heap_4.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\queue.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\stream_buffer.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\tasks.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\timers.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Utils\ring_fifo\ring_fifo.c': object (.o) file not exist
 
-[2026-04-02 12:46:49]	compilation failed at : "d:\Workspace\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c", exit code: 1
+[2026-04-20 20:56:17]	[done]
+	build successfully !
+
+[2026-04-25 18:03:39]	[info] incremental build: 48 source files changed
+These source files will be recompiled
+---
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\crc.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\dma.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\dma2d.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\gpio.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\iwdg.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\spi.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\stm32f4xx_hal_msp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\stm32f4xx_it.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\system_stm32f4xx.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\tim.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\usart.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_crc.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma2d.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenView.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXGPIO.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\STM32DMA.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\TouchGFXConfiguration.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\TouchGFXGeneratedHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\ads868x\ads868x.c': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\core_delay\core_delay.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\syscalls\syscalls.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\usart_ex\usart_ex.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Inc\stm32f4xx_hal_conf.h' has been changed.
+
+[2026-04-25 18:03:44]	[done]
+	build successfully !
+
+[2026-04-25 18:12:27]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': source file has been changed.
+
+[2026-04-25 18:12:28]	[done]
+	build successfully !
+
+[2026-04-25 21:38:10]	[info] incremental build: 8 source files changed
+These source files will be recompiled
+---
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': source file has been changed.
+
+[2026-04-25 21:38:10]	compilation failed at : "c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c", exit code: 1
 command: 
-  "E:\IDE\Keil\ARM\ARMCLANG\bin\armclang.exe" --target=arm-arm-none-eabi -c -xc -std=c11 -I. -ICubeMX/Drivers/STM32F4xx_HAL_Driver/Inc -ICubeMX/Drivers/CMSIS/Device/ST/STM32F4xx/Include -IUser/Bsp -IUser/Application/Inc -IUser/Utils -IUser/Middlewares/FreeRTOS/include -IUser/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F -ICubeMX/Core/Inc -ICubeMX/Drivers/CMSIS/Include -ICubeMX/TouchGFX/App -ICubeMX/TouchGFX/gui/include -ICubeMX/TouchGFX/target -ICubeMX/TouchGFX/target/generated -ICubeMX/TouchGFX/generated/images/include -ICubeMX/TouchGFX/generated/texts/include -ICubeMX/TouchGFX/generated/fonts/include -ICubeMX/TouchGFX/generated/videos/include -ICubeMX/TouchGFX/generated/gui_generated/include -ICubeMX/Middlewares/ST/touchgfx/framework/include -D"USE_HAL_DRIVER" -D"DEBUG" -D"STM32F429xx" -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mcpu=cortex-m4 -mlittle-endian -O0 -ffunction-sections -funsigned-char -fno-rtti -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-padded -Wno-unsafe-buffer-usage -Wno-reserved-identifier -Wno-missing-noreturn -Wno-covered-switch-default -Wno-switch-enum -Wno-missing-prototypes -Wno-newline-eof -Wno-gnu-pointer-arith -Wno-declaration-after-statement -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-double-promotion -Wno-missing-field-initializers -Wno-self-assign -Wno-extra-semi-stmt -Wno-missing-variable-declarations -Wno-cast-align -Wno-implicit-float-conversion -Wno-missing-braces -Wno-cast-qual -Wno-format-nonliteral -Wno-gnu-binary-literal -g -o ./Build/Debug/.obj/User/Application/Src/rtos_tasks.o -MMD ./User/Application/Src/rtos_tasks.c
+  "E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\armclang.exe" --target=arm-arm-none-eabi -c -xc -std=c11 -I. -ICubeMX/Drivers/STM32F4xx_HAL_Driver/Inc -ICubeMX/Drivers/CMSIS/Device/ST/STM32F4xx/Include -IUser/Bsp -IUser/Application/Inc -IUser/Utils -IUser/Middlewares/FreeRTOS/include -IUser/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F -ICubeMX/Core/Inc -ICubeMX/Drivers/CMSIS/Include -ICubeMX/TouchGFX/App -ICubeMX/TouchGFX/gui/include -ICubeMX/TouchGFX/target -ICubeMX/TouchGFX/target/generated -ICubeMX/TouchGFX/generated/images/include -ICubeMX/TouchGFX/generated/texts/include -ICubeMX/TouchGFX/generated/fonts/include -ICubeMX/TouchGFX/generated/videos/include -ICubeMX/TouchGFX/generated/gui_generated/include -ICubeMX/Middlewares/ST/touchgfx/framework/include -D"USE_HAL_DRIVER" -D"DEBUG" -D"STM32F429xx" -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mcpu=cortex-m4 -mlittle-endian -O0 -ffunction-sections -funsigned-char -fno-rtti -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-padded -Wno-unsafe-buffer-usage -Wno-reserved-identifier -Wno-missing-noreturn -Wno-covered-switch-default -Wno-switch-enum -Wno-missing-prototypes -Wno-newline-eof -Wno-gnu-pointer-arith -Wno-declaration-after-statement -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-double-promotion -Wno-missing-field-initializers -Wno-self-assign -Wno-extra-semi-stmt -Wno-missing-variable-declarations -Wno-cast-align -Wno-implicit-float-conversion -Wno-missing-braces -Wno-cast-qual -Wno-format-nonliteral -Wno-gnu-binary-literal -g -o ./Build/Debug/.obj/User/Application/Src/rc_msg_process.o -MMD ./User/Application/Src/rc_msg_process.c
    at unify_builder.Program.compileByMulThread(Int32 thrNum, CmdInfo[] cmds_, List`1 errLogs)
    at unify_builder.Program.Main(String[] args_)
 ---
-In file included from ./User/Application/Src/rc_msg_process.c:9:
-User/Application/Inc\includes.h:69:5: warning: 'bool' is a keyword in C23 [-Wc23-compat]
-   69 |     bool left_adsorbed;  /*!< ×ó²àÊÇ·ñÎü×¡ */
-      |     ^
-User/Application/Inc\includes.h:69:5: error: unknown type name 'bool'
-User/Application/Inc\includes.h:70:5: error: unknown type name 'bool'
-   70 |     bool right_adsorbed; /*!< ÓÒ²àÊÇ·ñÎü×¡ */
-      |     ^
-1 warning and 2 errors generated.
-In file included from ./User/Application/Src/rtos_tasks.c:9:
-User/Application/Inc\includes.h:69:5: warning: 'bool' is a keyword in C23 [-Wc23-compat]
-   69 |     bool left_adsorbed;  /*!< ×ó²àÊÇ·ñÎü×¡ */
-      |     ^
-User/Application/Inc\includes.h:69:5: error: unknown type name 'bool'
-User/Application/Inc\includes.h:70:5: error: unknown type name 'bool'
-   70 |     bool right_adsorbed; /*!< ÓÒ²àÊÇ·ñÎü×¡ */
-      |     ^
-1 warning and 2 errors generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+./User/Application/Src/rc_msg_process.c:142:9: warning: implicit declaration of function 'IWDG_Feed' is invalid in C99 [-Wimplicit-function-declaration]
+        IWDG_Feed();//¿´ÃÅ¹·Î¹¹·
+        ^
+./User/Application/Src/rc_msg_process.c:250:33: error: use of undeclared identifier 'MSG_DATA_UINT8'
+    if ((msg_id_type & 0x0F) != MSG_DATA_UINT8) {
+                                ^
+4 warnings and 1 error generated.
 
-[2026-04-02 12:47:16]	[info] incremental build: 4 source files changed
+[2026-04-25 21:39:01]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'd:\Workspace\26RemoteCtrl\Code\User\Application\Inc\includes.h' has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'd:\Workspace\26RemoteCtrl\Code\User\Application\Inc\includes.h' has been changed.
-'d:\Workspace\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': object (.o) file not exist
-'d:\Workspace\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': object (.o) file not exist
 
-[2026-04-02 12:47:18]	[done]
+[2026-04-25 21:39:02]	[done]
 	build successfully !
 
-[2026-04-02 12:48:00]	[info] incremental build: 2 source files changed
+[2026-04-25 21:39:45]	[info] incremental build: 8 source files changed
 These source files will be recompiled
 ---
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\LanguageGb.cpp': source file has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\Texts.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
 
-[2026-04-02 12:48:02]	[done]
+[2026-04-25 21:39:46]	[done]
 	build successfully !
 
-[2026-04-02 12:53:34]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenView.cpp': source file has been changed.
-
-[2026-04-02 12:53:35]	[done]
+[2026-04-25 21:49:05]	[done]
 	build successfully !
 
-[2026-04-02 13:09:47]	[info] incremental build: 2 source files changed
+[2026-04-25 21:50:03]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': source file has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenView.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': source file has been changed.
 
-[2026-04-02 13:09:48]	[done]
+[2026-04-25 21:50:04]	compilation failed at : "c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c", exit code: 1
+command: 
+  "E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\armclang.exe" --target=arm-arm-none-eabi -c -xc -std=c11 -I. -ICubeMX/Drivers/STM32F4xx_HAL_Driver/Inc -ICubeMX/Drivers/CMSIS/Device/ST/STM32F4xx/Include -IUser/Bsp -IUser/Application/Inc -IUser/Utils -IUser/Middlewares/FreeRTOS/include -IUser/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F -ICubeMX/Core/Inc -ICubeMX/Drivers/CMSIS/Include -ICubeMX/TouchGFX/App -ICubeMX/TouchGFX/gui/include -ICubeMX/TouchGFX/target -ICubeMX/TouchGFX/target/generated -ICubeMX/TouchGFX/generated/images/include -ICubeMX/TouchGFX/generated/texts/include -ICubeMX/TouchGFX/generated/fonts/include -ICubeMX/TouchGFX/generated/videos/include -ICubeMX/TouchGFX/generated/gui_generated/include -ICubeMX/Middlewares/ST/touchgfx/framework/include -D"USE_HAL_DRIVER" -D"DEBUG" -D"STM32F429xx" -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mcpu=cortex-m4 -mlittle-endian -O0 -ffunction-sections -funsigned-char -fno-rtti -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-padded -Wno-unsafe-buffer-usage -Wno-reserved-identifier -Wno-missing-noreturn -Wno-covered-switch-default -Wno-switch-enum -Wno-missing-prototypes -Wno-newline-eof -Wno-gnu-pointer-arith -Wno-declaration-after-statement -Wno-sign-conversion -Wno-implicit-int-conversion -Wno-double-promotion -Wno-missing-field-initializers -Wno-self-assign -Wno-extra-semi-stmt -Wno-missing-variable-declarations -Wno-cast-align -Wno-implicit-float-conversion -Wno-missing-braces -Wno-cast-qual -Wno-format-nonliteral -Wno-gnu-binary-literal -g -o ./Build/Debug/.obj/User/Application/Src/rc_msg_process.o -MMD ./User/Application/Src/rc_msg_process.c
+   at unify_builder.Program.Main(String[] args_)
+---
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+./User/Application/Src/rc_msg_process.c:122:45: error: use of undeclared identifier 'MSG_DATA_UINT8'
+        message_send_data(MSG_RC_TO_MASTER, MSG_DATA_UINT8,
+                                            ^
+./User/Application/Src/rc_msg_process.c:126:9: warning: implicit declaration of function 'IWDG_Feed' is invalid in C99 [-Wimplicit-function-declaration]
+        IWDG_Feed();//¿´ÃÅ¹·Î¹¹·
+        ^
+./User/Application/Src/rc_msg_process.c:234:33: error: use of undeclared identifier 'MSG_DATA_UINT8'
+    if ((msg_id_type & 0x0F) != MSG_DATA_UINT8) {
+                                ^
+4 warnings and 2 errors generated.
+
+[2026-04-25 21:50:22]	[info] incremental build: 8 source files changed
+These source files will be recompiled
+---
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+
+[2026-04-25 21:50:24]	[done]
 	build successfully !
 
-[2026-04-02 13:15:58]	[info] incremental build: 5 source files changed
+[2026-04-25 23:41:30]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanab_15_4bpp_0.cpp': source file has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanai_15_4bpp_0.cpp': source file has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanab_15_4bpp.cpp': source file has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanai_15_4bpp.cpp': source file has been changed.
-'d:\Workspace\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\screen_screen\screenView.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\ads868x\ads868x.c': source file has been changed.
 
-[2026-04-02 13:16:00]	[done]
+[2026-04-25 23:41:31]	[done]
+	build successfully !
+
+[2026-04-25 23:45:36]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\ads868x\ads868x.c': source file has been changed.
+
+[2026-04-25 23:45:36]	[done]
+	build successfully !
+
+[2026-04-25 23:51:45]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\ads868x\ads868x.c': source file has been changed.
+
+[2026-04-25 23:51:46]	[done]
 	build successfully !
 

@@ -1,4 +1,0 @@
-arm-none-eabi-objcopy --update-section ER_IROM1="C:\Users\27471\AppData\Local\Temp\26RemoteCtrl_9GWTNb2Z.bin"  "c:\Users\27471\Desktop\26RemoteCtrl\Build\Debug/26RemoteCtrl.axf" "c:\Users\27471\Desktop\26RemoteCtrl\Build\Debug/26RemoteCtrl.elf"
-
-arm-none-eabi-objcopy: c:\Users\27471\Desktop\26RemoteCtrl\Build\Debug/26RemoteCtrl.elf: warning: allocated section `RW_IRAM1' not in segment
-

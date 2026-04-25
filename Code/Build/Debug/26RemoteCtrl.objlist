@@ -2,6 +2,7 @@
 ./Build/Debug/.obj/CubeMX/Core/Src/dma.o
 ./Build/Debug/.obj/CubeMX/Core/Src/dma2d.o
 ./Build/Debug/.obj/CubeMX/Core/Src/gpio.o
+./Build/Debug/.obj/CubeMX/Core/Src/iwdg.o
 ./Build/Debug/.obj/CubeMX/Core/Src/main.o
 ./Build/Debug/.obj/CubeMX/Core/Src/spi.o
 ./Build/Debug/.obj/CubeMX/Core/Src/stm32f4xx_hal_msp.o
@@ -21,6 +22,7 @@
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
 ./Build/Debug/.obj/CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o

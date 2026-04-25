@@ -26,8 +26,8 @@ screenView::screenView()
     : keyState(0), voltage(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
       r1_x_speed(0), r1_y_speed(0), r1_w_speed(0), r1_status(1),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
-      r1_right_adsorbed(0), r2_x_speed(0), r2_y_speed(0), r2_angle(0),
-      r2_status(0), graphValue(0.0f), tickCounter(0), digitalHours(0),
+      r1_right_adsorbed(0), r1_send_msg(0), r2_x_speed(0), r2_y_speed(0), r2_angle(0),
+      r2_status(0), r2_send_msg(0), graphValue(0.0f), tickCounter(0), digitalHours(0),
       digitalMinutes(0), digitalSeconds(0) {}
 
 void screenView::setupScreen() {
@@ -75,6 +75,7 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(R1V_xBuffer, R1V_X_SIZE, "%d", r1_x_speed);
     touchgfx::Unicode::snprintf(R1V_yBuffer, R1V_Y_SIZE, "%d", r1_y_speed);
     touchgfx::Unicode::snprintf(R1YawBuffer, R1YAW_SIZE, "%d", r1_w_speed);
+    touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "%d", r1_send_msg);
     touchgfx::Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%u",
                                 static_cast<unsigned int>(r1_status));
     formatFixed2(L_PBuffer, L_P_SIZE, r1_left_pos);
@@ -87,6 +88,7 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(R2V_xBuffer, R2V_X_SIZE, "%d", r2_x_speed);
     touchgfx::Unicode::snprintf(R2V_yBuffer, R2V_Y_SIZE, "%d", r2_y_speed);
     touchgfx::Unicode::snprintf(R2YawBuffer, R2YAW_SIZE, "%d", r2_angle);
+    touchgfx::Unicode::snprintf(R2_MSGBuffer, R2_MSG_SIZE, "%d", r2_send_msg);
     touchgfx::Unicode::snprintf(R2StateBuffer, R2STATE_SIZE, "%u",
                                 static_cast<unsigned int>(r2_status));
 

@@ -61,6 +61,8 @@ protected:
     touchgfx::TextAreaWithOneWildcard R1State;
     touchgfx::TextAreaWithOneWildcard R2V_x;
     touchgfx::TextAreaWithOneWildcard L_P;
+    touchgfx::TextAreaWithOneWildcard R1_MSG;
+    touchgfx::TextAreaWithOneWildcard R2_MSG;
     touchgfx::Container container2;
     touchgfx::TextAreaWithOneWildcard Battery;
     touchgfx::TextAreaWithOneWildcard KeyNum;
@@ -97,6 +99,10 @@ protected:
     touchgfx::Unicode::UnicodeChar R2V_xBuffer[R2V_X_SIZE];
     static const uint16_t L_P_SIZE = 10;
     touchgfx::Unicode::UnicodeChar L_PBuffer[L_P_SIZE];
+    static const uint16_t R1_MSG_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar R1_MSGBuffer[R1_MSG_SIZE];
+    static const uint16_t R2_MSG_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar R2_MSGBuffer[R2_MSG_SIZE];
     static const uint16_t BATTERY_SIZE = 10;
     touchgfx::Unicode::UnicodeChar BatteryBuffer[BATTERY_SIZE];
     static const uint16_t KEYNUM_SIZE = 15;

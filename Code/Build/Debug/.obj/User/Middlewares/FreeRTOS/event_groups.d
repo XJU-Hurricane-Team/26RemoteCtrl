@@ -10,4 +10,6 @@
   User\Middlewares\FreeRTOS\include\task.h \
   User\Middlewares\FreeRTOS\include\list.h \
   User\Middlewares\FreeRTOS\include\timers.h \
-  User\Middlewares\FreeRTOS\include\event_groups.h
+  User\Middlewares\FreeRTOS\include\task.h \
+  User\Middlewares\FreeRTOS\include\event_groups.h \
+  User\Middlewares\FreeRTOS\include\timers.h

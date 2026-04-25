@@ -2,12 +2,12 @@
     "name": "26RemoteCtrl",
     "target": "Debug",
     "toolchain": "AC6",
-    "toolchainLocation": "E:\\IDE\\Keil\\ARM\\ARMCLANG",
-    "toolchainCfgFile": "c:\\Users\\27471\\.vscode\\extensions\\cl.eide-3.26.6\\res\\data\\models/arm.v6.model.json",
+    "toolchainLocation": "E:\\APP_data\\Keil\\Keil_v5\\ARM\\ARMCLANG",
+    "toolchainCfgFile": "c:\\Users\\78680\\.vscode\\extensions\\cl.eide-3.26.7\\res\\data\\models/arm.v6.model.json",
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
-    "threadNum": 16,
-    "rootDir": "d:\\Workspace\\26RemoteCtrl\\Code",
+    "threadNum": 24,
+    "rootDir": "c:\\Users\\78680\\Desktop\\2026R1\\26RemoteCtrl2.0\\26RemoteCtrl\\Code",
     "dumpPath": "Build\\Debug",
     "outDir": "Build\\Debug",
     "ram": 262144,
@@ -45,6 +45,7 @@
         "CubeMX/Core/Src/dma.c",
         "CubeMX/Core/Src/dma2d.c",
         "CubeMX/Core/Src/gpio.c",
+        "CubeMX/Core/Src/iwdg.c",
         "CubeMX/Core/Src/main.c",
         "CubeMX/Core/Src/spi.c",
         "CubeMX/Core/Src/stm32f4xx_hal_msp.c",
@@ -64,6 +65,7 @@
         "CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
         "CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
         "CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+        "CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c",
         "CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
         "CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
         "CubeMX/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
@@ -175,20 +177,20 @@
             "misc-controls": "--diag_suppress=L6329",
             "output-format": "elf",
             "link-scatter": [
-                "d:/Workspace/26RemoteCtrl/Code/Build/Debug/26RemoteCtrl.sct"
+                "c:/Users/78680/Desktop/2026R1/26RemoteCtrl2.0/26RemoteCtrl/Code/Build/Debug/26RemoteCtrl.sct"
             ]
         }
     },
     "env": {
-        "workspaceFolder": "d:\\Workspace\\26RemoteCtrl\\Code",
+        "workspaceFolder": "c:\\Users\\78680\\Desktop\\2026R1\\26RemoteCtrl2.0\\26RemoteCtrl\\Code",
         "workspaceFolderBasename": "Code",
-        "OutDir": "d:\\Workspace\\26RemoteCtrl\\Code\\Build\\Debug",
+        "OutDir": "c:\\Users\\78680\\Desktop\\2026R1\\26RemoteCtrl2.0\\26RemoteCtrl\\Code\\Build\\Debug",
         "OutDirRoot": "Build",
         "OutDirBase": "Build\\Debug",
         "ProjectName": "26RemoteCtrl",
         "ConfigName": "Debug",
-        "ProjectRoot": "d:\\Workspace\\26RemoteCtrl\\Code",
-        "ExecutableName": "d:\\Workspace\\26RemoteCtrl\\Code\\Build\\Debug\\26RemoteCtrl",
+        "ProjectRoot": "c:\\Users\\78680\\Desktop\\2026R1\\26RemoteCtrl2.0\\26RemoteCtrl\\Code",
+        "ExecutableName": "c:\\Users\\78680\\Desktop\\2026R1\\26RemoteCtrl2.0\\26RemoteCtrl\\Code\\Build\\Debug\\26RemoteCtrl",
         "ChipPackDir": ".pack/Keil/STM32F4xx_DFP.2.14.0",
         "ChipName": "STM32F429IGTx",
         "SYS_Platform": "win32",
@@ -197,11 +199,11 @@
         "SYS_PathSep": ";",
         "SYS_PathSeparator": ";",
         "SYS_EOL": "\r\n",
-        "EIDE_BUILDER_DIR": "c:\\Users\\27471\\.vscode\\extensions\\cl.eide-3.26.6\\res\\tools\\win32\\unify_builder",
+        "EIDE_BUILDER_DIR": "c:\\Users\\78680\\.vscode\\extensions\\cl.eide-3.26.7\\res\\tools\\win32\\unify_builder",
         "EIDE_BINARIES_VER": "12.1.1",
-        "EIDE_MSYS": "C:\\Users\\27471\\.eide\\bin\\builder\\msys\\bin",
-        "EIDE_PY3_CMD": "C:\\Users\\27471\\.eide\\bin\\python36\\python3.exe",
-        "ToolchainRoot": "E:\\IDE\\Keil\\ARM\\ARMCLANG"
+        "EIDE_MSYS": "C:\\Users\\78680\\.eide\\bin\\builder\\msys\\bin",
+        "EIDE_PY3_CMD": "C:\\Users\\78680\\.eide\\bin\\python36\\python3.exe",
+        "ToolchainRoot": "E:\\APP_data\\Keil\\Keil_v5\\ARM\\ARMCLANG"
     },
     "sysPaths": []
 }

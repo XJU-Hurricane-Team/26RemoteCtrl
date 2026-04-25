@@ -17,8 +17,8 @@ public:
     virtual void onKeyValueChanged(int8_t) {}
     virtual void onVoltageChanged(int8_t) {}
     virtual void onJoystickChanged(int8_t, int8_t, int8_t, int8_t) {}
-    virtual void onR1StateChanged(int16_t, int16_t, int16_t, uint8_t, float, float, uint8_t, uint8_t) {}
-    virtual void onR2StateChanged(int16_t, int16_t, int16_t, uint8_t) {}
+    virtual void onR1StateChanged(int16_t, int16_t, int16_t, uint8_t, float, float, uint8_t, uint8_t, uint8_t) {}
+    virtual void onR2StateChanged(int16_t, int16_t, int16_t, uint8_t, uint8_t) {}
 protected:
     Model* model;
 };

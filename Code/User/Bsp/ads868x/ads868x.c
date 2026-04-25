@@ -84,7 +84,7 @@ void rs_get_value(uint32_t *data, uint8_t dead_zone, uint8_t data_level)
             rs_data_limit(g_My_AD[2], dead_zone, data_level);
         data[3] +=
             rs_data_limit(g_My_AD[3], dead_zone, data_level);
-        data[4] += get_real_data(g_My_AD[4], 0);
+        data[4] += get_real_data(g_My_AD[4], 1);
 
     }
 
@@ -322,16 +322,16 @@ void ads868x_Mult_ch_Init(uint8_t range)
 /**
  * @brief 获取手动扫描模式各通道的AD转换数据
  *        单极性t = 1 双极性t = 0
- * @param 真实电压(mV) = (原始值 - 零点偏移) × 满量程电压(V) / ADC分辨率 × 1000(V→mV)
+ * @param 真实电压(mV) = 值与ADC分辨率之比 × 满量程电压(V)(V→mV)
  */
 double get_real_data(uint16_t data, uint8_t t)
 {
     double real_data;
     if (!t)
     {
-        real_data = (double)data * 51.2 / 65535;
+        real_data = (((double)data - 21000)* 102.4 / (double)65535);
     }else{
-        real_data = (int16_t)(((double)data * 10 / (double)65535) * 1000);
+        real_data = (double)data * 51.2 / 65535;
     }
     return real_data;
 }
