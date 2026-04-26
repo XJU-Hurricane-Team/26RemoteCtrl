@@ -11,6 +11,7 @@ class screenView : public screenViewBase {
     virtual void setupScreen();
     virtual void tearDownScreen();
     virtual void handleTickEvent();
+    virtual void handleKeyEvent(uint8_t key);
     virtual void InfoUpdate1();
     int8_t keyState;
     int8_t voltage;

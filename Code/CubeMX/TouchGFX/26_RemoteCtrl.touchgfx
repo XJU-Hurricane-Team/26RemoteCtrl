@@ -10,7 +10,7 @@
             "Name": "scalableImage1",
             "Width": 320,
             "Height": 240,
-            "Filename": "PixPin_2025-11-26_21-33-12.png",
+            "Filename": "__generated\\alternate_theme_images_backgrounds_320x240_spotlights.png",
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
@@ -510,6 +510,370 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "InfoUpdate1"
+            }
+          },
+          {
+            "InteractionName": "changescreen2",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 21
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "runpoint"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "runpoint",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Filename": "__generated\\alternate_theme_images_backgrounds_320x240_spotlights.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "X": 96,
+            "Y": 58,
+            "Width": 129,
+            "Height": 152,
+            "Components": [
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box1",
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box2",
+                "X": 43,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box3",
+                "X": 86,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box4",
+                "X": 86,
+                "Y": 36,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box5",
+                "X": 86,
+                "Y": 76,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box6",
+                "X": 86,
+                "Y": 112,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box7",
+                "X": 43,
+                "Y": 112,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box8",
+                "Y": 112,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box9",
+                "Y": 76,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box10",
+                "Y": 36,
+                "Width": 43,
+                "Height": 40,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 6,
+                "Y": 6,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_FH0H",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea2",
+                "X": 49,
+                "Y": 6,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_UIJ7",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3",
+                "X": 92,
+                "Y": 6,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_1P3Y",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea4",
+                "X": 92,
+                "Y": 42,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_2Y8H",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea5",
+                "X": 92,
+                "Y": 82,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_DWYE",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea6",
+                "X": 92,
+                "Y": 118,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_JCS1",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea7",
+                "X": 49,
+                "Y": 118,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_76DJ",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea8",
+                "X": 6,
+                "Y": 118,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_8JUQ",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea9",
+                "X": 6,
+                "Y": 82,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_A4OQ",
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea10",
+                "X": 6,
+                "Y": 42,
+                "Width": 31,
+                "Height": 28,
+                "TextId": "__SingleUse_KWOC",
+                "TextRotation": "0"
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "keynum",
+            "X": 109,
+            "Y": 28,
+            "Width": 102,
+            "Height": 30,
+            "TextId": "__SingleUse_89X0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 152,
+              "Blue": 97
+            },
+            "Wildcard1": {
+              "TextId": "key_num",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "changescreen1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 24
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "screen"
+            }
+          },
+          {
+            "InteractionName": "UPdate2",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 3
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "update2"
             }
           }
         ]

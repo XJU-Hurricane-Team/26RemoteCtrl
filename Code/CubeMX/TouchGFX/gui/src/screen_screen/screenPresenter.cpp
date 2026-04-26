@@ -19,6 +19,7 @@ void screenPresenter::deactivate()
 
 void screenPresenter::onKeyValueChanged(int8_t key){
     view.keyState = key;
+    view.handleKeyEvent(key);
 }
 
 void screenPresenter::onVoltageChanged(int8_t voltage){

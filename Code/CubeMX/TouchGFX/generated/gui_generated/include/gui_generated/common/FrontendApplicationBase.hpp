@@ -23,6 +23,9 @@ public:
     // screen
     void gotoscreenScreenNoTransition();
 
+    // runpoint
+    void gotorunpointScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -30,6 +33,9 @@ protected:
 
     // screen
     void gotoscreenScreenNoTransitionImpl();
+
+    // runpoint
+    void gotorunpointScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

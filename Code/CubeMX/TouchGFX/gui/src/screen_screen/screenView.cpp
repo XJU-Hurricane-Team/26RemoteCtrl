@@ -58,6 +58,10 @@ void screenView::handleTickEvent() {
     RunningTime.setTime24Hour(digitalHours, digitalMinutes, digitalSeconds);
 }
 
+void screenView::handleKeyEvent(uint8_t key){
+    screenViewBase::handleKeyEvent(key);
+}
+
 /**
  * @brief Updates the information displayed on the screen
  * 

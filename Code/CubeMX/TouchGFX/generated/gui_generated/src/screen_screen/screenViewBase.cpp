@@ -16,7 +16,7 @@ screenViewBase::screenViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_PIXPIN_2025_11_26_21_33_12_ID));
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_320X240_SPOTLIGHTS_ID));
     scalableImage1.setPosition(0, 0, 320, 240);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(scalableImage1);
@@ -246,5 +246,17 @@ void screenViewBase::handleTickEvent()
         //Call InfoUpdate1
         InfoUpdate1();
         frameCountInfoUpdate1Interval = 0;
+    }
+}
+
+void screenViewBase::handleKeyEvent(uint8_t key)
+{
+    if(21 == key)
+    {
+        //changescreen2
+        //When hardware button 21 clicked change screen to runpoint
+        //Go to runpoint with no screen transition
+        application().gotorunpointScreenNoTransition();
+    
     }
 }

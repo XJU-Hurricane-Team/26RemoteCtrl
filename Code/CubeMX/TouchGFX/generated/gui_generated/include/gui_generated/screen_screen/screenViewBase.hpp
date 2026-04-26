@@ -23,6 +23,7 @@ public:
     virtual ~screenViewBase();
     virtual void setupScreen();
     virtual void handleTickEvent();
+    virtual void handleKeyEvent(uint8_t key);
 
     /*
      * Virtual Action Handlers

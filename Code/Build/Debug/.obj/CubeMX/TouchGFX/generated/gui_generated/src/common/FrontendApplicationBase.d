@@ -75,4 +75,8 @@
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\canvas\AbstractPainterRGB565.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\containers\clock\DigitalClock.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\containers\clock\AbstractClock.hpp \
+  CubeMX\TouchGFX\gui\include\gui\runpoint_screen\runpointView.hpp \
+  CubeMX\TouchGFX\generated\gui_generated\include\gui_generated\runpoint_screen\runpointViewBase.hpp \
+  CubeMX\TouchGFX\gui\include\gui\runpoint_screen\runpointPresenter.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp \
   CubeMX\TouchGFX\generated\texts\include\texts\TextKeysAndLanguages.hpp

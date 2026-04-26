@@ -10,6 +10,8 @@
 #include <touchgfx/hal/HAL.hpp>
 #include <gui/screen_screen/screenView.hpp>
 #include <gui/screen_screen/screenPresenter.hpp>
+#include <gui/runpoint_screen/runpointView.hpp>
+#include <gui/runpoint_screen/runpointPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -38,4 +40,17 @@ void FrontendApplicationBase::gotoscreenScreenNoTransition()
 void FrontendApplicationBase::gotoscreenScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<screenView, screenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// runpoint
+
+void FrontendApplicationBase::gotorunpointScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotorunpointScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotorunpointScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<runpointView, runpointPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

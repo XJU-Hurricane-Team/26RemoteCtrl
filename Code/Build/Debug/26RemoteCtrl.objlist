@@ -62,9 +62,11 @@
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/UnmappedDataFont.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/VectorFontRendererBuffers.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.o
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/runpoint_screen/runpointViewBase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/screen_screen/screenViewBase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/images/src/BitmapDatabase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/images/src/SVGDatabase.o
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_backgrounds_320x240_spotlights.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/images/src/image_PixPin_2025-11-26_21-33-12.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/images/src/image_ky50_50.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/texts/src/LanguageGb.o
@@ -72,6 +74,8 @@
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/texts/src/TypedTextDatabase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/common/FrontendApplication.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/model/Model.o
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/runpoint_screen/runpointPresenter.o
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/screen_screen/screenPresenter.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/screen_screen/screenView.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/target/OSWrappers.o

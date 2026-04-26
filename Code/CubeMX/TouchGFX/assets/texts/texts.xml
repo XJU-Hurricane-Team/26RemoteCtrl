@@ -7,6 +7,42 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Screen1" />
     <TextGroup Id="Unsorted">
+      <Text Id="key_num" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_89X0" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">key:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KWOC" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_A4OQ" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">7</Translation>
+      </Text>
+      <Text Id="__SingleUse_8JUQ" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">8</Translation>
+      </Text>
+      <Text Id="__SingleUse_76DJ" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">12</Translation>
+      </Text>
+      <Text Id="__SingleUse_JCS1" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">16</Translation>
+      </Text>
+      <Text Id="__SingleUse_DWYE" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">15</Translation>
+      </Text>
+      <Text Id="__SingleUse_2Y8H" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">14</Translation>
+      </Text>
+      <Text Id="__SingleUse_1P3Y" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">13</Translation>
+      </Text>
+      <Text Id="__SingleUse_UIJ7" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_FH0H" Alignment="Center" TypographyId="Typography3">
+        <Translation Language="GB">5</Translation>
+      </Text>
       <Text Id="__SingleUse_PGE0" Alignment="Left" TypographyId="Typography2">
         <Translation Language="GB">R2_send:&lt;value&gt;</Translation>
       </Text>
@@ -121,12 +157,12 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography1" Font="verdanai.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Info" Font="verdanab.ttf" Size="15" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="-+!*()key." WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Typography2" Font="verdanai.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-+!*()key." WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9,a-z,A-Z" />
-    <Typography Id="Typography3" Font="verdanaz.ttf" Size="22" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography3" Font="verdanaz.ttf" Size="22" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
   </Typographies>
 </TextDatabase>

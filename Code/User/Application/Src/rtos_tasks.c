@@ -42,7 +42,7 @@ void start_task(void *pvParameters) {
     taskENTER_CRITICAL();
     
     Play_Music();
-
+                                          
     ret = xTaskCreate(task1, "task1", 128, NULL, 2, &task1_handle);
     if (ret != pdPASS) {
         taskEXIT_CRITICAL();

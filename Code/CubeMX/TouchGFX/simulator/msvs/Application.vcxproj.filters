@@ -184,6 +184,18 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>6222592F-BAE8-D3AD-C833-CF899F999CB6</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\runpoint_screen">
+      <UniqueIdentifier>C0BF25D9-0734-5412-86DB-120A759516F2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\runpoint_screen">
+      <UniqueIdentifier>B778A5AD-49FC-0C91-7F13-41DE0F5AADDD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\runpoint_screen">
+      <UniqueIdentifier>B63C0DF8-BA3F-1CAA-E0B3-4CBAC8AEAE1A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\runpoint_screen">
+      <UniqueIdentifier>B48B6630-9B80-B46B-764B-72A902AAB253</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -224,6 +236,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\runpoint_screen\runpointPresenter.cpp">
+      <Filter>Source Files\gui\runpoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\runpoint_screen\runpointView.cpp">
+      <Filter>Source Files\gui\runpoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\runpoint_screen\runpointViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\runpoint_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -675,6 +696,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\runpoint_screen\runpointPresenter.hpp">
+      <Filter>Header Files\gui\runpoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\runpoint_screen\runpointView.hpp">
+      <Filter>Header Files\gui\runpoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\runpoint_screen\runpointViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\runpoint_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
