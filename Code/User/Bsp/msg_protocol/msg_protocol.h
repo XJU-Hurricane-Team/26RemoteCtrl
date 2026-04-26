@@ -76,20 +76,8 @@ typedef enum {
  * @brief 数据类型
  */
 typedef enum {
-    MSG_DATA_UINT8 = 0x00U,
-    MSG_DATA_INT8,
-    MSG_DATA_UINT16,
-    MSG_DATA_INT16,
-    MSG_DATA_INT32,
-    MSG_DATA_UINT32,
-    MSG_DATA_INT64,
-    MSG_DATA_UINT64,
-    MSG_DATA_FP32,
-    MSG_DATA_FP64,
-    MSG_DATA_STRING,
-    MSG_DATA_CUSTOM, /*!< 自定义数据类型 */
-    /*!< 可以在下面加自定义的数据类型 */
-
+    CHANGE_TO_NORMAL_MODE = 0x00U, /*!< 切换到普通模式 */
+    CHANGE_TO_RUNPOINT_MODE,           /*!< 切换到跑点模式 */
 } msg_type_t;
 
 /**

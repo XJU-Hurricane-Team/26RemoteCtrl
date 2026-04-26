@@ -91,14 +91,6 @@ typedef enum {
 #define LED3_OFF()    HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, GPIO_PIN_SET)
 #define LED3_TOGGLE() HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin)
 
-/* BEEP */
-#define BEEP(x)                                                                \
-    x ? HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_SET)              \
-      : HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET)
-#define BEEP_OFF()    HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_RESET)
-#define BEEP_ON()     HAL_GPIO_WritePin(BEEP_GPIO_Port, BEEP_Pin, GPIO_PIN_SET)
-#define BEEP_TOGGLE() HAL_GPIO_TogglePin(BEEP_GPIO_Port, BEEP_Pin)
-
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);

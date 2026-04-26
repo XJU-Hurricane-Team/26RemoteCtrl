@@ -6,8 +6,8 @@ Model::Model()
     : modelListener(nullptr), keyValue(0), voltage(0), rsL_x(0), rsL_y(0),
       rsR_x(0), rsR_y(0), r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
-      r1_right_adsorbed(0), r1_chassis_status(1), r1_send_msg(0), r2_x_speed(0), r2_y_speed(0),
-      r2_angle(0), r2_status(0), r2_send_msg(0) {}
+      r1_right_adsorbed(0), r1_chassis_status(1), r1_send_msg(0), r2_x_speed(0),
+      r2_y_speed(0), r2_angle(0), r2_status(0), r2_send_msg(0) {}
 
 void Model::tick() {
     /* UI在这里进行数据采集，为了不阻塞UI渲染通过消息队列进行通信 */

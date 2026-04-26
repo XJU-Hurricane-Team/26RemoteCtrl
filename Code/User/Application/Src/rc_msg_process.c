@@ -34,6 +34,8 @@ static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 /* UI 消息序列号 */
 static uint32_t ui_msg_seq = 0;
 
+static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
+
 /**
  * @brief UI 消息发布函数
  * 
@@ -119,9 +121,23 @@ static void remote_send_task(void *pvParameters) {
         remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */
         remote_send_data.rs[1] = joystick_set_value(rs_adc_buf[3]); /* 左 y */
 
-        message_send_data(MSG_RC_TO_MASTER, MSG_DATA_UINT8,
+        message_send_data(MSG_RC_TO_MASTER, MSG_MODES,
                           (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
+
+        switch (remote_send_data.key)
+        {
+            //切换至跑点模式
+        case 21:
+            MSG_MODES = CHANGE_TO_RUNPOINT_MODE;
+            break;
+            //切换至普通模式
+        case 24:
+            MSG_MODES = CHANGE_TO_NORMAL_MODE;
+            break;
+        default:
+            break;
+        }
 
         IWDG_Feed();//看门狗喂狗
 
@@ -231,7 +247,7 @@ void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
         return;
     }
 
-    if ((msg_id_type & 0x0F) != MSG_DATA_UINT8) {
+    if ((msg_id_type & 0x0F) != CHANGE_TO_NORMAL_MODE) {
         return;
     }
 
