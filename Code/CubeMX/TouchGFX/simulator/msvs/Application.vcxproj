@@ -24,9 +24,12 @@
     <ClCompile Include="..\..\gui\src\screen_screen\screenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\screen_screen\screenViewBase.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
-    <ClCompile Include="..\..\gui\src\runpoint_screen\runpointPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\runpoint_screen\runpointView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\runpoint_screen\runpointViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\bluemap_screen\bluemapPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\bluemap_screen\bluemapView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\bluemap_screen\bluemapViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\redmap_screen\redmapPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\redmap_screen\redmapView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\redmap_screen\redmapViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -180,9 +183,12 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen_screen\screenViewBase.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\runpoint_screen\runpointPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\runpoint_screen\runpointView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\runpoint_screen\runpointViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\bluemap_screen\bluemapPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\bluemap_screen\bluemapView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\bluemap_screen\bluemapViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\redmap_screen\redmapViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

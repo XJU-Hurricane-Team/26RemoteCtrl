@@ -1,6 +1,7 @@
-./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/runpoint_screen/runpointViewBase.o: \
-  CubeMX\TouchGFX\generated\gui_generated\src\runpoint_screen\runpointViewBase.cpp \
-  CubeMX\TouchGFX\generated\gui_generated\include\gui_generated\runpoint_screen\runpointViewBase.hpp \
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/redmap_screen/redmapPresenter.o: \
+  CubeMX\TouchGFX\gui\src\redmap_screen\redmapPresenter.cpp \
+  CubeMX\TouchGFX\gui\include\gui\redmap_screen\redmapView.hpp \
+  CubeMX\TouchGFX\generated\gui_generated\include\gui_generated\redmap_screen\redmapViewBase.hpp \
   CubeMX\TouchGFX\gui\include\gui\common\FrontendApplication.hpp \
   CubeMX\TouchGFX\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\mvp\MVPApplication.hpp \
@@ -44,16 +45,11 @@
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\transitions\Transition.hpp \
   CubeMX\TouchGFX\gui\include\gui\model\Model.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\mvp\View.hpp \
-  CubeMX\TouchGFX\gui\include\gui\runpoint_screen\runpointPresenter.hpp \
+  CubeMX\TouchGFX\gui\include\gui\redmap_screen\redmapPresenter.hpp \
   CubeMX\TouchGFX\gui\include\gui\model\ModelListener.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\Box.hpp \
-  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\ScalableImage.hpp \
-  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\Image.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\TextArea.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\TypedText.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Texts.hpp \
-  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\TextAreaWithWildcard.hpp \
-  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Color.hpp \
-  CubeMX\TouchGFX\generated\images\include\images\BitmapDatabase.hpp \
-  CubeMX\TouchGFX\generated\texts\include\texts\TextKeysAndLanguages.hpp
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\TextAreaWithWildcard.hpp

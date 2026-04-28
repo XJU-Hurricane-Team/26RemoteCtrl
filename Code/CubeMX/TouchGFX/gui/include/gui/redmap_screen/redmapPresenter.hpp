@@ -1,17 +1,17 @@
-#ifndef RUNPOINTPRESENTER_HPP
-#define RUNPOINTPRESENTER_HPP
+#ifndef REDMAPPRESENTER_HPP
+#define REDMAPPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class runpointView;
+class redmapView;
 
-class runpointPresenter : public touchgfx::Presenter, public ModelListener
+class redmapPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    runpointPresenter(runpointView& v);
+    redmapPresenter(redmapView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -24,14 +24,14 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
-    virtual void onKeyValueChanged(int8_t key);
     virtual void onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose, int8_t send, int8_t mode);
-    virtual ~runpointPresenter() {}
+
+    virtual ~redmapPresenter() {}
 
 private:
-    runpointPresenter();
+    redmapPresenter();
 
-    runpointView& view;
+    redmapView& view;
 };
 
-#endif // RUNPOINTPRESENTER_HPP
+#endif // REDMAPPRESENTER_HPP

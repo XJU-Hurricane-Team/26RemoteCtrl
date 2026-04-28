@@ -48,7 +48,7 @@ typedef enum {
     WHE_L_TURNDO,
     WHE_R_TURNUP,
     WHE_R_PRESS,
-    WHE_R_TURNDO,
+    WHE_R_TURNDO
 } key_press_t;
 
 #define KEYBOARD_COL_GPIO_PORT GPIOC

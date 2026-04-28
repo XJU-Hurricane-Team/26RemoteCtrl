@@ -184,17 +184,29 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>6222592F-BAE8-D3AD-C833-CF899F999CB6</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\runpoint_screen">
-      <UniqueIdentifier>C0BF25D9-0734-5412-86DB-120A759516F2</UniqueIdentifier>
+    <Filter Include="Header Files\gui\redmap_screen">
+      <UniqueIdentifier>4DDAFB78-D9D6-515A-276A-8A1F441DD830</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\runpoint_screen">
-      <UniqueIdentifier>B778A5AD-49FC-0C91-7F13-41DE0F5AADDD</UniqueIdentifier>
+    <Filter Include="Source Files\gui\redmap_screen">
+      <UniqueIdentifier>5F4B7712-CAF5-1CE4-3020-9F65A0A45D67</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\runpoint_screen">
-      <UniqueIdentifier>B63C0DF8-BA3F-1CAA-E0B3-4CBAC8AEAE1A</UniqueIdentifier>
+    <Filter Include="Header Files\gui\bluemap_screen">
+      <UniqueIdentifier>ADC1B1C9-2263-FF02-AB3A-017AD1876F15</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\runpoint_screen">
-      <UniqueIdentifier>B48B6630-9B80-B46B-764B-72A902AAB253</UniqueIdentifier>
+    <Filter Include="Source Files\gui\bluemap_screen">
+      <UniqueIdentifier>38C02A0B-027C-F771-CE00-5F99033BFCB0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\redmap_screen">
+      <UniqueIdentifier>E6405BF5-BEA9-9D22-995F-A805AACB8053</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\redmap_screen">
+      <UniqueIdentifier>BA93FBC7-C5B4-BE0A-9926-B5BAE45F91A4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\bluemap_screen">
+      <UniqueIdentifier>01F7184B-9917-A817-CF0B-C13A2A6233C0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\bluemap_screen">
+      <UniqueIdentifier>74D17DA2-2EC5-62B4-F8D6-F20DEC11537A</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -237,14 +249,23 @@
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\runpoint_screen\runpointPresenter.cpp">
-      <Filter>Source Files\gui\runpoint_screen</Filter>
+    <ClCompile Include="..\..\gui\src\bluemap_screen\bluemapPresenter.cpp">
+      <Filter>Source Files\gui\bluemap_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\runpoint_screen\runpointView.cpp">
-      <Filter>Source Files\gui\runpoint_screen</Filter>
+    <ClCompile Include="..\..\gui\src\bluemap_screen\bluemapView.cpp">
+      <Filter>Source Files\gui\bluemap_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\runpoint_screen\runpointViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\runpoint_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\bluemap_screen\bluemapViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\bluemap_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\redmap_screen\redmapPresenter.cpp">
+      <Filter>Source Files\gui\redmap_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\redmap_screen\redmapView.cpp">
+      <Filter>Source Files\gui\redmap_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\redmap_screen\redmapViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\redmap_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -697,14 +718,23 @@
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\runpoint_screen\runpointPresenter.hpp">
-      <Filter>Header Files\gui\runpoint_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\bluemap_screen\bluemapPresenter.hpp">
+      <Filter>Header Files\gui\bluemap_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\runpoint_screen\runpointView.hpp">
-      <Filter>Header Files\gui\runpoint_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\bluemap_screen\bluemapView.hpp">
+      <Filter>Header Files\gui\bluemap_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\runpoint_screen\runpointViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\runpoint_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\bluemap_screen\bluemapViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\bluemap_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapPresenter.hpp">
+      <Filter>Header Files\gui\redmap_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapView.hpp">
+      <Filter>Header Files\gui\redmap_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\redmap_screen\redmapViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\redmap_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

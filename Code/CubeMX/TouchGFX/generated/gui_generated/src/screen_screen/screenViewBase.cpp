@@ -261,10 +261,19 @@ void screenViewBase::handleKeyEvent(uint8_t key)
 {
     if(21 == key)
     {
-        //changescreen2
-        //When hardware button 21 clicked change screen to runpoint
-        //Go to runpoint with no screen transition
-        application().gotorunpointScreenNoTransition();
+        //changeredmap
+        //When hardware button 21 clicked change screen to redmap
+        //Go to redmap with no screen transition
+        application().gotoredmapScreenNoTransition();
+    
+    }
+
+    if(23 == key)
+    {
+        //changebluemap
+        //When hardware button 23 clicked change screen to bluemap
+        //Go to bluemap with no screen transition
+        application().gotobluemapScreenNoTransition();
     
     }
 }

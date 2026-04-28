@@ -23,8 +23,11 @@ public:
     // screen
     void gotoscreenScreenNoTransition();
 
-    // runpoint
-    void gotorunpointScreenNoTransition();
+    // bluemap
+    void gotobluemapScreenNoTransition();
+
+    // redmap
+    void gotoredmapScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -34,8 +37,11 @@ protected:
     // screen
     void gotoscreenScreenNoTransitionImpl();
 
-    // runpoint
-    void gotorunpointScreenNoTransitionImpl();
+    // bluemap
+    void gotobluemapScreenNoTransitionImpl();
+
+    // redmap
+    void gotoredmapScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

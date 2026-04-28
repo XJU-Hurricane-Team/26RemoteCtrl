@@ -1,7 +1,7 @@
-./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/runpoint_screen/runpointPresenter.o: \
-  CubeMX\TouchGFX\gui\src\runpoint_screen\runpointPresenter.cpp \
-  CubeMX\TouchGFX\gui\include\gui\runpoint_screen\runpointView.hpp \
-  CubeMX\TouchGFX\generated\gui_generated\include\gui_generated\runpoint_screen\runpointViewBase.hpp \
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/bluemap_screen/bluemapView.o: \
+  CubeMX\TouchGFX\gui\src\bluemap_screen\bluemapView.cpp \
+  CubeMX\TouchGFX\gui\include\gui\bluemap_screen\bluemapView.hpp \
+  CubeMX\TouchGFX\generated\gui_generated\include\gui_generated\bluemap_screen\bluemapViewBase.hpp \
   CubeMX\TouchGFX\gui\include\gui\common\FrontendApplication.hpp \
   CubeMX\TouchGFX\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\mvp\MVPApplication.hpp \
@@ -45,11 +45,9 @@
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\transitions\Transition.hpp \
   CubeMX\TouchGFX\gui\include\gui\model\Model.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\mvp\View.hpp \
-  CubeMX\TouchGFX\gui\include\gui\runpoint_screen\runpointPresenter.hpp \
+  CubeMX\TouchGFX\gui\include\gui\bluemap_screen\bluemapPresenter.hpp \
   CubeMX\TouchGFX\gui\include\gui\model\ModelListener.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\Box.hpp \
-  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\ScalableImage.hpp \
-  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\Image.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\BoxWithBorder.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\TextArea.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\TypedText.hpp \

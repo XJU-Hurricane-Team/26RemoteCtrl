@@ -10,8 +10,10 @@
 #include <touchgfx/hal/HAL.hpp>
 #include <gui/screen_screen/screenView.hpp>
 #include <gui/screen_screen/screenPresenter.hpp>
-#include <gui/runpoint_screen/runpointView.hpp>
-#include <gui/runpoint_screen/runpointPresenter.hpp>
+#include <gui/bluemap_screen/bluemapView.hpp>
+#include <gui/bluemap_screen/bluemapPresenter.hpp>
+#include <gui/redmap_screen/redmapView.hpp>
+#include <gui/redmap_screen/redmapPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -42,15 +44,28 @@ void FrontendApplicationBase::gotoscreenScreenNoTransitionImpl()
     touchgfx::makeTransition<screenView, screenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// runpoint
+// bluemap
 
-void FrontendApplicationBase::gotorunpointScreenNoTransition()
+void FrontendApplicationBase::gotobluemapScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotorunpointScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotobluemapScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotorunpointScreenNoTransitionImpl()
+void FrontendApplicationBase::gotobluemapScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<runpointView, runpointPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<bluemapView, bluemapPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// redmap
+
+void FrontendApplicationBase::gotoredmapScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoredmapScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoredmapScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<redmapView, redmapPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

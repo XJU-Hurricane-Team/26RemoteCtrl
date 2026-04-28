@@ -727,6 +727,16 @@
           <GroupName>gui</GroupName>
           <Files>
             <File>
+              <FileName>bluemapPresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/bluemap_screen/bluemappresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>bluemapView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/gui/src/bluemap_screen/bluemapview.cpp</FilePath>
+            </File>
+            <File>
               <FileName>FrontendApplication.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/gui/src/common/frontendapplication.cpp</FilePath>
@@ -737,14 +747,14 @@
               <FilePath>../touchgfx/gui/src/model/model.cpp</FilePath>
             </File>
             <File>
-              <FileName>runpointPresenter.cpp</FileName>
+              <FileName>redmapPresenter.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/runpoint_screen/runpointpresenter.cpp</FilePath>
+              <FilePath>../touchgfx/gui/src/redmap_screen/redmappresenter.cpp</FilePath>
             </File>
             <File>
-              <FileName>runpointView.cpp</FileName>
+              <FileName>redmapView.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/gui/src/runpoint_screen/runpointview.cpp</FilePath>
+              <FilePath>../touchgfx/gui/src/redmap_screen/redmapview.cpp</FilePath>
             </File>
             <File>
               <FileName>screenPresenter.cpp</FileName>
@@ -770,6 +780,11 @@
               <FileName>BitmapDatabase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/bitmapdatabase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>bluemapViewBase.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/gui_generated/src/bluemap_screen/bluemapviewbase.cpp</FilePath>
             </File>
             <File>
               <FileName>CachedFont.cpp</FileName>
@@ -892,9 +907,9 @@
               <FilePath>../touchgfx/generated/texts/src/languagegb.cpp</FilePath>
             </File>
             <File>
-              <FileName>runpointViewBase.cpp</FileName>
+              <FileName>redmapViewBase.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/gui_generated/src/runpoint_screen/runpointviewbase.cpp</FilePath>
+              <FilePath>../touchgfx/generated/gui_generated/src/redmap_screen/redmapviewbase.cpp</FilePath>
             </File>
             <File>
               <FileName>screenViewBase.cpp</FileName>

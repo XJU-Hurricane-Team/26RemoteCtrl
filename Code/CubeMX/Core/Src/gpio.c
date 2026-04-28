@@ -312,7 +312,7 @@ key_press_t ctrl_key_scan(uint8_t scan_continous) {
     }
     if (key_up && (WHE_L_UP == 1 ||WHE_L_PS == 1 || WHE_L_DO == 1 ||
                      WHE_R_UP == 1 || WHE_R_PS == 1 || WHE_R_DO == 1)) {
-        HAL_Delay(25);
+        HAL_Delay(50);
         key_up = 0;
         if (WHE_L_UP == 1) {
             return WHE_L_TURNUP;
@@ -334,28 +334,29 @@ key_press_t ctrl_key_scan(uint8_t scan_continous) {
     return KEY_NO_PRESS;
 }
 
-static uint8_t choosepoint = 0;
+static int8_t choosepoint = 1;
 uint8_t get_point_value(void) {
+    static const uint8_t press_sequence[] = {1, 6, 11, 16, 18, 20, 22, 24, 29, 34};
+    static uint8_t seq_idx = 0;
     switch (ctrl_key_scan(1))
     {
-    case WHE_L_PRESS:
-        choosepoint = 8;
-        break;
     case WHE_R_TURNUP:
-        if (choosepoint <= 1)
+        choosepoint -= 1;
+        if (choosepoint <= 0)
         {
-            choosepoint = 14;
-        }else{
-            choosepoint--;
+            choosepoint = 0;
         }
         break;
     case WHE_R_TURNDO:
-        if (choosepoint >= 14)
+        choosepoint += 1;
+        if (choosepoint > 38)
         {
-            choosepoint = 1;
-        }else{
-            choosepoint++;
+            choosepoint = 38;
         }
+        break;
+    case WHE_L_PRESS:
+        choosepoint = press_sequence[seq_idx];
+        seq_idx = (seq_idx + 1) % (sizeof(press_sequence) / sizeof(press_sequence[0]));
         break;
     default:
         break;

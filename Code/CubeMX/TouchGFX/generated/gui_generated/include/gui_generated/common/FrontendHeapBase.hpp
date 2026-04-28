@@ -14,8 +14,10 @@
 
 #include <gui/screen_screen/screenView.hpp>
 #include <gui/screen_screen/screenPresenter.hpp>
-#include <gui/runpoint_screen/runpointView.hpp>
-#include <gui/runpoint_screen/runpointPresenter.hpp>
+#include <gui/bluemap_screen/bluemapView.hpp>
+#include <gui/bluemap_screen/bluemapPresenter.hpp>
+#include <gui/redmap_screen/redmapView.hpp>
+#include <gui/redmap_screen/redmapPresenter.hpp>
 
 
 /**
@@ -39,8 +41,9 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< screenView,
-            touchgfx::meta::TypeList< runpointView,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< bluemapView,
+            touchgfx::meta::TypeList< redmapView,
+            touchgfx::meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -53,8 +56,9 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< screenPresenter,
-            touchgfx::meta::TypeList< runpointPresenter,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< bluemapPresenter,
+            touchgfx::meta::TypeList< redmapPresenter,
+            touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**

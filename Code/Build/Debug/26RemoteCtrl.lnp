@@ -63,8 +63,9 @@
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/Table_verdanaz_22_4bpp.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/UnmappedDataFont.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/fonts/src/VectorFontRendererBuffers.o
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/bluemap_screen/bluemapViewBase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.o
-./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/runpoint_screen/runpointViewBase.o
+./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/redmap_screen/redmapViewBase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/gui_generated/src/screen_screen/screenViewBase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/images/src/BitmapDatabase.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/images/src/SVGDatabase.o
@@ -74,10 +75,12 @@
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/texts/src/LanguageGb.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/texts/src/Texts.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/generated/texts/src/TypedTextDatabase.o
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/bluemap_screen/bluemapPresenter.o
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/bluemap_screen/bluemapView.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/common/FrontendApplication.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/model/Model.o
-./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/runpoint_screen/runpointPresenter.o
-./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.o
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/redmap_screen/redmapPresenter.o
+./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/redmap_screen/redmapView.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/screen_screen/screenPresenter.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/gui/src/screen_screen/screenView.o
 ./Build/Debug/.obj/CubeMX/TouchGFX/target/OSWrappers.o
