@@ -23,7 +23,7 @@ void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
 } // namespace
 
 screenView::screenView()
-    : keyState(0), voltage(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
+    : keyState(0), voltage(0), Mode1(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
       r1_x_speed(0), r1_y_speed(0), r1_w_speed(0), r1_status(1),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
       r1_right_adsorbed(0), r1_send_msg(0), r2_x_speed(0), r2_y_speed(0), r2_angle(0),
@@ -75,6 +75,7 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(RockRBuffer2, ROCKRBUFFER2_SIZE, "%d", rsR_y);
     touchgfx::Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "Key%d", keyState);
     touchgfx::Unicode::snprintf(BatteryBuffer, BATTERY_SIZE, "%d", voltage);
+    touchgfx::Unicode::snprintf(mode1Buffer, MODE1_SIZE, "%d", Mode1);
 
     touchgfx::Unicode::snprintf(R1V_xBuffer, R1V_X_SIZE, "%d", r1_x_speed);
     touchgfx::Unicode::snprintf(R1V_yBuffer, R1V_Y_SIZE, "%d", r1_y_speed);
@@ -96,6 +97,7 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(R2StateBuffer, R2STATE_SIZE, "%u",
                                 static_cast<unsigned int>(r2_status));
 
+    mode1.invalidate();
     RockL.invalidate();
     RockR.invalidate();
     KeyNum.invalidate();

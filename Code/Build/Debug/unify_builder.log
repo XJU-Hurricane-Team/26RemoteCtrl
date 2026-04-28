@@ -1,4 +1,4 @@
-[2026-04-26 13:25:44]	[info] incremental build: 106 source files changed
+[2026-04-28 21:27:13]	[info] incremental build: 106 source files changed
 These source files will be recompiled
 ---
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\crc.c': object (.o) file not exist
@@ -41,23 +41,23 @@ These source files will be recompiled
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\CompressedUnmappedFontCache.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\FontCache.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_10_4bpp_0.cpp': object (.o) file not exist
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_20_4bpp_0.cpp': object (.o) file not exist
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_40_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_19_4bpp_0.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_32_4bpp_0.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanab_15_4bpp_0.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanai_15_4bpp_0.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanai_20_4bpp_0.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanaz_22_4bpp_0.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\GeneratedFont.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_10_4bpp.cpp': object (.o) file not exist
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_20_4bpp.cpp': object (.o) file not exist
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_40_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_19_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_32_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanab_15_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanai_15_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanai_20_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanaz_22_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_10_4bpp.cpp': object (.o) file not exist
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_20_4bpp.cpp': object (.o) file not exist
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_40_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_19_4bpp.cpp': object (.o) file not exist
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_32_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanab_15_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanai_15_4bpp.cpp': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanai_20_4bpp.cpp': object (.o) file not exist
@@ -108,36 +108,51 @@ These source files will be recompiled
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\timers.c': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Utils\ring_fifo\ring_fifo.c': object (.o) file not exist
 
-[2026-04-26 13:25:50]	[done]
+[2026-04-28 21:27:20]	[done]
 	build successfully !
 
-[2026-04-26 13:26:12]	[done]
-	build successfully !
-
-[2026-04-26 13:27:35]	[info] incremental build: 1 source files changed
+[2026-04-28 21:29:08]	[info] incremental build: 8 source files changed
 These source files will be recompiled
 ---
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\runpoint_screen\runpointView.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
 
-[2026-04-26 13:27:36]	[done]
+[2026-04-28 21:29:10]	[done]
 	build successfully !
 
-[2026-04-26 13:27:51]	[info] incremental build: 1 source files changed
+[2026-04-28 21:29:47]	[info] incremental build: 8 source files changed
 These source files will be recompiled
 ---
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\runpoint_screen\runpointView.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
 
-[2026-04-26 13:27:52]	[done]
+[2026-04-28 21:29:49]	[done]
 	build successfully !
 
-[2026-04-26 13:31:21]	[done]
-	build successfully !
-
-[2026-04-26 13:34:41]	[info] incremental build: 1 source files changed
+[2026-04-28 21:30:06]	[info] incremental build: 8 source files changed
 These source files will be recompiled
 ---
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\runpoint_screen\runpointView.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\main.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\gui\src\model\Model.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\TouchGFXHAL.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rc_msg_process.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Application\Src\rtos_tasks.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\bsp.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\st77xx_gfx\st77xx.c': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Bsp\msg_protocol\msg_protocol.h' has been changed.
 
-[2026-04-26 13:34:42]	[done]
+[2026-04-28 21:30:07]	[done]
 	build successfully !
 

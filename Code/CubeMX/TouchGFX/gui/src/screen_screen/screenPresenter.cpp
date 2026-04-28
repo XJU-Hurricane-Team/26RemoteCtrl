@@ -19,7 +19,11 @@ void screenPresenter::deactivate()
 
 void screenPresenter::onKeyValueChanged(int8_t key){
     view.keyState = key;
-    view.handleKeyEvent(key);
+}
+
+void screenPresenter::onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose, int8_t send, int8_t mode){
+    view.handleKeyEvent(ctrl_key);
+    view.Mode1 = mode;
 }
 
 void screenPresenter::onVoltageChanged(int8_t voltage){

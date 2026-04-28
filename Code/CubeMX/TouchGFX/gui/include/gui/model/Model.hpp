@@ -17,6 +17,10 @@ class Model {
 
   protected:
     ModelListener *modelListener;
+    int8_t ctrl_keyValue;
+    int8_t choosepoint;
+    int8_t sendpoint;
+    int8_t modevalue;
     int8_t keyValue; // latest sampled key value
     int8_t voltage;
     int8_t rsL_x;

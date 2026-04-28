@@ -82,7 +82,9 @@ static void remote_send_task(void *pvParameters) {
 
     uint8_t mV = 0;
     uint8_t last_key = 0;
+    uint8_t add_key = 0;
     uint8_t ctrl_key = 0;
+    uint8_t choosepoint = 0;
     uint8_t keyboard_value = 0;
     uint32_t rs_adc_buf[5] = {0};
 
@@ -100,13 +102,11 @@ static void remote_send_task(void *pvParameters) {
     while (1) {
 
         keyboard_value = keyboard_scan();
-        ctrl_key = key_scan(1);
+        add_key = add_key_scan(1);
+        ctrl_key = ctrl_key_scan(1);
+        choosepoint = get_point_value();
 
         rs_get_value(rs_adc_buf, 10, 40);
-
-        if (ctrl_key) {
-            keyboard_value = 16 + ctrl_key;
-        }
 
         mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
         if (mV <= 33)
@@ -114,8 +114,33 @@ static void remote_send_task(void *pvParameters) {
             BEEP_SWITCH(1);
         }
 
+        //模式选择(模式1优先级高于模式2)
+        switch (add_key)
+        {
+            //切换至模式1
+        case KEY_TL_PRESS:
+            MSG_MODES = CHANGE_TO_MODE1;
+            // if (keyboard_value)
+            // {
+            //     keyboard_value += 16;
+            // }
+            break;
+            //切换至模式2
+        case KEY_TR_PRESS:
+            MSG_MODES = CHANGE_TO_MODE2;
+            // if (keyboard_value)
+            // {
+            //     keyboard_value += 32;
+            // }
+            break;
+        default:
+            MSG_MODES = NORMAL_MODE;
+            break;
+        }
+
         /* 控制按键有更高的优先级 */
         remote_send_data.key = (uint8_t)keyboard_value;
+        remote_send_data.point = 0;
         remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
         remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
         remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */
@@ -125,24 +150,22 @@ static void remote_send_task(void *pvParameters) {
                           (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
 
-        switch (remote_send_data.key)
+        //发送跑点点位给主控
+        if(ctrl_key == WHE_R_PRESS)
         {
-            //切换至跑点模式
-        case 21:
-            MSG_MODES = CHANGE_TO_RUNPOINT_MODE;
-            break;
-            //切换至普通模式
-        case 24:
-            MSG_MODES = CHANGE_TO_NORMAL_MODE;
-            break;
-        default:
-            break;
+            remote_send_data.point = choosepoint;
         }
+        message_send_data(MSG_RC_TO_MASTER, MSG_MODES,
+                          (uint8_t *)&remote_send_data,
+                          sizeof(remote_send_data));
 
-        IWDG_Feed();//看门狗喂狗
+        
 
         ui_msg.type = UI_REMOTE_CTRL;
         ui_msg.seq = ++ui_msg_seq;
+        ui_msg.payload.remote_ctrl.mode = MSG_MODES;
+        ui_msg.payload.remote_ctrl.choose_point = choosepoint;
+        ui_msg.payload.remote_ctrl.ctrl_key = ctrl_key;
         ui_msg.payload.remote_ctrl.voltage = mV;
         ui_msg.payload.remote_ctrl.data = remote_send_data;
         ui_publish_msg(&ui_msg);
@@ -247,7 +270,7 @@ void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
         return;
     }
 
-    if ((msg_id_type & 0x0F) != CHANGE_TO_NORMAL_MODE) {
+    if ((msg_id_type & 0x0F) != NORMAL_MODE) {
         return;
     }
 

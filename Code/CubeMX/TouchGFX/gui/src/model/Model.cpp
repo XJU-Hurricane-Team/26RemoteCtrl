@@ -3,7 +3,8 @@
 #include <gui/model/ModelListener.hpp>
 
 Model::Model()
-    : modelListener(nullptr), keyValue(0), voltage(0), rsL_x(0), rsL_y(0),
+    : modelListener(nullptr), ctrl_keyValue(0), choosepoint(0), sendpoint(0), 
+      modevalue(0), keyValue(0), voltage(0), rsL_x(0), rsL_y(0),
       rsR_x(0), rsR_y(0), r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
       r1_right_adsorbed(0), r1_chassis_status(1), r1_send_msg(0), r2_x_speed(0),
@@ -31,6 +32,14 @@ void Model::tick() {
                     if (ctrl_msg->data.key != keyValue) {
                         keyValue = ctrl_msg->data.key;
                         modelListener->onKeyValueChanged(keyValue);
+                    }
+                    if (ctrl_msg->ctrl_key!= ctrl_keyValue || ctrl_msg->choose_point != choosepoint
+                        || ctrl_msg->data.point != sendpoint || ctrl_msg->mode != modevalue) {
+                        ctrl_keyValue = ctrl_msg->ctrl_key;
+                        choosepoint = ctrl_msg->choose_point;
+                        sendpoint = ctrl_msg->data.point;
+                        modevalue = ctrl_msg->mode;
+                        modelListener->onCtrlKeyValueChanged(ctrl_keyValue, choosepoint, sendpoint, modevalue);
                     }
 
                     remote_changed = true;

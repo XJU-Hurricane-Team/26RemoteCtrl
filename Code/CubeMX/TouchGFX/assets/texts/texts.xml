@@ -7,41 +7,77 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Screen1" />
     <TextGroup Id="Unsorted">
-      <Text Id="key_num" Alignment="Left" TypographyId="Typography3">
+      <Text Id="choose" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_VV4E" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JU88" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">14</Translation>
+      </Text>
+      <Text Id="__SingleUse_IMMR" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">13</Translation>
+      </Text>
+      <Text Id="__SingleUse_P0AU" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">12</Translation>
+      </Text>
+      <Text Id="__SingleUse_FK0U" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">11</Translation>
+      </Text>
+      <Text Id="__SingleUse_EM6S" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">10</Translation>
+      </Text>
+      <Text Id="__SingleUse_019T" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">9</Translation>
+      </Text>
+      <Text Id="__SingleUse_FNCS" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">8</Translation>
+      </Text>
+      <Text Id="__SingleUse_RHR5" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">7</Translation>
+      </Text>
+      <Text Id="__SingleUse_SSB3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_O4NK" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_18YU" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_BD9E" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_TX9X" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_HIUQ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="mode2" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_HTMU" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">Mode:&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="sendpoint" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_UAOQ" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">point:&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_89X0" Alignment="Left" TypographyId="Typography3">
         <Translation Language="GB">key:&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_KWOC" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">6</Translation>
+      <Text Id="mode1" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_A4OQ" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">7</Translation>
+      <Text Id="__SingleUse_TO15" Alignment="Left" TypographyId="Info">
+        <Translation Language="GB">Mode:&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_8JUQ" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">8</Translation>
-      </Text>
-      <Text Id="__SingleUse_76DJ" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">12</Translation>
-      </Text>
-      <Text Id="__SingleUse_JCS1" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">16</Translation>
-      </Text>
-      <Text Id="__SingleUse_DWYE" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">15</Translation>
-      </Text>
-      <Text Id="__SingleUse_2Y8H" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">14</Translation>
-      </Text>
-      <Text Id="__SingleUse_1P3Y" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">13</Translation>
-      </Text>
-      <Text Id="__SingleUse_UIJ7" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">4</Translation>
-      </Text>
-      <Text Id="__SingleUse_FH0H" Alignment="Center" TypographyId="Typography3">
-        <Translation Language="GB">5</Translation>
+      <Text Id="key_num" Alignment="Left" TypographyId="Typography3">
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="__SingleUse_PGE0" Alignment="Left" TypographyId="Typography2">
         <Translation Language="GB">R2_send:&lt;value&gt;</Translation>
@@ -157,8 +193,8 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="19" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="Large" Font="verdana.ttf" Size="32" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography1" Font="verdanai.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Info" Font="verdanab.ttf" Size="15" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="-+!*()key." WildcardCharacterRanges="0-9,a-z,A-Z" />

@@ -373,9 +373,9 @@
               {
                 "Type": "TextArea",
                 "Name": "Battery",
-                "X": 160,
+                "X": 195,
                 "Y": 45,
-                "Width": 87,
+                "Width": 52,
                 "Height": 22,
                 "TextId": "Battery",
                 "TextRotation": "0",
@@ -394,7 +394,7 @@
                 "Type": "TextArea",
                 "Name": "KeyNum",
                 "Y": 46,
-                "Width": 158,
+                "Width": 115,
                 "Height": 21,
                 "TextId": "KeyNum",
                 "TextRotation": "0",
@@ -496,6 +496,25 @@
                   "Green": 255,
                   "Blue": 255
                 }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "mode1",
+                "X": 115,
+                "Y": 45,
+                "Width": 80,
+                "Height": 22,
+                "TextId": "__SingleUse_TO15",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 187,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "mode1",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
               }
             ]
           }
@@ -539,148 +558,32 @@
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
+            "Type": "Box",
+            "Name": "box11",
+            "X": 140,
+            "Y": 120,
+            "Width": 45,
+            "Height": 58,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
             "Type": "Container",
             "Name": "container1",
-            "X": 96,
-            "Y": 58,
-            "Width": 129,
-            "Height": 152,
+            "X": 54,
+            "Width": 212,
+            "Height": 240,
             "Components": [
               {
                 "Type": "BoxWithBorder",
-                "Name": "box1",
-                "Width": 43,
-                "Height": 40,
-                "Color": {
-                  "Red": 23,
-                  "Green": 255,
-                  "Blue": 243
-                },
-                "BorderColor": {
-                  "Red": 252,
-                  "Green": 255,
-                  "Blue": 153
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "box2",
-                "X": 43,
-                "Width": 43,
-                "Height": 40,
-                "Color": {
-                  "Red": 23,
-                  "Green": 255,
-                  "Blue": 243
-                },
-                "BorderColor": {
-                  "Red": 252,
-                  "Green": 255,
-                  "Blue": 153
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "box3",
-                "X": 86,
-                "Width": 43,
-                "Height": 40,
-                "Color": {
-                  "Red": 23,
-                  "Green": 255,
-                  "Blue": 243
-                },
-                "BorderColor": {
-                  "Red": 252,
-                  "Green": 255,
-                  "Blue": 153
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "box4",
-                "X": 86,
-                "Y": 36,
-                "Width": 43,
-                "Height": 40,
-                "Color": {
-                  "Red": 23,
-                  "Green": 255,
-                  "Blue": 243
-                },
-                "BorderColor": {
-                  "Red": 252,
-                  "Green": 255,
-                  "Blue": 153
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "box5",
-                "X": 86,
-                "Y": 76,
-                "Width": 43,
-                "Height": 40,
-                "Color": {
-                  "Red": 23,
-                  "Green": 255,
-                  "Blue": 243
-                },
-                "BorderColor": {
-                  "Red": 252,
-                  "Green": 255,
-                  "Blue": 153
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "box6",
-                "X": 86,
-                "Y": 112,
-                "Width": 43,
-                "Height": 40,
-                "Color": {
-                  "Red": 23,
-                  "Green": 255,
-                  "Blue": 243
-                },
-                "BorderColor": {
-                  "Red": 252,
-                  "Green": 255,
-                  "Blue": 153
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "box7",
-                "X": 43,
-                "Y": 112,
-                "Width": 43,
-                "Height": 40,
-                "Color": {
-                  "Red": 23,
-                  "Green": 255,
-                  "Blue": 243
-                },
-                "BorderColor": {
-                  "Red": 252,
-                  "Green": 255,
-                  "Blue": 153
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "box8",
-                "Y": 112,
-                "Width": 43,
-                "Height": 40,
+                "Name": "box10",
+                "X": 24,
+                "Y": 120,
+                "Width": 62,
+                "Height": 29,
                 "Color": {
                   "Red": 23,
                   "Green": 255,
@@ -696,9 +599,10 @@
               {
                 "Type": "BoxWithBorder",
                 "Name": "box9",
-                "Y": 76,
-                "Width": 43,
-                "Height": 40,
+                "X": 24,
+                "Y": 149,
+                "Width": 62,
+                "Height": 29,
                 "Color": {
                   "Red": 23,
                   "Green": 255,
@@ -713,10 +617,144 @@
               },
               {
                 "Type": "BoxWithBorder",
-                "Name": "box10",
-                "Y": 36,
-                "Width": 43,
-                "Height": 40,
+                "Name": "box8",
+                "X": 24,
+                "Y": 178,
+                "Width": 62,
+                "Height": 53,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box7",
+                "X": 85,
+                "Y": 178,
+                "Width": 46,
+                "Height": 53,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box6",
+                "X": 131,
+                "Y": 178,
+                "Width": 62,
+                "Height": 53,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box5",
+                "X": 131,
+                "Y": 149,
+                "Width": 62,
+                "Height": 29,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box4",
+                "X": 131,
+                "Y": 120,
+                "Width": 62,
+                "Height": 29,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box3",
+                "X": 131,
+                "Y": 68,
+                "Width": 62,
+                "Height": 53,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box2",
+                "X": 85,
+                "Y": 68,
+                "Width": 46,
+                "Height": 53,
+                "Color": {
+                  "Red": 23,
+                  "Green": 255,
+                  "Blue": 243
+                },
+                "BorderColor": {
+                  "Red": 252,
+                  "Green": 255,
+                  "Blue": 153
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "box1",
+                "X": 24,
+                "Y": 68,
+                "Width": 62,
+                "Height": 53,
                 "Color": {
                   "Red": 23,
                   "Green": 255,
@@ -731,125 +769,274 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea1",
-                "X": 6,
-                "Y": 6,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_FH0H",
-                "TextRotation": "0"
+                "Name": "point14",
+                "X": 29,
+                "Y": 94,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_JU88",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea2",
-                "X": 49,
-                "Y": 6,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_UIJ7",
-                "TextRotation": "0"
+                "Name": "point13",
+                "X": 29,
+                "Y": 124,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_IMMR",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea3",
-                "X": 92,
-                "Y": 6,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_1P3Y",
-                "TextRotation": "0"
+                "Name": "point12",
+                "X": 29,
+                "Y": 153,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_P0AU",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea4",
-                "X": 92,
-                "Y": 42,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_2Y8H",
-                "TextRotation": "0"
+                "Name": "point11",
+                "X": 29,
+                "Y": 184,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_FK0U",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea5",
-                "X": 92,
-                "Y": 82,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_DWYE",
-                "TextRotation": "0"
+                "Name": "point10",
+                "X": 55,
+                "Y": 204,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_EM6S",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea6",
-                "X": 92,
-                "Y": 118,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_JCS1",
-                "TextRotation": "0"
+                "Name": "point9",
+                "X": 95,
+                "Y": 204,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_019T",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea7",
-                "X": 49,
-                "Y": 118,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_76DJ",
-                "TextRotation": "0"
+                "Name": "point8",
+                "X": 136,
+                "Y": 204,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_FNCS",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea8",
-                "X": 6,
-                "Y": 118,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_8JUQ",
-                "TextRotation": "0"
+                "Name": "point7",
+                "X": 161,
+                "Y": 184,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_RHR5",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea9",
-                "X": 6,
-                "Y": 82,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_A4OQ",
-                "TextRotation": "0"
+                "Name": "point6",
+                "X": 161,
+                "Y": 153,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_SSB3",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea10",
-                "X": 6,
-                "Y": 42,
-                "Width": 31,
-                "Height": 28,
-                "TextId": "__SingleUse_KWOC",
-                "TextRotation": "0"
+                "Name": "point5",
+                "X": 161,
+                "Y": 124,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_O4NK",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "point4",
+                "X": 162,
+                "Y": 94,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_18YU",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "point3",
+                "X": 136,
+                "Y": 74,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_BD9E",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "point2",
+                "X": 95,
+                "Y": 74,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_TX9X",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "point1",
+                "X": 55,
+                "Y": 74,
+                "Width": 26,
+                "Height": 20,
+                "TextId": "__SingleUse_HIUQ",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 23,
+                  "Green": 117
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "keynum",
+                "Y": 38,
+                "Width": 102,
+                "Height": 30,
+                "TextId": "__SingleUse_89X0",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 211,
+                  "Green": 181,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "key_num",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "sendpoint",
+                "X": 102,
+                "Y": 38,
+                "Width": 110,
+                "Height": 30,
+                "TextId": "__SingleUse_UAOQ",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 252,
+                  "Green": 146,
+                  "Blue": 194
+                },
+                "Wildcard1": {
+                  "TextId": "sendpoint",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "mode2",
+                "X": 55,
+                "Y": 9,
+                "Width": 106,
+                "Height": 29,
+                "TextId": "__SingleUse_HTMU",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 140
+                },
+                "Wildcard1": {
+                  "TextId": "mode2",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "choose",
+                "X": 86,
+                "Y": 130,
+                "Width": 45,
+                "Height": 39,
+                "TextId": "__SingleUse_VV4E",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "choose",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
               }
             ]
-          },
-          {
-            "Type": "TextArea",
-            "Name": "keynum",
-            "X": 109,
-            "Y": 28,
-            "Width": 102,
-            "Height": 30,
-            "TextId": "__SingleUse_89X0",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 152,
-              "Blue": 97
-            },
-            "Wildcard1": {
-              "TextId": "key_num",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
           }
         ],
         "Interactions": [
@@ -857,7 +1044,7 @@
             "InteractionName": "changescreen1",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked",
-              "ButtonKey": 24
+              "ButtonKey": 23
             },
             "Action": {
               "Type": "ActionGotoScreen",

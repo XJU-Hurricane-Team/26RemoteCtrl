@@ -25,6 +25,7 @@ public:
      */
     virtual void deactivate();
     virtual void onKeyValueChanged(int8_t key);
+    virtual void onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose, int8_t send, int8_t mode);
     virtual ~runpointPresenter() {}
 
 private:

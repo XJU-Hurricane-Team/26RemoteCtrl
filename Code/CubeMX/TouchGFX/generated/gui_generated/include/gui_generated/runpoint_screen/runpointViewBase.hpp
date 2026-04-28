@@ -41,34 +41,48 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::ScalableImage scalableImage1;
+    touchgfx::Box box11;
     touchgfx::Container container1;
-    touchgfx::BoxWithBorder box1;
-    touchgfx::BoxWithBorder box2;
-    touchgfx::BoxWithBorder box3;
-    touchgfx::BoxWithBorder box4;
-    touchgfx::BoxWithBorder box5;
-    touchgfx::BoxWithBorder box6;
-    touchgfx::BoxWithBorder box7;
-    touchgfx::BoxWithBorder box8;
-    touchgfx::BoxWithBorder box9;
     touchgfx::BoxWithBorder box10;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea3;
-    touchgfx::TextArea textArea4;
-    touchgfx::TextArea textArea5;
-    touchgfx::TextArea textArea6;
-    touchgfx::TextArea textArea7;
-    touchgfx::TextArea textArea8;
-    touchgfx::TextArea textArea9;
-    touchgfx::TextArea textArea10;
+    touchgfx::BoxWithBorder box9;
+    touchgfx::BoxWithBorder box8;
+    touchgfx::BoxWithBorder box7;
+    touchgfx::BoxWithBorder box6;
+    touchgfx::BoxWithBorder box5;
+    touchgfx::BoxWithBorder box4;
+    touchgfx::BoxWithBorder box3;
+    touchgfx::BoxWithBorder box2;
+    touchgfx::BoxWithBorder box1;
+    touchgfx::TextArea point14;
+    touchgfx::TextArea point13;
+    touchgfx::TextArea point12;
+    touchgfx::TextArea point11;
+    touchgfx::TextArea point10;
+    touchgfx::TextArea point9;
+    touchgfx::TextArea point8;
+    touchgfx::TextArea point7;
+    touchgfx::TextArea point6;
+    touchgfx::TextArea point5;
+    touchgfx::TextArea point4;
+    touchgfx::TextArea point3;
+    touchgfx::TextArea point2;
+    touchgfx::TextArea point1;
     touchgfx::TextAreaWithOneWildcard keynum;
+    touchgfx::TextAreaWithOneWildcard sendpoint;
+    touchgfx::TextAreaWithOneWildcard mode2;
+    touchgfx::TextAreaWithOneWildcard choose;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t KEYNUM_SIZE = 10;
     touchgfx::Unicode::UnicodeChar keynumBuffer[KEYNUM_SIZE];
+    static const uint16_t SENDPOINT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar sendpointBuffer[SENDPOINT_SIZE];
+    static const uint16_t MODE2_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar mode2Buffer[MODE2_SIZE];
+    static const uint16_t CHOOSE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar chooseBuffer[CHOOSE_SIZE];
 
 private:
 

@@ -72,6 +72,7 @@ protected:
     touchgfx::DigitalClock RunningTime;
     touchgfx::ScalableImage scalableImage2;
     touchgfx::TextArea textArea1;
+    touchgfx::TextAreaWithOneWildcard mode1;
 
     /*
      * Wildcard Buffers
@@ -116,6 +117,8 @@ protected:
     touchgfx::Unicode::UnicodeChar RockRBuffer1[ROCKRBUFFER1_SIZE];
     static const uint16_t ROCKRBUFFER2_SIZE = 10;
     touchgfx::Unicode::UnicodeChar RockRBuffer2[ROCKRBUFFER2_SIZE];
+    static const uint16_t MODE1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar mode1Buffer[MODE1_SIZE];
 
 private:
 

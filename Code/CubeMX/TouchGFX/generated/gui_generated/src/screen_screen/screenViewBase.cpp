@@ -168,7 +168,7 @@ screenViewBase::screenViewBase() :
     add(container1);
 
     container2.setPosition(0, 0, 320, 105);
-    Battery.setPosition(160, 45, 87, 22);
+    Battery.setPosition(195, 45, 52, 22);
     Battery.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     Battery.setLinespacing(0);
     Unicode::snprintf(BatteryBuffer, BATTERY_SIZE, "%s", touchgfx::TypedText(T_V).getText());
@@ -176,7 +176,7 @@ screenViewBase::screenViewBase() :
     Battery.setTypedText(touchgfx::TypedText(T_BATTERY));
     container2.add(Battery);
 
-    KeyNum.setPosition(0, 46, 158, 21);
+    KeyNum.setPosition(0, 46, 115, 21);
     KeyNum.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
     KeyNum.setLinespacing(0);
     Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "%s", touchgfx::TypedText(T_KEY).getText());
@@ -222,6 +222,14 @@ screenViewBase::screenViewBase() :
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_O8EP));
     container2.add(textArea1);
+
+    mode1.setPosition(115, 45, 80, 22);
+    mode1.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
+    mode1.setLinespacing(0);
+    Unicode::snprintf(mode1Buffer, MODE1_SIZE, "%s", touchgfx::TypedText(T_MODE1).getText());
+    mode1.setWildcard(mode1Buffer);
+    mode1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TO15));
+    container2.add(mode1);
 
     add(container2);
 }

@@ -14,6 +14,9 @@ public:
     virtual void update2();
     virtual void handleKeyEvent(uint8_t key);
     int8_t keyState;
+    int8_t choosekey;
+    int8_t point;
+    int8_t Mode2;
 protected:
 };
 

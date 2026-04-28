@@ -3,23 +3,126 @@
 warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
 warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:22:
-CubeMX/Middlewares/ST/touchgfx/framework/include\common/AbstractPartition.hpp:177:38: warning: use of old-style cast [-Wold-style-cast]
-        return Pair<T*, uint16_t>(0, (uint16_t)-1);
-                                     ^         ~~
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:21:
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:16:
+In file included from CubeMX/Core/Inc\cubemx.h:16:
+In file included from CubeMX/Core/Inc/crc.h:29:
+In file included from CubeMX/Core/Inc/main.h:30:
+In file included from CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h:29:
+In file included from CubeMX/Core/Inc\stm32f4xx_hal_conf.h:287:
+CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h:109:42: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+  HAL_DMA_STATE_ABORT             = 0x05U,  /*!< DMA Abort state                     */
+                                         ^~
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:16:
+In file included from CubeMX/Core/Inc\cubemx.h:16:
+In file included from CubeMX/Core/Inc/crc.h:29:
+In file included from CubeMX/Core/Inc/main.h:30:
+In file included from CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h:29:
+In file included from CubeMX/Core/Inc\stm32f4xx_hal_conf.h:407:
+CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_tim.h:306:50: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+  HAL_TIM_CHANNEL_STATE_BUSY              = 0x02U,    /*!< An internal process is ongoing on the TIM channel */
+                                                 ^~
+CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_tim.h:316:48: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+  HAL_DMA_BURST_STATE_BUSY              = 0x02U,    /*!< Ongoing DMA Burst       */
+                                               ^~
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:16:
+In file included from CubeMX/Core/Inc\cubemx.h:19:
+CubeMX/Core/Inc/gpio.h:51:17: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+    WHE_R_TURNDO,
+                ^
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:19:
+User/Bsp/./usart_ex/usart_ex.h:292:28: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* __USART_EX_H__ */
+                           ^
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:21:
+In file included from User/Bsp/./st77xx_gfx/st77xx.h:15:
+User/Bsp\bsp.h:30:21: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* __BSP_H */
+                    ^
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:21:
+User/Bsp/./st77xx_gfx/st77xx.h:20:11: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+    ST7789,
+          ^
+User/Bsp/./st77xx_gfx/st77xx.h:156:24: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* _ST77xx_H_ */
+                       ^
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:16:
+User/Bsp\bsp.h:30:21: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* __BSP_H */
+                    ^
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:18:
+In file included from User/Middlewares/FreeRTOS/include\FreeRTOS.h:107:
+In file included from User/Middlewares/FreeRTOS/include/portable.h:53:
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:201:19: warning: use of old-style cast [-Wold-style-cast]
+        xReturn = pdFALSE;
+                  ^~~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:52:52: note: expanded from macro 'pdFALSE'
+#define pdFALSE                                  ( ( BaseType_t ) 0 )
+                                                   ^              ~
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:1:
+In file included from User/Application/Inc\includes.h:18:
+In file included from User/Middlewares/FreeRTOS/include\FreeRTOS.h:107:
+In file included from User/Middlewares/FreeRTOS/include/portable.h:53:
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:205:19: warning: use of old-style cast [-Wold-style-cast]
+        xReturn = pdTRUE;
+                  ^~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:53:52: note: expanded from macro 'pdTRUE'
+#define pdTRUE                                   ( ( BaseType_t ) 1 )
+                                                   ^              ~
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:3:
+CubeMX/TouchGFX/gui/include\gui/model/ModelListener.hpp:9:29: warning: 'nullptr' is incompatible with C++98 [-Wc++98-compat]
+    ModelListener() : model(nullptr) {}
+                            ^
+./CubeMX/TouchGFX/gui/src/model/Model.cpp:6:21: warning: 'nullptr' is incompatible with C++98 [-Wc++98-compat]
+    : modelListener(nullptr), ctrl_keyValue(0), choosepoint(0), sendpoint(0), 
+                    ^
+./CubeMX/TouchGFX/gui/src/model/Model.cpp:10:7: warning: field 'r1_right_adsorbed' will be initialized after field 'r1_chassis_status' [-Wreorder-ctor]
+      r1_right_adsorbed(0), r1_chassis_status(1), r1_send_msg(0), r2_x_speed(0),
+      ^
+./CubeMX/TouchGFX/gui/src/model/Model.cpp:15:26: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+    if ((ui_msg_queue != NULL) && (modelListener != nullptr)) {
+                         ^~~~
+                         nullptr
+E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h:56:14: note: expanded from macro 'NULL'
+#define NULL 0                   /* see <stddef.h> */
+             ^
+./CubeMX/TouchGFX/gui/src/model/Model.cpp:15:53: warning: 'nullptr' is incompatible with C++98 [-Wc++98-compat]
+    if ((ui_msg_queue != NULL) && (modelListener != nullptr)) {
+                                                    ^
+./CubeMX/TouchGFX/gui/src/model/Model.cpp:21:57: warning: use of old-style cast [-Wold-style-cast]
+        while (xQueueReceive(ui_msg_queue, &msg, 0U) == pdPASS) {
+                                                        ^~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:59:52: note: expanded from macro 'pdPASS'
+#define pdPASS                                   ( pdTRUE )
+                                                   ^~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:53:52: note: expanded from macro 'pdTRUE'
+#define pdTRUE                                   ( ( BaseType_t ) 1 )
+                                                   ^              ~
+In file included from ./CubeMX/TouchGFX/gui/src/model/Model.cpp:3:
+CubeMX/TouchGFX/gui/include\gui/model/ModelListener.hpp:6:7: warning: 'ModelListener' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+class ModelListener
+      ^
+21 warnings generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:24:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:257:101: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
     static void registerBitmapDatabase(const BitmapData* data, const uint16_t n, uint16_t* cachep = 0, uint32_t csize = 0,
                                                                                                     ^
@@ -46,14 +149,10 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:148:27: war
 E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
 #          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
                               ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:24:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:148:27: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         assert(bitmaps != 0 && "Bitmap database has not been initialized.");
                           ^
@@ -61,14 +160,10 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:148:27: war
 E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
 #          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
                                                                                                                                      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:24:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:222:27: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         assert(bitmaps != 0 && "Bitmap database has not been initialized.");
                           ^
@@ -76,14 +171,10 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:222:27: war
 E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
 #          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
                               ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:24:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:222:27: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         assert(bitmaps != 0 && "Bitmap database has not been initialized.");
                           ^
@@ -91,14 +182,10 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:222:27: war
 E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
 #          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
                                                                                                                                      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:24:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:227:29: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         return ((bitmaps != 0) && (bitmapId < numberOfBitmaps)) ? (bitmaps[bitmapId].extraData != 0) : false;
                             ^
@@ -107,13 +194,10 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Bitmap.hpp:227:99: war
         return ((bitmaps != 0) && (bitmapId < numberOfBitmaps)) ? (bitmaps[bitmapId].extraData != 0) : false;
                                                                                                   ^
                                                                                                   nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:25:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:51:18: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
           parent(0),
                  ^
@@ -130,13 +214,28 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:149:16: w
         return 0;
                ^
                nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:28:
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferAllocator.hpp:174:18: warning: use of old-style cast [-Wold-style-cast]
+        *block = (uint8_t*)&memory[drawingBlock][0];
+                 ^         ~~~~~~~~~~~~~~~~~~~~~~~~
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferAllocator.hpp:224:16: warning: use of old-style cast [-Wold-style-cast]
+        return (const uint8_t*)&memory[sendingBlock][0];
+               ^               ~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:30:
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/Gestures.hpp:61:28: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+        : drag(), listener(0), dragThresholdValue(0)
+                           ^
+                           nullptr
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:33:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Font.hpp:204:20: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
             return 0;
@@ -154,13 +253,10 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Font.hpp:463:16: warni
         return 0;
                ^
                nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:34:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TextProvider.hpp:57:105: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
     void initialize(const Unicode::UnicodeChar* stringFormat, va_list pArg, const uint16_t* gsubTable = 0, const FontContextualFormsTable* formsTable = 0);
@@ -178,13 +274,10 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TextProvider.hpp:68:13
     void initialize(const Unicode::UnicodeChar* stringFormat, const uint16_t* gsubTable = 0, const FontContextualFormsTable* formsTable = 0, ...);
                                                                                                                                           ^
                                                                                                                                           nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:35:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TextureMapTypes.hpp:141:12: warning: use of old-style cast [-Wold-style-cast]
     return (float)value / 16.0f;
@@ -195,38 +288,29 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TextureMapTypes.hpp:15
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TextureMapTypes.hpp:165:12: warning: use of old-style cast [-Wold-style-cast]
     return (fixed16_16)(value * 65536);
            ^           ~~~~~~~~~~~~~~~
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:38:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/VectorFontRenderer.hpp:22:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/VectorRenderer.hpp:129:123: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
     virtual void drawPath(const uint8_t* cmds, uint32_t nCmds, const float* points, uint32_t nPoints, const float* bbox = 0) = 0;
                                                                                                                           ^
                                                                                                                           nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:39:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/DebugPrinter.hpp:34:23: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         : debugString(0), debugRegion(), debugForegroundColor(0xffffffff), debugScale(1)
                       ^
                       nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:59:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         : textureMapperClass(0), vectorFontRenderer(0)
                              ^
@@ -259,50 +343,9 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:902:42: wa
                     if (ellipsisGlyph != 0)
                                          ^
                                          nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:21:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/containers/Container.hpp:45:22: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-          firstChild(0)
-                     ^
-                     nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:28:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferAllocator.hpp:174:18: warning: use of old-style cast [-Wold-style-cast]
-        *block = (uint8_t*)&memory[drawingBlock][0];
-                 ^         ~~~~~~~~~~~~~~~~~~~~~~~~
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferAllocator.hpp:224:16: warning: use of old-style cast [-Wold-style-cast]
-        return (const uint8_t*)&memory[sendingBlock][0];
-               ^               ~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:30:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/Gestures.hpp:61:28: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        : drag(), listener(0), dragThresholdValue(0)
-                           ^
-                           nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:60:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
           mcuInstrumentation(0),
                              ^
@@ -350,13 +393,9 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:769:31: wa
 E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
 #          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
                               ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:769:31: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         assert(frameBuffer != 0 && "A framebuffer address must be set");
                               ^
@@ -364,13 +403,9 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:769:31: wa
 E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
 #          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
                                                                                                                                      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:772:48: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
         USE_DOUBLE_BUFFERING = doubleBuffer != 0;
                                                ^
@@ -399,527 +434,363 @@ CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:1068:34: w
             if (taskDelayFunc != 0 && getTFTCurrentLine() != 0xFFFF && !USE_DOUBLE_BUFFERING)
                                  ^
                                  nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:29:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/transitions/Transition.hpp:42:27: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        : screenContainer(0), done(false)
-                          ^
-                          nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/transitions/Transition.hpp:117:39: warning: unused parameter 'area' [-Wunused-parameter]
-        virtual void draw(const Rect& area) const
-                                      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:48:28: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        : currentPresenter(0),
-                           ^
-                           nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:49:43: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-          pendingScreenTransitionCallback(0)
-                                          ^
-                                          nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:78:47: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-            pendingScreenTransitionCallback = 0;
-                                              ^
-                                              nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:179:24: warning: use of old-style cast [-Wold-style-cast]
-    finalizeTransition((Screen*)newScreen, (Presenter*)newPresenter, (Transition*)newTransition);
-                       ^        ~~~~~~~~~
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:179:44: warning: use of old-style cast [-Wold-style-cast]
-    finalizeTransition((Screen*)newScreen, (Presenter*)newPresenter, (Transition*)newTransition);
-                                           ^           ~~~~~~~~~~~~
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:179:70: warning: use of old-style cast [-Wold-style-cast]
-    finalizeTransition((Screen*)newScreen, (Presenter*)newPresenter, (Transition*)newTransition);
-                                                                     ^            ~~~~~~~~~~~~~
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:16:13: warning: '~FrontendApplicationBase' overrides a destructor but is not marked 'override' [-Wsuggest-destructor-override]
-    virtual ~FrontendApplicationBase() { }
-            ^
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:43:7: note: overridden virtual function is here
-class MVPApplication : public Application
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:8:17: warning: using namespace directive in global context in header [-Wheader-hygiene]
-using namespace touchgfx;
-                ^
-CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:14:13: warning: '~FrontendApplication' overrides a destructor but is not marked 'override' [-Wsuggest-destructor-override]
-    virtual ~FrontendApplication() { }
-            ^
-CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:16:13: note: overridden virtual function is here
-    virtual ~FrontendApplicationBase() { }
-            ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:9:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointPresenter.hpp:4:
-CubeMX/TouchGFX/gui/include\gui/model/ModelListener.hpp:9:29: warning: 'nullptr' is incompatible with C++98 [-Wc++98-compat]
-    ModelListener() : model(nullptr) {}
-                            ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:9:
-CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointPresenter.hpp:7:17: warning: using namespace directive in global context in header [-Wheader-hygiene]
-using namespace touchgfx;
-                ^
-CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointPresenter.hpp:28:13: warning: '~runpointPresenter' overrides a destructor but is not marked 'override' [-Wsuggest-destructor-override]
-    virtual ~runpointPresenter() {}
-            ^
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/Presenter.hpp:52:13: note: overridden virtual function is here
-    virtual ~Presenter()
-            ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:96:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                              ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:96:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                                                                                                                                     ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:108:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                              ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:108:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                                                                                                                                     ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:120:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                              ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:120:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                                                                                                                                     ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:132:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                              ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:132:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                                                                                                                                     ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:144:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:31: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                              ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:144:30: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        assert(typedTexts != 0 && "TypedText database has not been initialized.");
-                             ^
-                             nullptr
-E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\assert.h:85:134: note: expanded from macro 'assert'
-#          define assert(e) ((e) ? (void)0 : __CLIBNS __aeabi_assert(#e, __FILE__, __LINE__), __CLANG_IGNORE_ASSUME (__ARM_PROMISE)((e)?1:0) __CLANG_UNIGNORE_ASSUME)
-                                                                                                                                     ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:393:16: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        return 0;
-               ^
-               nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:405:16: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        return 0;
-               ^
-               nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:431:20: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-              text(0)
-                   ^
-                   nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:15:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextAreaWithWildcard.hpp:66:43: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        : TextAreaWithWildcardBase(), wc1(0)
-                                          ^
-                                          nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextAreaWithWildcard.hpp:129:43: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        : TextAreaWithWildcardBase(), wc1(0), wc2(0)
-                                          ^
-                                          nullptr
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextAreaWithWildcard.hpp:129:51: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        : TextAreaWithWildcardBase(), wc1(0), wc2(0)
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:46:51: warning: parameter 'dma' shadows member inherited from type 'HAL' [-Wshadow-field]
+    TouchGFXGeneratedHAL(touchgfx::DMA_Interface& dma, touchgfx::LCD& display, touchgfx::TouchController& tc, uint16_t width, uint16_t height) :
                                                   ^
-                                                  nullptr
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:21:13: warning: '~runpointViewBase' overrides a destructor but is not marked 'override' [-Wsuggest-destructor-override]
-    virtual ~runpointViewBase();
-            ^
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/View.hpp:36:7: note: overridden virtual function is here
-class View : public Screen
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:1421:20: note: declared here
+    DMA_Interface& dma;                          ///< A reference to the DMA interface.
+                   ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+CubeMX/TouchGFX/target\TouchGFXHAL.hpp:52:42: warning: parameter 'dma' shadows member inherited from type 'HAL' [-Wshadow-field]
+    TouchGFXHAL(touchgfx::DMA_Interface& dma, touchgfx::LCD& display, touchgfx::TouchController& tc, uint16_t width, uint16_t height) : TouchGFXGeneratedHAL(dma, display, tc, width, height)
+                                         ^
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:1421:20: note: declared here
+    DMA_Interface& dma;                          ///< A reference to the DMA interface.
+                   ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:16:
+In file included from CubeMX/Core/Inc\cubemx.h:16:
+In file included from CubeMX/Core/Inc/crc.h:29:
+In file included from CubeMX/Core/Inc/main.h:30:
+In file included from CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h:29:
+In file included from CubeMX/Core/Inc\stm32f4xx_hal_conf.h:287:
+CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_dma.h:109:42: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+  HAL_DMA_STATE_ABORT             = 0x05U,  /*!< DMA Abort state                     */
+                                         ^~
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:16:
+In file included from CubeMX/Core/Inc\cubemx.h:16:
+In file included from CubeMX/Core/Inc/crc.h:29:
+In file included from CubeMX/Core/Inc/main.h:30:
+In file included from CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h:29:
+In file included from CubeMX/Core/Inc\stm32f4xx_hal_conf.h:407:
+CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_tim.h:306:50: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+  HAL_TIM_CHANNEL_STATE_BUSY              = 0x02U,    /*!< An internal process is ongoing on the TIM channel */
+                                                 ^~
+CubeMX/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_tim.h:316:48: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+  HAL_DMA_BURST_STATE_BUSY              = 0x02U,    /*!< Ongoing DMA Burst       */
+                                               ^~
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:16:
+In file included from CubeMX/Core/Inc\cubemx.h:19:
+CubeMX/Core/Inc/gpio.h:51:17: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+    WHE_R_TURNDO,
+                ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:19:
+User/Bsp/./usart_ex/usart_ex.h:292:28: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* __USART_EX_H__ */
+                           ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:21:
+In file included from User/Bsp/./st77xx_gfx/st77xx.h:15:
+User/Bsp\bsp.h:30:21: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* __BSP_H */
+                    ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:16:
+In file included from User/Bsp\bsp.h:21:
+User/Bsp/./st77xx_gfx/st77xx.h:20:11: warning: commas at the end of enumerator lists are incompatible with C++98 [-Wc++98-compat-pedantic]
+    ST7789,
+          ^
+User/Bsp/./st77xx_gfx/st77xx.h:156:24: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* _ST77xx_H_ */
+                       ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:16:
+User/Bsp\bsp.h:30:21: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
+#endif /* __BSP_H */
+                    ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:18:
+In file included from User/Middlewares/FreeRTOS/include\FreeRTOS.h:107:
+In file included from User/Middlewares/FreeRTOS/include/portable.h:53:
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:201:19: warning: use of old-style cast [-Wold-style-cast]
+        xReturn = pdFALSE;
+                  ^~~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:52:52: note: expanded from macro 'pdFALSE'
+#define pdFALSE                                  ( ( BaseType_t ) 0 )
+                                                   ^              ~
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:26:
+In file included from User/Application/Inc\includes.h:18:
+In file included from User/Middlewares/FreeRTOS/include\FreeRTOS.h:107:
+In file included from User/Middlewares/FreeRTOS/include/portable.h:53:
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:205:19: warning: use of old-style cast [-Wold-style-cast]
+        xReturn = pdTRUE;
+                  ^~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:53:52: note: expanded from macro 'pdTRUE'
+#define pdTRUE                                   ( ( BaseType_t ) 1 )
+                                                   ^              ~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:29:50: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+static SemaphoreHandle_t g_touchgfxTransferSem = NULL;
+                                                 ^~~~
+                                                 nullptr
+E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h:56:14: note: expanded from macro 'NULL'
+#define NULL 0                   /* see <stddef.h> */
+             ^
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:33:34: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+    if (g_touchgfxTransferSem != NULL) {
+                                 ^~~~
+                                 nullptr
+E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h:56:14: note: expanded from macro 'NULL'
+#define NULL 0                   /* see <stddef.h> */
+             ^
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:34:53: warning: use of old-style cast [-Wold-style-cast]
+        (void)xSemaphoreTake(g_touchgfxTransferSem, portMAX_DELAY);
+                                                    ^~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:67:40: note: expanded from macro 'portMAX_DELAY'
+    #define portMAX_DELAY              ( TickType_t ) 0xffffffffUL
+                                       ^              ~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/include\semphr.h:298:92: note: expanded from macro 'xSemaphoreTake'
+#define xSemaphoreTake( xSemaphore, xBlockTime )    xQueueSemaphoreTake( ( xSemaphore ), ( xBlockTime ) )
+                                                                                           ^~~~~~~~~~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:36:9: warning: use of old-style cast [-Wold-style-cast]
+        taskYIELD();
+        ^~~~~~~~~~~
+User/Middlewares/FreeRTOS/include/task.h:213:46: note: expanded from macro 'taskYIELD'
+#define taskYIELD()                          portYIELD()
+                                             ^~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:91:9: note: expanded from macro 'portYIELD'
+        portNVIC_INT_CTRL_REG = portNVIC_PENDSVSET_BIT; \
+        ^~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:99:40: note: expanded from macro 'portNVIC_INT_CTRL_REG'
+#define portNVIC_INT_CTRL_REG     ( *( ( volatile uint32_t * ) 0xe000ed04 ) )
+                                       ^                       ~~~~~~~~~~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:47:34: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+    if (g_touchgfxTransferSem != NULL) {
+                                 ^~~~
+                                 nullptr
+E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h:56:14: note: expanded from macro 'NULL'
+#define NULL 0                   /* see <stddef.h> */
+             ^
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:48:15: warning: use of old-style cast [-Wold-style-cast]
+        (void)xSemaphoreGive(g_touchgfxTransferSem);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/include\semphr.h:460:60: note: expanded from macro 'xSemaphoreGive'
+#define xSemaphoreGive( xSemaphore )    xQueueGenericSend( ( QueueHandle_t ) ( xSemaphore ), NULL, semGIVE_BLOCK_TIME, queueSEND_TO_BACK )
+                                                           ^                 ~~~~~~~~~~~~~~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:48:15: warning: use of old-style cast [-Wold-style-cast]
+        (void)xSemaphoreGive(g_touchgfxTransferSem);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/include\semphr.h:460:100: note: expanded from macro 'xSemaphoreGive'
+#define xSemaphoreGive( xSemaphore )    xQueueGenericSend( ( QueueHandle_t ) ( xSemaphore ), NULL, semGIVE_BLOCK_TIME, queueSEND_TO_BACK )
+                                                                                                   ^~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/include\semphr.h:42:47: note: expanded from macro 'semGIVE_BLOCK_TIME'
+#define semGIVE_BLOCK_TIME                  ( ( TickType_t ) 0U )
+                                              ^              ~~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:48:15: warning: use of old-style cast [-Wold-style-cast]
+        (void)xSemaphoreGive(g_touchgfxTransferSem);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/include\semphr.h:460:120: note: expanded from macro 'xSemaphoreGive'
+#define xSemaphoreGive( xSemaphore )    xQueueGenericSend( ( QueueHandle_t ) ( xSemaphore ), NULL, semGIVE_BLOCK_TIME, queueSEND_TO_BACK )
+                                                                                                                       ^~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/include\queue.h:68:49: note: expanded from macro 'queueSEND_TO_BACK'
+#define queueSEND_TO_BACK                     ( ( BaseType_t ) 0 )
+                                                ^              ~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:53:34: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+    if (g_touchgfxTransferSem != NULL) {
+                                 ^~~~
+                                 nullptr
+E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h:56:14: note: expanded from macro 'NULL'
+#define NULL 0                   /* see <stddef.h> */
+             ^
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:54:47: warning: use of old-style cast [-Wold-style-cast]
+        BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+                                              ^~~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:52:52: note: expanded from macro 'pdFALSE'
+#define pdFALSE                                  ( ( BaseType_t ) 0 )
+                                                   ^              ~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:55:15: warning: use of old-style cast [-Wold-style-cast]
+        (void)xSemaphoreGiveFromISR(g_touchgfxTransferSem,
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/include\semphr.h:640:94: note: expanded from macro 'xSemaphoreGiveFromISR'
+#define xSemaphoreGiveFromISR( xSemaphore, pxHigherPriorityTaskWoken )    xQueueGiveFromISR( ( QueueHandle_t ) ( xSemaphore ), ( pxHigherPriorityTaskWoken ) )
+                                                                                             ^                 ~~~~~~~~~~~~~~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:57:9: warning: use of old-style cast [-Wold-style-cast]
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:114:36: note: expanded from macro 'portYIELD_FROM_ISR'
+#define portYIELD_FROM_ISR( x )    portEND_SWITCHING_ISR( x )
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:104:32: note: expanded from macro 'portEND_SWITCHING_ISR'
+        if( xSwitchRequired != pdFALSE )         \
+                               ^~~~~~~
+User/Middlewares/FreeRTOS/include/projdefs.h:52:52: note: expanded from macro 'pdFALSE'
+#define pdFALSE                                  ( ( BaseType_t ) 0 )
+                                                   ^              ~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:57:9: warning: use of old-style cast [-Wold-style-cast]
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:114:36: note: expanded from macro 'portYIELD_FROM_ISR'
+#define portYIELD_FROM_ISR( x )    portEND_SWITCHING_ISR( x )
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:107:13: note: expanded from macro 'portEND_SWITCHING_ISR'
+            portYIELD();                         \
+            ^~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:91:9: note: expanded from macro 'portYIELD'
+        portNVIC_INT_CTRL_REG = portNVIC_PENDSVSET_BIT; \
+        ^~~~~~~~~~~~~~~~~~~~~
+User/Middlewares/FreeRTOS/portable/GCC/ARM_CM4F\portmacro.h:99:40: note: expanded from macro 'portNVIC_INT_CTRL_REG'
+#define portNVIC_INT_CTRL_REG     ( *( ( volatile uint32_t * ) 0xe000ed04 ) )
+                                       ^                       ~~~~~~~~~~
+./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:80:34: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+    if (g_touchgfxTransferSem == NULL) {
+                                 ^~~~
+                                 nullptr
+E:\APP_data\Keil\Keil_v5\ARM\ARMCLANG\bin\..\include\string.h:56:14: note: expanded from macro 'NULL'
+#define NULL 0                   /* see <stddef.h> */
+             ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:21:
+CubeMX/Middlewares/ST/touchgfx/framework/include\platform/core/MCUInstrumentation.hpp:26:7: warning: 'MCUInstrumentation' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+class MCUInstrumentation
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:11:13: warning: '~runpointView' overrides a destructor but is not marked 'override' [-Wsuggest-destructor-override]
-    virtual ~runpointView() {}
-            ^
-CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:21:13: note: overridden virtual function is here
-    virtual ~runpointViewBase();
-            ^
-./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:25:2: warning: C++98 requires newline at end of file [-Wc++98-compat-pedantic]
-}
- ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPHeap.hpp:35:7: warning: 'MVPHeap' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class MVPHeap
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:22:
+CubeMX/Middlewares/ST/touchgfx/framework/include\platform/driver/button/ButtonController.hpp:26:7: warning: 'ButtonController' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+class ButtonController
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:24:
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/Presenter.hpp:28:7: warning: 'Presenter' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class Presenter
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:23:
+CubeMX/Middlewares/ST/touchgfx/framework/include\platform/driver/touch/TouchController.hpp:26:7: warning: 'TouchController' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+class TouchController
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:25:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:22:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/events/ClickEvent.hpp:21:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Event.hpp:24:7: warning: 'Event' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class Event
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:25:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:22:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/events/ClickEvent.hpp:32:7: warning: 'ClickEvent' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class ClickEvent : public Event
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:25:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:23:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/events/DragEvent.hpp:32:7: warning: 'DragEvent' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class DragEvent : public Event
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:21:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:25:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Drawable.hpp:24:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/events/GestureEvent.hpp:32:7: warning: 'GestureEvent' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class GestureEvent : public Event
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:22:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:27:
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/DMA.hpp:34:7: warning: 'DMA_Queue' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+class DMA_Queue
+      ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:28:
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferAllocator.hpp:45:7: warning: 'FrameBufferAllocator' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+class FrameBufferAllocator
+      ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:29:
+CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferListener.hpp:29:7: warning: 'FrameBufferListener' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+class FrameBufferListener
+      ^
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:30:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/Gestures.hpp:21:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/UIEventListener.hpp:35:7: warning: 'UIEventListener' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class UIEventListener
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:38:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/VectorFontRenderer.hpp:22:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/VectorRenderer.hpp:38:7: warning: 'VectorRenderer' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class VectorRenderer
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:38:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/VectorFontRenderer.hpp:29:7: warning: 'VectorFontRenderer' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class VectorFontRenderer
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:39:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/DebugPrinter.hpp:29:7: warning: 'DebugPrinter' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
 class DebugPrinter
       ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
+In file included from ./CubeMX/TouchGFX/target/TouchGFXHAL.cpp:23:
+In file included from CubeMX/TouchGFX/target\TouchGFXHAL.hpp:27:
+In file included from CubeMX/TouchGFX/target/generated\TouchGFXGeneratedHAL.hpp:21:
+In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:32:
 CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:487:11: warning: 'DrawTextureMapScanLineBase' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
     class DrawTextureMapScanLineBase
           ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:26:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Callback.hpp:175:7: warning: 'GenericCallback<>' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class GenericCallback<void>
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:21:
-CubeMX/Middlewares/ST/touchgfx/framework/include\platform/core/MCUInstrumentation.hpp:26:7: warning: 'MCUInstrumentation' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class MCUInstrumentation
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:22:
-CubeMX/Middlewares/ST/touchgfx/framework/include\platform/driver/button/ButtonController.hpp:26:7: warning: 'ButtonController' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class ButtonController
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\platform/driver/touch/TouchController.hpp:26:7: warning: 'TouchController' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class TouchController
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:27:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/DMA.hpp:34:7: warning: 'DMA_Queue' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class DMA_Queue
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:28:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferAllocator.hpp:45:7: warning: 'FrameBufferAllocator' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class FrameBufferAllocator
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:27:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Screen.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/HAL.hpp:29:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/FrameBufferListener.hpp:29:7: warning: 'FrameBufferListener' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class FrameBufferListener
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:29:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/transitions/Transition.hpp:37:7: warning: 'Transition' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class Transition
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:43:7: warning: 'MVPApplication' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class MVPApplication : public Application
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:12:7: warning: 'FrontendApplicationBase' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class FrontendApplicationBase : public touchgfx::MVPApplication
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:10:7: warning: 'FrontendApplication' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class FrontendApplication : public FrontendApplicationBase
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:9:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointPresenter.hpp:4:
-CubeMX/TouchGFX/gui/include\gui/model/ModelListener.hpp:6:7: warning: 'ModelListener' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class ModelListener
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:25:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Application.hpp:28:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/lcd/LCD.hpp:38:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/VectorFontRenderer.hpp:22:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/hal/VectorRenderer.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/Widget.hpp:36:7: warning: 'Widget' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class Widget : public Drawable
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:14:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextArea.hpp:23:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/TypedText.hpp:41:7: warning: 'TypedText' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class TypedText
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:15:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextAreaWithWildcard.hpp:62:7: warning: 'TextAreaWithOneWildcard' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class TextAreaWithOneWildcard : public TextAreaWithWildcardBase
-      ^
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/widgets/TextAreaWithWildcard.hpp:125:7: warning: 'TextAreaWithTwoWildcards' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
-class TextAreaWithTwoWildcards : public TextAreaWithWildcardBase
-      ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:26:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Callback.hpp:461:28: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        return (pobject != 0) && (pmemfun != 0);
-                           ^
-                           nullptr
-CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:16:13: note: in instantiation of member function 'touchgfx::Callback<FrontendApplicationBase>::isValid' requested here
-    virtual ~FrontendApplicationBase() { }
-            ^
-In file included from ./CubeMX/TouchGFX/gui/src/runpoint_screen/runpointView.cpp:1:
-In file included from CubeMX/TouchGFX/gui/include\gui/runpoint_screen/runpointView.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/runpoint_screen/runpointViewBase.hpp:7:
-In file included from CubeMX/TouchGFX/gui/include\gui/common/FrontendApplication.hpp:4:
-In file included from CubeMX/TouchGFX/generated/gui_generated/include\gui_generated/common/FrontendApplicationBase.hpp:7:
-In file included from CubeMX/Middlewares/ST/touchgfx/framework/include\mvp/MVPApplication.hpp:26:
-CubeMX/Middlewares/ST/touchgfx/framework/include\touchgfx/Callback.hpp:461:46: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
-        return (pobject != 0) && (pmemfun != 0);
-                                             ^
-                                             nullptr
-125 warnings generated.
+103 warnings generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+3 warnings generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+3 warnings generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+./User/Application/Src/rtos_tasks.c:110:9: warning: implicit declaration of function 'IWDG_Feed' is invalid in C99 [-Wimplicit-function-declaration]
+        IWDG_Feed();//¿´ÃÅ¹·Î¹¹·
+        ^
+4 warnings generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+3 warnings generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+3 warnings generated.
+warning: unknown warning option '-Wno-unsafe-buffer-usage'; did you mean '-Wno-frame-larger-than='? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-reserved-identifier'; did you mean '-Wno-reserved-id-macro'? [-Wunknown-warning-option]
+warning: unknown warning option '-Wno-gnu-pointer-arith'; did you mean '-Wno-pointer-arith'? [-Wunknown-warning-option]
+3 warnings generated.
 
 >>> ld
 
-Program Size: Code=148488 RO-data=244448 RW-data=608 ZI-data=130056  
+Program Size: Code=151364 RO-data=246700 RW-data=608 ZI-data=130168  

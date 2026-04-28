@@ -39,7 +39,7 @@ extern "C" {
  */
 typedef enum {
     KEY_NO_PRESS = 0U,
-    KEY_LZ_PRESS,
+    KEY_LZ_PRESS =17U,
     KEY_RZ_PRESS,
     KEY_TL_PRESS,
     KEY_TR_PRESS,
@@ -99,7 +99,9 @@ void MX_GPIO_Init(void);
 
 uint8_t keyboard_scan(void);
 
-key_press_t key_scan(uint8_t scan_continous);
+key_press_t add_key_scan(uint8_t scan_continous);
+key_press_t ctrl_key_scan(uint8_t scan_continous);
+uint8_t get_point_value(void);
 
 /* USER CODE END Prototypes */
 

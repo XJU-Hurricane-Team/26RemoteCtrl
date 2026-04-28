@@ -100,12 +100,16 @@ typedef struct __packed {
 /* 遥控器发送数据结构 */
 typedef struct __packed {
     int8_t key;   /*!< 按键值 */
+    int8_t point; /*!< 跑点位置 */
     int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
 } remote_send_data_t;
 
 /* 遥控器控制消息结构 */
 typedef struct {
     uint8_t voltage;         /*!< 电压值 */
+    int8_t mode; /*!< 模式 */
+    int8_t choose_point; /*!< 选择跑点位置 */
+    int8_t ctrl_key; /*!< 控制按键值 */
     remote_send_data_t data; /*!< 遥控器发送数据 */
 } remote_ctrl_msg_t;
 

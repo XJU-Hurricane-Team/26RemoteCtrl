@@ -282,13 +282,12 @@ uint8_t keyboard_scan(void) {
  * @return The key which be pressed.
  * @note Note that keys have priority,`KEY_LZ > KEY_TL > KEY_RZ > KEY_TR`
  */
-key_press_t key_scan(uint8_t scan_continous) {
+key_press_t add_key_scan(uint8_t scan_continous) {
     static uint8_t key_up = 1; /* The flag of key released. */
     if (scan_continous == 1) {
         key_up = 1; /* Detect consecutive presses. */
     }
-    if (key_up && (KEY_LZ == 0 || KEY_RZ == 0 || KEY_TL == 0 || KEY_TR == 0 || WHE_L_UP == 1 ||
-        WHE_L_PS == 1 || WHE_L_DO == 1 || WHE_R_UP == 1 || WHE_R_PS == 1 || WHE_R_DO == 1)) {
+    if (key_up && (KEY_LZ == 0 || KEY_RZ == 0 || KEY_TL == 0 || KEY_TR == 0)) {
         HAL_Delay(10);
         key_up = 0;
         if (KEY_LZ == 0) {
@@ -299,7 +298,23 @@ key_press_t key_scan(uint8_t scan_continous) {
             return KEY_TL_PRESS;
         } else if (KEY_TR == 0) {
             return KEY_TR_PRESS;
-        }else if (WHE_L_UP == 1) {
+        }
+    } else if (KEY_LZ == 1 && KEY_RZ == 1 && KEY_TL == 1 && KEY_TR == 1) {
+        key_up = 1;
+    }
+    return KEY_NO_PRESS;
+}
+
+key_press_t ctrl_key_scan(uint8_t scan_continous) {
+    static uint8_t key_up = 1; /* The flag of key released. */
+    if (scan_continous == 1) {
+        key_up = 1; /* Detect consecutive presses. */
+    }
+    if (key_up && (WHE_L_UP == 1 ||WHE_L_PS == 1 || WHE_L_DO == 1 ||
+                     WHE_R_UP == 1 || WHE_R_PS == 1 || WHE_R_DO == 1)) {
+        HAL_Delay(25);
+        key_up = 0;
+        if (WHE_L_UP == 1) {
             return WHE_L_TURNUP;
         }else if (WHE_L_PS == 1) {
             return WHE_L_PRESS;
@@ -312,11 +327,40 @@ key_press_t key_scan(uint8_t scan_continous) {
         }else if (WHE_R_DO == 1) {
             return WHE_R_TURNDO;
         }
-    } else if (KEY_LZ == 1 && KEY_RZ == 1 && KEY_TL == 1 && KEY_TR == 1 && WHE_L_UP == 0 &&
-        WHE_L_PS == 0 && WHE_L_DO == 0 && WHE_R_UP == 0 && WHE_R_PS == 0 && WHE_R_DO == 0) {
+    } else if (WHE_L_UP == 0 && WHE_L_PS == 0 && WHE_L_DO == 0 && 
+                WHE_R_UP == 0 && WHE_R_PS == 0 && WHE_R_DO == 0) {
         key_up = 1;
     }
     return KEY_NO_PRESS;
+}
+
+static uint8_t choosepoint = 0;
+uint8_t get_point_value(void) {
+    switch (ctrl_key_scan(1))
+    {
+    case WHE_L_PRESS:
+        choosepoint = 8;
+        break;
+    case WHE_R_TURNUP:
+        if (choosepoint <= 1)
+        {
+            choosepoint = 14;
+        }else{
+            choosepoint--;
+        }
+        break;
+    case WHE_R_TURNDO:
+        if (choosepoint >= 14)
+        {
+            choosepoint = 1;
+        }else{
+            choosepoint++;
+        }
+        break;
+    default:
+        break;
+    }
+    return choosepoint;
 }
 
 /* USER CODE END 2 */
