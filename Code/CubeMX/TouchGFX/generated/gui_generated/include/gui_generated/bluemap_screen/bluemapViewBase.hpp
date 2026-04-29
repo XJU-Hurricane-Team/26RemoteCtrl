@@ -21,7 +21,6 @@ public:
     virtual void setupScreen();
     virtual void handleKeyEvent(uint8_t key);
     virtual void handleTickEvent();
-    virtual void colortoggleEvent(uint8_t point);
 
     /*
      * Virtual Action Handlers

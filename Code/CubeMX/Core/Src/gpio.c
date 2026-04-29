@@ -336,7 +336,7 @@ key_press_t ctrl_key_scan(uint8_t scan_continous) {
 
 static int8_t choosepoint = 1;
 uint8_t get_point_value(void) {
-    static const uint8_t press_sequence[] = {1, 6, 11, 16, 18, 20, 22, 24, 29, 34};
+    static const uint8_t press_sequence[] = {1, 6, 11, 16, 21, 26, 31, 36, 41, 46};
     static uint8_t seq_idx = 0;
     switch (ctrl_key_scan(1))
     {
@@ -349,9 +349,9 @@ uint8_t get_point_value(void) {
         break;
     case WHE_R_TURNDO:
         choosepoint += 1;
-        if (choosepoint > 38)
+        if (choosepoint > 50)
         {
-            choosepoint = 38;
+            choosepoint = 50;
         }
         break;
     case WHE_L_PRESS:
@@ -361,6 +361,7 @@ uint8_t get_point_value(void) {
     default:
         break;
     }
+    
     return choosepoint;
 }
 

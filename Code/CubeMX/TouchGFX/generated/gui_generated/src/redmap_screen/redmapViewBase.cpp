@@ -13,17 +13,17 @@ redmapViewBase::redmapViewBase() :
     add(__background);
 
     container1.setPosition(0, 0, 320, 240);
-    box01.setPosition(0, 0, 32, 48);
-    box01.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-    box01.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box01.setBorderSize(1);
-    container1.add(box01);
+    box05.setPosition(0, 0, 32, 48);
+    box05.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
+    box05.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box05.setBorderSize(1);
+    container1.add(box05);
 
-    box02.setPosition(0, 48, 32, 48);
-    box02.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-    box02.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box02.setBorderSize(1);
-    container1.add(box02);
+    box04.setPosition(0, 48, 32, 48);
+    box04.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
+    box04.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box04.setBorderSize(1);
+    container1.add(box04);
 
     box03.setPosition(0, 96, 32, 48);
     box03.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
@@ -31,29 +31,29 @@ redmapViewBase::redmapViewBase() :
     box03.setBorderSize(1);
     container1.add(box03);
 
-    box04.setPosition(0, 144, 32, 48);
-    box04.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-    box04.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box04.setBorderSize(1);
-    container1.add(box04);
+    box02.setPosition(0, 144, 32, 48);
+    box02.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
+    box02.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box02.setBorderSize(1);
+    container1.add(box02);
 
-    box05.setPosition(0, 192, 32, 48);
-    box05.setColor(touchgfx::Color::getColorFromRGB(214, 0, 0));
-    box05.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box05.setBorderSize(1);
-    container1.add(box05);
+    box01.setPosition(0, 192, 32, 48);
+    box01.setColor(touchgfx::Color::getColorFromRGB(214, 0, 0));
+    box01.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box01.setBorderSize(1);
+    container1.add(box01);
 
-    box11.setPosition(32, 0, 32, 48);
-    box11.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-    box11.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box11.setBorderSize(1);
-    container1.add(box11);
+    box15.setPosition(32, 0, 32, 48);
+    box15.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
+    box15.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box15.setBorderSize(1);
+    container1.add(box15);
 
-    box12.setPosition(32, 48, 32, 48);
-    box12.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-    box12.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box12.setBorderSize(1);
-    container1.add(box12);
+    box14.setPosition(32, 48, 32, 48);
+    box14.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
+    box14.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box14.setBorderSize(1);
+    container1.add(box14);
 
     box13.setPosition(32, 96, 32, 48);
     box13.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
@@ -61,29 +61,29 @@ redmapViewBase::redmapViewBase() :
     box13.setBorderSize(1);
     container1.add(box13);
 
-    box14.setPosition(32, 144, 32, 48);
-    box14.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-    box14.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box14.setBorderSize(1);
-    container1.add(box14);
+    box12.setPosition(32, 144, 32, 48);
+    box12.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
+    box12.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box12.setBorderSize(1);
+    container1.add(box12);
 
-    box15.setPosition(32, 192, 32, 48);
-    box15.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-    box15.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box15.setBorderSize(1);
-    container1.add(box15);
+    box11.setPosition(32, 192, 32, 48);
+    box11.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
+    box11.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box11.setBorderSize(1);
+    container1.add(box11);
 
-    box21.setPosition(64, 0, 32, 48);
-    box21.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box21.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box21.setBorderSize(1);
-    container1.add(box21);
+    box25.setPosition(64, 0, 32, 48);
+    box25.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box25.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box25.setBorderSize(1);
+    container1.add(box25);
 
-    box22.setPosition(64, 48, 32, 48);
-    box22.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box22.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box22.setBorderSize(1);
-    container1.add(box22);
+    box24.setPosition(64, 48, 32, 48);
+    box24.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box24.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box24.setBorderSize(1);
+    container1.add(box24);
 
     box23.setPosition(64, 96, 32, 48);
     box23.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
@@ -91,125 +91,125 @@ redmapViewBase::redmapViewBase() :
     box23.setBorderSize(1);
     container1.add(box23);
 
-    box24.setPosition(64, 144, 32, 48);
-    box24.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box24.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box24.setBorderSize(1);
-    container1.add(box24);
+    box22.setPosition(64, 144, 32, 48);
+    box22.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box22.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box22.setBorderSize(1);
+    container1.add(box22);
 
-    box25.setPosition(64, 192, 32, 48);
-    box25.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box25.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box25.setBorderSize(1);
-    container1.add(box25);
+    box21.setPosition(64, 192, 32, 48);
+    box21.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box21.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box21.setBorderSize(1);
+    container1.add(box21);
 
-    box31.setPosition(96, 0, 32, 48);
-    box31.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box31.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box31.setBorderSize(1);
-    container1.add(box31);
-
-    box32.setPosition(96, 48, 32, 48);
-    box32.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box32);
-
-    box33.setPosition(96, 96, 32, 48);
-    box33.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box33);
-
-    box34.setPosition(96, 144, 32, 48);
-    box34.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box34);
-
-    box35.setPosition(96, 192, 32, 48);
+    box35.setPosition(96, 0, 32, 48);
     box35.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
     box35.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     box35.setBorderSize(1);
     container1.add(box35);
 
-    box41.setPosition(128, 0, 32, 48);
-    box41.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box41.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box41.setBorderSize(1);
-    container1.add(box41);
+    box34.setPosition(96, 48, 32, 48);
+    box34.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box34);
 
-    box42.setPosition(128, 48, 32, 48);
-    box42.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box42);
+    box33.setPosition(96, 96, 32, 48);
+    box33.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box33);
 
-    box43.setPosition(128, 96, 32, 48);
-    box43.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box43);
+    box32.setPosition(96, 144, 32, 48);
+    box32.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box32);
 
-    box44.setPosition(128, 144, 32, 48);
-    box44.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box44);
+    box31.setPosition(96, 192, 32, 48);
+    box31.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box31.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box31.setBorderSize(1);
+    container1.add(box31);
 
-    box45.setPosition(128, 192, 32, 48);
+    box45.setPosition(128, 0, 32, 48);
     box45.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
     box45.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     box45.setBorderSize(1);
     container1.add(box45);
 
-    box51.setPosition(160, 0, 32, 48);
-    box51.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box51.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box51.setBorderSize(1);
-    container1.add(box51);
+    box44.setPosition(128, 48, 32, 48);
+    box44.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box44);
 
-    box52.setPosition(160, 48, 32, 48);
-    box52.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box52);
+    box43.setPosition(128, 96, 32, 48);
+    box43.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box43);
 
-    box53.setPosition(160, 96, 32, 48);
-    box53.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box53);
+    box42.setPosition(128, 144, 32, 48);
+    box42.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box42);
 
-    box54.setPosition(160, 144, 32, 48);
-    box54.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box54);
+    box41.setPosition(128, 192, 32, 48);
+    box41.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box41.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box41.setBorderSize(1);
+    container1.add(box41);
 
-    box55.setPosition(160, 192, 32, 48);
+    box55.setPosition(160, 0, 32, 48);
     box55.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
     box55.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     box55.setBorderSize(1);
     container1.add(box55);
 
-    box61.setPosition(192, 0, 32, 48);
-    box61.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box61.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box61.setBorderSize(1);
-    container1.add(box61);
+    box54.setPosition(160, 48, 32, 48);
+    box54.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box54);
 
-    box62.setPosition(192, 48, 32, 48);
-    box62.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box62);
+    box53.setPosition(160, 96, 32, 48);
+    box53.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box53);
 
-    box63.setPosition(192, 96, 32, 48);
-    box63.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box63);
+    box52.setPosition(160, 144, 32, 48);
+    box52.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box52);
 
-    box64.setPosition(192, 144, 32, 48);
-    box64.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
-    container1.add(box64);
+    box51.setPosition(160, 192, 32, 48);
+    box51.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box51.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box51.setBorderSize(1);
+    container1.add(box51);
 
-    box65.setPosition(192, 192, 32, 48);
+    box65.setPosition(192, 0, 32, 48);
     box65.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
     box65.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     box65.setBorderSize(1);
     container1.add(box65);
 
-    box71.setPosition(224, 0, 32, 48);
-    box71.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box71.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box71.setBorderSize(1);
-    container1.add(box71);
+    box64.setPosition(192, 48, 32, 48);
+    box64.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box64);
 
-    box72.setPosition(224, 48, 32, 48);
-    box72.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box72.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box72.setBorderSize(1);
-    container1.add(box72);
+    box63.setPosition(192, 96, 32, 48);
+    box63.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box63);
+
+    box62.setPosition(192, 144, 32, 48);
+    box62.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
+    container1.add(box62);
+
+    box61.setPosition(192, 192, 32, 48);
+    box61.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box61.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box61.setBorderSize(1);
+    container1.add(box61);
+
+    box75.setPosition(224, 0, 32, 48);
+    box75.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box75.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box75.setBorderSize(1);
+    container1.add(box75);
+
+    box74.setPosition(224, 48, 32, 48);
+    box74.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box74.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box74.setBorderSize(1);
+    container1.add(box74);
 
     box73.setPosition(224, 96, 32, 48);
     box73.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
@@ -217,29 +217,29 @@ redmapViewBase::redmapViewBase() :
     box73.setBorderSize(1);
     container1.add(box73);
 
-    box74.setPosition(224, 144, 32, 48);
-    box74.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box74.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box74.setBorderSize(1);
-    container1.add(box74);
+    box72.setPosition(224, 144, 32, 48);
+    box72.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box72.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box72.setBorderSize(1);
+    container1.add(box72);
 
-    box75.setPosition(224, 192, 32, 48);
-    box75.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-    box75.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box75.setBorderSize(1);
-    container1.add(box75);
+    box71.setPosition(224, 192, 32, 48);
+    box71.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
+    box71.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box71.setBorderSize(1);
+    container1.add(box71);
 
-    box81.setPosition(256, 0, 32, 48);
-    box81.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-    box81.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box81.setBorderSize(1);
-    container1.add(box81);
+    box85.setPosition(256, 0, 32, 48);
+    box85.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
+    box85.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box85.setBorderSize(1);
+    container1.add(box85);
 
-    box82.setPosition(256, 48, 32, 48);
-    box82.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-    box82.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box82.setBorderSize(1);
-    container1.add(box82);
+    box84.setPosition(256, 48, 32, 48);
+    box84.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
+    box84.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box84.setBorderSize(1);
+    container1.add(box84);
 
     box83.setPosition(256, 96, 32, 48);
     box83.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
@@ -247,29 +247,29 @@ redmapViewBase::redmapViewBase() :
     box83.setBorderSize(1);
     container1.add(box83);
 
-    box84.setPosition(256, 144, 32, 48);
-    box84.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-    box84.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box84.setBorderSize(1);
-    container1.add(box84);
+    box82.setPosition(256, 144, 32, 48);
+    box82.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
+    box82.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box82.setBorderSize(1);
+    container1.add(box82);
 
-    box85.setPosition(256, 192, 32, 48);
-    box85.setColor(touchgfx::Color::getColorFromRGB(163, 162, 162));
-    box85.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box85.setBorderSize(1);
-    container1.add(box85);
+    box81.setPosition(256, 192, 32, 48);
+    box81.setColor(touchgfx::Color::getColorFromRGB(163, 162, 162));
+    box81.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box81.setBorderSize(1);
+    container1.add(box81);
 
-    box91.setPosition(288, 0, 32, 48);
-    box91.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-    box91.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box91.setBorderSize(1);
-    container1.add(box91);
+    box95.setPosition(288, 0, 32, 48);
+    box95.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
+    box95.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box95.setBorderSize(1);
+    container1.add(box95);
 
-    box92.setPosition(288, 48, 32, 48);
-    box92.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-    box92.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box92.setBorderSize(1);
-    container1.add(box92);
+    box94.setPosition(288, 48, 32, 48);
+    box94.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
+    box94.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box94.setBorderSize(1);
+    container1.add(box94);
 
     box93.setPosition(288, 96, 32, 48);
     box93.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
@@ -277,28 +277,28 @@ redmapViewBase::redmapViewBase() :
     box93.setBorderSize(1);
     container1.add(box93);
 
-    box94.setPosition(288, 144, 32, 48);
-    box94.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-    box94.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box94.setBorderSize(1);
-    container1.add(box94);
+    box92.setPosition(288, 144, 32, 48);
+    box92.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
+    box92.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box92.setBorderSize(1);
+    container1.add(box92);
 
-    box95.setPosition(288, 192, 32, 48);
-    box95.setColor(touchgfx::Color::getColorFromRGB(214, 0, 0));
-    box95.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box95.setBorderSize(1);
-    container1.add(box95);
+    box91.setPosition(288, 192, 32, 48);
+    box91.setColor(touchgfx::Color::getColorFromRGB(214, 0, 0));
+    box91.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    box91.setBorderSize(1);
+    container1.add(box91);
 
     add(container1);
 
     container2.setPosition(0, 0, 320, 240);
-    point01.setPosition(0, 12, 32, 24);
+    point01.setPosition(0, 204, 32, 24);
     point01.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point01.setLinespacing(0);
     point01.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9FJG));
     container2.add(point01);
 
-    point02.setPosition(0, 60, 32, 24);
+    point02.setPosition(0, 156, 32, 24);
     point02.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point02.setLinespacing(0);
     point02.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GDPS));
@@ -310,25 +310,25 @@ redmapViewBase::redmapViewBase() :
     point03.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YSPA));
     container2.add(point03);
 
-    point04.setPosition(0, 156, 32, 24);
+    point04.setPosition(0, 60, 32, 24);
     point04.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point04.setLinespacing(0);
     point04.setTypedText(touchgfx::TypedText(T___SINGLEUSE_8K2M));
     container2.add(point04);
 
-    point05.setPosition(0, 204, 32, 24);
+    point05.setPosition(0, 12, 32, 24);
     point05.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point05.setLinespacing(0);
     point05.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9KNY));
     container2.add(point05);
 
-    point11.setPosition(32, 12, 32, 24);
+    point11.setPosition(32, 204, 32, 24);
     point11.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point11.setLinespacing(0);
     point11.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2XVK));
     container2.add(point11);
 
-    point12.setPosition(32, 60, 32, 24);
+    point12.setPosition(32, 156, 32, 24);
     point12.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point12.setLinespacing(0);
     point12.setTypedText(touchgfx::TypedText(T___SINGLEUSE_O4QT));
@@ -340,25 +340,25 @@ redmapViewBase::redmapViewBase() :
     point13.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OIOM));
     container2.add(point13);
 
-    point14.setPosition(32, 156, 32, 24);
+    point14.setPosition(32, 60, 32, 24);
     point14.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point14.setLinespacing(0);
     point14.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AJPT));
     container2.add(point14);
 
-    point15.setPosition(32, 204, 32, 24);
+    point15.setPosition(32, 12, 32, 24);
     point15.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point15.setLinespacing(0);
     point15.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TQH1));
     container2.add(point15);
 
-    point21.setPosition(64, 12, 32, 24);
+    point21.setPosition(64, 204, 32, 24);
     point21.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point21.setLinespacing(0);
     point21.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J4QC));
     container2.add(point21);
 
-    point22.setPosition(64, 60, 32, 24);
+    point22.setPosition(64, 156, 32, 24);
     point22.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point22.setLinespacing(0);
     point22.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TDHW));
@@ -370,73 +370,73 @@ redmapViewBase::redmapViewBase() :
     point23.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RC7J));
     container2.add(point23);
 
-    point24.setPosition(64, 156, 32, 24);
+    point24.setPosition(64, 60, 32, 24);
     point24.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point24.setLinespacing(0);
     point24.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4V0F));
     container2.add(point24);
 
-    point25.setPosition(64, 204, 32, 24);
+    point25.setPosition(64, 12, 32, 24);
     point25.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point25.setLinespacing(0);
     point25.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CY9E));
     container2.add(point25);
 
-    point31.setPosition(96, 12, 32, 24);
+    point31.setPosition(96, 204, 32, 24);
     point31.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point31.setLinespacing(0);
     point31.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Z6CW));
     container2.add(point31);
 
-    point35.setPosition(96, 204, 32, 24);
+    point35.setPosition(96, 12, 32, 24);
     point35.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point35.setLinespacing(0);
     point35.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IYO6));
     container2.add(point35);
 
-    point41.setPosition(128, 12, 32, 24);
+    point41.setPosition(128, 204, 32, 24);
     point41.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point41.setLinespacing(0);
     point41.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0K6F));
     container2.add(point41);
 
-    point45.setPosition(128, 204, 32, 24);
+    point45.setPosition(128, 12, 32, 24);
     point45.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point45.setLinespacing(0);
     point45.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FCYC));
     container2.add(point45);
 
-    point51.setPosition(160, 12, 32, 24);
+    point51.setPosition(160, 204, 32, 24);
     point51.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point51.setLinespacing(0);
     point51.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UEIS));
     container2.add(point51);
 
-    point55.setPosition(160, 204, 32, 24);
+    point55.setPosition(160, 12, 32, 24);
     point55.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point55.setLinespacing(0);
     point55.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J28Q));
     container2.add(point55);
 
-    point61.setPosition(192, 12, 32, 24);
+    point61.setPosition(192, 204, 32, 24);
     point61.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point61.setLinespacing(0);
     point61.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3W99));
     container2.add(point61);
 
-    point65.setPosition(192, 204, 32, 24);
+    point65.setPosition(192, 12, 32, 24);
     point65.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point65.setLinespacing(0);
     point65.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WTJW));
     container2.add(point65);
 
-    point71.setPosition(224, 12, 32, 24);
+    point71.setPosition(224, 204, 32, 24);
     point71.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point71.setLinespacing(0);
     point71.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PHVE));
     container2.add(point71);
 
-    point72.setPosition(224, 60, 32, 24);
+    point72.setPosition(224, 156, 32, 24);
     point72.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point72.setLinespacing(0);
     point72.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZMN3));
@@ -448,25 +448,25 @@ redmapViewBase::redmapViewBase() :
     point73.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QG4W));
     container2.add(point73);
 
-    point74.setPosition(224, 156, 32, 24);
+    point74.setPosition(224, 60, 32, 24);
     point74.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point74.setLinespacing(0);
     point74.setTypedText(touchgfx::TypedText(T___SINGLEUSE_11HC));
     container2.add(point74);
 
-    point75.setPosition(224, 204, 32, 24);
+    point75.setPosition(224, 12, 32, 24);
     point75.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point75.setLinespacing(0);
     point75.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NS07));
     container2.add(point75);
 
-    point81.setPosition(256, 12, 32, 24);
+    point81.setPosition(256, 204, 32, 24);
     point81.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point81.setLinespacing(0);
     point81.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Z9Q1));
     container2.add(point81);
 
-    point82.setPosition(256, 60, 32, 24);
+    point82.setPosition(256, 156, 32, 24);
     point82.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point82.setLinespacing(0);
     point82.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LY56));
@@ -478,25 +478,25 @@ redmapViewBase::redmapViewBase() :
     point83.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SMLP));
     container2.add(point83);
 
-    point84.setPosition(256, 156, 32, 24);
+    point84.setPosition(256, 60, 32, 24);
     point84.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point84.setLinespacing(0);
     point84.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IOSH));
     container2.add(point84);
 
-    point85.setPosition(256, 204, 32, 24);
+    point85.setPosition(256, 12, 32, 24);
     point85.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point85.setLinespacing(0);
     point85.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TSYG));
     container2.add(point85);
 
-    point91.setPosition(288, 12, 32, 24);
+    point91.setPosition(288, 204, 32, 24);
     point91.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point91.setLinespacing(0);
     point91.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F8DX));
     container2.add(point91);
 
-    point92.setPosition(288, 60, 32, 24);
+    point92.setPosition(288, 156, 32, 24);
     point92.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point92.setLinespacing(0);
     point92.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KJ61));
@@ -508,13 +508,13 @@ redmapViewBase::redmapViewBase() :
     point93.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J423));
     container2.add(point93);
 
-    point94.setPosition(288, 156, 32, 24);
+    point94.setPosition(288, 60, 32, 24);
     point94.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point94.setLinespacing(0);
     point94.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OT8S));
     container2.add(point94);
 
-    point95.setPosition(288, 204, 32, 24);
+    point95.setPosition(288, 12, 32, 24);
     point95.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point95.setLinespacing(0);
     point95.setTypedText(touchgfx::TypedText(T___SINGLEUSE_VEFO));
@@ -562,403 +562,6 @@ void redmapViewBase::handleKeyEvent(uint8_t key)
         application().gotoscreenScreenNoTransition();
     
     }
-}
-
-void redmapViewBase::colortoggleEvent(uint8_t point)
-{
-    static uint8_t last_point;
-    switch (last_point)
-    {
-    case 1:
-        //toggle01
-        box01.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box01.invalidate();
-        break;
-    case 2:
-        //toggle02
-        box02.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box02.invalidate();
-        break;
-    case 3:
-        //toggle03
-        box03.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box03.invalidate();
-        break;
-    case 4:
-        //toggle04
-        box04.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box04.invalidate();
-        break;
-    case 5:
-        //toggle05
-        box05.setColor(touchgfx::Color::getColorFromRGB(214, 0, 0));
-        box05.invalidate();
-        break;
-    case 6:
-        //toggle11
-        box11.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box11.invalidate();
-        break;
-    case 7:
-        //toggle12
-        box12.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box12.invalidate();
-        break;
-    case 8:
-        //toggle13
-        box13.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box13.invalidate();
-        break;
-    case 9:
-        //toggle14
-        box14.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box14.invalidate();
-        break;
-    case 10:
-        //toggle15
-        box15.setColor(touchgfx::Color::getColorFromRGB(252, 235, 235));
-        box15.invalidate();
-        break;
-    case 11:
-        //toggle21
-        box21.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box21.invalidate();
-        break;
-    case 12:
-        //toggle22
-        box22.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box22.invalidate();
-        break;
-    case 13:
-        //toggle23
-        box23.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box23.invalidate();
-        break;
-    case 14:
-        //toggle24
-        box24.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box24.invalidate();
-        break;
-    case 15:
-        //toggle25
-        box25.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box25.invalidate();
-        break;
-    case 16:
-        //toggle31
-        box31.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box31.invalidate();
-        break;
-    case 17:
-        //toggle35
-        box35.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box35.invalidate();
-        break;
-    case 18:
-        //toggle41
-        box41.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box41.invalidate();
-        break;
-    case 19:
-        //toggle45
-        box45.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box45.invalidate();
-        break;
-    case 20:
-        //toggle51
-        box51.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box51.invalidate();
-        break;
-    case 21:
-        //toggle55
-        box55.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box55.invalidate();
-        break;
-    case 22:
-        //toggle61
-        box61.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box61.invalidate();
-        break;
-    case 23:
-        //toggle65
-        box65.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box65.invalidate();
-        break;
-    case 24:
-        //toggle71
-        box71.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box71.invalidate();
-        break;
-    case 25:
-        //toggle72
-        box72.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box72.invalidate();
-        break;
-    case 26:
-        //toggle73
-        box73.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box73.invalidate();
-        break;
-    case 27:
-        //toggle74
-        box74.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box74.invalidate();
-        break;
-    case 28:
-        //toggle75
-        box75.setColor(touchgfx::Color::getColorFromRGB(250, 165, 165));
-        box75.invalidate();
-        break;
-    case 29:
-        //toggle81
-        box81.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box81.invalidate();
-        break;
-    case 30:
-        //toggle82
-        box82.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box82.invalidate();
-        break;
-    case 31:
-        //toggle83
-        box83.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box83.invalidate();
-        break;
-    case 32:
-        //toggle84
-        box84.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box84.invalidate();
-        break;
-    case 33:
-        //toggle85
-        box85.setColor(touchgfx::Color::getColorFromRGB(163, 162, 162));
-        box85.invalidate();
-        break;
-    case 34:
-        //toggle91
-        box91.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box91.invalidate();
-        break;
-    case 35:
-        //toggle92
-        box92.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box92.invalidate();
-        break;
-    case 36:
-        //toggle93
-        box93.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box93.invalidate();
-        break;
-    case 37:
-        //toggle94
-        box94.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
-        box94.invalidate();
-        break;
-    case 38:
-        //toggle95
-        box95.setColor(touchgfx::Color::getColorFromRGB(214, 0, 0));
-        box95.invalidate();
-        break;
-    default:
-        break;
-    }
-
-    switch (point)
-    {
-    case 1:
-        //toggle01
-        box01.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box01.invalidate();
-        break;
-    case 2:
-        //toggle02
-        box02.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box02.invalidate();
-        break;
-    case 3:
-        //toggle03
-        box03.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box03.invalidate();
-        break;
-    case 4:
-        //toggle04
-        box04.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box04.invalidate();
-        break;
-    case 5:
-        //toggle05
-        box05.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box05.invalidate();
-        break;
-    case 6:
-        //toggle11
-        box11.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box11.invalidate();
-        break;
-    case 7:
-        //toggle12
-        box12.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box12.invalidate();
-        break;
-    case 8:
-        //toggle13
-        box13.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box13.invalidate();
-        break;
-    case 9:
-        //toggle14
-        box14.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box14.invalidate();
-        break;
-    case 10:
-        //toggle15
-        box15.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box15.invalidate();
-        break;
-    case 11:
-        //toggle21
-        box21.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box21.invalidate();
-        break;
-    case 12:
-        //toggle22
-        box22.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box22.invalidate();
-        break;
-    case 13:
-        //toggle23
-        box23.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box23.invalidate();
-        break;
-    case 14:
-        //toggle24
-        box24.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box24.invalidate();
-        break;
-    case 15:
-        //toggle25
-        box25.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box25.invalidate();
-        break;
-    case 16:
-        //toggle31
-        box31.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box31.invalidate();
-        break;
-    case 17:
-        //toggle35
-        box35.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box35.invalidate();
-        break;
-    case 18:
-        //toggle41
-        box41.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box41.invalidate();
-        break;
-    case 19:
-        //toggle45
-        box45.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box45.invalidate();
-        break;
-    case 20:
-        //toggle51
-        box51.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box51.invalidate();
-        break;
-    case 21:
-        //toggle55
-        box55.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box55.invalidate();
-        break;
-    case 22:
-        //toggle61
-        box61.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box61.invalidate();
-        break;
-    case 23:
-        //toggle65
-        box65.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box65.invalidate();
-        break;
-    case 24:
-        //toggle71
-        box71.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box71.invalidate();
-        break;
-    case 25:
-        //toggle72
-        box72.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box72.invalidate();
-        break;
-    case 26:
-        //toggle73
-        box73.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box73.invalidate();
-        break;
-    case 27:
-        //toggle74
-        box74.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box74.invalidate();
-        break;
-    case 28:
-        //toggle75
-        box75.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box75.invalidate();
-        break;
-    case 29:
-        //toggle81
-        box81.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box81.invalidate();
-        break;
-    case 30:
-        //toggle82
-        box82.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box82.invalidate();
-        break;
-    case 31:
-        //toggle83
-        box83.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box83.invalidate();
-        break;
-    case 32:
-        //toggle84
-        box84.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box84.invalidate();
-        break;
-    case 33:
-        //toggle85
-        box85.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box85.invalidate();
-        break;
-    case 34:
-        //toggle91
-        box91.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box91.invalidate();
-        break;
-    case 35:
-        //toggle92
-        box92.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box92.invalidate();
-        break;
-    case 36:
-        //toggle93
-        box93.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box93.invalidate();
-        break;
-    case 37:
-        //toggle94
-        box94.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box94.invalidate();
-        break;
-    case 38:
-        //toggle95
-        box95.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box95.invalidate();
-        break;
-    default:
-        break;
-    }
-    last_point = point;
 }
 
 void redmapViewBase::handleTickEvent()

@@ -1,4 +1,4 @@
-[2026-04-29 19:09:49]	[info] incremental build: 109 source files changed
+[2026-04-29 23:13:43]	[info] incremental build: 109 source files changed
 These source files will be recompiled
 ---
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\crc.c': object (.o) file not exist
@@ -111,15 +111,6 @@ These source files will be recompiled
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\timers.c': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Utils\ring_fifo\ring_fifo.c': object (.o) file not exist
 
-[2026-04-29 19:09:59]	[done]
-	build successfully !
-
-[2026-04-29 19:13:12]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\bluemap_screen\bluemapViewBase.cpp': source file has been changed.
-'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\redmap_screen\redmapViewBase.cpp': source file has been changed.
-
-[2026-04-29 19:13:14]	[done]
+[2026-04-29 23:13:53]	[done]
 	build successfully !
 

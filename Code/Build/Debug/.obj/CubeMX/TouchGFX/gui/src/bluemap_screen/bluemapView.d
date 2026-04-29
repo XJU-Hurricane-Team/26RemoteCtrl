@@ -52,4 +52,5 @@
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\TextArea.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\TypedText.hpp \
   CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Texts.hpp \
-  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\TextAreaWithWildcard.hpp
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\widgets\TextAreaWithWildcard.hpp \
+  CubeMX\Middlewares\ST\touchgfx\framework\include\touchgfx\Color.hpp
