@@ -621,8 +621,8 @@
                 "Width": 32,
                 "Height": 48,
                 "Color": {
-                  "Green": 192,
-                  "Blue": 250
+                  "Green": 60,
+                  "Blue": 255
                 },
                 "BorderSize": 1
               },
@@ -1207,8 +1207,7 @@
                 "Width": 32,
                 "Height": 48,
                 "Color": {
-                  "Red": 212,
-                  "Green": 252,
+                  "Green": 60,
                   "Blue": 255
                 },
                 "BorderSize": 1
@@ -1745,9 +1744,7 @@
                 "Width": 32,
                 "Height": 48,
                 "Color": {
-                  "Red": 252,
-                  "Green": 235,
-                  "Blue": 235
+                  "Red": 214
                 },
                 "BorderSize": 1
               },
@@ -2354,9 +2351,7 @@
                 "Width": 32,
                 "Height": 48,
                 "Color": {
-                  "Red": 255,
-                  "Green": 140,
-                  "Blue": 140
+                  "Red": 214
                 },
                 "BorderSize": 1
               }

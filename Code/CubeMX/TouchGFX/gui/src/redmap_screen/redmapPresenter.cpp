@@ -21,4 +21,5 @@ void redmapPresenter::onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose, int8
     view.point = send;
     view.choosekey = choose;
     view.handleKeyEvent(ctrl_Key);
+    view.colortoggleEvent(choose);
 }

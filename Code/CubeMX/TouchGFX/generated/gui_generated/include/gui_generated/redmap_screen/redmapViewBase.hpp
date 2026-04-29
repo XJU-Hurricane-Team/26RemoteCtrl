@@ -20,6 +20,7 @@ public:
     virtual ~redmapViewBase();
     virtual void setupScreen();
     virtual void handleKeyEvent(uint8_t key);
+    virtual void colortoggleEvent(uint8_t point);
     virtual void handleTickEvent();
 
     /*

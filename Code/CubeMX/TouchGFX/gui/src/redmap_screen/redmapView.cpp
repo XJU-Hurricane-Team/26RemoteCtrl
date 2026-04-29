@@ -19,6 +19,10 @@ void redmapView::handleKeyEvent(uint8_t key){
     redmapViewBase::handleKeyEvent(key);
 }
 
+void redmapView::colortoggleEvent(uint8_t point){
+    redmapViewBase::colortoggleEvent(point);
+}
+
 void redmapView::update2(){
     Unicode::snprintf(redchoosepointBuffer, REDCHOOSEPOINT_SIZE, "%d", choosekey);
     Unicode::snprintf(redsendpointBuffer, REDSENDPOINT_SIZE, "%d", point);
