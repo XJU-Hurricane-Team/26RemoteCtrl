@@ -120,18 +120,18 @@ static void remote_send_task(void *pvParameters) {
             //切换至模式1
         case KEY_TL_PRESS:
             MSG_MODES = CHANGE_TO_MODE1;
-            // if (keyboard_value)
-            // {
-            //     keyboard_value += 16;
-            // }
+            if (keyboard_value)
+            {
+                keyboard_value += 16;
+            }
             break;
             //切换至模式2
         case KEY_TR_PRESS:
             MSG_MODES = CHANGE_TO_MODE2;
-            // if (keyboard_value)
-            // {
-            //     keyboard_value += 32;
-            // }
+            if (keyboard_value)
+            {
+                keyboard_value += 32;
+            }
             break;
         default:
             MSG_MODES = NORMAL_MODE;
@@ -140,7 +140,7 @@ static void remote_send_task(void *pvParameters) {
 
         /* 控制按键有更高的优先级 */
         remote_send_data.key = (uint8_t)keyboard_value;
-        remote_send_data.point = 0;
+        remote_send_data.point = choosepoint;
         remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
         remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
         remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */
@@ -150,21 +150,8 @@ static void remote_send_task(void *pvParameters) {
                           (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
 
-        //发送跑点点位给主控
-        if(ctrl_key == WHE_R_PRESS)
-        {
-            remote_send_data.point = choosepoint;
-        }
-        message_send_data(MSG_RC_TO_MASTER, MSG_MODES,
-                          (uint8_t *)&remote_send_data,
-                          sizeof(remote_send_data));
-
-        
-
         ui_msg.type = UI_REMOTE_CTRL;
         ui_msg.seq = ++ui_msg_seq;
-        ui_msg.payload.remote_ctrl.mode = MSG_MODES;
-        ui_msg.payload.remote_ctrl.choose_point = choosepoint;
         ui_msg.payload.remote_ctrl.ctrl_key = ctrl_key;
         ui_msg.payload.remote_ctrl.voltage = mV;
         ui_msg.payload.remote_ctrl.data = remote_send_data;

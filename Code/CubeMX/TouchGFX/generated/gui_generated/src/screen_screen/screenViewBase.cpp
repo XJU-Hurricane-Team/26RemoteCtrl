@@ -209,7 +209,7 @@ screenViewBase::screenViewBase() :
     RunningTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NMGM));
     RunningTime.displayLeadingZeroForHourIndicator(true);
     RunningTime.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR);
-    RunningTime.setTime24Hour(10, 10, 0);
+    RunningTime.setTime24Hour(0, 0, 0);
     container2.add(RunningTime);
 
     scalableImage2.setBitmap(touchgfx::Bitmap(BITMAP_KY50_50_ID));
@@ -223,13 +223,13 @@ screenViewBase::screenViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_O8EP));
     container2.add(textArea1);
 
-    mode1.setPosition(115, 45, 80, 22);
-    mode1.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-    mode1.setLinespacing(0);
-    Unicode::snprintf(mode1Buffer, MODE1_SIZE, "%s", touchgfx::TypedText(T_MODE1).getText());
-    mode1.setWildcard(mode1Buffer);
-    mode1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TO15));
-    container2.add(mode1);
+    point.setPosition(115, 45, 80, 22);
+    point.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
+    point.setLinespacing(0);
+    Unicode::snprintf(pointBuffer, POINT_SIZE, "%s", touchgfx::TypedText(T_POINT).getText());
+    point.setWildcard(pointBuffer);
+    point.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TO15));
+    container2.add(point);
 
     add(container2);
 }

@@ -15,7 +15,6 @@ public:
     virtual void handleKeyEvent(uint8_t key);
     virtual void colortoggleEvent(uint8_t point);
     int8_t choosekey;
-    int8_t point;
 protected:
 };
 

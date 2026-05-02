@@ -311,8 +311,8 @@ key_press_t ctrl_key_scan(uint8_t scan_continous) {
         key_up = 1; /* Detect consecutive presses. */
     }
     if (key_up && (WHE_L_UP == 1 ||WHE_L_PS == 1 || WHE_L_DO == 1 ||
-                     WHE_R_UP == 1 || WHE_R_PS == 1 || WHE_R_DO == 1)) {
-        HAL_Delay(50);
+         WHE_R_UP == 1 || WHE_R_PS == 1 || WHE_R_DO == 1)) {
+        HAL_Delay(60);
         key_up = 0;
         if (WHE_L_UP == 1) {
             return WHE_L_TURNUP;
@@ -328,7 +328,7 @@ key_press_t ctrl_key_scan(uint8_t scan_continous) {
             return WHE_R_TURNDO;
         }
     } else if (WHE_L_UP == 0 && WHE_L_PS == 0 && WHE_L_DO == 0 && 
-                WHE_R_UP == 0 && WHE_R_PS == 0 && WHE_R_DO == 0) {
+    WHE_R_UP == 0 && WHE_R_PS == 0 && WHE_R_DO == 0) {
         key_up = 1;
     }
     return KEY_NO_PRESS;
@@ -336,15 +336,25 @@ key_press_t ctrl_key_scan(uint8_t scan_continous) {
 
 static int8_t choosepoint = 1;
 uint8_t get_point_value(void) {
-    static const uint8_t press_sequence[] = {1, 6, 11, 16, 21, 26, 31, 36, 41, 46};
-    static uint8_t seq_idx = 0;
     switch (ctrl_key_scan(1))
     {
     case WHE_R_TURNUP:
         choosepoint -= 1;
-        if (choosepoint <= 0)
+        if (choosepoint < 1)
         {
-            choosepoint = 0;
+            choosepoint = 1;
+        }else if (choosepoint == 19)
+        {
+            choosepoint = 16;
+        }else if (choosepoint == 24)
+        {
+            choosepoint = 21;
+        }else if (choosepoint == 29)
+        {
+            choosepoint = 26;
+        }else if (choosepoint == 34)
+        {
+            choosepoint = 31;
         }
         break;
     case WHE_R_TURNDO:
@@ -352,16 +362,55 @@ uint8_t get_point_value(void) {
         if (choosepoint > 50)
         {
             choosepoint = 50;
+        }else if (choosepoint == 17)
+        {
+            choosepoint = 20;
+        }else if (choosepoint == 22)
+        {
+            choosepoint = 25;
+        }else if (choosepoint == 27)
+        {
+            choosepoint = 30;
+        }else if (choosepoint == 32)
+        {
+            choosepoint = 35;
         }
         break;
     case WHE_L_PRESS:
-        choosepoint = press_sequence[seq_idx];
-        seq_idx = (seq_idx + 1) % (sizeof(press_sequence) / sizeof(press_sequence[0]));
+        choosepoint -= 5;
+        if (choosepoint < 1)
+        {
+            choosepoint += 5;
+        }else if (choosepoint == 34)
+        {
+            choosepoint = 14;
+        }else if (choosepoint == 33)
+        {
+            choosepoint = 13;
+        }else if (choosepoint == 32)
+        {
+            choosepoint = 12;
+        }
+        break;
+    case WHE_R_PRESS:
+        choosepoint += 5;
+        if (choosepoint > 50)
+        {
+            choosepoint -= 5;
+        }else if (choosepoint == 19)
+        {
+            choosepoint = 39;
+        }else if (choosepoint == 18)
+        {
+            choosepoint = 38;
+        }else if (choosepoint == 17)
+        {
+            choosepoint = 37;
+        }
         break;
     default:
         break;
     }
-    
     return choosepoint;
 }
 

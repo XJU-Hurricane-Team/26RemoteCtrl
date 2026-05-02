@@ -24,7 +24,8 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
-    virtual void onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose, int8_t send, int8_t mode);
+    virtual void onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose);
+    virtual void R1StateChanged(uint8_t status);
 
     virtual ~redmapPresenter() {}
 

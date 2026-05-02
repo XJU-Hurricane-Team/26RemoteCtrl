@@ -1,4 +1,4 @@
-[2026-04-29 23:13:43]	[info] incremental build: 109 source files changed
+[2026-05-02 17:19:12]	[info] incremental build: 109 source files changed
 These source files will be recompiled
 ---
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\Core\Src\crc.c': object (.o) file not exist
@@ -111,6 +111,50 @@ These source files will be recompiled
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Middlewares\FreeRTOS\timers.c': object (.o) file not exist
 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\User\Utils\ring_fifo\ring_fifo.c': object (.o) file not exist
 
-[2026-04-29 23:13:53]	[done]
+[2026-05-02 17:19:18]	[done]
+	build successfully !
+
+[2026-05-02 17:20:41]	[info] incremental build: 37 source files changed
+These source files will be recompiled
+---
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\ApplicationFontProvider.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\CachedFont.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\CompressedFontCache.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\CompressedUnmappedFontCache.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\FontCache.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_10_4bpp_0.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_19_4bpp_0.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdana_32_4bpp_0.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanab_15_4bpp_0.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanai_15_4bpp_0.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanai_20_4bpp_0.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Font_verdanaz_22_4bpp_0.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\GeneratedFont.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_10_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_19_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdana_32_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanab_15_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanai_15_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanai_20_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Kerning_verdanaz_22_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_10_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_19_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdana_32_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanab_15_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanai_15_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanai_20_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\Table_verdanaz_22_4bpp.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\UnmappedDataFont.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\fonts\src\VectorFontRendererBuffers.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\bluemap_screen\bluemapViewBase.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\include\texts\TextKeysAndLanguages.hpp' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\common\FrontendApplicationBase.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\include\texts\TextKeysAndLanguages.hpp' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\redmap_screen\redmapViewBase.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\gui_generated\src\screen_screen\screenViewBase.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\include\texts\TextKeysAndLanguages.hpp' has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\LanguageGb.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\Texts.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\src\TypedTextDatabase.cpp': source file has been changed.
+'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\target\generated\TouchGFXConfiguration.cpp': dependence 'c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\CubeMX\TouchGFX\generated\texts\include\texts\TypedTextDatabase.hpp' has been changed.
+
+[2026-05-02 17:20:44]	[done]
 	build successfully !
 

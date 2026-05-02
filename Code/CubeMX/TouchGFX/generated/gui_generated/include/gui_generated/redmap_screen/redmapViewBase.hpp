@@ -130,16 +130,19 @@ protected:
     touchgfx::TextArea point94;
     touchgfx::TextArea point95;
     touchgfx::Container container3;
-    touchgfx::TextAreaWithOneWildcard redsendpoint;
     touchgfx::TextAreaWithOneWildcard redchoosepoint;
+    touchgfx::TextArea textArea1;
+    touchgfx::Container container4;
+    touchgfx::Box infobox;
+    touchgfx::TextAreaWithOneWildcard state;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t REDSENDPOINT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar redsendpointBuffer[REDSENDPOINT_SIZE];
     static const uint16_t REDCHOOSEPOINT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar redchoosepointBuffer[REDCHOOSEPOINT_SIZE];
+    static const uint16_t STATE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar stateBuffer[STATE_SIZE];
 
 private:
 

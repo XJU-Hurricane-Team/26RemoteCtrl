@@ -17,8 +17,7 @@ void bluemapPresenter::deactivate()
 
 }
 
-void bluemapPresenter::onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose, int8_t send, int8_t mode){
-    view.point = send;
+void bluemapPresenter::onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose){
     view.choosekey = choose;
     view.handleKeyEvent(ctrl_Key);
     view.colortoggleEvent(choose);

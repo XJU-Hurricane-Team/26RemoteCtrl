@@ -3,12 +3,12 @@
 #include <gui/model/ModelListener.hpp>
 
 Model::Model()
-    : modelListener(nullptr), ctrl_keyValue(0), choosepoint(0), sendpoint(0), 
-      modevalue(0), keyValue(0), voltage(0), rsL_x(0), rsL_y(0),
-      rsR_x(0), rsR_y(0), r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
+    : modelListener(nullptr), ctrl_keyValue(0), choosepoint(0),
+      keyValue(0), voltage(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0), 
+      r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
-      r1_right_adsorbed(0), r1_chassis_status(1), r1_send_msg(0), r2_x_speed(0),
-      r2_y_speed(0), r2_angle(0), r2_status(0), r2_send_msg(0) {}
+      r1_right_adsorbed(0), r1_chassis_status(1), r1_send_msg(0), r1_rec_msg(0), r2_x_speed(0),
+      r2_y_speed(0), r2_angle(0), r2_status(0) {}
 
 void Model::tick() {
     /* UI在这里进行数据采集，为了不阻塞UI渲染通过消息队列进行通信 */
@@ -33,13 +33,10 @@ void Model::tick() {
                         keyValue = ctrl_msg->data.key;
                         modelListener->onKeyValueChanged(keyValue);
                     }
-                    if (ctrl_msg->ctrl_key!= ctrl_keyValue || ctrl_msg->choose_point != choosepoint
-                        || ctrl_msg->data.point != sendpoint || ctrl_msg->mode != modevalue) {
+                    if (ctrl_msg->ctrl_key!= ctrl_keyValue || ctrl_msg->data.point != choosepoint) {
                         ctrl_keyValue = ctrl_msg->ctrl_key;
-                        choosepoint = ctrl_msg->choose_point;
-                        sendpoint = ctrl_msg->data.point;
-                        modevalue = ctrl_msg->mode;
-                        modelListener->onCtrlKeyValueChanged(ctrl_keyValue, choosepoint, sendpoint, modevalue);
+                        choosepoint = ctrl_msg->data.point;
+                        modelListener->onCtrlKeyValueChanged(ctrl_keyValue, choosepoint);
                     }
 
                     remote_changed = true;
@@ -55,7 +52,8 @@ void Model::tick() {
                     r1_left_adsorbed = r1_msg->left_adsorbed;
                     r1_right_adsorbed = r1_msg->right_adsorbed;
                     r1_chassis_status = r1_msg->r1_chassis_status;
-                    r1_send_msg = r1_msg->r1_send_msg;
+                    r1_send_msg = r1_msg->send_msg;
+                    r1_rec_msg = r1_msg->rec_msg;
                     r1_changed = true;
                 } break;
 
@@ -65,7 +63,6 @@ void Model::tick() {
                     r2_y_speed = r2_msg->y_speed;
                     r2_angle = r2_msg->angle;
                     r2_status = r2_msg->r2_status;
-                    r2_send_msg = r2_msg->r2_send_msg;
                     r2_changed = true;
                 } break;
 
@@ -82,12 +79,14 @@ void Model::tick() {
         if (r1_changed) {
             modelListener->onR1StateChanged(
                 r1_x_speed, r1_y_speed, r1_w_speed, r1_chassis_status,
-                r1_left_pos, r1_right_pos, r1_left_adsorbed, r1_right_adsorbed, r1_send_msg);
+                r1_left_pos, r1_right_pos, r1_left_adsorbed, r1_right_adsorbed,
+                r1_send_msg, r1_rec_msg);
+            modelListener->R1StateChanged(r1_chassis_status);
             r1_changed = false;
         }
         if (r2_changed) {
             modelListener->onR2StateChanged(r2_x_speed, r2_y_speed, r2_angle,
-                                            r2_status, r2_send_msg);
+                                            r2_status);
             r2_changed = false;
         }
     }

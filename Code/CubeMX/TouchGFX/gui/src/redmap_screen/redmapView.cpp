@@ -1,6 +1,6 @@
 #include <gui/redmap_screen/redmapView.hpp>
 #include <touchgfx/Color.hpp>
-redmapView::redmapView():choosekey(0),point(0)
+redmapView::redmapView():choosekey(0),r1state(1)
 {
 
 }
@@ -419,7 +419,7 @@ void redmapView::colortoggleEvent(uint8_t point)
 
 void redmapView::update2(){
     Unicode::snprintf(redchoosepointBuffer, REDCHOOSEPOINT_SIZE, "%d", choosekey);
-    Unicode::snprintf(redsendpointBuffer, REDSENDPOINT_SIZE, "%d", point);
+    Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1state));
     redchoosepoint.invalidate();
-    redsendpoint.invalidate();
+    state.invalidate();
 }

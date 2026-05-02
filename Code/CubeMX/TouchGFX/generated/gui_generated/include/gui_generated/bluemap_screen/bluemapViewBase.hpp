@@ -130,14 +130,14 @@ protected:
     touchgfx::TextArea point94;
     touchgfx::TextArea point95;
     touchgfx::Container container3;
-    touchgfx::TextAreaWithOneWildcard bluesendpoint;
     touchgfx::TextAreaWithOneWildcard bluechoosepoint;
+    touchgfx::TextArea textArea1;
+    touchgfx::Container container4;
+    touchgfx::Box box96;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t BLUESENDPOINT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar bluesendpointBuffer[BLUESENDPOINT_SIZE];
     static const uint16_t BLUECHOOSEPOINT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar bluechoosepointBuffer[BLUECHOOSEPOINT_SIZE];
 

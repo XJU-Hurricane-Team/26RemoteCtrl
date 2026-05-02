@@ -70,7 +70,8 @@ typedef struct __packed {
     float right_pos;   /*!< 右侧抬升高度 */
     bool left_adsorbed;  /*!< 左侧是否吸住 */
     bool right_adsorbed; /*!< 右侧是否吸住 */
-    uint8_t r1_send_msg; /*!< R1发送的消息 */
+    uint8_t rec_msg;     /*!< 接收到R2传的数据 */
+    uint8_t send_msg;    /*!< 发送给R2的数据 */
 } r1_data_t;
 
 /**
@@ -80,7 +81,6 @@ typedef struct __packed {
     int16_t x_speed; /*!< x 方向速度 */
     int16_t y_speed; /*!< y 方向速度 */
     int16_t angle;   /*!< yaw 大小 */
-    uint8_t r2_send_msg; /*!< R2发送的消息 */
 
     /*!< R2 状态
      * bit[7:0] 保留, 后续按协议扩展
@@ -100,15 +100,13 @@ typedef struct __packed {
 /* 遥控器发送数据结构 */
 typedef struct __packed {
     int8_t key;   /*!< 按键值 */
-    int8_t point; /*!< 跑点位置 */
     int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
+    int8_t point; /*!< 跑点位置 */
 } remote_send_data_t;
 
 /* 遥控器控制消息结构 */
 typedef struct {
     uint8_t voltage;         /*!< 电压值 */
-    int8_t mode; /*!< 模式 */
-    int8_t choose_point; /*!< 选择跑点位置 */
     int8_t ctrl_key; /*!< 控制按键值 */
     remote_send_data_t data; /*!< 遥控器发送数据 */
 } remote_ctrl_msg_t;

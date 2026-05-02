@@ -15,7 +15,7 @@ class screenView : public screenViewBase {
     virtual void InfoUpdate1();
     int8_t keyState;
     int8_t voltage;
-    int8_t Mode1;
+    int8_t pointvalue;
     int8_t rsL_x;
     int8_t rsL_y;
     int8_t rsR_x;
@@ -30,12 +30,12 @@ class screenView : public screenViewBase {
     uint8_t r1_left_adsorbed;
     uint8_t r1_right_adsorbed;
     uint8_t r1_send_msg;
+    uint8_t r1_rec_msg;
 
     int16_t r2_x_speed;
     int16_t r2_y_speed;
     int16_t r2_angle;
     uint8_t r2_status;
-    uint8_t r2_send_msg;
 
     float graphValue;
     int tickCounter;
