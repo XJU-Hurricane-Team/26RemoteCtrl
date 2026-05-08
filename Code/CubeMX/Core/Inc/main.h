@@ -87,12 +87,12 @@ void Error_Handler(void);
 #define KeyBoard4_GPIO_Port GPIOC
 #define KeyBoard5_Pin GPIO_PIN_5
 #define KeyBoard5_GPIO_Port GPIOC
-#define WHE_R_UP_Pin GPIO_PIN_7
-#define WHE_R_UP_GPIO_Port GPIOE
+#define WHE_R_DO_Pin GPIO_PIN_7
+#define WHE_R_DO_GPIO_Port GPIOE
 #define WHE_R_KEY_Pin GPIO_PIN_8
 #define WHE_R_KEY_GPIO_Port GPIOE
-#define WHE_R_DO_Pin GPIO_PIN_9
-#define WHE_R_DO_GPIO_Port GPIOE
+#define WHE_R_UP_Pin GPIO_PIN_9
+#define WHE_R_UP_GPIO_Port GPIOE
 #define KEY_TR_Pin GPIO_PIN_10
 #define KEY_TR_GPIO_Port GPIOB
 #define KEY_TL_Pin GPIO_PIN_11

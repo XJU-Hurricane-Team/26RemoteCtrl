@@ -15,6 +15,7 @@
 void bsp_init(void) {
     uart_ex_init(&huart1);
     ads868x_Mult_ch_Init(0x06);
+    HAL_TIM_PWM_Start(BUZZER_TIM, BUZZER_CH);
 }
 
 #ifdef USE_FULL_ASSERT

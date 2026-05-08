@@ -100,8 +100,8 @@ int main(void)
   MX_DMA2D_Init();
   MX_SPI4_Init();
   MX_TIM2_Init();
-  MX_TIM3_Init();
   MX_IWDG_Init();
+  MX_TIM5_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 

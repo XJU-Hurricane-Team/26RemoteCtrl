@@ -40,9 +40,7 @@ void start_task(void *pvParameters) {
     UNUSED(pvParameters);
     BaseType_t ret;
     taskENTER_CRITICAL();
-    
-    Play_Music();
-                                          
+                                              
     ret = xTaskCreate(task1, "task1", 128, NULL, 2, &task1_handle);
     if (ret != pdPASS) {
         taskEXIT_CRITICAL();
@@ -63,8 +61,10 @@ void start_task(void *pvParameters) {
         while (1) {}
     }
 
-    vTaskDelete(start_task_handle);
     taskEXIT_CRITICAL();
+    Play_Music();
+    
+    vTaskDelete(start_task_handle);
 }
 
 /**

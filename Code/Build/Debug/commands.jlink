@@ -1,6 +1,0 @@
-r
-halt
-loadfile "c:\Users\78680\Desktop\2026R1\26RemoteCtrl2.0\26RemoteCtrl\Code\Build\Debug\26RemoteCtrl.hex"
-r
-go
-exit
