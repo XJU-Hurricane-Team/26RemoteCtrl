@@ -196,18 +196,6 @@
     <Filter Include="Source Files\gui\bluemap_screen">
       <UniqueIdentifier>38C02A0B-027C-F771-CE00-5F99033BFCB0</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\redmap_screen">
-      <UniqueIdentifier>E6405BF5-BEA9-9D22-995F-A805AACB8053</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\redmap_screen">
-      <UniqueIdentifier>BA93FBC7-C5B4-BE0A-9926-B5BAE45F91A4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\bluemap_screen">
-      <UniqueIdentifier>01F7184B-9917-A817-CF0B-C13A2A6233C0</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\bluemap_screen">
-      <UniqueIdentifier>74D17DA2-2EC5-62B4-F8D6-F20DEC11537A</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -255,17 +243,11 @@
     <ClCompile Include="..\..\gui\src\bluemap_screen\bluemapView.cpp">
       <Filter>Source Files\gui\bluemap_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\bluemap_screen\bluemapViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\bluemap_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\redmap_screen\redmapPresenter.cpp">
       <Filter>Source Files\gui\redmap_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\redmap_screen\redmapView.cpp">
       <Filter>Source Files\gui\redmap_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\redmap_screen\redmapViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\redmap_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -724,17 +706,11 @@
     <ClInclude Include="..\..\gui\include\gui\bluemap_screen\bluemapView.hpp">
       <Filter>Header Files\gui\bluemap_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\bluemap_screen\bluemapViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\bluemap_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapPresenter.hpp">
       <Filter>Header Files\gui\redmap_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapView.hpp">
       <Filter>Header Files\gui\redmap_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\redmap_screen\redmapViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\redmap_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

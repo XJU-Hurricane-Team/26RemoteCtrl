@@ -101,7 +101,6 @@ typedef struct __packed {
 typedef struct __packed {
     int8_t key;   /*!< 按键值 */
     int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
-    int8_t point; /*!< 跑点位置 */
 } remote_send_data_t;
 
 /* 遥控器控制消息结构 */

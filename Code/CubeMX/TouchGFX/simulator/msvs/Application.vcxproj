@@ -26,10 +26,8 @@
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
     <ClCompile Include="..\..\gui\src\bluemap_screen\bluemapPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\bluemap_screen\bluemapView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\bluemap_screen\bluemapViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\redmap_screen\redmapPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\redmap_screen\redmapView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\redmap_screen\redmapViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -185,10 +183,8 @@
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\bluemap_screen\bluemapPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\bluemap_screen\bluemapView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\bluemap_screen\bluemapViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\redmap_screen\redmapView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\redmap_screen\redmapViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

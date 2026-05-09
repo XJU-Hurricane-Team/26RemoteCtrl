@@ -10,10 +10,6 @@
 #include <touchgfx/hal/HAL.hpp>
 #include <gui/screen_screen/screenView.hpp>
 #include <gui/screen_screen/screenPresenter.hpp>
-#include <gui/bluemap_screen/bluemapView.hpp>
-#include <gui/bluemap_screen/bluemapPresenter.hpp>
-#include <gui/redmap_screen/redmapView.hpp>
-#include <gui/redmap_screen/redmapPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -42,30 +38,4 @@ void FrontendApplicationBase::gotoscreenScreenNoTransition()
 void FrontendApplicationBase::gotoscreenScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<screenView, screenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// bluemap
-
-void FrontendApplicationBase::gotobluemapScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotobluemapScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotobluemapScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<bluemapView, bluemapPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// redmap
-
-void FrontendApplicationBase::gotoredmapScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoredmapScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoredmapScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<redmapView, redmapPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

@@ -3,31 +3,9 @@
 #include "stm32f4xx_hal.h"
 #include <stdlib.h>
 
-namespace {
-    /* 格式化固定小数点 */
-void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
-                  float value) {
-    int32_t scaled = static_cast<int32_t>(value * 10.0f);
-    int32_t absScaled = (scaled < 0) ? -scaled : scaled;
-    int32_t intPart = absScaled / 10;
-    int32_t fracPart = absScaled % 10;
-
-    if (scaled < 0) {
-        touchgfx::Unicode::snprintf(buffer, bufferSize, "-%d.%01d", intPart,
-                                    fracPart);
-    } else {
-        touchgfx::Unicode::snprintf(buffer, bufferSize, "%d.%01d", intPart,
-                                    fracPart);
-    }
-}
-} // namespace
-
 screenView::screenView()
     : keyState(0), voltage(0), pointvalue(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
-      r1_x_speed(0), r1_y_speed(0), r1_w_speed(0), r1_status(1),
-      r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
-      r1_right_adsorbed(0), r1_send_msg(0), r1_rec_msg(0), r2_x_speed(0), r2_y_speed(0), r2_angle(0),
-      r2_status(0), graphValue(0.0f), tickCounter(0), digitalHours(0),
+      graphValue(0.0f), tickCounter(0), digitalHours(0),
       digitalMinutes(0), digitalSeconds(0) {}
 
 void screenView::setupScreen() {
@@ -73,47 +51,13 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(RockLBuffer2, ROCKLBUFFER2_SIZE, "%d", rsL_y);
     touchgfx::Unicode::snprintf(RockRBuffer1, ROCKRBUFFER1_SIZE, "%d", rsR_x);
     touchgfx::Unicode::snprintf(RockRBuffer2, ROCKRBUFFER2_SIZE, "%d", rsR_y);
-    touchgfx::Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "Key%d", keyState);
+    touchgfx::Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "%d", keyState);
     touchgfx::Unicode::snprintf(BatteryBuffer, BATTERY_SIZE, "%d", voltage);
     touchgfx::Unicode::snprintf(pointBuffer, POINT_SIZE, "%d", pointvalue);
-
-    touchgfx::Unicode::snprintf(R1V_xBuffer, R1V_X_SIZE, "%d", r1_x_speed);
-    touchgfx::Unicode::snprintf(R1V_yBuffer, R1V_Y_SIZE, "%d", r1_y_speed);
-    touchgfx::Unicode::snprintf(R1YawBuffer, R1YAW_SIZE, "%d", r1_w_speed);
-    touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "%d", r1_send_msg);
-    touchgfx::Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%u",
-                                static_cast<unsigned int>(r1_status));
-    formatFixed2(L_PBuffer, L_P_SIZE, r1_left_pos);
-    formatFixed2(R_PBuffer, R_P_SIZE, r1_right_pos);
-    touchgfx::Unicode::snprintf(L_ABuffer, L_A_SIZE, "%u",
-                                static_cast<unsigned int>(r1_left_adsorbed));
-    touchgfx::Unicode::snprintf(R_ABuffer, R_A_SIZE, "%u",
-                                static_cast<unsigned int>(r1_right_adsorbed));
-
-    touchgfx::Unicode::snprintf(R2V_xBuffer, R2V_X_SIZE, "%d", r2_x_speed);
-    touchgfx::Unicode::snprintf(R2V_yBuffer, R2V_Y_SIZE, "%d", r2_y_speed);
-    touchgfx::Unicode::snprintf(R2YawBuffer, R2YAW_SIZE, "%d", r2_angle);
-    touchgfx::Unicode::snprintf(R2_MSGBuffer, R2_MSG_SIZE, "%d", r1_rec_msg);
-    touchgfx::Unicode::snprintf(R2StateBuffer, R2STATE_SIZE, "%u",
-                                static_cast<unsigned int>(r2_status));
 
     point.invalidate();
     RockL.invalidate();
     RockR.invalidate();
     KeyNum.invalidate();
     Battery.invalidate();
-
-    R1V_x.invalidate();
-    R1V_y.invalidate();
-    R1Yaw.invalidate();
-    R1State.invalidate();
-    L_P.invalidate();
-    R_P.invalidate();
-    L_A.invalidate();
-    R_A.invalidate();
-
-    R2V_x.invalidate();
-    R2V_y.invalidate();
-    R2Yaw.invalidate();
-    R2State.invalidate();
 }

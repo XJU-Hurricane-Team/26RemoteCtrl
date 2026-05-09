@@ -102,8 +102,8 @@ void message_polling_task(void *pvParameters) {
     remote_send_init(&huart1);
 
     /* 注册接收回调函数 */
-    message_register_recv_callback(MSG_MASTER_TO_RC, remote_recv_msg_callback);
-    message_register_polling_uart(MSG_MASTER_TO_RC, &huart1, 128, 128);
+    // message_register_recv_callback(MSG_MASTER_TO_RC, remote_recv_msg_callback);
+    // message_register_polling_uart(MSG_MASTER_TO_RC, &huart1, 128, 128);
 
     while (1) {
         message_polling_data();

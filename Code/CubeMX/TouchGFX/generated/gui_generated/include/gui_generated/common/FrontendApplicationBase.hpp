@@ -23,12 +23,6 @@ public:
     // screen
     void gotoscreenScreenNoTransition();
 
-    // bluemap
-    void gotobluemapScreenNoTransition();
-
-    // redmap
-    void gotoredmapScreenNoTransition();
-
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -36,12 +30,6 @@ protected:
 
     // screen
     void gotoscreenScreenNoTransitionImpl();
-
-    // bluemap
-    void gotobluemapScreenNoTransitionImpl();
-
-    // redmap
-    void gotoredmapScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

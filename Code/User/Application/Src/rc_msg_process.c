@@ -102,10 +102,11 @@ static void remote_send_task(void *pvParameters) {
     while (1) {
 
         keyboard_value = keyboard_scan();
-        add_key = add_key_scan(1);
-        ctrl_key = ctrl_key_scan(1);
-        choosepoint = get_point_value();
-
+        if (add_key_scan(1) != KEY_NO_PRESS)
+        {
+            keyboard_value = add_key_scan(1);
+        }
+        
         rs_get_value(rs_adc_buf, 10, 40);
 
         mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
@@ -116,40 +117,9 @@ static void remote_send_task(void *pvParameters) {
         }else{
             LED1_OFF();
         }
-
-        //模式选择(模式1优先级高于模式2)
-        switch (add_key)
-        {
-        case KEY_LZ_PRESS:
-            keyboard_value = 49;
-            break;
-        case KEY_RZ_PRESS:
-            keyboard_value = 50;
-            break;
-            //切换至模式1
-        case KEY_TL_PRESS:
-            MSG_MODES = CHANGE_TO_MODE1;
-            if (keyboard_value)
-            {
-                keyboard_value += 16;
-            }
-            break;
-            //切换至模式2
-        case KEY_TR_PRESS:
-            MSG_MODES = CHANGE_TO_MODE2;
-            if (keyboard_value)
-            {
-                keyboard_value += 32;
-            }
-            break;
-        default:
-            MSG_MODES = NORMAL_MODE;
-            break;
-        }
-
+        
         /* 控制按键有更高的优先级 */
         remote_send_data.key = (uint8_t)keyboard_value;
-        remote_send_data.point = choosepoint;
         remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
         remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
         remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */

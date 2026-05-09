@@ -23,9 +23,9 @@ static volatile float g_real_AD[8]={0.0};//存储通道的真实电压值 mV
 static uint16_t rs_data_limit(uint16_t data, uint8_t dead_zone,
                               uint8_t data_level) 
 {
-    uint16_t adc_max = 40000;
+    uint16_t adc_max = 38000;
     uint16_t adc_mid = 21000;
-    uint16_t adc_min = 2000;
+    uint16_t adc_min = 4000;
 
     float dead_zone_threshold = (adc_max - adc_min) * dead_zone / 100;
     uint16_t data_piece = (uint16_t)((adc_mid - adc_min - dead_zone_threshold) * 2 /
@@ -93,7 +93,7 @@ void rs_get_value(uint32_t *data, uint8_t dead_zone, uint8_t data_level)
     data[2] /= 100;
     data[3] /= 100;
     data[4] /= 100;
-}
+ }
 
 void ads868x_spi_writeBit(uint8_t bit)
 {
