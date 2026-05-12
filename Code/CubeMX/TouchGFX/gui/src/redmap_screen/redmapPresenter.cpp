@@ -23,6 +23,9 @@ void redmapPresenter::onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose){
     view.colortoggleEvent(choose);
 }
 
-void redmapPresenter::R1StateChanged(uint8_t status){
+void redmapPresenter::R1StateChanged(uint8_t status ,uint8_t state ,float accel ,uint8_t source){
     view.r1state = status;
+    view.r1_accel_xy = accel;
+    view.r1_state = state;
+    view.r1_yaw_source = source;
 }

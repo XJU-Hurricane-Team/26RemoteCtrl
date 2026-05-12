@@ -134,15 +134,24 @@ protected:
     touchgfx::TextArea textArea1;
     touchgfx::Container container4;
     touchgfx::Box infobox;
+    touchgfx::TextAreaWithOneWildcard SOURCE;
     touchgfx::TextAreaWithOneWildcard state;
+    touchgfx::TextAreaWithOneWildcard CTRL;
+    touchgfx::TextAreaWithOneWildcard ACCEL;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t REDCHOOSEPOINT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar redchoosepointBuffer[REDCHOOSEPOINT_SIZE];
+    static const uint16_t SOURCE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SOURCEBuffer[SOURCE_SIZE];
     static const uint16_t STATE_SIZE = 10;
     touchgfx::Unicode::UnicodeChar stateBuffer[STATE_SIZE];
+    static const uint16_t CTRL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar CTRLBuffer[CTRL_SIZE];
+    static const uint16_t ACCEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar ACCELBuffer[ACCEL_SIZE];
 
 private:
 

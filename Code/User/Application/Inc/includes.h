@@ -65,28 +65,17 @@ typedef struct __packed {
     int16_t x_speed; /*!< x 方向速度 */
     int16_t y_speed; /*!< y 方向速度 */
     int16_t w_speed; /*!< 角速度 */
-    uint8_t r1_chassis_status;
+    uint8_t r1_chassis_status;/*!< 自锁与否 */
+    uint8_t r1_chassis_state; /*!< 手控与否 */
+    float accel_xy;      /*!< 加速度 */
     float left_pos;    /*!< 左侧抬升高度 */
     float right_pos;   /*!< 右侧抬升高度 */
     bool left_adsorbed;  /*!< 左侧是否吸住 */
     bool right_adsorbed; /*!< 右侧是否吸住 */
     uint8_t rec_msg;     /*!< 接收到R2传的数据 */
     uint8_t send_msg;    /*!< 发送给R2的数据 */
+    uint8_t yaw_source;        /*!< 坐标系来源，0=SELF, 1=NUC */
 } r1_data_t;
-
-/**
- * @brief R2 状态数据
- */
-typedef struct __packed {
-    int16_t x_speed; /*!< x 方向速度 */
-    int16_t y_speed; /*!< y 方向速度 */
-    int16_t angle;   /*!< yaw 大小 */
-
-    /*!< R2 状态
-     * bit[7:0] 保留, 后续按协议扩展
-     */
-    uint8_t r2_status;
-} r2_data_t;
 
 /**
  * @brief 上报的数据包
@@ -94,7 +83,6 @@ typedef struct __packed {
  */
 typedef struct __packed {
     r1_data_t r1_state;
-    r2_data_t r2_state;
 } report_data_t;
 
 /* 遥控器发送数据结构 */
@@ -102,6 +90,7 @@ typedef struct __packed {
     int8_t key;   /*!< 按键值 */
     int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
     int8_t point; /*!< 跑点位置 */
+    int8_t irdamsg;
 } remote_send_data_t;
 
 /* 遥控器控制消息结构 */
@@ -115,7 +104,7 @@ typedef struct {
 typedef union {
     remote_ctrl_msg_t remote_ctrl;
     r1_data_t r1_state;
-    r2_data_t r2_state;
+    // r2_data_t r2_state;
 } ui_msg_payload_t;
 
 typedef struct {

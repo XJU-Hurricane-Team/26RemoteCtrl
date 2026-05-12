@@ -544,6 +544,38 @@ bluemapViewBase::bluemapViewBase() :
     box96.setColor(touchgfx::Color::getColorFromRGB(255, 252, 171));
     container4.add(box96);
 
+    SOURCE.setPosition(161, 18, 127, 25);
+    SOURCE.setColor(touchgfx::Color::getColorFromRGB(255, 0, 149));
+    SOURCE.setLinespacing(0);
+    Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "%s", touchgfx::TypedText(T_YAWSOURCE).getText());
+    SOURCE.setWildcard(SOURCEBuffer);
+    SOURCE.setTypedText(touchgfx::TypedText(T_YSOURCE));
+    container4.add(SOURCE);
+
+    state.setPosition(29, 15, 99, 31);
+    state.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    state.setLinespacing(0);
+    Unicode::snprintf(stateBuffer, STATE_SIZE, "%s", touchgfx::TypedText(T_HALTSTATE).getText());
+    state.setWildcard(stateBuffer);
+    state.setTypedText(touchgfx::TypedText(T___SINGLEUSE_6I2G));
+    container4.add(state);
+
+    CTRL.setPosition(29, 46, 128, 27);
+    CTRL.setColor(touchgfx::Color::getColorFromRGB(0, 191, 255));
+    CTRL.setLinespacing(0);
+    Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "%s", touchgfx::TypedText(T_CTRLMODE).getText());
+    CTRL.setWildcard(CTRLBuffer);
+    CTRL.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QUIZ));
+    container4.add(CTRL);
+
+    ACCEL.setPosition(160, 46, 125, 28);
+    ACCEL.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    ACCEL.setLinespacing(0);
+    Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%s", touchgfx::TypedText(T_ACCELVALUE).getText());
+    ACCEL.setWildcard(ACCELBuffer);
+    ACCEL.setTypedText(touchgfx::TypedText(T___SINGLEUSE_30XJ));
+    container4.add(ACCEL);
+
     add(container4);
 }
 

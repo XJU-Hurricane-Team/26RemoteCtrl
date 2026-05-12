@@ -62,7 +62,7 @@ void start_task(void *pvParameters) {
     }
 
     taskEXIT_CRITICAL();
-    Play_Music();
+    // Play_Music();
     
     vTaskDelete(start_task_handle);
 }

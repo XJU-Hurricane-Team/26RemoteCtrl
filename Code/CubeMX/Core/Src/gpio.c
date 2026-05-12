@@ -416,4 +416,30 @@ uint8_t get_point_value(void) {
     return choosepoint;
 }
 
+static int8_t msg_num = 1;
+uint8_t get_irda_msg(void) {
+    switch (ctrl_key_scan(1))
+    {
+    case WHE_R_TURNUP:
+        msg_num -= 1;
+        if (msg_num < 1)
+        {
+            msg_num = 0;
+        }
+        
+        break;
+    
+    case WHE_R_TURNDO:
+        msg_num += 1;
+        if (msg_num > 6)
+        {
+            msg_num = 6;
+        }
+        break;
+
+    default:
+        break;
+    }
+    return msg_num;
+}
 /* USER CODE END 2 */

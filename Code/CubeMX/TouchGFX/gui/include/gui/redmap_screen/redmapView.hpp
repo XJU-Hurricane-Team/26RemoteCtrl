@@ -17,6 +17,9 @@ public:
 
     int8_t choosekey;
     uint8_t r1state;
+    uint8_t r1_state;
+    float r1_accel_xy;
+    uint8_t r1_yaw_source;
 
 protected:
 };

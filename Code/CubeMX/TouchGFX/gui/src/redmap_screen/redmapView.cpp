@@ -1,6 +1,26 @@
 #include <gui/redmap_screen/redmapView.hpp>
 #include <touchgfx/Color.hpp>
-redmapView::redmapView():choosekey(0),r1state(1)
+
+namespace {
+    /* 格式化固定小数点 */
+void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
+                  float value) {
+    int32_t scaled = static_cast<int32_t>(value * 10.0f);
+    int32_t absScaled = (scaled < 0) ? -scaled : scaled;
+    int32_t intPart = absScaled / 10;
+    int32_t fracPart = absScaled % 10;
+
+    if (scaled < 0) {
+        touchgfx::Unicode::snprintf(buffer, bufferSize, "-%d.%01d", intPart,
+                                    fracPart);
+    } else {
+        touchgfx::Unicode::snprintf(buffer, bufferSize, "%d.%01d", intPart,
+                                    fracPart);
+    }
+}
+} // namespace
+
+redmapView::redmapView():choosekey(0),r1state(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0)
 {
 
 }
@@ -420,6 +440,13 @@ void redmapView::colortoggleEvent(uint8_t point)
 void redmapView::update2(){
     Unicode::snprintf(redchoosepointBuffer, REDCHOOSEPOINT_SIZE, "%d", choosekey);
     Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1state));
+    Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "%d", r1_state);
+    formatFixed2(ACCELBuffer, ACCEL_SIZE, r1_accel_xy);
+    Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u", static_cast<unsigned int>(r1_accel_xy));
+    Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "%d", r1_yaw_source);
     redchoosepoint.invalidate();
     state.invalidate();
+    CTRL.invalidate();
+    ACCEL.invalidate();
+    SOURCE.invalidate();
 }

@@ -23,8 +23,9 @@
               {
                 "Type": "TextArea",
                 "Name": "L_A",
+                "X": 9,
                 "Y": 86,
-                "Width": 77,
+                "Width": 61,
                 "Height": 19,
                 "TextId": "__SingleUse_I2OW",
                 "TextRotation": "0",
@@ -44,7 +45,7 @@
                 "Name": "R_A",
                 "X": 77,
                 "Y": 86,
-                "Width": 77,
+                "Width": 69,
                 "Height": 19,
                 "TextId": "__SingleUse_CLN1",
                 "TextRotation": "0",
@@ -64,7 +65,7 @@
                 "Name": "R_P",
                 "X": 79,
                 "Y": 67,
-                "Width": 77,
+                "Width": 67,
                 "Height": 19,
                 "TextId": "__SingleUse_3OW3",
                 "TextRotation": "0",
@@ -81,71 +82,10 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "R2State",
-                "X": 163,
-                "Y": 71,
-                "Width": 155,
-                "Height": 20,
-                "TextId": "__SingleUse_QWN1",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 245,
-                  "Green": 2,
-                  "Blue": 2
-                },
-                "Wildcard1": {
-                  "TextId": "R2state",
-                  "UseBuffer": true,
-                  "BufferSize": 10
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "R2Yaw",
-                "X": 165,
-                "Y": 52,
-                "Width": 47,
-                "Height": 18,
-                "TextId": "__SingleUse_B9HS",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 167,
-                  "Green": 247,
-                  "Blue": 124
-                },
-                "AutoSize": true,
-                "Wildcard1": {
-                  "TextId": "R2_yaw",
-                  "UseBuffer": true,
-                  "BufferSize": 10
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "R2V_y",
-                "X": 240,
-                "Y": 28,
-                "Width": 75,
-                "Height": 20,
-                "TextId": "__SingleUse_BDBH",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 167,
-                  "Green": 247,
-                  "Blue": 124
-                },
-                "Wildcard1": {
-                  "TextId": "R2_vy",
-                  "UseBuffer": true,
-                  "BufferSize": 10
-                }
-              },
-              {
-                "Type": "TextArea",
                 "Name": "R1Yaw",
                 "X": 77,
                 "Y": 29,
-                "Width": 81,
+                "Width": 69,
                 "Height": 20,
                 "TextId": "__SingleUse_C9E6",
                 "TextRotation": "0",
@@ -178,39 +118,6 @@
                 "LineEndingStyle": "Round"
               },
               {
-                "Type": "Line",
-                "Name": "line2",
-                "X": 155,
-                "Y": 6,
-                "Width": 10,
-                "Height": 130,
-                "Color": {
-                  "Red": 43,
-                  "Green": 171,
-                  "Blue": 217
-                },
-                "StartX": 5.0,
-                "EndX": 5.0,
-                "EndY": 245.0,
-                "LineWidth": 3.0,
-                "LineEndingStyle": "Round"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea3",
-                "X": 160,
-                "Y": 6,
-                "Width": 160,
-                "Height": 22,
-                "TextId": "__SingleUse_V51Z",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                }
-              },
-              {
                 "Type": "TextArea",
                 "Name": "textArea2",
                 "X": 3,
@@ -228,8 +135,9 @@
               {
                 "Type": "TextArea",
                 "Name": "R1V_x",
+                "X": 9,
                 "Y": 47,
-                "Width": 78,
+                "Width": 61,
                 "Height": 20,
                 "TextId": "__SingleUse_I0DT",
                 "TextRotation": "0",
@@ -249,7 +157,7 @@
                 "Name": "R1V_y",
                 "X": 78,
                 "Y": 47,
-                "Width": 80,
+                "Width": 68,
                 "Height": 20,
                 "TextId": "__SingleUse_JQKN",
                 "TextRotation": "0",
@@ -267,15 +175,16 @@
               {
                 "Type": "TextArea",
                 "Name": "R1State",
-                "Y": 27,
-                "Width": 77,
+                "X": 9,
+                "Y": 29,
+                "Width": 61,
                 "Height": 20,
                 "TextId": "__SingleUse_2J9Y",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 245,
-                  "Green": 2,
-                  "Blue": 2
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
                 },
                 "Wildcard1": {
                   "TextId": "R1state",
@@ -285,30 +194,11 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "R2V_x",
-                "X": 165,
-                "Y": 29,
-                "Width": 75,
-                "Height": 20,
-                "TextId": "__SingleUse_ECEO",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 167,
-                  "Green": 247,
-                  "Blue": 124
-                },
-                "Wildcard1": {
-                  "TextId": "R2speed",
-                  "UseBuffer": true,
-                  "BufferSize": 10
-                }
-              },
-              {
-                "Type": "TextArea",
                 "Name": "L_P",
-                "Y": 67,
-                "Width": 77,
-                "Height": 19,
+                "X": 9,
+                "Y": 66,
+                "Width": 61,
+                "Height": 20,
                 "TextId": "__SingleUse_IDUM",
                 "TextRotation": "0",
                 "Color": {
@@ -325,39 +215,56 @@
               {
                 "Type": "TextArea",
                 "Name": "R1_MSG",
-                "X": 13,
-                "Y": 105,
-                "Width": 133,
-                "Height": 22,
+                "X": 156,
+                "Y": 18,
+                "Width": 164,
+                "Height": 48,
                 "TextId": "__SingleUse_NKFY",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
-                  "Green": 178,
-                  "Blue": 221
+                  "Green": 181,
+                  "Blue": 239
                 },
                 "Wildcard1": {
                   "TextId": "R2_send",
+                  "UseBuffer": true,
+                  "BufferSize": 20
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "CTRL",
+                "X": 168,
+                "Y": 71,
+                "Width": 131,
+                "Height": 31,
+                "TextId": "__SingleUse_UX0S",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "CTRLmode",
                   "UseBuffer": true,
                   "BufferSize": 10
                 }
               },
               {
                 "Type": "TextArea",
-                "Name": "R2_MSG",
-                "X": 175,
-                "Y": 105,
-                "Width": 130,
-                "Height": 22,
-                "TextId": "__SingleUse_PGE0",
+                "Name": "ACCEL",
+                "X": 168,
+                "Y": 102,
+                "Width": 145,
+                "Height": 28,
+                "TextId": "__SingleUse_W6E1",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 255,
-                  "Green": 178,
-                  "Blue": 221
+                  "Red": 255
                 },
                 "Wildcard1": {
-                  "TextId": "R2_send",
+                  "TextId": "ACCELvalue",
                   "UseBuffer": true,
                   "BufferSize": 10
                 }
@@ -370,6 +277,25 @@
             "Width": 320,
             "Height": 105,
             "Components": [
+              {
+                "Type": "TextArea",
+                "Name": "SOURCE",
+                "X": 179,
+                "Y": 73,
+                "Width": 127,
+                "Height": 25,
+                "TextId": "Ysource",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Blue": 149
+                },
+                "Wildcard1": {
+                  "TextId": "yawsource",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
               {
                 "Type": "TextArea",
                 "Name": "Battery",
@@ -393,8 +319,9 @@
               {
                 "Type": "TextArea",
                 "Name": "KeyNum",
+                "X": 13,
                 "Y": 46,
-                "Width": 115,
+                "Width": 97,
                 "Height": 21,
                 "TextId": "KeyNum",
                 "TextRotation": "0",
@@ -412,8 +339,9 @@
               {
                 "Type": "TextArea",
                 "Name": "RockL",
+                "X": 18,
                 "Y": 67,
-                "Width": 160,
+                "Width": 79,
                 "Height": 38,
                 "TextId": "__SingleUse_5TK6",
                 "TextRotation": "0",
@@ -436,9 +364,9 @@
               {
                 "Type": "TextArea",
                 "Name": "RockR",
-                "X": 160,
+                "X": 97,
                 "Y": 67,
-                "Width": 160,
+                "Width": 80,
                 "Height": 38,
                 "TextId": "__SingleUse_PKSR",
                 "TextRotation": "0",
@@ -461,8 +389,9 @@
               {
                 "Type": "DigitalClock",
                 "Name": "RunningTime",
+                "X": 32,
                 "Y": 27,
-                "Width": 247,
+                "Width": 189,
                 "Height": 18,
                 "TextColor": {
                   "Red": 246,
@@ -1667,6 +1596,77 @@
                   "Green": 252,
                   "Blue": 171
                 }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "SOURCE",
+                "X": 161,
+                "Y": 18,
+                "Width": 127,
+                "Height": 25,
+                "TextId": "Ysource",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Blue": 149
+                },
+                "Wildcard1": {
+                  "TextId": "yawsource",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "state",
+                "X": 29,
+                "Y": 15,
+                "Width": 99,
+                "Height": 31,
+                "TextId": "__SingleUse_6I2G",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "Haltstate",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "CTRL",
+                "X": 29,
+                "Y": 46,
+                "Width": 128,
+                "Height": 27,
+                "TextId": "__SingleUse_QUIZ",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 191,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "CTRLmode",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "ACCEL",
+                "X": 160,
+                "Y": 46,
+                "Width": 125,
+                "Height": 28,
+                "TextId": "__SingleUse_30XJ",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255
+                },
+                "Wildcard1": {
+                  "TextId": "ACCELvalue",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
               }
             ]
           }
@@ -2779,6 +2779,7 @@
             "Y": 112,
             "Width": 128,
             "Height": 96,
+            "LockPosition": true,
             "Components": [
               {
                 "Type": "TextArea",
@@ -2836,15 +2837,71 @@
               },
               {
                 "Type": "TextArea",
+                "Name": "SOURCE",
+                "X": 161,
+                "Y": 18,
+                "Width": 127,
+                "Height": 25,
+                "TextId": "Ysource",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Blue": 149
+                },
+                "Wildcard1": {
+                  "TextId": "yawsource",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
                 "Name": "state",
-                "X": 9,
-                "Y": 9,
+                "X": 29,
+                "Y": 15,
                 "Width": 99,
                 "Height": 31,
                 "TextId": "__SingleUse_5JV8",
                 "TextRotation": "0",
                 "Wildcard1": {
                   "TextId": "Haltstate",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "CTRL",
+                "X": 29,
+                "Y": 46,
+                "Width": 128,
+                "Height": 27,
+                "TextId": "__SingleUse_734D",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 191,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "CTRLmode",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "ACCEL",
+                "X": 160,
+                "Y": 46,
+                "Width": 145,
+                "Height": 28,
+                "TextId": "__SingleUse_RUQL",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255
+                },
+                "Wildcard1": {
+                  "TextId": "ACCELvalue",
                   "UseBuffer": true,
                   "BufferSize": 10
                 }

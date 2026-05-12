@@ -33,7 +33,7 @@ QueueHandle_t ui_msg_queue = NULL;
 static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 /* UI 消息序列号 */
 static uint32_t ui_msg_seq = 0;
-
+static int8_t screen = 1;
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
 
 /**
@@ -85,6 +85,7 @@ static void remote_send_task(void *pvParameters) {
     uint8_t add_key = 0;
     uint8_t ctrl_key = 0;
     uint8_t choosepoint = 0;
+    int8_t msg_num = 0;
     uint8_t keyboard_value = 0;
     uint32_t rs_adc_buf[5] = {0};
 
@@ -103,15 +104,42 @@ static void remote_send_task(void *pvParameters) {
 
         keyboard_value = keyboard_scan();
         add_key = add_key_scan(1);
-        ctrl_key = ctrl_key_scan(1);
-        choosepoint = get_point_value();
+        ctrl_key = ctrl_key_scan(0);
+
+        switch (ctrl_key)
+        {
+        case WHE_L_TURNUP:
+            screen -= 1;
+            if (screen < 1)
+            {
+                screen = 0;
+            }
+            break;
+
+        case WHE_L_TURNDO:
+            screen += 1;
+            if (screen > 1)
+            {
+                screen = 2;
+            }
+            break;
+        
+        default:
+            break;
+        }
+
+        if (screen != 1)
+        {
+            choosepoint = get_point_value();
+        }else{
+            msg_num = get_irda_msg();
+        }
 
         rs_get_value(rs_adc_buf, 10, 40);
 
         mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
         if (mV <= 35)
         {
-            // BEEP_SWITCH(1);
             LED1_ON();
         }else{
             LED1_OFF();
@@ -150,6 +178,7 @@ static void remote_send_task(void *pvParameters) {
         /* 控制按键有更高的优先级 */
         remote_send_data.key = (uint8_t)keyboard_value;
         remote_send_data.point = choosepoint;
+        remote_send_data.irdamsg = msg_num;
         remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
         remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
         remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */
@@ -279,11 +308,6 @@ void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
     ui_msg.type = UI_R1_STATE;
     ui_msg.seq = ++ui_msg_seq;
     memcpy(&ui_msg.payload.r1_state, &report_data.r1_state, sizeof(r1_data_t));
-    ui_publish_msg(&ui_msg);
-
-    ui_msg.type = UI_R2_STATE;
-    ui_msg.seq = ++ui_msg_seq;
-    memcpy(&ui_msg.payload.r2_state, &report_data.r2_state, sizeof(r2_data_t));
     ui_publish_msg(&ui_msg);
 
     /* LED3 闪烁判断消息接收是否正常 */

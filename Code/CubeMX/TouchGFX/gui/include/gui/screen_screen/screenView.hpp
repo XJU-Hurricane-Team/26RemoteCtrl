@@ -16,6 +16,7 @@ class screenView : public screenViewBase {
     int8_t keyState;
     int8_t voltage;
     int8_t pointvalue;
+    int8_t msgnum;
     int8_t rsL_x;
     int8_t rsL_y;
     int8_t rsR_x;
@@ -25,17 +26,20 @@ class screenView : public screenViewBase {
     int16_t r1_y_speed;
     int16_t r1_w_speed;
     uint8_t r1_status;
+    uint8_t r1_state;
+    float r1_accel_xy;
     float r1_left_pos;
     float r1_right_pos;
     uint8_t r1_left_adsorbed;
     uint8_t r1_right_adsorbed;
     uint8_t r1_send_msg;
     uint8_t r1_rec_msg;
+    uint8_t r1_yaw_source;  
 
-    int16_t r2_x_speed;
-    int16_t r2_y_speed;
-    int16_t r2_angle;
-    uint8_t r2_status;
+    // int16_t r2_x_speed;
+    // int16_t r2_y_speed;
+    // int16_t r2_angle;
+    // uint8_t r2_status;
 
     float graphValue;
     int tickCounter;
