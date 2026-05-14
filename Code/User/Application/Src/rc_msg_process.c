@@ -7,7 +7,7 @@
  */
 
 #include "includes.h"
-
+#include "my_math/my_math.h"
 /* 发送时间间隔, 单位: ms */
 #define REMOTE_SEND_PERIOD 10
 
@@ -16,6 +16,9 @@
 
 /* 遥控器触发回调按键数量 */
 #define REMOTE_KEY_NUM     18
+
+/* 屏幕总数量 */
+#define SCREEN_TOTALNUM    2
 
 #define KEY_EVENT_CB(key, event)                                               \
     do {                                                                       \
@@ -63,11 +66,7 @@ static void ui_publish_msg(const ui_msg_t *msg) {
 static int8_t joystick_set_value(uint32_t adc_value) {
     int32_t value = 20 - (int32_t)adc_value;
 
-    if (value > 20) {
-        value = 20;
-    } else if (value < -20) {
-        value = -20;
-    }
+    my_limit(value, -20, 20);
 
     return (int8_t)value;
 }
@@ -110,18 +109,12 @@ static void remote_send_task(void *pvParameters) {
         {
         case WHE_L_TURNUP:
             screen -= 1;
-            if (screen < 1)
-            {
-                screen = 0;
-            }
+            my_limit(screen, 0, SCREEN_TOTALNUM);
             break;
 
         case WHE_L_TURNDO:
             screen += 1;
-            if (screen > 1)
-            {
-                screen = 2;
-            }
+            my_limit(screen, 0, SCREEN_TOTALNUM);
             break;
         
         default:

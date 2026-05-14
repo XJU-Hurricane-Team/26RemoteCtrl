@@ -8,6 +8,7 @@
 
 #include "ads868x.h"
 #include "../core_delay/core_delay.h"
+#include "my_math/my_math.h"
 
 static uint16_t g_My_AD[8]={0};//存储通道读取到的数值
 static volatile float g_real_AD[8]={0.0};//存储通道的真实电压值 mV
@@ -32,13 +33,9 @@ static uint16_t rs_data_limit(uint16_t data, uint8_t dead_zone,
                                      data_level); /* 计算每一份的值 */
     uint8_t data_res = 0;
 
-    if (data >= adc_max)
-    {
-        data = adc_max;
-    }else if (data <= adc_min)
-    {
-        data = adc_min;
-    }else if( data >= (adc_mid - dead_zone_threshold) && 
+    my_limit(data, adc_min, adc_max);
+    
+    if( data >= (adc_mid - dead_zone_threshold) && 
         data <= (adc_mid + dead_zone_threshold)){
                 data = adc_mid;/*设置死区内的数值为中间值 */
     }

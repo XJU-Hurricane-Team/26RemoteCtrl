@@ -22,7 +22,7 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "my_math/my_math.h"
 /* USER CODE END 0 */
 
 /*----------------------------------------------------------------------------*/
@@ -276,6 +276,8 @@ uint8_t keyboard_scan(void) {
 #define WHE_R_PS HAL_GPIO_ReadPin(WHE_R_KEY_GPIO_Port, WHE_R_KEY_Pin)
 #define WHE_R_DO HAL_GPIO_ReadPin(WHE_R_DO_GPIO_Port, WHE_R_DO_Pin)
 
+#define KEY_TOTALNUM 50
+#define MSG_TOTALNUM 6
 
 /**
  * @brief Scan the key.
@@ -342,10 +344,9 @@ uint8_t get_point_value(void) {
     {
     case WHE_R_TURNUP:
         choosepoint -= 1;
-        if (choosepoint < 1)
-        {
-            choosepoint = 1;
-        }else if (choosepoint == 19)
+
+        my_limit(choosepoint, 1, KEY_TOTALNUM);
+        if (choosepoint == 19)
         {
             choosepoint = 16;
         }else if (choosepoint == 24)
@@ -361,10 +362,9 @@ uint8_t get_point_value(void) {
         break;
     case WHE_R_TURNDO:
         choosepoint += 1;
-        if (choosepoint > 50)
-        {
-            choosepoint = 50;
-        }else if (choosepoint == 17)
+
+        my_limit(choosepoint, 1, KEY_TOTALNUM);
+        if (choosepoint == 17)
         {
             choosepoint = 20;
         }else if (choosepoint == 22)
@@ -380,10 +380,9 @@ uint8_t get_point_value(void) {
         break;
     case WHE_L_PRESS:
         choosepoint -= 5;
-        if (choosepoint < 1)
-        {
-            choosepoint += 5;
-        }else if (choosepoint == 34)
+
+        my_limit(choosepoint, 1, KEY_TOTALNUM);
+        if (choosepoint == 34)
         {
             choosepoint = 14;
         }else if (choosepoint == 33)
@@ -396,10 +395,9 @@ uint8_t get_point_value(void) {
         break;
     case WHE_R_PRESS:
         choosepoint += 5;
-        if (choosepoint > 50)
-        {
-            choosepoint -= 5;
-        }else if (choosepoint == 19)
+
+        my_limit(choosepoint, 1, KEY_TOTALNUM);
+        if (choosepoint == 19)
         {
             choosepoint = 39;
         }else if (choosepoint == 18)
@@ -422,19 +420,12 @@ uint8_t get_irda_msg(void) {
     {
     case WHE_R_TURNUP:
         msg_num -= 1;
-        if (msg_num < 1)
-        {
-            msg_num = 0;
-        }
-        
+        my_limit(msg_num, 0, MSG_TOTALNUM);
         break;
     
     case WHE_R_TURNDO:
         msg_num += 1;
-        if (msg_num > 6)
-        {
-            msg_num = 6;
-        }
+        my_limit(msg_num, 0, MSG_TOTALNUM);
         break;
 
     default:
