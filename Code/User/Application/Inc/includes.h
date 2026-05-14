@@ -40,7 +40,7 @@ typedef enum {
 
 /**
  * @brief 上报给UI的消息类型
- * 
+ *
  */
 typedef enum {
     UI_REMOTE_CTRL = 0x00U, /*!< 遥控器控制消息 */
@@ -51,7 +51,7 @@ typedef enum {
 
 /**
  * @brief 遥控器键盘回调函数
- * 
+ *
  * @param key 按键
  * @param event 事件
  */
@@ -59,27 +59,27 @@ typedef void (*remote_key_callback_t)(uint8_t key, remote_key_event_t event);
 
 /**
  * @brief R1 状态数据
- * 
+ *
  */
 typedef struct __packed {
-    int16_t x_speed; /*!< x 方向速度 */
-    int16_t y_speed; /*!< y 方向速度 */
-    int16_t w_speed; /*!< 角速度 */
-    uint8_t r1_chassis_status;/*!< 自锁与否 */
-    uint8_t r1_chassis_state; /*!< 手控与否 */
-    float accel_xy;      /*!< 加速度 */
-    float left_pos;    /*!< 左侧抬升高度 */
-    float right_pos;   /*!< 右侧抬升高度 */
-    bool left_adsorbed;  /*!< 左侧是否吸住 */
-    bool right_adsorbed; /*!< 右侧是否吸住 */
-    uint8_t rec_msg;     /*!< 接收到R2传的数据 */
-    uint8_t send_msg;    /*!< 发送给R2的数据 */
+    int16_t x_speed;           /*!< x 方向速度 */
+    int16_t y_speed;           /*!< y 方向速度 */
+    int16_t w_speed;           /*!< 角速度 */
+    uint8_t r1_chassis_status; /*!< 自锁与否 */
+    uint8_t r1_chassis_state;  /*!< 手控与否 */
+    float accel_xy;            /*!< 加速度 */
+    float left_pos;            /*!< 左侧抬升高度 */
+    float right_pos;           /*!< 右侧抬升高度 */
+    bool left_adsorbed;        /*!< 左侧是否吸住 */
+    bool right_adsorbed;       /*!< 右侧是否吸住 */
+    uint8_t rec_msg;           /*!< 接收到R2传的数据 */
+    uint8_t send_msg;          /*!< 发送给R2的数据 */
     uint8_t yaw_source;        /*!< 坐标系来源，0=SELF, 1=NUC */
 } r1_data_t;
 
 /**
  * @brief 上报的数据包
- * 
+ *
  */
 typedef struct __packed {
     r1_data_t r1_state;
@@ -96,7 +96,7 @@ typedef struct __packed {
 /* 遥控器控制消息结构 */
 typedef struct {
     uint8_t voltage;         /*!< 电压值 */
-    int8_t ctrl_key; /*!< 控制按键值 */
+    int8_t ctrl_key;         /*!< 控制按键值 */
     remote_send_data_t data; /*!< 遥控器发送数据 */
 } remote_ctrl_msg_t;
 

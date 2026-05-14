@@ -81,7 +81,20 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(R1YawBuffer, R1YAW_SIZE, "%d", r1_w_speed);
     touchgfx::Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%u",
                                 static_cast<unsigned int>(r1_status));
-    touchgfx::Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "%d", r1_state);
+
+    switch (r1_state)
+    {
+    case 0:
+        touchgfx::Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
+        break;
+    case 1:
+        touchgfx::Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "A");
+        break;
+    default:
+        touchgfx::Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
+        break;
+    }
+
     formatFixed2(ACCELBuffer, ACCEL_SIZE, r1_accel_xy);
     touchgfx::Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u", static_cast<unsigned int>(r1_accel_xy));
     formatFixed2(L_PBuffer, L_P_SIZE, r1_left_pos);
@@ -90,7 +103,19 @@ void screenView::InfoUpdate1() {
                                 static_cast<unsigned int>(r1_left_adsorbed));
     touchgfx::Unicode::snprintf(R_ABuffer, R_A_SIZE, "%u",
                                 static_cast<unsigned int>(r1_right_adsorbed));
-    touchgfx::Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "%d", r1_yaw_source);
+
+    switch (r1_yaw_source)
+    {
+    case 0:
+        touchgfx::Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
+        break;
+    case 1:
+        touchgfx::Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "W");
+        break;
+    default:
+        touchgfx::Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
+        break;
+    }
 
     switch (msgnum)
     {

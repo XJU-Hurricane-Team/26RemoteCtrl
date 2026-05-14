@@ -56,3 +56,10 @@ void screenPresenter::onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t w
 void screenPresenter::onIrdaMsgNumChanged(uint8_t msgnum){
     view.msgnum = msgnum;
 }
+
+void screenPresenter::R1StateChanged(uint8_t status, uint8_t state, float accel, uint8_t source){
+    (void)status;  // Unused parameter
+    (void)accel;   // Unused parameter
+    view.r1_state = state;
+    view.r1_yaw_source = source;
+}

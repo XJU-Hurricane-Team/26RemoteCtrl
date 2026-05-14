@@ -440,10 +440,35 @@ void redmapView::colortoggleEvent(uint8_t point)
 void redmapView::update2(){
     Unicode::snprintf(redchoosepointBuffer, REDCHOOSEPOINT_SIZE, "%d", choosekey);
     Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1state));
-    Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "%d", r1_state);
+
+    switch (r1_state)
+    {
+    case 0:
+        Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
+        break;
+    case 1:
+        Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "A");
+        break;
+    default:
+        Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
+        break;
+    }
+
+    switch (r1_yaw_source)
+    {
+    case 0:
+        Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
+        break;
+    case 1:
+        Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "W");
+        break;
+    default:
+        Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
+        break;
+    }
+
     formatFixed2(ACCELBuffer, ACCEL_SIZE, r1_accel_xy);
     Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u", static_cast<unsigned int>(r1_accel_xy));
-    Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "%d", r1_yaw_source);
     redchoosepoint.invalidate();
     state.invalidate();
     CTRL.invalidate();
