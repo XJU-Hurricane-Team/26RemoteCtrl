@@ -25,3 +25,19 @@ __MACOSX__
 *.uvgui
 *.uvgui.*
 *.uvguix.*
+
+# Machine-specific TouchGFX config (IDE-specific makefiles)
+CubeMX/TouchGFX/config/
+
+# TouchGFX cache files (regenerated on build)
+CubeMX/TouchGFX/generated/**/cache/
+CubeMX/TouchGFX/generated/**/*.cache
+
+# TouchGFX simulator files (PC only, not needed for embedded build)
+CubeMX/TouchGFX/generated/simulator/
+
+# TouchGFX font Unicode lists (intermediate files)
+CubeMX/TouchGFX/generated/fonts/UnicodeList*.txt
+
+# TouchGFX user.config (machine-specific path)
+CubeMX/TouchGFX/generated/user.config

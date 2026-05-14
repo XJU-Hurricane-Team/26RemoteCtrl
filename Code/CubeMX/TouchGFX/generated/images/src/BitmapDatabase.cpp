@@ -9,7 +9,7 @@ extern const unsigned char image_ky50_50[]; // BITMAP_KY50_50_ID = 1, Size: 50x5
 extern const unsigned char image_pixpin_2025_11_26_21_33_12[]; // BITMAP_PIXPIN_2025_11_26_21_33_12_ID = 2, Size: 163x128 pixels
 
 const touchgfx::Bitmap::BitmapData bitmap_database[] = {
-    { image_alternate_theme_images_backgrounds_320x240_spotlights, 0, 320, 240, 0, 0, 320, ((uint8_t)touchgfx::Bitmap::RGB565) >> 3, 240, ((uint8_t)touchgfx::Bitmap::RGB565) & 0x7 },
+    { image_alternate_theme_images_backgrounds_320x240_spotlights, 0, 240, 320, 0, 0, 240, ((uint8_t)touchgfx::Bitmap::RGB565) >> 3, 320, ((uint8_t)touchgfx::Bitmap::RGB565) & 0x7 },
     { image_ky50_50, 0, 50, 50, 39, 12, 3, ((uint8_t)touchgfx::Bitmap::ARGB8888) >> 3, 24, ((uint8_t)touchgfx::Bitmap::ARGB8888) & 0x7 },
     { image_pixpin_2025_11_26_21_33_12, 0, 163, 128, 0, 0, 163, ((uint8_t)touchgfx::Bitmap::RGB565) >> 3, 128, ((uint8_t)touchgfx::Bitmap::RGB565) & 0x7 }
 };
