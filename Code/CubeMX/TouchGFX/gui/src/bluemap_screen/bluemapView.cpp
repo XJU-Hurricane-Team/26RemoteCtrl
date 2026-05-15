@@ -1,9 +1,8 @@
 #include <gui/bluemap_screen/bluemapView.hpp>
 #include <touchgfx/Color.hpp>
 
-namespace {
-    /* 格式化固定小数点 */
-void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
+/* 格式化浮点数为 xx.x 格式，如 "12.3" */
+static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
                   float value) {
     int32_t scaled = static_cast<int32_t>(value * 10.0f);
     int32_t absScaled = (scaled < 0) ? -scaled : scaled;
@@ -18,7 +17,6 @@ void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
                                     fracPart);
     }
 }
-} // namespace
 
 bluemapView::bluemapView():choosekey(0),r1state(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0)
 {
@@ -39,434 +37,111 @@ void bluemapView::handleKeyEvent(uint8_t key){
     bluemapViewBase::handleKeyEvent(key);
 }
 
-void bluemapView::colortoggleEvent(uint8_t point){
-    static uint8_t last_point;
-    switch (last_point)
-    {
-    case 50:
-        //toggle01
-        box01.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box01.invalidate();
-        break;
-    case 49:
-        //toggle02
-        box02.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box02.invalidate();
-        break;
-    case 48:
-        //toggle03
-        box03.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box03.invalidate();
-        break;
-    case 47:
-        //toggle04
-        box04.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box04.invalidate();
-        break;
-    case 46:
-        //toggle05
-        box05.setColor(touchgfx::Color::getColorFromRGB(0, 60, 255));
-        box05.invalidate();
-        break;
-    case 45:
-        //toggle11
-        box11.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box11.invalidate();
-        break;
-    case 44:
-        //toggle12
-        box12.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box12.invalidate();
-        break;
-    case 43:
-        //toggle13
-        box13.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box13.invalidate();
-        break;
-    case 42:
-        //toggle14
-        box14.setColor(touchgfx::Color::getColorFromRGB(0, 192, 250));
-        box14.invalidate();
-        break;
-    case 41:
-        //toggle15
-        box15.setColor(touchgfx::Color::getColorFromRGB(163, 162, 162));
-        box15.invalidate();
-        break;
-    case 40:
-        //toggle21
-        box21.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box21.invalidate();
-        break;
-    case 39:
-        //toggle22
-        box22.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box22.invalidate();
-        break;
-    case 38:
-        //toggle23
-        box23.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box23.invalidate();
-        break;
-    case 37:
-        //toggle24
-        box24.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box24.invalidate();
-        break;
-    case 36:
-        //toggle25
-        box25.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box25.invalidate();
-        break;
-    case 35:
-        //toggle31
-        box31.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box31.invalidate();
-        break;
-    case 31:
-        //toggle35
-        box35.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box35.invalidate();
-        break;
-    case 30:
-        //toggle41
-        box41.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box41.invalidate();
-        break;
-    case 26:
-        //toggle45
-        box45.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box45.invalidate();
-        break;
-    case 25:
-        //toggle51
-        box51.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box51.invalidate();
-        break;
-    case 21:
-        //toggle55
-        box55.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box55.invalidate();
-        break;
-    case 20:
-        //toggle61
-        box61.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box61.invalidate();
-        break;
-    case 16:
-        //toggle65
-        box65.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box65.invalidate();
-        break;
-    case 15:
-        //toggle71
-        box71.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box71.invalidate();
-        break;
-    case 14:
-        //toggle72
-        box72.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box72.invalidate();
-        break;
-    case 13:
-        //toggle73
-        box73.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box73.invalidate();
-        break;
-    case 12:
-        //toggle74
-        box74.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box74.invalidate();
-        break;
-    case 11:
-        //toggle75
-        box75.setColor(touchgfx::Color::getColorFromRGB(0, 238, 255));
-        box75.invalidate();
-        break;
-    case 10:
-        //toggle81
-        box81.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box81.invalidate();
-        break;
-    case 9:
-        //toggle82
-        box82.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box82.invalidate();
-        break;
-    case 8:
-        //toggle83
-        box83.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box83.invalidate();
-        break;
-    case 7:
-        //toggle84
-        box84.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box84.invalidate();
-        break;
-    case 6:
-        //toggle85
-        box85.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box85.invalidate();
-        break;
-    case 5:
-        //toggle91
-        box91.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box91.invalidate();
-        break;
-    case 4:
-        //toggle92
-        box92.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box92.invalidate();
-        break;
-    case 3:
-        //toggle93
-        box93.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box93.invalidate();
-        break;
-    case 2:
-        //toggle94
-        box94.setColor(touchgfx::Color::getColorFromRGB(212, 252, 255));
-        box94.invalidate();
-        break;
-    case 1:
-        //toggle95
-        box95.setColor(touchgfx::Color::getColorFromRGB(0, 60, 255));
-        box95.invalidate();
-        break;
-    default:
-        break;
+void bluemapView::colortoggleEvent(uint8_t point) {
+    static uint8_t last_point = 0;
+
+    static const touchgfx::colortype kActiveColor = 0xBB00FF;   // 高亮: 紫色
+    static const touchgfx::colortype kDefaultColor = 0x00EEFF;  // 默认: 青色
+
+    static const touchgfx::colortype kBlueDeep  = 0x003CFF;   // 深蓝
+    static const touchgfx::colortype kBlueLight = 0xD4FCFF;   // 浅蓝
+    static const touchgfx::colortype kCyan      = 0x00EEFF;   // 青色
+    static const touchgfx::colortype kBlueSky   = 0x3CC0FA;   // 天蓝
+
+    struct PointConfig {
+        touchgfx::BoxWithBorder* box;
+        touchgfx::colortype color;
+    };
+
+    static const PointConfig kPoints[51] = {
+        /* 0  无效 */ {nullptr,  0},
+        /* 1  深蓝 */ {&box95,   kBlueDeep},
+        /* 2  浅蓝 */ {&box94,   kBlueLight},
+        /* 3  浅蓝 */ {&box93,   kBlueLight},
+        /* 4  浅蓝 */ {&box92,   kBlueLight},
+        /* 5  浅蓝 */ {&box91,   kBlueLight},
+        /* 6  浅蓝 */ {&box85,   kBlueLight},
+        /* 7  浅蓝 */ {&box84,   kBlueLight},
+        /* 8  浅蓝 */ {&box83,   kBlueLight},
+        /* 9  浅蓝 */ {&box82,   kBlueLight},
+        /* 10 浅蓝 */ {&box81,   kBlueLight},
+        /* 11 青色 */ {&box75,   kCyan},
+        /* 12 青色 */ {&box74,   kCyan},
+        /* 13 青色 */ {&box73,   kCyan},
+        /* 14 青色 */ {&box72,   kCyan},
+        /* 15 青色 */ {&box71,   kCyan},
+        /* 16 青色 */ {&box65,   kCyan},
+        /* 17 无效 */ {nullptr,  0},
+        /* 18 无效 */ {nullptr,  0},
+        /* 19 无效 */ {nullptr,  0},
+        /* 20 青色 */ {&box61,   kCyan},
+        /* 21 青色 */ {&box55,   kCyan},
+        /* 22 无效 */ {nullptr,  0},
+        /* 23 无效 */ {nullptr,  0},
+        /* 24 无效 */ {nullptr,  0},
+        /* 25 青色 */ {&box51,   kCyan},
+        /* 26 青色 */ {&box45,   kCyan},
+        /* 27 无效 */ {nullptr,  0},
+        /* 28 无效 */ {nullptr,  0},
+        /* 29 无效 */ {nullptr,  0},
+        /* 30 青色 */ {&box41,   kCyan},
+        /* 31 青色 */ {&box35,   kCyan},
+        /* 32 无效 */ {nullptr,  0},
+        /* 33 无效 */ {nullptr,  0},
+        /* 34 无效 */ {nullptr,  0},
+        /* 35 青色 */ {&box31,   kCyan},
+        /* 36 青色 */ {&box25,   kCyan},
+        /* 37 青色 */ {&box24,   kCyan},
+        /* 38 青色 */ {&box23,   kCyan},
+        /* 39 青色 */ {&box22,   kCyan},
+        /* 40 青色 */ {&box21,   kCyan},
+        /* 41 浅蓝 */ {&box15,   kBlueLight},
+        /* 42 天蓝 */ {&box14,   kBlueSky},
+        /* 43 天蓝 */ {&box13,   kBlueSky},
+        /* 44 天蓝 */ {&box12,   kBlueSky},
+        /* 45 天蓝 */ {&box11,   kBlueSky},
+        /* 46 天蓝 */ {&box05,   kBlueSky},
+        /* 47 天蓝 */ {&box04,   kBlueSky},
+        /* 48 天蓝 */ {&box03,   kBlueSky},
+        /* 49 天蓝 */ {&box02,   kBlueSky},
+        /* 50 深蓝 */ {&box01,   kBlueDeep},
+    };
+
+    // 恢复上次选中的默认颜色，设置新的高亮色
+    if (last_point != 0 && last_point <= 50 && kPoints[last_point].box) {
+        kPoints[last_point].box->setColor(
+            kPoints[last_point].color ? kPoints[last_point].color : kDefaultColor);
+        kPoints[last_point].box->invalidate();
     }
 
-    switch (point)
-    {
-    case 50:
-        //toggle01
-        box01.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box01.invalidate();
-        break;
-    case 49:
-        //toggle02
-        box02.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box02.invalidate();
-        break;
-    case 48:
-        //toggle03
-        box03.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box03.invalidate();
-        break;
-    case 47:
-        //toggle04
-        box04.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box04.invalidate();
-        break;
-    case 46:
-        //toggle05
-        box05.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box05.invalidate();
-        break;
-    case 45:
-        //toggle11
-        box11.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box11.invalidate();
-        break;
-    case 44:
-        //toggle12
-        box12.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box12.invalidate();
-        break;
-    case 43:
-        //toggle13
-        box13.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box13.invalidate();
-        break;
-    case 42:
-        //toggle14
-        box14.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box14.invalidate();
-        break;
-    case 41:
-        //toggle15
-        box15.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box15.invalidate();
-        break;
-    case 40:
-        //toggle21
-        box21.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box21.invalidate();
-        break;
-    case 39:
-        //toggle22
-        box22.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box22.invalidate();
-        break;
-    case 38:
-        //toggle23
-        box23.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box23.invalidate();
-        break;
-    case 37:
-        //toggle24
-        box24.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box24.invalidate();
-        break;
-    case 36:
-        //toggle25
-        box25.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box25.invalidate();
-        break;
-    case 35:
-        //toggle31
-        box31.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box31.invalidate();
-        break;
-    case 31:
-        //toggle35
-        box35.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box35.invalidate();
-        break;
-    case 30:
-        //toggle41
-        box41.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box41.invalidate();
-        break;
-    case 26:
-        //toggle45
-        box45.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box45.invalidate();
-        break;
-    case 25:
-        //toggle51
-        box51.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box51.invalidate();
-        break;
-    case 21:
-        //toggle55
-        box55.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box55.invalidate();
-        break;
-    case 20:
-        //toggle61
-        box61.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box61.invalidate();
-        break;
-    case 16:
-        //toggle65
-        box65.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box65.invalidate();
-        break;
-    case 15:
-        //toggle71
-        box71.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box71.invalidate();
-        break;
-    case 14:
-        //toggle72
-        box72.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box72.invalidate();
-        break;
-    case 13:
-        //toggle73
-        box73.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box73.invalidate();
-        break;
-    case 12:
-        //toggle74
-        box74.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box74.invalidate();
-        break;
-    case 11:
-        //toggle75
-        box75.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box75.invalidate();
-        break;
-    case 10:
-        //toggle81
-        box81.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box81.invalidate();
-        break;
-    case 9:
-        //toggle82
-        box82.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box82.invalidate();
-        break;
-    case 8:
-        //toggle83
-        box83.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box83.invalidate();
-        break;
-    case 7:
-        //toggle84
-        box84.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box84.invalidate();
-        break;
-    case 6:
-        //toggle85
-        box85.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box85.invalidate();
-        break;
-    case 5:
-        //toggle91
-        box91.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box91.invalidate();
-        break;
-    case 4:
-        //toggle92
-        box92.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box92.invalidate();
-        break;
-    case 3:
-        //toggle93
-        box93.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box93.invalidate();
-        break;
-    case 2:
-        //toggle94
-        box94.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box94.invalidate();
-        break;
-    case 1:
-        //toggle95
-        box95.setColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
-        box95.invalidate();
-        break;
-    default:
-        break;
+    if (point != 0 && point <= 50 && kPoints[point].box) {
+        kPoints[point].box->setColor(kActiveColor);
+        kPoints[point].box->invalidate();
     }
+
     last_point = point;
 }
 
-void bluemapView::update2(){
+void bluemapView::update2() {
     Unicode::snprintf(bluechoosepointBuffer, BLUECHOOSEPOINT_SIZE, "%d", choosekey);
     Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1state));
 
-    switch (r1_state)
-    {
-    case 0:
-        Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
-        break;
-    case 1:
-        Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "A");
-        break;
-    default:
-        Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
-        break;
-    }
+    /* 使用数组查找表替代switch-case，索引对应r1_state值，越界时回退到默认值"M" */
+    const char *kCtrlLabels[] = {"M", "A"};
+    const char *ctrl = (r1_state < 2) ? kCtrlLabels[r1_state] : "M";
+    CTRLBuffer[0] = ctrl[0];
+    CTRLBuffer[1] = 0;
 
-    switch (r1_yaw_source)
-    {
-    case 0:
-        Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
-        break;
-    case 1:
-        Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "W");
-        break;
-    default:
-        Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
-        break;
-    }
+    /* 索引对应r1_yaw_source值，越界时回退到默认值"S" */
+    const char *kSourceLabels[] = {"S", "W"};
+    const char *source = (r1_yaw_source < 2) ? kSourceLabels[r1_yaw_source] : "S";
+    SOURCEBuffer[0] = source[0];
+    SOURCEBuffer[1] = 0;
 
+    // FIXME: 第2行覆盖第1行，ACCEL始终显示为整数，后续可能换为模式，暂时不解决
     formatFixed2(ACCELBuffer, ACCEL_SIZE, r1_accel_xy);
     Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u", static_cast<unsigned int>(r1_accel_xy));
+
     bluechoosepoint.invalidate();
     state.invalidate();
     CTRL.invalidate();
