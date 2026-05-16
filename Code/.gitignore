@@ -3,6 +3,7 @@
 /.eide/log
 /.eide.usr.ctx.json
 
+
 # project out
 build
 Build/Debug/
@@ -25,6 +26,9 @@ __MACOSX__
 *.uvgui
 *.uvgui.*
 *.uvguix.*
+
+# CubeMX generated files 
+*.bak
 
 # Machine-specific TouchGFX config (IDE-specific makefiles)
 CubeMX/TouchGFX/config/
