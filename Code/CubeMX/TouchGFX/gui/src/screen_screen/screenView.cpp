@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 namespace {
-    /* 格式化固定小数点 */
+/* 格式化固定小数点 */
 void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
                   float value) {
     int32_t scaled = static_cast<int32_t>(value * 10.0f);
@@ -20,13 +20,30 @@ void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
                                     fracPart);
     }
 }
+
+/* 设置单个字符文本 */
+void setCharText(touchgfx::Unicode::UnicodeChar *buffer, char c) {
+    buffer[0] = c;
+    buffer[1] = 0;
+}
+
+/* 状态到字符的查找表 */
+const char kCtrlLabels[] = {'M', 'A'};
+const char kSourceLabels[] = {'S', 'W'};
+
+/* 消息号到字符串的查找表 */
+const char *const kMsgTable[] = {
+    "NULL", "Assembled_weapon", "AWAY_MARTIAL", "AWAY_MEILIN",
+    "COMPLEX", "CAN_PUT", "pre"
+};
+constexpr uint8_t kMsgCount = sizeof(kMsgTable) / sizeof(kMsgTable[0]);
 } // namespace
 
 screenView::screenView()
     : keyState(0), voltage(0), pointvalue(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
       r1_x_speed(0), r1_y_speed(0), r1_w_speed(0), r1_status(1),r1_state(0), r1_accel_xy(0.0f),r1_yaw_source(0),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
-      r1_right_adsorbed(0), r1_send_msg(0), r1_rec_msg(0), 
+      r1_right_adsorbed(0), r1_send_msg(0), r1_rec_msg(0), msgnum(0),
       graphValue(0.0f), tickCounter(0), digitalHours(0),
       digitalMinutes(0), digitalSeconds(0) {}
 
@@ -82,21 +99,11 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(R1StateBuffer, R1STATE_SIZE, "%u",
                                 static_cast<unsigned int>(r1_status));
 
-    switch (r1_state)
-    {
-    case 0:
-        touchgfx::Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
-        break;
-    case 1:
-        touchgfx::Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "A");
-        break;
-    default:
-        touchgfx::Unicode::snprintf(CTRLBuffer, CTRL_SIZE, "M");
-        break;
-    }
+    setCharText(CTRLBuffer,
+                (r1_state < 2) ? kCtrlLabels[r1_state] : 'M');
 
-    formatFixed2(ACCELBuffer, ACCEL_SIZE, r1_accel_xy);
-    touchgfx::Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u", static_cast<unsigned int>(r1_accel_xy));
+    touchgfx::Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u",
+                                static_cast<unsigned int>(r1_accel_xy));
     formatFixed2(L_PBuffer, L_P_SIZE, r1_left_pos);
     formatFixed2(R_PBuffer, R_P_SIZE, r1_right_pos);
     touchgfx::Unicode::snprintf(L_ABuffer, L_A_SIZE, "%u",
@@ -104,52 +111,12 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(R_ABuffer, R_A_SIZE, "%u",
                                 static_cast<unsigned int>(r1_right_adsorbed));
 
-    switch (r1_yaw_source)
-    {
-    case 0:
-        touchgfx::Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
-        break;
-    case 1:
-        touchgfx::Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "W");
-        break;
-    default:
-        touchgfx::Unicode::snprintf(SOURCEBuffer, SOURCE_SIZE, "S");
-        break;
-    }
+    setCharText(SOURCEBuffer,
+                (r1_yaw_source < 2) ? kSourceLabels[r1_yaw_source] : 'S');
 
-    switch (msgnum)
-    {
-    case 0:
-        touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "NULL", msgnum);
-        break;
-
-    case 1:
-        touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "Assembled_weapon", msgnum);
-        break;
-
-    case 2:
-        touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "AWAY_MARTIAL", msgnum);
-        break;
-
-    case 3:
-        touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "AWAY_MEILIN", msgnum);
-        break;
-
-    case 4:
-        touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "COMPLEX", msgnum);
-        break;
-
-    case 5:
-        touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "CAN_PUT", msgnum);
-        break;
-
-    case 6:
-        touchgfx::Unicode::snprintf(R1_MSGBuffer, R1_MSG_SIZE, "pre", msgnum);
-        break;
-    
-    default:
-        break;
-    }
+    const char *msgText =
+        (msgnum >= 0 && msgnum < kMsgCount) ? kMsgTable[msgnum] : "OutOfRange";
+    touchgfx::Unicode::strncpy(R1_MSGBuffer, msgText, R1_MSG_SIZE);
     
 
     point.invalidate();

@@ -41,8 +41,8 @@ static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模�
 
 /**
  * @brief UI 消息发布函数
- * 
- * @param msg 
+ *
+ * @param msg
  */
 static void ui_publish_msg(const ui_msg_t *msg) {
     if ((ui_msg_queue == NULL) || (msg == NULL)) {
@@ -59,9 +59,9 @@ static void ui_publish_msg(const ui_msg_t *msg) {
 
 /**
  * @brief 遥感值修正函数
- * 
+ *
  * @param adc_value ADC 读取值
- * @return int8_t 
+ * @return int8_t
  */
 static int8_t joystick_set_value(uint32_t adc_value) {
     int32_t value = 20 - (int32_t)adc_value;
@@ -73,26 +73,17 @@ static int8_t joystick_set_value(uint32_t adc_value) {
 
 /**
  * @brief 负责将数据发送到主控和UI
- * 
- * @param pvParameters 
+ *
+ * @param pvParameters
  */
 static void remote_send_task(void *pvParameters) {
     UNUSED(pvParameters);
 
-    uint8_t mV = 0;
     uint8_t last_key = 0;
-    uint8_t add_key = 0;
-    uint8_t ctrl_key = 0;
-    uint8_t choosepoint = 0;
-    int8_t msg_num = 0;
-    uint8_t keyboard_value = 0;
     uint32_t rs_adc_buf[5] = {0};
-
     remote_send_data_t remote_send_data = {0};
-    ui_msg_t ui_msg = {0};
-
-    TickType_t last_wake_time = xTaskGetTickCount(); /*!< 保证发送周期固定 */
-    TickType_t led_time = xTaskGetTickCount();       /*!< 控制 LED 闪烁频率 */
+    TickType_t last_wake_time = xTaskGetTickCount();
+    TickType_t led_time = xTaskGetTickCount();
 
     ui_msg_queue = xQueueCreate(UI_MSG_QUEUE_LEN, sizeof(ui_msg_t));
     if (ui_msg_queue == NULL) {
@@ -100,92 +91,67 @@ static void remote_send_task(void *pvParameters) {
     }
 
     while (1) {
+        uint8_t keyboard = keyboard_scan();
+        uint8_t add_key = add_key_scan(1);
+        uint8_t ctrl_key = ctrl_key_scan(0);
 
-        keyboard_value = keyboard_scan();
-        add_key = add_key_scan(1);
-        ctrl_key = ctrl_key_scan(0);
-
-        switch (ctrl_key)
-        {
-        case WHE_L_TURNUP:
-            screen -= 1;
-            my_limit(screen, 0, SCREEN_TOTALNUM);
-            break;
-
-        case WHE_L_TURNDO:
-            screen += 1;
-            my_limit(screen, 0, SCREEN_TOTALNUM);
-            break;
-        
-        default:
-            break;
+        /* screen 切换 */
+        if (ctrl_key == WHE_L_TURNUP) {
+            screen--;
+        } else if (ctrl_key == WHE_L_TURNDO) {
+            screen++;
         }
+        my_limit(screen, 0, SCREEN_TOTALNUM);
 
-        if (screen != 1)
-        {
-            choosepoint = get_point_value();
-        }else{
-            msg_num = get_irda_msg();
+        /* 点数/消息选择 */
+        if (screen != 1) {
+            remote_send_data.point = get_point_value();
+            remote_send_data.irdamsg = 0;
+        } else {
+            remote_send_data.point = 0;
+            remote_send_data.irdamsg = get_irda_msg();
         }
 
         rs_get_value(rs_adc_buf, 10, 40);
 
-        mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
-        if (mV <= 35)
-        {
+        uint8_t mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
+        if (mV <= 35) {
             LED1_ON();
-        }else{
+        } else {
             LED1_OFF();
         }
 
-        //模式选择(模式1优先级高于模式2)
-        switch (add_key)
-        {
-        case KEY_LZ_PRESS:
-            keyboard_value = 49;
-            break;
-        case KEY_RZ_PRESS:
-            keyboard_value = 50;
-            break;
-            //切换至模式1
-        case KEY_TL_PRESS:
-            MSG_MODES = CHANGE_TO_MODE1;
-            if (keyboard_value)
-            {
-                keyboard_value += 16;
-            }
-            break;
-            //切换至模式2
-        case KEY_TR_PRESS:
-            MSG_MODES = CHANGE_TO_MODE2;
-            if (keyboard_value)
-            {
-                keyboard_value += 32;
-            }
-            break;
-        default:
-            MSG_MODES = NORMAL_MODE;
-            break;
+        /* 模式选择 (模式1优先级高于模式2) */
+        MSG_MODES = NORMAL_MODE;
+        switch (add_key) {
+            case KEY_LZ_PRESS: keyboard = 49; break;
+            case KEY_RZ_PRESS: keyboard = 50; break;
+            case KEY_TL_PRESS:
+                MSG_MODES = CHANGE_TO_MODE1;
+                if (keyboard) keyboard += 16;
+                break;
+            case KEY_TR_PRESS:
+                MSG_MODES = CHANGE_TO_MODE2;
+                if (keyboard) keyboard += 32;
+                break;
         }
 
-        /* 控制按键有更高的优先级 */
-        remote_send_data.key = (uint8_t)keyboard_value;
-        remote_send_data.point = choosepoint;
-        remote_send_data.irdamsg = msg_num;
-        remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
-        remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
+        /* 填充发送数据 */
+        remote_send_data.key = keyboard;
         remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */
         remote_send_data.rs[1] = joystick_set_value(rs_adc_buf[3]); /* 左 y */
+        remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
+        remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
 
-        message_send_data(MSG_RC_TO_MASTER, MSG_MODES,
-                          (uint8_t *)&remote_send_data,
+        message_send_data(MSG_RC_TO_MASTER, MSG_MODES, (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
 
-        ui_msg.type = UI_REMOTE_CTRL;
-        ui_msg.seq = ++ui_msg_seq;
-        ui_msg.payload.remote_ctrl.ctrl_key = ctrl_key;
-        ui_msg.payload.remote_ctrl.voltage = mV;
-        ui_msg.payload.remote_ctrl.data = remote_send_data;
+        /* UI 消息 */
+        ui_msg_t ui_msg = {
+            .type = UI_REMOTE_CTRL,
+            .seq = ++ui_msg_seq,
+            .payload.remote_ctrl =
+                {.ctrl_key = ctrl_key, .voltage = mV, .data = remote_send_data}};
         ui_publish_msg(&ui_msg);
 
         /* 判断按键状态并触发按键回调 */
@@ -219,7 +185,7 @@ static void remote_send_task(void *pvParameters) {
 
 /**
  * @brief 遥控器发送初始化
- * 
+ *
  * @param send_uart 发送数据的串口
  */
 void remote_send_init(UART_HandleTypeDef *send_uart) {
@@ -234,7 +200,7 @@ void remote_send_init(UART_HandleTypeDef *send_uart) {
 
 /**
  * @brief 遥控器键盘注册回调函数
- * 
+ *
  * @param key 按键
  * @param event 事件
  * @param callback 事件回调函数
@@ -254,7 +220,7 @@ void remote_register_key_callback(uint8_t key, remote_key_event_t event,
 
 /**
  * @brief 遥控器键盘取消注册回调函数
- * 
+ *
  * @param key 按键
  * @param event 事件
  * @param callback 事件回调函数
@@ -273,7 +239,7 @@ void remote_unregister_key_callback(uint8_t key, remote_key_event_t event) {
 
 /**
  * @brief 主板接收数据回调函数
- * 
+ *
  * @param msg_length 消息帧长度
  * @param msg_id_type 消息 ID 和数据类型 (高四位为 ID, 低四位为数据类型)
  * @param[in] msg_data 消息数据接收区

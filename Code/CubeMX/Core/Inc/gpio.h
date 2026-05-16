@@ -39,16 +39,16 @@ extern "C" {
  */
 typedef enum {
     KEY_NO_PRESS = 0U,
-    KEY_LZ_PRESS =17U,
-    KEY_RZ_PRESS,
-    KEY_TL_PRESS,
-    KEY_TR_PRESS,
-    WHE_L_TURNUP,
-    WHE_L_PRESS,
-    WHE_L_TURNDO,
-    WHE_R_TURNUP,
-    WHE_R_PRESS,
-    WHE_R_TURNDO
+    KEY_LZ_PRESS =17U,  /* 左侧摇杆赶下*/
+    KEY_RZ_PRESS,       /* 右侧摇杆按下 */
+    KEY_TL_PRESS,       /* 左肩键按下 */
+    KEY_TR_PRESS,       /* 右肩键按下 */
+    WHE_L_TURNUP,       /* 左波轮向上 */
+    WHE_L_PRESS,        /* 左波轮按下 */
+    WHE_L_TURNDO,       /* 左波轮向下 */
+    WHE_R_TURNUP,       /* 右波轮向上 */
+    WHE_R_PRESS,        /* 右波轮按下 */
+    WHE_R_TURNDO        /* 右波轮向下 */
 } key_press_t;
 
 #define KEYBOARD_COL_GPIO_PORT GPIOC
