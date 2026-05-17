@@ -7,7 +7,7 @@
         "Components": [
           {
             "Type": "ScalableImage",
-            "Name": "scalableImage1",
+            "Name": "mainScreenBG",
             "Width": 320,
             "Height": 240,
             "Filename": "__generated\\alternate_theme_images_backgrounds_320x240_spotlights.png",
@@ -15,7 +15,7 @@
           },
           {
             "Type": "Container",
-            "Name": "container1",
+            "Name": "robotInfo",
             "Y": 105,
             "Width": 320,
             "Height": 133,
@@ -273,7 +273,7 @@
           },
           {
             "Type": "Container",
-            "Name": "container2",
+            "Name": "remoteInfo",
             "Width": 320,
             "Height": 105,
             "Components": [
@@ -489,7 +489,7 @@
         "Components": [
           {
             "Type": "Container",
-            "Name": "container1",
+            "Name": "pointBoxes",
             "Width": 320,
             "Height": 240,
             "LockPosition": true,
@@ -1153,7 +1153,7 @@
           },
           {
             "Type": "Container",
-            "Name": "container2",
+            "Name": "pointTexts",
             "Width": 320,
             "Height": 240,
             "LockPosition": true,
@@ -1537,7 +1537,7 @@
           },
           {
             "Type": "Container",
-            "Name": "container3",
+            "Name": "Forest",
             "X": 96,
             "Y": 112,
             "Width": 128,
@@ -1669,6 +1669,41 @@
                 }
               }
             ]
+          },
+          {
+            "Type": "Container",
+            "Name": "containerTact",
+            "Width": 320,
+            "Height": 80,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "tactBackground",
+                "Width": 320,
+                "Height": 80,
+                "Color": {
+                  "Red": 255,
+                  "Green": 252,
+                  "Blue": 171
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "RunPoint",
+                "X": 29,
+                "Y": 14,
+                "Width": 195,
+                "Height": 56,
+                "TextId": "__SingleUse_NJ58",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "RunPoint",
+                  "UseBuffer": true,
+                  "BufferSize": 20
+                }
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1702,7 +1737,7 @@
         "Components": [
           {
             "Type": "Container",
-            "Name": "container1",
+            "Name": "pointBoxes",
             "Width": 320,
             "Height": 240,
             "LockPosition": true,
@@ -2390,7 +2425,7 @@
           },
           {
             "Type": "Container",
-            "Name": "container2",
+            "Name": "pointTexts",
             "Width": 320,
             "Height": 240,
             "LockPosition": true,
@@ -2774,7 +2809,7 @@
           },
           {
             "Type": "Container",
-            "Name": "container3",
+            "Name": "Forest",
             "X": 96,
             "Y": 112,
             "Width": 128,
@@ -2904,6 +2939,41 @@
                   "TextId": "ACCELvalue",
                   "UseBuffer": true,
                   "BufferSize": 10
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "containerTact",
+            "Width": 320,
+            "Height": 80,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "tactBackground",
+                "Width": 320,
+                "Height": 80,
+                "Color": {
+                  "Red": 255,
+                  "Green": 252,
+                  "Blue": 171
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "RunPoint",
+                "X": 29,
+                "Y": 14,
+                "Width": 195,
+                "Height": 56,
+                "TextId": "__SingleUse_M7YT",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "RunPoint",
+                  "UseBuffer": true,
+                  "BufferSize": 20
                 }
               }
             ]

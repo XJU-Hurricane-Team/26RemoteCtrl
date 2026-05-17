@@ -12,6 +12,10 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T___SINGLEUSE_NJ58,
+    T_RUNPOINT,
+    T_R1_SEND,
+    T___SINGLEUSE_M7YT,
     T_YAWSOURCE,
     T_YSOURCE,
     T_SOURCE,

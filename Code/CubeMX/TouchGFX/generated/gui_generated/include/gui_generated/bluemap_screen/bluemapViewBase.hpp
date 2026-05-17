@@ -39,7 +39,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Container container1;
+    touchgfx::Container pointBoxes;
     touchgfx::BoxWithBorder box01;
     touchgfx::BoxWithBorder box02;
     touchgfx::BoxWithBorder box03;
@@ -90,7 +90,7 @@ protected:
     touchgfx::BoxWithBorder box93;
     touchgfx::BoxWithBorder box94;
     touchgfx::BoxWithBorder box95;
-    touchgfx::Container container2;
+    touchgfx::Container pointTexts;
     touchgfx::TextArea point01;
     touchgfx::TextArea point02;
     touchgfx::TextArea point03;
@@ -129,7 +129,7 @@ protected:
     touchgfx::TextArea point93;
     touchgfx::TextArea point94;
     touchgfx::TextArea point95;
-    touchgfx::Container container3;
+    touchgfx::Container Forest;
     touchgfx::TextAreaWithOneWildcard bluechoosepoint;
     touchgfx::TextArea textArea1;
     touchgfx::Container container4;
@@ -138,6 +138,9 @@ protected:
     touchgfx::TextAreaWithOneWildcard state;
     touchgfx::TextAreaWithOneWildcard CTRL;
     touchgfx::TextAreaWithOneWildcard ACCEL;
+    touchgfx::Container containerTact;
+    touchgfx::Box tactBackground;
+    touchgfx::TextAreaWithOneWildcard RunPoint;
 
     /*
      * Wildcard Buffers
@@ -152,6 +155,8 @@ protected:
     touchgfx::Unicode::UnicodeChar CTRLBuffer[CTRL_SIZE];
     static const uint16_t ACCEL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar ACCELBuffer[ACCEL_SIZE];
+    static const uint16_t RUNPOINT_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar RunPointBuffer[RUNPOINT_SIZE];
 
 private:
 

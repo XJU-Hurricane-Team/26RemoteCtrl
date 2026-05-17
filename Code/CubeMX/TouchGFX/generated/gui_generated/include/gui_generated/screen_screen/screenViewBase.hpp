@@ -42,8 +42,8 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::ScalableImage scalableImage1;
-    touchgfx::Container container1;
+    touchgfx::ScalableImage mainScreenBG;
+    touchgfx::Container robotInfo;
     touchgfx::TextAreaWithOneWildcard L_A;
     touchgfx::TextAreaWithOneWildcard R_A;
     touchgfx::TextAreaWithOneWildcard R_P;
@@ -58,7 +58,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard R1_MSG;
     touchgfx::TextAreaWithOneWildcard CTRL;
     touchgfx::TextAreaWithOneWildcard ACCEL;
-    touchgfx::Container container2;
+    touchgfx::Container remoteInfo;
     touchgfx::TextAreaWithOneWildcard SOURCE;
     touchgfx::TextAreaWithOneWildcard Battery;
     touchgfx::TextAreaWithOneWildcard KeyNum;

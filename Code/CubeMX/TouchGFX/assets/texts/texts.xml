@@ -7,6 +7,18 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Screen1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_NJ58" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">RunPoint:&#10;&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="RunPoint" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">Null</Translation>
+      </Text>
+      <Text Id="R1_send" Alignment="Left" TypographyId="Typography2">
+        <Translation Language="GB">R1_send:&#10;&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_M7YT" Alignment="Left" TypographyId="Typography4">
+        <Translation Language="GB">RunPoint:&#10;&lt;value&gt;</Translation>
+      </Text>
       <Text Id="yawsource" Alignment="Left" TypographyId="Typography3">
         <Translation Language="GB">0</Translation>
       </Text>
@@ -420,7 +432,8 @@
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography1" Font="verdanai.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Info" Font="verdanab.ttf" Size="15" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="-+!*()key." WildcardCharacterRanges="0-9,a-z,A-Z" />
-    <Typography Id="Typography2" Font="verdanai.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-+!*()key." WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Typography2" Font="verdanai.ttf" Size="15" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="-+!*()key." WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9,a-z,A-Z" />
     <Typography Id="Typography3" Font="verdanai.ttf" Size="22" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="-+!*()key." WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Typography4" Font="verdanai.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

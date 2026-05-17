@@ -30,6 +30,9 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::TYPOGRAPHY3:
         // verdanai_22_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[6]);
+    case Typography::TYPOGRAPHY4:
+        // verdanai_20_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
     default:
         return 0;
     }
