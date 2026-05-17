@@ -101,8 +101,8 @@ uint8_t keyboard_scan(void);
 
 key_press_t add_key_scan(uint8_t scan_continous);
 key_press_t ctrl_key_scan(uint8_t scan_continous);
-uint8_t get_point_value(void);
-uint8_t get_irda_msg(void);
+uint8_t get_point_value(uint8_t ctrl_key);
+uint8_t get_irda_msg(uint8_t ctrl_key);
 
 /* USER CODE END Prototypes */
 

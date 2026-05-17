@@ -1,3 +1,7 @@
+/**
+ * @file    screenPresenter.cpp
+ * @brief   主遥控界面Presenter实现
+ */
 #include <gui/screen_screen/screenView.hpp>
 #include <gui/screen_screen/screenPresenter.hpp>
 
@@ -21,7 +25,10 @@ void screenPresenter::onKeyValueChanged(int8_t key){
     view.keyState = key;
 }
 
-void screenPresenter::onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose){
+void screenPresenter::onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose,
+                                            uint8_t sub_mode, uint8_t tactical_idx){
+    (void)sub_mode;
+    (void)tactical_idx;
     view.handleKeyEvent(ctrl_key);
     view.pointvalue = choose;
 }
@@ -58,8 +65,8 @@ void screenPresenter::onIrdaMsgNumChanged(uint8_t msgnum){
 }
 
 void screenPresenter::R1StateChanged(uint8_t status, uint8_t state, float accel, uint8_t source){
-    (void)status;  // Unused parameter
-    (void)accel;   // Unused parameter
+    (void)status;  // 无需转发
+    (void)accel;   // 由 onR1StateChanged 完整更新
     view.r1_state = state;
     view.r1_yaw_source = source;
 }

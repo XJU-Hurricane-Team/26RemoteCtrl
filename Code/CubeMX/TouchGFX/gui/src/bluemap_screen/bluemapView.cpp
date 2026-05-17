@@ -1,5 +1,11 @@
+/**
+ * @file    bluemapView.cpp
+ * @brief   蓝方地图视图实现
+ */
 #include <gui/bluemap_screen/bluemapView.hpp>
 #include <touchgfx/Color.hpp>
+#include "includes.h"
+#include "tactical_points.h"
 
 /* 格式化浮点数为 xx.x 格式，如 "12.3" */
 static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
@@ -18,7 +24,7 @@ static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t buffer
     }
 }
 
-bluemapView::bluemapView():choosekey(0),r1state(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0)
+bluemapView::bluemapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),sub_mode(SUB_MODE_OFF),tactical_idx(0)
 {
 
 }
@@ -123,8 +129,24 @@ void bluemapView::colortoggleEvent(uint8_t point) {
 }
 
 void bluemapView::update2() {
+    static uint8_t last_sub = SUB_MODE_OFF;
+    if (sub_mode != last_sub) {
+        bool in_sub = (sub_mode == SUB_MODE_BLUE);
+        container4.setVisible(!in_sub);
+        containerTact.setVisible(in_sub);
+        container4.invalidate();
+        containerTact.invalidate();
+        last_sub = sub_mode;
+    }
+    if (sub_mode == SUB_MODE_BLUE) {
+        uint8_t idx = (tactical_idx <= TACTICAL_POINT_TOTAL) ? tactical_idx : 0;
+        Unicode::strncpy(RunPointBuffer, kTacticalNames[idx], RUNPOINT_SIZE);
+        RunPoint.invalidate();
+        return;
+    }
+
     Unicode::snprintf(bluechoosepointBuffer, BLUECHOOSEPOINT_SIZE, "%d", choosekey);
-    Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1state));
+    Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1_halt));
 
     /* 使用数组查找表替代switch-case，索引对应r1_state值，越界时回退到默认值"M" */
     const char *kCtrlLabels[] = {"M", "A"};

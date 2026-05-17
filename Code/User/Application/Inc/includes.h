@@ -50,6 +50,15 @@ typedef enum {
 } ui_msg_type_t;
 
 /**
+ * @brief 地图屏子模式 (战术点选择)
+ */
+typedef enum {
+    SUB_MODE_OFF  = 0, /*!< 未进入子模式 */
+    SUB_MODE_RED  = 1, /*!< 红区子模式 */
+    SUB_MODE_BLUE = 2  /*!< 蓝区子模式 */
+} sub_mode_t;
+
+/**
  * @brief 遥控器键盘回调函数
  *
  * @param key 按键
@@ -87,10 +96,12 @@ typedef struct __packed {
 
 /* 遥控器发送数据结构 */
 typedef struct __packed {
-    int8_t key;   /*!< 按键值 */
-    int8_t rs[4]; /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
-    int8_t point; /*!< 跑点位置 */
-    int8_t irdamsg;
+    int8_t key;          /*!< 按键值 */
+    int8_t rs[4];        /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
+    int8_t point;        /*!< 跑点位置 (普通模式) */
+    int8_t irdamsg;      /*!< IRDA 消息号 (info 屏) */
+    uint8_t sub_mode;    /*!< 子模式: sub_mode_t */
+    uint8_t tactical_idx;/*!< 战术点索引, 1..TACTICAL_POINT_TOTAL */
 } remote_send_data_t;
 
 /* 遥控器控制消息结构 */

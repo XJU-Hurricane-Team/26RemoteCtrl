@@ -339,8 +339,8 @@ key_press_t ctrl_key_scan(uint8_t scan_continous) {
 }
 
 static int8_t choosepoint = 1;
-uint8_t get_point_value(void) {
-    switch (ctrl_key_scan(1))
+uint8_t get_point_value(uint8_t ctrl_key) {
+    switch (ctrl_key)
     {
     case WHE_R_TURNUP:
         choosepoint -= 1;
@@ -415,8 +415,8 @@ uint8_t get_point_value(void) {
 }
 
 static int8_t msg_num = 1;
-uint8_t get_irda_msg(void) {
-    switch (ctrl_key_scan(1))
+uint8_t get_irda_msg(uint8_t ctrl_key) {
+    switch (ctrl_key)
     {
     case WHE_R_TURNUP:
         msg_num -= 1;

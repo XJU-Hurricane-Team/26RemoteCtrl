@@ -1,14 +1,26 @@
+/**
+ * @file    Model.cpp
+ * @brief   应用数据模型实现
+ */
 #include "includes.h"
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
 Model::Model()
-    : modelListener(nullptr), ctrl_keyValue(0), choosepoint(0),
-      keyValue(0), voltage(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0), irda_msgnum(0),
-      r1_x_speed(0), r1_y_speed(0), r1_w_speed(0), r1_chassis_status(1), r1_chassis_state(0), r1_yaw_source(0),
-      r1_accel_xy(0.0f), r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0), r1_right_adsorbed(0),
+    : modelListener(nullptr),
+      /* 遥控器数据 */
+      ctrl_keyValue(0), choosepoint(0),
+      keyValue(0), voltage(0),
+      rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
+      irda_msgnum(0), sub_mode(SUB_MODE_OFF), tactical_idx(0),
+      /* R1 底盘数据 */
+      r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
+      r1_chassis_status(1), r1_chassis_state(0), r1_yaw_source(0),
+      r1_accel_xy(0.0f),
+      r1_left_pos(0.0f), r1_right_pos(0.0f),
+      r1_left_adsorbed(0), r1_right_adsorbed(0),
       r1_send_msg(0), r1_rec_msg(0)
-    //   r2_x_speed(0), r2_y_speed(0), r2_angle(0), r2_status(0) 
+    //   r2_x_speed(0), r2_y_speed(0), r2_angle(0), r2_status(0)
       {}
 
 void Model::tick() {
@@ -20,6 +32,7 @@ void Model::tick() {
 
         while (xQueueReceive(ui_msg_queue, &msg, 0U) == pdPASS) {
             switch (msg.type) {
+                /* 遥控器数据: 遥杆/按键/电压 */
                 case UI_REMOTE_CTRL: {
                     const remote_ctrl_msg_t *ctrl_msg =
                         &msg.payload.remote_ctrl;
@@ -34,10 +47,16 @@ void Model::tick() {
                         keyValue = ctrl_msg->data.key;
                         modelListener->onKeyValueChanged(keyValue);
                     }
-                    if (ctrl_msg->ctrl_key!= ctrl_keyValue || ctrl_msg->data.point != choosepoint ) {
+                    if (ctrl_msg->ctrl_key != ctrl_keyValue ||
+                        ctrl_msg->data.point != choosepoint ||
+                        ctrl_msg->data.sub_mode != sub_mode ||
+                        ctrl_msg->data.tactical_idx != tactical_idx) {
                         ctrl_keyValue = ctrl_msg->ctrl_key;
-                        choosepoint = ctrl_msg->data.point;
-                        modelListener->onCtrlKeyValueChanged(ctrl_keyValue, choosepoint);
+                        choosepoint   = ctrl_msg->data.point;
+                        sub_mode      = ctrl_msg->data.sub_mode;
+                        tactical_idx  = ctrl_msg->data.tactical_idx;
+                        modelListener->onCtrlKeyValueChanged(
+                            ctrl_keyValue, choosepoint, sub_mode, tactical_idx);
                     }
 
                     modelListener->onIrdaMsgNumChanged(irda_msgnum);

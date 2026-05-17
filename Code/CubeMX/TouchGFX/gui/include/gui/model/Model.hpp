@@ -1,3 +1,7 @@
+/**
+ * @file    Model.hpp
+ * @brief   应用数据模型
+ */
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
@@ -17,29 +21,31 @@ class Model {
 
   protected:
     ModelListener *modelListener;
-    int8_t ctrl_keyValue;
-    int8_t choosepoint;
-    int8_t keyValue; // latest sampled key value
-    int8_t voltage;
-    int8_t rsL_x;
-    int8_t rsL_y;
-    int8_t rsR_x;
-    int8_t rsR_y;
-    uint8_t irda_msgnum;
+    int8_t ctrl_keyValue;    // 面板按键值(CTRL/SET 等)
+    int8_t choosepoint;      // 选中的地图点
+    int8_t keyValue;         // 最新按键采样值
+    int8_t voltage;          // 电池电压
+    int8_t rsL_x;            // 左摇杆 X
+    int8_t rsL_y;            // 左摇杆 Y
+    int8_t rsR_x;            // 右摇杆 X
+    int8_t rsR_y;            // 右摇杆 Y
+    uint8_t irda_msgnum;     // IRDA 消息号
+    uint8_t sub_mode;        // 子模式 sub_mode_t
+    uint8_t tactical_idx;    // 当前战术点索引
 
-    int16_t r1_x_speed;
-    int16_t r1_y_speed;
-    int16_t r1_w_speed;
-    uint8_t r1_chassis_status;
-    uint8_t r1_chassis_state;
-    float r1_accel_xy;
-    float r1_left_pos;
-    float r1_right_pos;
-    uint8_t r1_left_adsorbed;
-    uint8_t r1_right_adsorbed;
-    uint8_t r1_send_msg;
-    uint8_t r1_rec_msg;
-    uint8_t r1_yaw_source;
+    int16_t r1_x_speed;      // R1 X 速度
+    int16_t r1_y_speed;      // R1 Y 速度
+    int16_t r1_w_speed;      // R1 角速度
+    uint8_t r1_chassis_status;  // R1 底盘连接状态
+    uint8_t r1_chassis_state;   // R1 底盘控制模式
+    float r1_accel_xy;         // R1 加速度
+    float r1_left_pos;         // R1 左臂位置
+    float r1_right_pos;        // R1 右臂位置
+    uint8_t r1_left_adsorbed;  // R1 左吸附状态
+    uint8_t r1_right_adsorbed; // R1 右吸附状态
+    uint8_t r1_send_msg;       // R1 已发送消息数
+    uint8_t r1_rec_msg;        // R1 已接收消息数
+    uint8_t r1_yaw_source;     // R1 坐标系: 0-自身, 1-世界坐标系
 
 };
 

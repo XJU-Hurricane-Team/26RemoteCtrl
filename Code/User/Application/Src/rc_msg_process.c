@@ -8,6 +8,7 @@
 
 #include "includes.h"
 #include "my_math/my_math.h"
+#include "tactical_points.h"
 /* 发送时间间隔, 单位: ms */
 #define REMOTE_SEND_PERIOD 10
 
@@ -37,6 +38,7 @@ static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 /* UI 消息序列号 */
 static uint32_t ui_msg_seq = 0;
 static int8_t screen = 1;
+static uint8_t sub_mode = SUB_MODE_OFF; /*!< 红/蓝区子模式状态 */
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
 
 /**
@@ -94,23 +96,54 @@ static void remote_send_task(void *pvParameters) {
         uint8_t keyboard = keyboard_scan();
         uint8_t add_key = add_key_scan(1);
         uint8_t ctrl_key = ctrl_key_scan(0);
+        uint8_t ctrl_key_for_ui = ctrl_key;
 
-        /* screen 切换 */
+        /* screen / 子模式 切换 */
         if (ctrl_key == WHE_L_TURNUP) {
-            screen--;
+            if (sub_mode == SUB_MODE_BLUE) {
+                sub_mode = SUB_MODE_OFF;        /* 蓝区子模式: 反向退出 */
+                ctrl_key_for_ui = KEY_NO_PRESS;
+            } else if (sub_mode == SUB_MODE_RED) {
+                ctrl_key_for_ui = KEY_NO_PRESS; /* 红区子模式同方向: 吞掉, 不下钻 */
+            } else if (screen == 0) {
+                sub_mode = SUB_MODE_RED;        /* 红区边界上越界: 进子模式 */
+                ctrl_key_for_ui = KEY_NO_PRESS;
+            } else {
+                screen--;
+            }
         } else if (ctrl_key == WHE_L_TURNDO) {
-            screen++;
+            if (sub_mode == SUB_MODE_RED) {
+                sub_mode = SUB_MODE_OFF;        /* 红区子模式: 反向退出 */
+                ctrl_key_for_ui = KEY_NO_PRESS;
+            } else if (sub_mode == SUB_MODE_BLUE) {
+                ctrl_key_for_ui = KEY_NO_PRESS; /* 蓝区子模式同方向: 吞掉 */
+            } else if (screen == 2) {
+                sub_mode = SUB_MODE_BLUE;       /* 蓝区边界下越界: 进子模式 */
+                ctrl_key_for_ui = KEY_NO_PRESS;
+            } else {
+                screen++;
+            }
         }
         my_limit(screen, 0, SCREEN_TOTALNUM);
-
-        /* 点数/消息选择 */
-        if (screen != 1) {
-            remote_send_data.point = get_point_value();
-            remote_send_data.irdamsg = 0;
-        } else {
-            remote_send_data.point = 0;
-            remote_send_data.irdamsg = get_irda_msg();
+        if (screen == 1) {
+            sub_mode = SUB_MODE_OFF;            /* 跨进 info 强制清子模式 */
         }
+
+        /* 点数/消息选择: irdamsg 仅在 info 屏由右波轮维护, 其他屏强制清零 */
+        if (screen == 1) {
+            remote_send_data.point        = 0;
+            remote_send_data.irdamsg      = get_irda_msg(ctrl_key);
+            remote_send_data.tactical_idx = 0;
+        } else if (sub_mode != SUB_MODE_OFF) {
+            remote_send_data.point        = 0;
+            remote_send_data.irdamsg      = 0;
+            remote_send_data.tactical_idx = get_tactical_point(ctrl_key);
+        } else {
+            remote_send_data.point        = get_point_value(ctrl_key);
+            remote_send_data.irdamsg      = 0;
+            remote_send_data.tactical_idx = 0;
+        }
+        remote_send_data.sub_mode = sub_mode;
 
         rs_get_value(rs_adc_buf, 10, 40);
 
@@ -151,7 +184,7 @@ static void remote_send_task(void *pvParameters) {
             .type = UI_REMOTE_CTRL,
             .seq = ++ui_msg_seq,
             .payload.remote_ctrl =
-                {.ctrl_key = ctrl_key, .voltage = mV, .data = remote_send_data}};
+                {.ctrl_key = ctrl_key_for_ui, .voltage = mV, .data = remote_send_data}};
         ui_publish_msg(&ui_msg);
 
         /* 判断按键状态并触发按键回调 */

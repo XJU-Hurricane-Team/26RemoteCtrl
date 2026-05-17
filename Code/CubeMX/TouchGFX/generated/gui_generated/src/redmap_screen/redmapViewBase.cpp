@@ -189,7 +189,7 @@ redmapViewBase::redmapViewBase() :
     box63.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
     pointBoxes.add(box63);
 
-    box62.setPosition(192, 175, 32, 33);
+    box62.setPosition(192, 176, 32, 32);
     box62.setColor(touchgfx::Color::getColorFromRGB(1, 117, 3));
     pointBoxes.add(box62);
 
@@ -496,7 +496,7 @@ redmapViewBase::redmapViewBase() :
     point91.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F8DX));
     pointTexts.add(point91);
 
-    point92.setPosition(288, 181, 32, 24);
+    point92.setPosition(288, 180, 32, 24);
     point92.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     point92.setLinespacing(0);
     point92.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KJ61));
