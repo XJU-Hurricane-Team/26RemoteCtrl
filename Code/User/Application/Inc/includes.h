@@ -50,13 +50,20 @@ typedef enum {
 } ui_msg_type_t;
 
 /**
- * @brief 地图屏子模式 (战术点选择)
+ * @brief 逻辑屏索引 (中心对称: 负=红, 正=蓝, 0=info)
+ * @note  物理 TouchGFX 屏只有 3 张, 子模式叠加在地图屏上无独立物理屏
  */
 typedef enum {
-    SUB_MODE_OFF  = 0, /*!< 未进入子模式 */
-    SUB_MODE_RED  = 1, /*!< 红区子模式 */
-    SUB_MODE_BLUE = 2  /*!< 蓝区子模式 */
-} sub_mode_t;
+    SCREEN_RED_SUB  = -2, /*!< 红区子模式 (叠加在 redmap 屏) */
+    SCREEN_RED_MAP  = -1, /*!< 红图屏 */
+    SCREEN_INFO     =  0, /*!< Info 屏 */
+    SCREEN_BLUE_MAP =  1, /*!< 蓝图屏 */
+    SCREEN_BLUE_SUB =  2  /*!< 蓝区子模式 (叠加在 bluemap 屏) */
+} screen_t;
+
+/* 战术点位表 (定义在 rc_msg_process.c), 索引范围 [0, TACTICAL_POINT_TOTAL] */
+#define TACTICAL_POINT_TOTAL 8
+extern const char *const kTacticalNames[TACTICAL_POINT_TOTAL + 1];
 
 /**
  * @brief 遥控器键盘回调函数
@@ -132,8 +139,8 @@ void remote_register_key_callback(uint8_t key, remote_key_event_t event,
                                   remote_key_callback_t callback);
 void remote_unregister_key_callback(uint8_t key, remote_key_event_t event);
 
-/* 子模式 / 战术点状态访问器 (UI 端读取, 模块私有于 rc_msg_process.c) */
-uint8_t rc_get_sub_mode(void);
+/* 屏幕状态 / 战术点访问器 (UI 端读取, 模块私有于 rc_msg_process.c) */
+int8_t rc_get_screen(void);
 uint8_t rc_get_tactical_idx(void);
 
 #ifdef __cplusplus

@@ -8,7 +8,6 @@
 
 #include "includes.h"
 #include "my_math/my_math.h"
-#include "tactical_points.h"
 /* 发送时间间隔, 单位: ms */
 #define REMOTE_SEND_PERIOD 10
 
@@ -17,9 +16,6 @@
 
 /* 遥控器触发回调按键数量 */
 #define REMOTE_KEY_NUM     18
-
-/* 屏幕总数量 */
-#define SCREEN_TOTALNUM    2
 
 #define KEY_EVENT_CB(key, event)                                               \
     do {                                                                       \
@@ -37,17 +33,48 @@ QueueHandle_t ui_msg_queue = NULL;
 static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 /* UI 消息序列号 */
 static uint32_t ui_msg_seq = 0;
-static int8_t screen = 1;
-static uint8_t s_sub_mode = SUB_MODE_OFF; /*!< 红/蓝区子模式状态 (UI 通过 rc_get_sub_mode 读) */
+/* 一维 screen 状态机: 负=红, 正=蓝, 0=info, |s|==2 为子模式 */
+static int8_t screen = SCREEN_INFO;
 static uint8_t s_tactical_idx = 0;        /*!< 战术点索引 1..8, 0=未选 (UI 通过 rc_get_tactical_idx 读) */
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
 
-uint8_t rc_get_sub_mode(void) {
-    return s_sub_mode;
+/* 战术点位表 (红蓝共享, UI 通过 includes.h 暴露的 extern 索引读取) */
+const char *const kTacticalNames[TACTICAL_POINT_TOTAL + 1] = {
+    "NONE",     /* idx=0, 未选 */
+    "POINT_A",
+    "POINT_B",
+    "TACT_C",
+    "TACT_D",
+    "BUFF_E",
+    "GUARD_F",
+    "SNIPE_G",
+    "BACK_H"
+};
+
+int8_t rc_get_screen(void) {
+    return screen;
 }
 
 uint8_t rc_get_tactical_idx(void) {
     return s_tactical_idx;
+}
+
+/* 右波轮驱动战术点选择, 返回 1..TACTICAL_POINT_TOTAL */
+static uint8_t get_tactical_point(uint8_t ctrl_key) {
+    static int8_t tactical_num = 1;
+    switch (ctrl_key) {
+        case WHE_R_TURNUP:
+            tactical_num -= 1;
+            my_limit(tactical_num, 1, TACTICAL_POINT_TOTAL);
+            break;
+        case WHE_R_TURNDO:
+            tactical_num += 1;
+            my_limit(tactical_num, 1, TACTICAL_POINT_TOTAL);
+            break;
+        default:
+            break;
+    }
+    return (uint8_t)tactical_num;
 }
 
 /**
@@ -108,47 +135,26 @@ static void remote_send_task(void *pvParameters) {
         uint8_t ctrl_key_for_ui = ctrl_key;
         uint8_t ctrl_key_cont = ctrl_key_scan(1);   /* 右波轮选择: 连发 */
 
-        /* screen / 子模式 切换 */
-        if (ctrl_key == WHE_L_TURNUP) {
-            if (s_sub_mode == SUB_MODE_BLUE) {
-                s_sub_mode = SUB_MODE_OFF;        /* 蓝区子模式: 反向退出 */
-                ctrl_key_for_ui = KEY_NO_PRESS;
-            } else if (s_sub_mode == SUB_MODE_RED) {
-                ctrl_key_for_ui = KEY_NO_PRESS; /* 红区子模式同方向: 吞掉, 不下钻 */
-            } else if (screen == 0) {
-                s_sub_mode = SUB_MODE_RED;        /* 红区边界上越界: 进子模式 */
-                ctrl_key_for_ui = KEY_NO_PRESS;
-            } else {
-                screen--;
-            }
-        } else if (ctrl_key == WHE_L_TURNDO) {
-            if (s_sub_mode == SUB_MODE_RED) {
-                s_sub_mode = SUB_MODE_OFF;        /* 红区子模式: 反向退出 */
-                ctrl_key_for_ui = KEY_NO_PRESS;
-            } else if (s_sub_mode == SUB_MODE_BLUE) {
-                ctrl_key_for_ui = KEY_NO_PRESS; /* 蓝区子模式同方向: 吞掉 */
-            } else if (screen == 2) {
-                s_sub_mode = SUB_MODE_BLUE;       /* 蓝区边界下越界: 进子模式 */
-                ctrl_key_for_ui = KEY_NO_PRESS;
-            } else {
-                screen++;
-            }
-        }
-        my_limit(screen, 0, SCREEN_TOTALNUM);
-        if (screen == 1) {
-            s_sub_mode = SUB_MODE_OFF;            /* 跨进 info 强制清子模式 */
+        /* 一维 screen 状态机: UP 减 (向红), DOWN 加 (向蓝), clamp 到 [-2, +2] */
+        int8_t prev = screen;
+        if (ctrl_key == WHE_L_TURNUP   && screen > SCREEN_RED_SUB)  screen--;
+        if (ctrl_key == WHE_L_TURNDO   && screen < SCREEN_BLUE_SUB) screen++;
+        /* 前后任一端处于子模式时吞掉给 UI 的 wheel 事件, 避免 redmap/bluemap 屏误跳到 info */
+        if (prev   == SCREEN_RED_SUB || prev   == SCREEN_BLUE_SUB ||
+            screen == SCREEN_RED_SUB || screen == SCREEN_BLUE_SUB) {
+            ctrl_key_for_ui = KEY_NO_PRESS;
         }
 
-        /* 点数/消息选择: irdamsg 仅在 info 屏由右波轮维护, 其他屏强制清零 */
-        if (screen == 1) {
+        /* 点数/消息/战术点分派, 跟 screen 一一对应 */
+        if (screen == SCREEN_INFO) {
             remote_send_data.point   = 0;
             remote_send_data.irdamsg = get_irda_msg(ctrl_key_cont);
             s_tactical_idx           = 0;
-        } else if (s_sub_mode != SUB_MODE_OFF) {
+        } else if (screen == SCREEN_RED_SUB || screen == SCREEN_BLUE_SUB) {
             remote_send_data.point   = 0;
             remote_send_data.irdamsg = 0;
             s_tactical_idx           = get_tactical_point(ctrl_key_cont);
-        } else {
+        } else {  /* SCREEN_RED_MAP / SCREEN_BLUE_MAP */
             remote_send_data.point   = get_point_value(ctrl_key_cont);
             remote_send_data.irdamsg = 0;
             s_tactical_idx           = 0;
@@ -179,7 +185,8 @@ static void remote_send_task(void *pvParameters) {
         }
 
         /* 子模式 + 右波轮按下: 用战术点确认覆盖矩阵键, key = 51..58 */
-        if (s_sub_mode != SUB_MODE_OFF && ctrl_key == WHE_R_PRESS) {
+        if ((screen == SCREEN_RED_SUB || screen == SCREEN_BLUE_SUB)
+            && ctrl_key == WHE_R_PRESS) {
             keyboard = s_tactical_idx + 50;
         }
 

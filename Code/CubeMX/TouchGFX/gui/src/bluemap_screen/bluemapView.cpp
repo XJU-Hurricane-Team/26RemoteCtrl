@@ -5,7 +5,6 @@
 #include <gui/bluemap_screen/bluemapView.hpp>
 #include <touchgfx/Color.hpp>
 #include "includes.h"
-#include "tactical_points.h"
 
 /* 格式化浮点数为 xx.x 格式，如 "12.3" */
 static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
@@ -129,18 +128,17 @@ void bluemapView::colortoggleEvent(uint8_t point) {
 }
 
 void bluemapView::update2() {
-    uint8_t sub_mode     = rc_get_sub_mode();
-    uint8_t tactical_idx = rc_get_tactical_idx();
-    static uint8_t last_sub = SUB_MODE_OFF;
-    if (sub_mode != last_sub) {
-        bool in_sub = (sub_mode == SUB_MODE_BLUE);
+    bool in_sub = (rc_get_screen() == SCREEN_BLUE_SUB);
+    static bool last_in_sub = false;
+    if (in_sub != last_in_sub) {
         container4.setVisible(!in_sub);
         containerTact.setVisible(in_sub);
         container4.invalidate();
         containerTact.invalidate();
-        last_sub = sub_mode;
+        last_in_sub = in_sub;
     }
-    if (sub_mode == SUB_MODE_BLUE) {
+    if (in_sub) {
+        uint8_t tactical_idx = rc_get_tactical_idx();
         uint8_t idx = (tactical_idx <= TACTICAL_POINT_TOTAL) ? tactical_idx : 0;
         Unicode::strncpy(RunPointBuffer, kTacticalNames[idx], RUNPOINT_SIZE);
         RunPoint.invalidate();

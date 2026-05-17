@@ -25,7 +25,6 @@ virtualFolder:
       files:
         - path: User/Application/Src/rtos_tasks.c
         - path: User/Application/Src/rc_msg_process.c
-        - path: User/Application/Src/tactical_points.c
       folders: []
     - name: Middlewares
       files: []
