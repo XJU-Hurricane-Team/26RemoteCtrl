@@ -104,8 +104,9 @@ static void remote_send_task(void *pvParameters) {
     while (1) {
         uint8_t keyboard = keyboard_scan();
         uint8_t add_key = add_key_scan(1);
-        uint8_t ctrl_key = ctrl_key_scan(0);
+        uint8_t ctrl_key = ctrl_key_scan(0);        /* 屏 / 子模式: 一次性 */
         uint8_t ctrl_key_for_ui = ctrl_key;
+        uint8_t ctrl_key_cont = ctrl_key_scan(1);   /* 右波轮选择: 连发 */
 
         /* screen / 子模式 切换 */
         if (ctrl_key == WHE_L_TURNUP) {
@@ -141,14 +142,14 @@ static void remote_send_task(void *pvParameters) {
         /* 点数/消息选择: irdamsg 仅在 info 屏由右波轮维护, 其他屏强制清零 */
         if (screen == 1) {
             remote_send_data.point   = 0;
-            remote_send_data.irdamsg = get_irda_msg(ctrl_key);
+            remote_send_data.irdamsg = get_irda_msg(ctrl_key_cont);
             s_tactical_idx           = 0;
         } else if (s_sub_mode != SUB_MODE_OFF) {
             remote_send_data.point   = 0;
             remote_send_data.irdamsg = 0;
-            s_tactical_idx           = get_tactical_point(ctrl_key);
+            s_tactical_idx           = get_tactical_point(ctrl_key_cont);
         } else {
-            remote_send_data.point   = get_point_value(ctrl_key);
+            remote_send_data.point   = get_point_value(ctrl_key_cont);
             remote_send_data.irdamsg = 0;
             s_tactical_idx           = 0;
         }
