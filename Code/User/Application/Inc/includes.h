@@ -96,12 +96,10 @@ typedef struct __packed {
 
 /* 遥控器发送数据结构 */
 typedef struct __packed {
-    int8_t key;          /*!< 按键值 */
+    int8_t key;          /*!< 按键值 (1..16 矩阵, +TL/+TR 修饰, 49/50 = LZ/RZ, 51+ = 固定点) */
     int8_t rs[4];        /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
     int8_t point;        /*!< 跑点位置 (普通模式) */
     int8_t irdamsg;      /*!< IRDA 消息号 (info 屏) */
-    uint8_t sub_mode;    /*!< 子模式: sub_mode_t */
-    uint8_t tactical_idx;/*!< 战术点索引, 1..TACTICAL_POINT_TOTAL */
 } remote_send_data_t;
 
 /* 遥控器控制消息结构 */
@@ -133,6 +131,10 @@ void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
 void remote_register_key_callback(uint8_t key, remote_key_event_t event,
                                   remote_key_callback_t callback);
 void remote_unregister_key_callback(uint8_t key, remote_key_event_t event);
+
+/* 子模式 / 战术点状态访问器 (UI 端读取, 模块私有于 rc_msg_process.c) */
+uint8_t rc_get_sub_mode(void);
+uint8_t rc_get_tactical_idx(void);
 
 #ifdef __cplusplus
 }

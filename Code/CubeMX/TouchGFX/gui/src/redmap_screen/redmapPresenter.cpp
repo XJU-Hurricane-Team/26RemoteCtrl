@@ -21,10 +21,8 @@ void redmapPresenter::deactivate()
 
 }
 
-void redmapPresenter::onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose, uint8_t sub_mode, uint8_t tact_idx){
-    view.choosekey     = choose;
-    view.sub_mode      = sub_mode;
-    view.tactical_idx  = tact_idx;
+void redmapPresenter::onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose){
+    view.choosekey = choose;
     view.handleKeyEvent(ctrl_Key);
     view.colortoggleEvent(choose);
 }

@@ -12,7 +12,7 @@ Model::Model()
       ctrl_keyValue(0), choosepoint(0),
       keyValue(0), voltage(0),
       rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
-      irda_msgnum(0), sub_mode(SUB_MODE_OFF), tactical_idx(0),
+      irda_msgnum(0),
       /* R1 底盘数据 */
       r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
       r1_chassis_status(1), r1_chassis_state(0), r1_yaw_source(0),
@@ -48,15 +48,11 @@ void Model::tick() {
                         modelListener->onKeyValueChanged(keyValue);
                     }
                     if (ctrl_msg->ctrl_key != ctrl_keyValue ||
-                        ctrl_msg->data.point != choosepoint ||
-                        ctrl_msg->data.sub_mode != sub_mode ||
-                        ctrl_msg->data.tactical_idx != tactical_idx) {
+                        ctrl_msg->data.point != choosepoint) {
                         ctrl_keyValue = ctrl_msg->ctrl_key;
                         choosepoint   = ctrl_msg->data.point;
-                        sub_mode      = ctrl_msg->data.sub_mode;
-                        tactical_idx  = ctrl_msg->data.tactical_idx;
                         modelListener->onCtrlKeyValueChanged(
-                            ctrl_keyValue, choosepoint, sub_mode, tactical_idx);
+                            ctrl_keyValue, choosepoint);
                     }
 
                     modelListener->onIrdaMsgNumChanged(irda_msgnum);

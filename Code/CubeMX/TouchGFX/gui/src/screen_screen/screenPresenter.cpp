@@ -25,10 +25,7 @@ void screenPresenter::onKeyValueChanged(int8_t key){
     view.keyState = key;
 }
 
-void screenPresenter::onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose,
-                                            uint8_t sub_mode, uint8_t tactical_idx){
-    (void)sub_mode;
-    (void)tactical_idx;
+void screenPresenter::onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose){
     view.handleKeyEvent(ctrl_key);
     view.pointvalue = choose;
 }

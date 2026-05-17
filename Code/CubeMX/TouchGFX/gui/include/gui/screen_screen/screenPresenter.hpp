@@ -31,8 +31,7 @@ class screenPresenter : public touchgfx::Presenter, public ModelListener {
     virtual ~screenPresenter() {}
     virtual void onKeyValueChanged(int8_t key) override;           // 普通按键
     virtual void onIrdaMsgNumChanged(uint8_t msgnum) override;     // IRDA消息号
-    virtual void onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose,
-                                       uint8_t sub_mode, uint8_t tactical_idx) override; // CTRL/SET 按键 + 选点 + 子模式 + 战术点
+    virtual void onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose) override; // CTRL/SET 按键 + 选点
     virtual void onVoltageChanged(int8_t voltage) override;       // 电池电压更新
     virtual void onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x,
                                    int8_t rsR_y) override;        // 摇杆数据更新

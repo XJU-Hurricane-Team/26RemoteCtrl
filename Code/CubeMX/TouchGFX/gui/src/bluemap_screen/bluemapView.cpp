@@ -24,7 +24,7 @@ static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t buffer
     }
 }
 
-bluemapView::bluemapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),sub_mode(SUB_MODE_OFF),tactical_idx(0)
+bluemapView::bluemapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0)
 {
 
 }
@@ -129,6 +129,8 @@ void bluemapView::colortoggleEvent(uint8_t point) {
 }
 
 void bluemapView::update2() {
+    uint8_t sub_mode     = rc_get_sub_mode();
+    uint8_t tactical_idx = rc_get_tactical_idx();
     static uint8_t last_sub = SUB_MODE_OFF;
     if (sub_mode != last_sub) {
         bool in_sub = (sub_mode == SUB_MODE_BLUE);

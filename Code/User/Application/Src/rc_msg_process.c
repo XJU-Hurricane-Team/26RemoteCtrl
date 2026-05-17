@@ -38,8 +38,17 @@ static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 /* UI 消息序列号 */
 static uint32_t ui_msg_seq = 0;
 static int8_t screen = 1;
-static uint8_t sub_mode = SUB_MODE_OFF; /*!< 红/蓝区子模式状态 */
+static uint8_t s_sub_mode = SUB_MODE_OFF; /*!< 红/蓝区子模式状态 (UI 通过 rc_get_sub_mode 读) */
+static uint8_t s_tactical_idx = 0;        /*!< 战术点索引 1..8, 0=未选 (UI 通过 rc_get_tactical_idx 读) */
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
+
+uint8_t rc_get_sub_mode(void) {
+    return s_sub_mode;
+}
+
+uint8_t rc_get_tactical_idx(void) {
+    return s_tactical_idx;
+}
 
 /**
  * @brief UI 消息发布函数
@@ -100,25 +109,25 @@ static void remote_send_task(void *pvParameters) {
 
         /* screen / 子模式 切换 */
         if (ctrl_key == WHE_L_TURNUP) {
-            if (sub_mode == SUB_MODE_BLUE) {
-                sub_mode = SUB_MODE_OFF;        /* 蓝区子模式: 反向退出 */
+            if (s_sub_mode == SUB_MODE_BLUE) {
+                s_sub_mode = SUB_MODE_OFF;        /* 蓝区子模式: 反向退出 */
                 ctrl_key_for_ui = KEY_NO_PRESS;
-            } else if (sub_mode == SUB_MODE_RED) {
+            } else if (s_sub_mode == SUB_MODE_RED) {
                 ctrl_key_for_ui = KEY_NO_PRESS; /* 红区子模式同方向: 吞掉, 不下钻 */
             } else if (screen == 0) {
-                sub_mode = SUB_MODE_RED;        /* 红区边界上越界: 进子模式 */
+                s_sub_mode = SUB_MODE_RED;        /* 红区边界上越界: 进子模式 */
                 ctrl_key_for_ui = KEY_NO_PRESS;
             } else {
                 screen--;
             }
         } else if (ctrl_key == WHE_L_TURNDO) {
-            if (sub_mode == SUB_MODE_RED) {
-                sub_mode = SUB_MODE_OFF;        /* 红区子模式: 反向退出 */
+            if (s_sub_mode == SUB_MODE_RED) {
+                s_sub_mode = SUB_MODE_OFF;        /* 红区子模式: 反向退出 */
                 ctrl_key_for_ui = KEY_NO_PRESS;
-            } else if (sub_mode == SUB_MODE_BLUE) {
+            } else if (s_sub_mode == SUB_MODE_BLUE) {
                 ctrl_key_for_ui = KEY_NO_PRESS; /* 蓝区子模式同方向: 吞掉 */
             } else if (screen == 2) {
-                sub_mode = SUB_MODE_BLUE;       /* 蓝区边界下越界: 进子模式 */
+                s_sub_mode = SUB_MODE_BLUE;       /* 蓝区边界下越界: 进子模式 */
                 ctrl_key_for_ui = KEY_NO_PRESS;
             } else {
                 screen++;
@@ -126,24 +135,23 @@ static void remote_send_task(void *pvParameters) {
         }
         my_limit(screen, 0, SCREEN_TOTALNUM);
         if (screen == 1) {
-            sub_mode = SUB_MODE_OFF;            /* 跨进 info 强制清子模式 */
+            s_sub_mode = SUB_MODE_OFF;            /* 跨进 info 强制清子模式 */
         }
 
         /* 点数/消息选择: irdamsg 仅在 info 屏由右波轮维护, 其他屏强制清零 */
         if (screen == 1) {
-            remote_send_data.point        = 0;
-            remote_send_data.irdamsg      = get_irda_msg(ctrl_key);
-            remote_send_data.tactical_idx = 0;
-        } else if (sub_mode != SUB_MODE_OFF) {
-            remote_send_data.point        = 0;
-            remote_send_data.irdamsg      = 0;
-            remote_send_data.tactical_idx = get_tactical_point(ctrl_key);
+            remote_send_data.point   = 0;
+            remote_send_data.irdamsg = get_irda_msg(ctrl_key);
+            s_tactical_idx           = 0;
+        } else if (s_sub_mode != SUB_MODE_OFF) {
+            remote_send_data.point   = 0;
+            remote_send_data.irdamsg = 0;
+            s_tactical_idx           = get_tactical_point(ctrl_key);
         } else {
-            remote_send_data.point        = get_point_value(ctrl_key);
-            remote_send_data.irdamsg      = 0;
-            remote_send_data.tactical_idx = 0;
+            remote_send_data.point   = get_point_value(ctrl_key);
+            remote_send_data.irdamsg = 0;
+            s_tactical_idx           = 0;
         }
-        remote_send_data.sub_mode = sub_mode;
 
         rs_get_value(rs_adc_buf, 10, 40);
 
@@ -167,6 +175,11 @@ static void remote_send_task(void *pvParameters) {
                 MSG_MODES = CHANGE_TO_MODE2;
                 if (keyboard) keyboard += 32;
                 break;
+        }
+
+        /* 子模式 + 右波轮按下: 用战术点确认覆盖矩阵键, key = 51..58 */
+        if (s_sub_mode != SUB_MODE_OFF && ctrl_key == WHE_R_PRESS) {
+            keyboard = s_tactical_idx + 50;
         }
 
         /* 填充发送数据 */

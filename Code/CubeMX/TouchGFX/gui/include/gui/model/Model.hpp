@@ -30,8 +30,6 @@ class Model {
     int8_t rsR_x;            // 右摇杆 X
     int8_t rsR_y;            // 右摇杆 Y
     uint8_t irda_msgnum;     // IRDA 消息号
-    uint8_t sub_mode;        // 子模式 sub_mode_t
-    uint8_t tactical_idx;    // 当前战术点索引
 
     int16_t r1_x_speed;      // R1 X 速度
     int16_t r1_y_speed;      // R1 Y 速度
