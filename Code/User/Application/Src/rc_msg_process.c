@@ -32,7 +32,7 @@ static uint8_t s_preset_idx = 0;
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
 
 /* 预设点总数 */
-#define PRESET_POINT_TOTAL 8
+#define PRESET_POINT_TOTAL 5
 
 static uint8_t get_preset_point(uint8_t ctrl_key) {
     static int8_t preset_num = 1;
@@ -107,7 +107,7 @@ static void remote_send_task(void *pvParameters) {
         uint8_t add_key = add_key_scan(1);
         uint8_t ctrl_key = ctrl_key_scan(0);        /* 屏 / 子模式: 一次性 */
         uint8_t ctrl_key_for_ui = ctrl_key;
-        uint8_t ctrl_key_cont = ctrl_key_scan(1);   /* 右波轮选择: 连发 */
+        uint8_t ctrl_key_cont = ctrl_key_scan(1);   /* 右波轮选择: 连发，如果不需要注释掉这里 */
 
         /* 一维 screen 状态机: UP 减 (向红), DOWN 加 (向蓝), clamp 到 [-2, +2] */
         int8_t prev = screen;
@@ -121,14 +121,14 @@ static void remote_send_task(void *pvParameters) {
 
         if (screen == SCREEN_INFO) {
             remote_send_data.point   = 0;
-            remote_send_data.irdamsg = get_irda_msg(ctrl_key_cont);
+            remote_send_data.irdamsg = get_irda_msg(ctrl_key_cont);  /* 右波轮连发，如果不需要换成 ctrl_key */
             s_preset_idx             = 0;
         } else if (screen == SCREEN_RED_SUB || screen == SCREEN_BLUE_SUB) {
-            remote_send_data.point   = 0;
+            remote_send_data.point   = s_preset_idx + 50;
             remote_send_data.irdamsg = 0;
-            s_preset_idx             = get_preset_point(ctrl_key_cont);
+            s_preset_idx             = get_preset_point(ctrl_key_cont);/* 右波轮连发，如果不需要换成 ctrl_key */
         } else {
-            remote_send_data.point   = get_point_value(ctrl_key_cont);
+            remote_send_data.point   = get_point_value(ctrl_key_cont); /* 右波轮连发，如果不需要换成 ctrl_key */
             remote_send_data.irdamsg = 0;
             s_preset_idx             = 0;
         }
@@ -154,11 +154,6 @@ static void remote_send_task(void *pvParameters) {
                 MSG_MODES = CHANGE_TO_MODE2;
                 if (keyboard) keyboard += 32;
                 break;
-        }
-
-        if ((screen == SCREEN_RED_SUB || screen == SCREEN_BLUE_SUB)
-            && ctrl_key == WHE_R_PRESS) {
-            keyboard = s_preset_idx + 50;
         }
 
         remote_send_data.key = keyboard;

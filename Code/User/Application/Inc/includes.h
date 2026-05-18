@@ -100,9 +100,9 @@ typedef struct __packed {
 
 /* 遥控器发送数据结构 */
 typedef struct __packed {
-    int8_t key;    /*!< 1..16 (矩阵键), 49/50 = LZ/RZ, 51+ = 固定点 */
+    int8_t key;    /*!< 1..16 (矩阵键), 49/50 = LZ/RZ */
     int8_t rs[4];  /*!< [0]=左x, [1]=左y, [2]=右x, [3]=右y */
-    int8_t point;  /*!< A* 跑点位置 */
+    int8_t point;  /*!< 1..50 A* 跑点位置 , 50+ 预设点位置 */
     int8_t irdamsg;
 } remote_send_data_t;
 

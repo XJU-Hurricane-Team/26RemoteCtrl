@@ -8,11 +8,11 @@
 
 const char *const Model::kPresetPointNames[Model::kPresetPointCount] = {
     "NONE",
-    "POINT_A",
-    "POINT_B",
-    "TACT_C",
-    "TACT_D",
-    "BUFF_E",
+    "CATCH_1",
+    "CATCH_2",
+    "CATCH_3",
+    "CATCH_4",
+    "ASSEMBLE",
     "GUARD_F",
     "SNIPE_G",
     "BACK_H"
