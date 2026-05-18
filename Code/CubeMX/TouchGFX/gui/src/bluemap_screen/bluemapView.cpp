@@ -3,8 +3,8 @@
  * @brief   蓝方地图视图实现
  */
 #include <gui/bluemap_screen/bluemapView.hpp>
+#include <gui/model/Model.hpp>
 #include <touchgfx/Color.hpp>
-#include "includes.h"
 
 /* 格式化浮点数为 xx.x 格式，如 "12.3" */
 static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t bufferSize,
@@ -23,7 +23,7 @@ static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t buffer
     }
 }
 
-bluemapView::bluemapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0)
+bluemapView::bluemapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),in_sub(false),cur_tactical_idx(0)
 {
 
 }
@@ -128,7 +128,6 @@ void bluemapView::colortoggleEvent(uint8_t point) {
 }
 
 void bluemapView::update2() {
-    bool in_sub = (rc_get_screen() == SCREEN_BLUE_SUB);
     static bool last_in_sub = false;
     if (in_sub != last_in_sub) {
         container4.setVisible(!in_sub);
@@ -138,9 +137,8 @@ void bluemapView::update2() {
         last_in_sub = in_sub;
     }
     if (in_sub) {
-        uint8_t tactical_idx = rc_get_tactical_idx();
-        uint8_t idx = (tactical_idx <= TACTICAL_POINT_TOTAL) ? tactical_idx : 0;
-        Unicode::strncpy(RunPointBuffer, kTacticalNames[idx], RUNPOINT_SIZE);
+        uint8_t idx = (cur_tactical_idx < Model::kTacticalCount) ? cur_tactical_idx : 0;
+        Unicode::strncpy(RunPointBuffer, Model::kTacticalNames[idx], RUNPOINT_SIZE);
         RunPoint.invalidate();
         return;
     }
@@ -148,16 +146,10 @@ void bluemapView::update2() {
     Unicode::snprintf(bluechoosepointBuffer, BLUECHOOSEPOINT_SIZE, "%d", choosekey);
     Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1_halt));
 
-    /* 使用数组查找表替代switch-case，索引对应r1_state值，越界时回退到默认值"M" */
-    const char *kCtrlLabels[] = {"M", "A"};
-    const char *ctrl = (r1_state < 2) ? kCtrlLabels[r1_state] : "M";
-    CTRLBuffer[0] = ctrl[0];
-    CTRLBuffer[1] = 0;
-
-    /* 索引对应r1_yaw_source值，越界时回退到默认值"S" */
-    const char *kSourceLabels[] = {"S", "W"};
-    const char *source = (r1_yaw_source < 2) ? kSourceLabels[r1_yaw_source] : "S";
-    SOURCEBuffer[0] = source[0];
+    /* 控制模式 / 坐标系来源: 用 Model 共享文案表查表 */
+    CTRLBuffer[0]   = (r1_state < 2)       ? Model::kCtrlLabels[r1_state]     : Model::kCtrlLabels[0];
+    CTRLBuffer[1]   = 0;
+    SOURCEBuffer[0] = (r1_yaw_source < 2)  ? Model::kSourceLabels[r1_yaw_source] : Model::kSourceLabels[0];
     SOURCEBuffer[1] = 0;
 
     // FIXME: 第2行覆盖第1行，ACCEL始终显示为整数，后续可能换为模式，暂时不解决

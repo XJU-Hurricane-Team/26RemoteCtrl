@@ -46,12 +46,13 @@ typedef enum {
     UI_REMOTE_CTRL = 0x00U, /*!< 遥控器控制消息 */
     UI_R1_STATE,            /*!< R1 状态消息 */
     UI_R2_STATE,            /*!< R2 状态消息 */
+    UI_SCREEN_STATE,        /*!< 屏状态变化 (screen + tactical_idx) */
     MSG_TYPE_NUM            /*!< 保留长度 */
 } ui_msg_type_t;
 
 /**
- * @brief 逻辑屏索引 (中心对称: 负=红, 正=蓝, 0=info)
- * @note  物理 TouchGFX 屏只有 3 张, 子模式叠加在地图屏上无独立物理屏
+ * @brief 屏索引 (中心对称: 负=红, 正=蓝, 0=info)
+ * @note  物理 TouchGFX 屏只有 3 张, 子模式叠加在地图屏上无独立屏
  */
 typedef enum {
     SCREEN_RED_SUB  = -2, /*!< 红区子模式 (叠加在 redmap 屏) */
@@ -61,9 +62,7 @@ typedef enum {
     SCREEN_BLUE_SUB =  2  /*!< 蓝区子模式 (叠加在 bluemap 屏) */
 } screen_t;
 
-/* 战术点位表 (定义在 rc_msg_process.c), 索引范围 [0, TACTICAL_POINT_TOTAL] */
-#define TACTICAL_POINT_TOTAL 8
-extern const char *const kTacticalNames[TACTICAL_POINT_TOTAL + 1];
+/* 战术点索引范围 [0, 8], UI 通过 UI_SCREEN_STATE 消息接收 */
 
 /**
  * @brief 遥控器键盘回调函数
@@ -117,9 +116,15 @@ typedef struct {
 } remote_ctrl_msg_t;
 
 /* UI 消息载荷 */
+typedef struct {
+    int8_t  screen;       /*!< screen_t 当前值 */
+    uint8_t tactical_idx; /*!< 战术点索引 0..8 (0=未选) */
+} ui_screen_state_t;
+
 typedef union {
     remote_ctrl_msg_t remote_ctrl;
     r1_data_t r1_state;
+    ui_screen_state_t screen_state;
     // r2_data_t r2_state;
 } ui_msg_payload_t;
 
@@ -138,10 +143,6 @@ void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
 void remote_register_key_callback(uint8_t key, remote_key_event_t event,
                                   remote_key_callback_t callback);
 void remote_unregister_key_callback(uint8_t key, remote_key_event_t event);
-
-/* 屏幕状态 / 战术点访问器 (UI 端读取, 模块私有于 rc_msg_process.c) */
-int8_t rc_get_screen(void);
-uint8_t rc_get_tactical_idx(void);
 
 #ifdef __cplusplus
 }

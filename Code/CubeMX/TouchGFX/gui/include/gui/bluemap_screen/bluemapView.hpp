@@ -23,6 +23,8 @@ public:
     uint8_t r1_state;      // R1 控制模式: 0-手动, 1-自动
     float r1_accel_xy;     // R1 加速度
     uint8_t r1_yaw_source; // R1 坐标系: 0-自身, 1-世界坐标系
+    bool in_sub;             // 是否处于子模式 (由 Presenter 通过 onMapSubModeChanged 设置)
+    uint8_t cur_tactical_idx; // 当前战术点索引 (0=未选)
 protected:
 };
 

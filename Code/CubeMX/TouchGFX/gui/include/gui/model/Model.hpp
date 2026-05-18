@@ -5,6 +5,8 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include <stdint.h>
+
 class ModelListener;
 
 class Model {
@@ -18,6 +20,12 @@ class Model {
     void tick();
 
     void setKeyValue(int8_t k);
+
+    /* UI 共享文案表 — 跨 Screen 复用, 住在 Model 而非 Application */
+    enum : uint8_t { kTacticalCount = 9 }; /* idx=0..8 */
+    static const char *const kTacticalNames[kTacticalCount];
+    static const char        kCtrlLabels[2];     /* {'M', 'A'} */
+    static const char        kSourceLabels[2];   /* {'S', 'W'} */
 
   protected:
     ModelListener *modelListener;

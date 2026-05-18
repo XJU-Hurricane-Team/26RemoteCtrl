@@ -6,6 +6,21 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
+/* UI 共享文案表 (跨 Screen 复用) */
+const char *const Model::kTacticalNames[Model::kTacticalCount] = {
+    "NONE",    /* idx=0, 未选 */
+    "POINT_A",
+    "POINT_B",
+    "TACT_C",
+    "TACT_D",
+    "BUFF_E",
+    "GUARD_F",
+    "SNIPE_G",
+    "BACK_H"
+};
+const char Model::kCtrlLabels[2]   = {'M', 'A'};
+const char Model::kSourceLabels[2] = {'S', 'W'};
+
 Model::Model()
     : modelListener(nullptr),
       /* 遥控器数据 */
@@ -76,6 +91,12 @@ void Model::tick() {
                     r1_rec_msg = r1_msg->rec_msg;
                     r1_yaw_source = r1_msg->yaw_source;
                     r1_changed = true;
+                } break;
+
+                case UI_SCREEN_STATE: {
+                    const ui_screen_state_t *s = &msg.payload.screen_state;
+                    bool in_sub = (s->screen == SCREEN_RED_SUB) || (s->screen == SCREEN_BLUE_SUB);
+                    modelListener->onMapSubModeChanged(in_sub, s->tactical_idx);
                 } break;
 
                 default:

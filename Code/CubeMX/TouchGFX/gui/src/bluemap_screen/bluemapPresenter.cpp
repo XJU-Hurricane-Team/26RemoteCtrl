@@ -33,3 +33,8 @@ void bluemapPresenter::R1StateChanged(uint8_t status ,uint8_t state ,float accel
     view.r1_state = state;
     view.r1_yaw_source = source;
 }
+
+void bluemapPresenter::onMapSubModeChanged(bool in_sub, uint8_t tactical_idx){
+    view.in_sub = in_sub;
+    view.cur_tactical_idx = tactical_idx;
+}

@@ -35,29 +35,12 @@ static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 static uint32_t ui_msg_seq = 0;
 /* 一维 screen 状态机: 负=红, 正=蓝, 0=info, |s|==2 为子模式 */
 static int8_t screen = SCREEN_INFO;
-static uint8_t s_tactical_idx = 0;        /*!< 战术点索引 1..8, 0=未选 (UI 通过 rc_get_tactical_idx 读) */
+/* 战术点索引 1..TACTICAL_POINT_TOTAL, 0=未选; UI 通过 UI_SCREEN_STATE 消息接收 */
+static uint8_t s_tactical_idx = 0;
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
 
-/* 战术点位表 (红蓝共享, UI 通过 includes.h 暴露的 extern 索引读取) */
-const char *const kTacticalNames[TACTICAL_POINT_TOTAL + 1] = {
-    "NONE",     /* idx=0, 未选 */
-    "POINT_A",
-    "POINT_B",
-    "TACT_C",
-    "TACT_D",
-    "BUFF_E",
-    "GUARD_F",
-    "SNIPE_G",
-    "BACK_H"
-};
-
-int8_t rc_get_screen(void) {
-    return screen;
-}
-
-uint8_t rc_get_tactical_idx(void) {
-    return s_tactical_idx;
-}
+/* 战术点总数上限 (波轮选择 clamp 用) */
+#define TACTICAL_POINT_TOTAL 8
 
 /* 右波轮驱动战术点选择, 返回 1..TACTICAL_POINT_TOTAL */
 static uint8_t get_tactical_point(uint8_t ctrl_key) {
@@ -207,6 +190,20 @@ static void remote_send_task(void *pvParameters) {
             .payload.remote_ctrl =
                 {.ctrl_key = ctrl_key_for_ui, .voltage = mV, .data = remote_send_data}};
         ui_publish_msg(&ui_msg);
+
+        /* 屏状态变化时单独推送 (UI 通过 ModelListener::onScreenStateChanged 接收) */
+        static int8_t last_pushed_screen = SCREEN_INFO;
+        static uint8_t last_pushed_tactical = 0;
+        if (screen != last_pushed_screen || s_tactical_idx != last_pushed_tactical) {
+            ui_msg_t screen_msg = {
+                .type = UI_SCREEN_STATE,
+                .seq = ++ui_msg_seq,
+                .payload.screen_state = {.screen = screen,
+                                         .tactical_idx = s_tactical_idx}};
+            ui_publish_msg(&screen_msg);
+            last_pushed_screen = screen;
+            last_pushed_tactical = s_tactical_idx;
+        }
 
         /* 判断按键状态并触发按键回调 */
         uint8_t current_key = remote_send_data.key;

@@ -1,4 +1,5 @@
 #include <gui/screen_screen/screenView.hpp>
+#include <gui/model/Model.hpp>
 #include <touchgfx/Unicode.hpp>
 #include "stm32f4xx_hal.h"
 #include <stdlib.h>
@@ -27,11 +28,7 @@ void setCharText(touchgfx::Unicode::UnicodeChar *buffer, char c) {
     buffer[1] = 0;
 }
 
-/* 状态到字符的查找表 */
-const char kCtrlLabels[] = {'M', 'A'};
-const char kSourceLabels[] = {'S', 'W'};
-
-/* 消息号到字符串的查找表 */
+/* 消息号到字符串的查找表 (screenView 专属, IRDA 文案) */
 const char *const kMsgTable[] = {
     "NULL", "Assembled_weapon", "AWAY_MARTIAL", "AWAY_MEILIN",
     "COMPLEX", "CAN_PUT", "pre"
@@ -100,7 +97,7 @@ void screenView::InfoUpdate1() {
                                 static_cast<unsigned int>(r1_status));
 
     setCharText(CTRLBuffer,
-                (r1_state < 2) ? kCtrlLabels[r1_state] : 'M');
+                (r1_state < 2) ? Model::kCtrlLabels[r1_state] : Model::kCtrlLabels[0]);
 
     touchgfx::Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u",
                                 static_cast<unsigned int>(r1_accel_xy));
@@ -112,7 +109,7 @@ void screenView::InfoUpdate1() {
                                 static_cast<unsigned int>(r1_right_adsorbed));
 
     setCharText(SOURCEBuffer,
-                (r1_yaw_source < 2) ? kSourceLabels[r1_yaw_source] : 'S');
+                (r1_yaw_source < 2) ? Model::kSourceLabels[r1_yaw_source] : Model::kSourceLabels[0]);
 
     const char *msgText =
         (msgnum >= 0 && msgnum < kMsgCount) ? kMsgTable[msgnum] : "OutOfRange";
