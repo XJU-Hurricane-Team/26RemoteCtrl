@@ -35,7 +35,7 @@ typedef enum {
     REMOTE_KEY_PRESS_DOWN, /*!< 按键按下 */
     REMOTE_KEY_PRESSING,   /*!< 按键长按 */
     REMOTE_KEY_PRESS_UP,   /*!< 按键抬起 */
-    REMOTE_KEY_EVENT_NUM   /*!< 保留长度 */
+    REMOTE_KEY_EVENT_NUM
 } remote_key_event_t;
 
 /**
@@ -46,8 +46,8 @@ typedef enum {
     UI_REMOTE_CTRL = 0x00U, /*!< 遥控器控制消息 */
     UI_R1_STATE,            /*!< R1 状态消息 */
     UI_R2_STATE,            /*!< R2 状态消息 */
-    UI_SCREEN_STATE,        /*!< 屏状态变化 (screen + tactical_idx) */
-    MSG_TYPE_NUM            /*!< 保留长度 */
+    UI_SCREEN_STATE,        /*!< 屏变化 (screen + preset_idx) */
+    MSG_TYPE_NUM
 } ui_msg_type_t;
 
 /**
@@ -62,8 +62,6 @@ typedef enum {
     SCREEN_BLUE_SUB =  2  /*!< 蓝区子模式 (叠加在 bluemap 屏) */
 } screen_t;
 
-/* 战术点索引范围 [0, 8], UI 通过 UI_SCREEN_STATE 消息接收 */
-
 /**
  * @brief 遥控器键盘回调函数
  *
@@ -77,19 +75,19 @@ typedef void (*remote_key_callback_t)(uint8_t key, remote_key_event_t event);
  *
  */
 typedef struct __packed {
-    int16_t x_speed;           /*!< x 方向速度 */
-    int16_t y_speed;           /*!< y 方向速度 */
-    int16_t w_speed;           /*!< 角速度 */
-    uint8_t r1_chassis_status; /*!< 自锁与否 */
-    uint8_t r1_chassis_state;  /*!< 手控与否 */
-    float accel_xy;            /*!< 加速度 */
-    float left_pos;            /*!< 左侧抬升高度 */
-    float right_pos;           /*!< 右侧抬升高度 */
-    bool left_adsorbed;        /*!< 左侧是否吸住 */
-    bool right_adsorbed;       /*!< 右侧是否吸住 */
-    uint8_t rec_msg;           /*!< 接收到R2传的数据 */
-    uint8_t send_msg;          /*!< 发送给R2的数据 */
-    uint8_t yaw_source;        /*!< 坐标系来源，0=SELF, 1=NUC */
+    int16_t x_speed;
+    int16_t y_speed;
+    int16_t w_speed;
+    uint8_t r1_chassis_status;
+    uint8_t r1_chassis_state;
+    float accel_xy;
+    float left_pos;
+    float right_pos;
+    bool left_adsorbed;
+    bool right_adsorbed;
+    uint8_t rec_msg;
+    uint8_t send_msg;
+    uint8_t yaw_source;
 } r1_data_t;
 
 /**
@@ -102,23 +100,23 @@ typedef struct __packed {
 
 /* 遥控器发送数据结构 */
 typedef struct __packed {
-    int8_t key;          /*!< 按键值 (1..16 矩阵, +TL/+TR 修饰, 49/50 = LZ/RZ, 51+ = 固定点) */
-    int8_t rs[4];        /*!< 摇杆, 左 x, 左 y, 右 x, 右 y */
-    int8_t point;        /*!< 跑点位置 (普通模式) */
-    int8_t irdamsg;      /*!< IRDA 消息号 (info 屏) */
+    int8_t key;    /*!< 1..16 (矩阵键), 49/50 = LZ/RZ, 51+ = 固定点 */
+    int8_t rs[4];  /*!< [0]=左x, [1]=左y, [2]=右x, [3]=右y */
+    int8_t point;  /*!< A* 跑点位置 */
+    int8_t irdamsg;
 } remote_send_data_t;
 
 /* 遥控器控制消息结构 */
 typedef struct {
-    uint8_t voltage;         /*!< 电压值 */
-    int8_t ctrl_key;         /*!< 控制按键值 */
-    remote_send_data_t data; /*!< 遥控器发送数据 */
+    uint8_t voltage;
+    int8_t ctrl_key;
+    remote_send_data_t data;
 } remote_ctrl_msg_t;
 
 /* UI 消息载荷 */
 typedef struct {
-    int8_t  screen;       /*!< screen_t 当前值 */
-    uint8_t tactical_idx; /*!< 战术点索引 0..8 (0=未选) */
+    int8_t  screen;
+    uint8_t preset_idx;
 } ui_screen_state_t;
 
 typedef union {
@@ -129,9 +127,9 @@ typedef union {
 } ui_msg_payload_t;
 
 typedef struct {
-    ui_msg_type_t type;       /*!< 消息类型 */
-    uint32_t seq;             /*!< 发布序号, 用于调试丢包与乱序 */
-    ui_msg_payload_t payload; /*!< 消息数据 */
+    ui_msg_type_t type;
+    uint32_t seq;
+    ui_msg_payload_t payload;
 } ui_msg_t;
 
 extern QueueHandle_t ui_msg_queue;

@@ -23,7 +23,7 @@ static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t buffer
     }
 }
 
-redmapView::redmapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),in_sub(false),cur_tactical_idx(0)
+redmapView::redmapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),in_sub(false),cur_preset_idx(0)
 {
 
 }
@@ -60,57 +60,57 @@ void redmapView::colortoggleEvent(uint8_t point) {
     };
 
     static const PointConfig kPoints[51] = {
-        /* 0  无效 */ {nullptr,  0},
-        /* 1  深红 */ {&box01,   kRedDeep},
-        /* 2  浅粉 */ {&box02,   kPinkLight},
-        /* 3  浅粉 */ {&box03,   kPinkLight},
-        /* 4  浅粉 */ {&box04,   kPinkLight},
-        /* 5  浅粉 */ {&box05,   kPinkLight},
-        /* 6  浅粉 */ {&box11,   kPinkLight},
-        /* 7  浅粉 */ {&box12,   kPinkLight},
-        /* 8  浅粉 */ {&box13,   kPinkLight},
-        /* 9  浅粉 */ {&box14,   kPinkLight},
-        /* 10 浅粉 */ {&box15,   kPinkLight},
-        /* 11 粉红 */ {&box21,   kPink},
-        /* 12 粉红 */ {&box22,   kPink},
-        /* 13 粉红 */ {&box23,   kPink},
-        /* 14 粉红 */ {&box24,   kPink},
-        /* 15 粉红 */ {&box25,   kPink},
-        /* 16 粉红 */ {&box31,   kPink},
-        /* 17 无效 */ {nullptr,  0},
-        /* 18 无效 */ {nullptr,  0},
-        /* 19 无效 */ {nullptr,  0},
-        /* 20 粉红 */ {&box35,   kPink},
-        /* 21 粉红 */ {&box41,   kPink},
-        /* 22 无效 */ {nullptr,  0},
-        /* 23 无效 */ {nullptr,  0},
-        /* 24 无效 */ {nullptr,  0},
-        /* 25 粉红 */ {&box45,   kPink},
-        /* 26 粉红 */ {&box51,   kPink},
-        /* 27 无效 */ {nullptr,  0},
-        /* 28 无效 */ {nullptr,  0},
-        /* 29 无效 */ {nullptr,  0},
-        /* 30 粉红 */ {&box55,   kPink},
-        /* 31 粉红 */ {&box61,   kPink},
-        /* 32 无效 */ {nullptr,  0},
-        /* 33 无效 */ {nullptr,  0},
-        /* 34 无效 */ {nullptr,  0},
-        /* 35 粉红 */ {&box65,   kPink},
-        /* 36 粉红 */ {&box71,   kPink},
-        /* 37 粉红 */ {&box72,   kPink},
-        /* 38 粉红 */ {&box73,   kPink},
-        /* 39 粉红 */ {&box74,   kPink},
-        /* 40 粉红 */ {&box75,   kPink},
-        /* 41 灰色 */ {&box81,   kGray},
-        /* 42 亮红 */ {&box82,   kRedBright},
-        /* 43 亮红 */ {&box83,   kRedBright},
-        /* 44 亮红 */ {&box84,   kRedBright},
-        /* 45 亮红 */ {&box85,   kRedBright},
-        /* 46 深红 */ {&box91,   kRedDeep},
-        /* 47 亮红 */ {&box92,   kRedBright},
-        /* 48 亮红 */ {&box93,   kRedBright},
-        /* 49 亮红 */ {&box94,   kRedBright},
-        /* 50 亮红 */ {&box95,   kRedBright},
+         {nullptr,  0},
+         {&box01,   kRedDeep},
+         {&box02,   kPinkLight},
+         {&box03,   kPinkLight},
+         {&box04,   kPinkLight},
+         {&box05,   kPinkLight},
+         {&box11,   kPinkLight},
+         {&box12,   kPinkLight},
+         {&box13,   kPinkLight},
+         {&box14,   kPinkLight},
+         {&box15,   kPinkLight},
+         {&box21,   kPink},
+         {&box22,   kPink},
+         {&box23,   kPink},
+         {&box24,   kPink},
+         {&box25,   kPink},
+         {&box31,   kPink},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box35,   kPink},
+         {&box41,   kPink},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box45,   kPink},
+         {&box51,   kPink},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box55,   kPink},
+         {&box61,   kPink},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box65,   kPink},
+         {&box71,   kPink},
+         {&box72,   kPink},
+         {&box73,   kPink},
+         {&box74,   kPink},
+         {&box75,   kPink},
+         {&box81,   kGray},
+         {&box82,   kRedBright},
+         {&box83,   kRedBright},
+         {&box84,   kRedBright},
+         {&box85,   kRedBright},
+         {&box91,   kRedDeep},
+         {&box92,   kRedBright},
+         {&box93,   kRedBright},
+         {&box94,   kRedBright},
+         {&box95,   kRedBright},
     };
 
     // 恢复上次选中的默认颜色，设置新的高亮色
@@ -139,8 +139,8 @@ void redmapView::update2() {
         last_in_sub = in_sub;
     }
     if (in_sub) {
-        uint8_t idx = (cur_tactical_idx < Model::kTacticalCount) ? cur_tactical_idx : 0;
-        Unicode::strncpy(RunPointBuffer, Model::kTacticalNames[idx], RUNPOINT_SIZE);
+        uint8_t idx = (cur_preset_idx < Model::kPresetPointCount) ? cur_preset_idx : 0;
+        Unicode::strncpy(RunPointBuffer, Model::kPresetPointNames[idx], RUNPOINT_SIZE);
         RunPoint.invalidate();
         return;
     }
@@ -148,7 +148,6 @@ void redmapView::update2() {
     Unicode::snprintf(redchoosepointBuffer, REDCHOOSEPOINT_SIZE, "%d", choosekey);
     Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1_halt));
 
-    /* 控制模式 / 坐标系来源: 用 Model 共享文案表查表 */
     CTRLBuffer[0]   = (r1_state < 2)       ? Model::kCtrlLabels[r1_state]     : Model::kCtrlLabels[0];
     CTRLBuffer[1]   = 0;
     SOURCEBuffer[0] = (r1_yaw_source < 2)  ? Model::kSourceLabels[r1_yaw_source] : Model::kSourceLabels[0];

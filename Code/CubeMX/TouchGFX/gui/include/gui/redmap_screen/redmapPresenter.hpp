@@ -30,7 +30,7 @@ public:
     virtual void deactivate();
     virtual void onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose);
     virtual void R1StateChanged(uint8_t status ,uint8_t accel ,float state,uint8_t source);
-    virtual void onMapSubModeChanged(bool in_sub, uint8_t tactical_idx);
+    virtual void onMapSubModeChanged(bool in_sub, uint8_t preset_idx);
 
     virtual ~redmapPresenter() {}
 

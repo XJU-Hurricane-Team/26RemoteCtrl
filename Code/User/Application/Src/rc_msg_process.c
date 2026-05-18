@@ -8,13 +8,10 @@
 
 #include "includes.h"
 #include "my_math/my_math.h"
-/* 发送时间间隔, 单位: ms */
 #define REMOTE_SEND_PERIOD 10
 
-/* UI 消息队列深度 */
 #define UI_MSG_QUEUE_LEN   8
 
-/* 遥控器触发回调按键数量 */
 #define REMOTE_KEY_NUM     18
 
 #define KEY_EVENT_CB(key, event)                                               \
@@ -25,39 +22,33 @@
         }                                                                      \
     } while (0)
 
-/* 发送任务句柄 */
 static TaskHandle_t remote_send_task_handle;
-/* 传递给屏幕的消息队列 */
 QueueHandle_t ui_msg_queue = NULL;
-/* 按键回调函数数组 */
 static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
-/* UI 消息序列号 */
 static uint32_t ui_msg_seq = 0;
 /* 一维 screen 状态机: 负=红, 正=蓝, 0=info, |s|==2 为子模式 */
 static int8_t screen = SCREEN_INFO;
-/* 战术点索引 1..TACTICAL_POINT_TOTAL, 0=未选; UI 通过 UI_SCREEN_STATE 消息接收 */
-static uint8_t s_tactical_idx = 0;
+static uint8_t s_preset_idx = 0;
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
 
-/* 战术点总数上限 (波轮选择 clamp 用) */
-#define TACTICAL_POINT_TOTAL 8
+/* 预设点总数 */
+#define PRESET_POINT_TOTAL 8
 
-/* 右波轮驱动战术点选择, 返回 1..TACTICAL_POINT_TOTAL */
-static uint8_t get_tactical_point(uint8_t ctrl_key) {
-    static int8_t tactical_num = 1;
+static uint8_t get_preset_point(uint8_t ctrl_key) {
+    static int8_t preset_num = 1;
     switch (ctrl_key) {
         case WHE_R_TURNUP:
-            tactical_num -= 1;
-            my_limit(tactical_num, 1, TACTICAL_POINT_TOTAL);
+            preset_num -= 1;
+            my_limit(preset_num, 1, PRESET_POINT_TOTAL);
             break;
         case WHE_R_TURNDO:
-            tactical_num += 1;
-            my_limit(tactical_num, 1, TACTICAL_POINT_TOTAL);
+            preset_num += 1;
+            my_limit(preset_num, 1, PRESET_POINT_TOTAL);
             break;
         default:
             break;
     }
-    return (uint8_t)tactical_num;
+    return (uint8_t)preset_num;
 }
 
 /**
@@ -128,31 +119,29 @@ static void remote_send_task(void *pvParameters) {
             ctrl_key_for_ui = KEY_NO_PRESS;
         }
 
-        /* 点数/消息/战术点分派, 跟 screen 一一对应 */
         if (screen == SCREEN_INFO) {
             remote_send_data.point   = 0;
             remote_send_data.irdamsg = get_irda_msg(ctrl_key_cont);
-            s_tactical_idx           = 0;
+            s_preset_idx             = 0;
         } else if (screen == SCREEN_RED_SUB || screen == SCREEN_BLUE_SUB) {
             remote_send_data.point   = 0;
             remote_send_data.irdamsg = 0;
-            s_tactical_idx           = get_tactical_point(ctrl_key_cont);
-        } else {  /* SCREEN_RED_MAP / SCREEN_BLUE_MAP */
+            s_preset_idx             = get_preset_point(ctrl_key_cont);
+        } else {
             remote_send_data.point   = get_point_value(ctrl_key_cont);
             remote_send_data.irdamsg = 0;
-            s_tactical_idx           = 0;
+            s_preset_idx             = 0;
         }
 
         rs_get_value(rs_adc_buf, 10, 40);
 
-        uint8_t mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
+        uint8_t mV = (uint8_t)(rs_adc_buf[4] & 0xFF);
         if (mV <= 35) {
             LED1_ON();
         } else {
             LED1_OFF();
         }
 
-        /* 模式选择 (模式1优先级高于模式2) */
         MSG_MODES = NORMAL_MODE;
         switch (add_key) {
             case KEY_LZ_PRESS: keyboard = 49; break;
@@ -167,23 +156,20 @@ static void remote_send_task(void *pvParameters) {
                 break;
         }
 
-        /* 子模式 + 右波轮按下: 用战术点确认覆盖矩阵键, key = 51..58 */
         if ((screen == SCREEN_RED_SUB || screen == SCREEN_BLUE_SUB)
             && ctrl_key == WHE_R_PRESS) {
-            keyboard = s_tactical_idx + 50;
+            keyboard = s_preset_idx + 50;
         }
 
-        /* 填充发送数据 */
         remote_send_data.key = keyboard;
-        remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]); /* 左 x */
-        remote_send_data.rs[1] = joystick_set_value(rs_adc_buf[3]); /* 左 y */
-        remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]); /* 右 x */
-        remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]); /* 右 y */
+        remote_send_data.rs[0] = joystick_set_value(rs_adc_buf[2]);
+        remote_send_data.rs[1] = joystick_set_value(rs_adc_buf[3]);
+        remote_send_data.rs[2] = joystick_set_value(rs_adc_buf[0]);
+        remote_send_data.rs[3] = joystick_set_value(rs_adc_buf[1]);
 
         message_send_data(MSG_RC_TO_MASTER, MSG_MODES, (uint8_t *)&remote_send_data,
                           sizeof(remote_send_data));
 
-        /* UI 消息 */
         ui_msg_t ui_msg = {
             .type = UI_REMOTE_CTRL,
             .seq = ++ui_msg_seq,
@@ -191,40 +177,34 @@ static void remote_send_task(void *pvParameters) {
                 {.ctrl_key = ctrl_key_for_ui, .voltage = mV, .data = remote_send_data}};
         ui_publish_msg(&ui_msg);
 
-        /* 屏状态变化时单独推送 (UI 通过 ModelListener::onScreenStateChanged 接收) */
         static int8_t last_pushed_screen = SCREEN_INFO;
-        static uint8_t last_pushed_tactical = 0;
-        if (screen != last_pushed_screen || s_tactical_idx != last_pushed_tactical) {
+        static uint8_t last_pushed_preset = 0;
+        if (screen != last_pushed_screen || s_preset_idx != last_pushed_preset) {
             ui_msg_t screen_msg = {
                 .type = UI_SCREEN_STATE,
                 .seq = ++ui_msg_seq,
                 .payload.screen_state = {.screen = screen,
-                                         .tactical_idx = s_tactical_idx}};
+                                         .preset_idx = s_preset_idx}};
             ui_publish_msg(&screen_msg);
             last_pushed_screen = screen;
-            last_pushed_tactical = s_tactical_idx;
+            last_pushed_preset = s_preset_idx;
         }
 
-        /* 判断按键状态并触发按键回调 */
         uint8_t current_key = remote_send_data.key;
         if (current_key != last_key) {
             if (last_key != 0) {
-                /* 上一个按键抬起 */
                 KEY_EVENT_CB(last_key, REMOTE_KEY_PRESS_UP);
             }
             if (current_key != 0) {
-                /* 当前按键按下 */
                 KEY_EVENT_CB(current_key, REMOTE_KEY_PRESS_DOWN);
             }
         } else {
             if (current_key != 0) {
-                /* 当前按键长按 */
                 KEY_EVENT_CB(current_key, REMOTE_KEY_PRESSING);
             }
         }
         last_key = current_key;
 
-        /* LED2 绿色灯闪烁判断消息发送是否正常 */
         if (xTaskGetTickCount() - led_time > 200) {
             led_time = xTaskGetTickCount();
             LED2_TOGGLE();

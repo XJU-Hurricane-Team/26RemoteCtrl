@@ -19,13 +19,13 @@ public:
     virtual void handleKeyEvent(uint8_t key);
     virtual void colortoggleEvent(uint8_t point);
 
-    int8_t choosekey;      // 当前选中的点位(1-50)
-    uint8_t r1_halt;       // R1 自锁状态
-    uint8_t r1_state;      // R1 控制模式: 0-手动, 1-自动
-    float r1_accel_xy;     // R1 加速度
-    uint8_t r1_yaw_source; // R1 坐标系: 0-自身, 1-世界坐标系
-    bool in_sub;             // 是否处于子模式 (由 Presenter 通过 onMapSubModeChanged 设置)
-    uint8_t cur_tactical_idx; // 当前战术点索引 (0=未选)
+    int8_t choosekey;
+    uint8_t r1_halt;
+    uint8_t r1_state;
+    float r1_accel_xy;
+    uint8_t r1_yaw_source;
+    bool in_sub;
+    uint8_t cur_preset_idx;
 
 protected:
 };

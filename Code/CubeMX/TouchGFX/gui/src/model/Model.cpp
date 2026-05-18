@@ -6,9 +6,8 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 
-/* UI 共享文案表 (跨 Screen 复用) */
-const char *const Model::kTacticalNames[Model::kTacticalCount] = {
-    "NONE",    /* idx=0, 未选 */
+const char *const Model::kPresetPointNames[Model::kPresetPointCount] = {
+    "NONE",
     "POINT_A",
     "POINT_B",
     "TACT_C",
@@ -39,7 +38,6 @@ Model::Model()
       {}
 
 void Model::tick() {
-    /* UI在这里进行数据采集，为了不阻塞UI渲染通过消息队列进行通信 */
     if ((ui_msg_queue != NULL) && (modelListener != nullptr)) {
         ui_msg_t msg = {};
         bool remote_changed = false;
@@ -47,7 +45,6 @@ void Model::tick() {
 
         while (xQueueReceive(ui_msg_queue, &msg, 0U) == pdPASS) {
             switch (msg.type) {
-                /* 遥控器数据: 遥杆/按键/电压 */
                 case UI_REMOTE_CTRL: {
                     const remote_ctrl_msg_t *ctrl_msg =
                         &msg.payload.remote_ctrl;
@@ -96,7 +93,7 @@ void Model::tick() {
                 case UI_SCREEN_STATE: {
                     const ui_screen_state_t *s = &msg.payload.screen_state;
                     bool in_sub = (s->screen == SCREEN_RED_SUB) || (s->screen == SCREEN_BLUE_SUB);
-                    modelListener->onMapSubModeChanged(in_sub, s->tactical_idx);
+                    modelListener->onMapSubModeChanged(in_sub, s->preset_idx);
                 } break;
 
                 default:
@@ -120,7 +117,9 @@ void Model::tick() {
     }
 }
 
-/* 将按键的值更改到UI */
+/**
+ * @brief 将按键的值更改到UI，并通知监听器更新UI显示
+ */
 void Model::setKeyValue(int8_t k) {
     keyValue = k;
     if (modelListener) {

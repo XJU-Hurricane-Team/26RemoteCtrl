@@ -23,7 +23,7 @@ static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t buffer
     }
 }
 
-bluemapView::bluemapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),in_sub(false),cur_tactical_idx(0)
+bluemapView::bluemapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),in_sub(false),cur_preset_idx(0)
 {
 
 }
@@ -59,57 +59,57 @@ void bluemapView::colortoggleEvent(uint8_t point) {
     };
 
     static const PointConfig kPoints[51] = {
-        /* 0  无效 */ {nullptr,  0},
-        /* 1  深蓝 */ {&box95,   kBlueDeep},
-        /* 2  浅蓝 */ {&box94,   kBlueLight},
-        /* 3  浅蓝 */ {&box93,   kBlueLight},
-        /* 4  浅蓝 */ {&box92,   kBlueLight},
-        /* 5  浅蓝 */ {&box91,   kBlueLight},
-        /* 6  浅蓝 */ {&box85,   kBlueLight},
-        /* 7  浅蓝 */ {&box84,   kBlueLight},
-        /* 8  浅蓝 */ {&box83,   kBlueLight},
-        /* 9  浅蓝 */ {&box82,   kBlueLight},
-        /* 10 浅蓝 */ {&box81,   kBlueLight},
-        /* 11 青色 */ {&box75,   kCyan},
-        /* 12 青色 */ {&box74,   kCyan},
-        /* 13 青色 */ {&box73,   kCyan},
-        /* 14 青色 */ {&box72,   kCyan},
-        /* 15 青色 */ {&box71,   kCyan},
-        /* 16 青色 */ {&box65,   kCyan},
-        /* 17 无效 */ {nullptr,  0},
-        /* 18 无效 */ {nullptr,  0},
-        /* 19 无效 */ {nullptr,  0},
-        /* 20 青色 */ {&box61,   kCyan},
-        /* 21 青色 */ {&box55,   kCyan},
-        /* 22 无效 */ {nullptr,  0},
-        /* 23 无效 */ {nullptr,  0},
-        /* 24 无效 */ {nullptr,  0},
-        /* 25 青色 */ {&box51,   kCyan},
-        /* 26 青色 */ {&box45,   kCyan},
-        /* 27 无效 */ {nullptr,  0},
-        /* 28 无效 */ {nullptr,  0},
-        /* 29 无效 */ {nullptr,  0},
-        /* 30 青色 */ {&box41,   kCyan},
-        /* 31 青色 */ {&box35,   kCyan},
-        /* 32 无效 */ {nullptr,  0},
-        /* 33 无效 */ {nullptr,  0},
-        /* 34 无效 */ {nullptr,  0},
-        /* 35 青色 */ {&box31,   kCyan},
-        /* 36 青色 */ {&box25,   kCyan},
-        /* 37 青色 */ {&box24,   kCyan},
-        /* 38 青色 */ {&box23,   kCyan},
-        /* 39 青色 */ {&box22,   kCyan},
-        /* 40 青色 */ {&box21,   kCyan},
-        /* 41 浅蓝 */ {&box15,   kBlueLight},
-        /* 42 天蓝 */ {&box14,   kBlueSky},
-        /* 43 天蓝 */ {&box13,   kBlueSky},
-        /* 44 天蓝 */ {&box12,   kBlueSky},
-        /* 45 天蓝 */ {&box11,   kBlueSky},
-        /* 46 天蓝 */ {&box05,   kBlueSky},
-        /* 47 天蓝 */ {&box04,   kBlueSky},
-        /* 48 天蓝 */ {&box03,   kBlueSky},
-        /* 49 天蓝 */ {&box02,   kBlueSky},
-        /* 50 深蓝 */ {&box01,   kBlueDeep},
+         {nullptr,  0},
+         {&box95,   kBlueDeep},
+         {&box94,   kBlueLight},
+         {&box93,   kBlueLight},
+         {&box92,   kBlueLight},
+         {&box91,   kBlueLight},
+         {&box85,   kBlueLight},
+         {&box84,   kBlueLight},
+         {&box83,   kBlueLight},
+         {&box82,   kBlueLight},
+         {&box81,   kBlueLight},
+         {&box75,   kCyan},
+         {&box74,   kCyan},
+         {&box73,   kCyan},
+         {&box72,   kCyan},
+         {&box71,   kCyan},
+         {&box65,   kCyan},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box61,   kCyan},
+         {&box55,   kCyan},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box51,   kCyan},
+         {&box45,   kCyan},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box41,   kCyan},
+         {&box35,   kCyan},
+         {nullptr,  0},
+         {nullptr,  0},
+         {nullptr,  0},
+         {&box31,   kCyan},
+         {&box25,   kCyan},
+         {&box24,   kCyan},
+         {&box23,   kCyan},
+         {&box22,   kCyan},
+         {&box21,   kCyan},
+         {&box15,   kBlueLight},
+         {&box14,   kBlueSky},
+         {&box13,   kBlueSky},
+         {&box12,   kBlueSky},
+         {&box11,   kBlueSky},
+         {&box05,   kBlueSky},
+         {&box04,   kBlueSky},
+         {&box03,   kBlueSky},
+         {&box02,   kBlueSky},
+         {&box01,   kBlueDeep},
     };
 
     // 恢复上次选中的默认颜色，设置新的高亮色
@@ -137,8 +137,8 @@ void bluemapView::update2() {
         last_in_sub = in_sub;
     }
     if (in_sub) {
-        uint8_t idx = (cur_tactical_idx < Model::kTacticalCount) ? cur_tactical_idx : 0;
-        Unicode::strncpy(RunPointBuffer, Model::kTacticalNames[idx], RUNPOINT_SIZE);
+        uint8_t idx = (cur_preset_idx < Model::kPresetPointCount) ? cur_preset_idx : 0;
+        Unicode::strncpy(RunPointBuffer, Model::kPresetPointNames[idx], RUNPOINT_SIZE);
         RunPoint.invalidate();
         return;
     }
@@ -146,7 +146,6 @@ void bluemapView::update2() {
     Unicode::snprintf(bluechoosepointBuffer, BLUECHOOSEPOINT_SIZE, "%d", choosekey);
     Unicode::snprintf(stateBuffer, STATE_SIZE, "%d", static_cast<unsigned int>(r1_halt));
 
-    /* 控制模式 / 坐标系来源: 用 Model 共享文案表查表 */
     CTRLBuffer[0]   = (r1_state < 2)       ? Model::kCtrlLabels[r1_state]     : Model::kCtrlLabels[0];
     CTRLBuffer[1]   = 0;
     SOURCEBuffer[0] = (r1_yaw_source < 2)  ? Model::kSourceLabels[r1_yaw_source] : Model::kSourceLabels[0];
