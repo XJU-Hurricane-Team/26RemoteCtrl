@@ -59,12 +59,13 @@ void Model::tick() {
                         keyValue = ctrl_msg->data.key;
                         modelListener->onKeyValueChanged(keyValue);
                     }
-                    if (ctrl_msg->ctrl_key != ctrl_keyValue ||
-                        ctrl_msg->data.point != choosepoint) {
+                    if (ctrl_msg->ctrl_key != ctrl_keyValue) {
                         ctrl_keyValue = ctrl_msg->ctrl_key;
-                        choosepoint   = ctrl_msg->data.point;
-                        modelListener->onCtrlKeyValueChanged(
-                            ctrl_keyValue, choosepoint);
+                        modelListener->onCtrlKeyChanged(ctrl_keyValue);
+                    }
+                    if (ctrl_msg->data.point != choosepoint) {
+                        choosepoint = ctrl_msg->data.point;
+                        modelListener->onChoosepointChanged(choosepoint);
                     }
 
                     modelListener->onIrdaMsgNumChanged(irda_msgnum);
@@ -110,8 +111,7 @@ void Model::tick() {
             modelListener->onR1StateChanged(
                 r1_x_speed, r1_y_speed, r1_w_speed, r1_chassis_status, r1_chassis_state, r1_accel_xy,
                 r1_left_pos, r1_right_pos, r1_left_adsorbed, r1_right_adsorbed,
-                r1_send_msg, r1_rec_msg);
-            modelListener->R1StateChanged(r1_chassis_status, r1_chassis_state, r1_accel_xy, r1_yaw_source);
+                r1_send_msg, r1_rec_msg, r1_yaw_source);
             r1_changed = false;
         }
     }

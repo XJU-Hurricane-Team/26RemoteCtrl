@@ -21,13 +21,22 @@ void redmapPresenter::deactivate()
 
 }
 
-void redmapPresenter::onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose){
-    view.choosekey = choose;
+void redmapPresenter::onCtrlKeyChanged(int8_t ctrl_Key){
     view.handleKeyEvent(ctrl_Key);
+}
+
+void redmapPresenter::onChoosepointChanged(int8_t choose){
+    view.choosekey = choose;
     view.colortoggleEvent(choose);
 }
 
-void redmapPresenter::R1StateChanged(uint8_t status ,uint8_t state ,float accel ,uint8_t source){
+void redmapPresenter::onR1StateChanged(
+    int16_t /*xSpeed*/, int16_t /*ySpeed*/, int16_t /*wSpeed*/,
+    uint8_t status, uint8_t state, float accel,
+    float /*leftPos*/, float /*rightPos*/,
+    uint8_t /*leftAdsorbed*/, uint8_t /*rightAdsorbed*/,
+    uint8_t /*sendMsg*/, uint8_t /*recMsg*/,
+    uint8_t source) {
     view.r1_halt = status;
     view.r1_accel_xy = accel;
     view.r1_state = state;

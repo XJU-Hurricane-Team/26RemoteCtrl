@@ -28,9 +28,15 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
-    virtual void onCtrlKeyValueChanged(int8_t ctrl_Key, int8_t choose);
-    virtual void R1StateChanged(uint8_t status ,uint8_t accel ,float state,uint8_t source);
-    virtual void onMapSubModeChanged(bool in_sub, uint8_t preset_idx);
+    virtual void onCtrlKeyChanged(int8_t ctrl_Key) override;
+    virtual void onChoosepointChanged(int8_t choose) override;
+    virtual void onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t wSpeed,
+                                  uint8_t status, uint8_t state, float accel,
+                                  float leftPos, float rightPos,
+                                  uint8_t leftAdsorbed, uint8_t rightAdsorbed,
+                                  uint8_t sendMsg, uint8_t recMsg,
+                                  uint8_t source) override;
+    virtual void onMapSubModeChanged(bool in_sub, uint8_t preset_idx) override;
 
     virtual ~redmapPresenter() {}
 

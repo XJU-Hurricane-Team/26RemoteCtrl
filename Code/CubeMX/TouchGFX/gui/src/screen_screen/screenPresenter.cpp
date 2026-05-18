@@ -25,9 +25,12 @@ void screenPresenter::onKeyValueChanged(int8_t key){
     view.keyState = key;
 }
 
-void screenPresenter::onCtrlKeyValueChanged(int8_t ctrl_key, int8_t choose){
-    view.handleKeyEvent(ctrl_key);
+void screenPresenter::onChoosepointChanged(int8_t choose){
     view.pointvalue = choose;
+}
+
+void screenPresenter::onCtrlKeyChanged(int8_t ctrl_key){
+    view.handleKeyEvent(ctrl_key);
 }
 
 void screenPresenter::onVoltageChanged(int8_t voltage){
@@ -42,7 +45,8 @@ void screenPresenter::onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x
 }
 
 void screenPresenter::onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t wSpeed, uint8_t status, uint8_t state, float accel,
-    float leftPos, float rightPos, uint8_t leftAdsorbed, uint8_t rightAdsorbed, uint8_t sendMsg, uint8_t recMsg){
+    float leftPos, float rightPos, uint8_t leftAdsorbed, uint8_t rightAdsorbed, uint8_t sendMsg, uint8_t recMsg,
+    uint8_t source){
     view.r1_x_speed = xSpeed;
     view.r1_y_speed = ySpeed;
     view.r1_w_speed = wSpeed;
@@ -55,15 +59,9 @@ void screenPresenter::onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t w
     view.r1_right_adsorbed = rightAdsorbed;
     view.r1_send_msg = sendMsg;
     view.r1_rec_msg = recMsg;
+    view.r1_yaw_source = source;
 }
 
 void screenPresenter::onIrdaMsgNumChanged(uint8_t msgnum){
     view.msgnum = msgnum;
-}
-
-void screenPresenter::R1StateChanged(uint8_t status, uint8_t state, float accel, uint8_t source){
-    (void)status;  // 无需转发
-    (void)accel;   // 由 onR1StateChanged 完整更新
-    view.r1_state = state;
-    view.r1_yaw_source = source;
 }
