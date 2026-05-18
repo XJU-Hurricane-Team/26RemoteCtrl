@@ -54,7 +54,7 @@ virtualFolder:
     - name: Utils
       files:
         - path: User/Utils/ring_fifo/ring_fifo.c
-        - path: User/Utils/my_math/my_math.c
+        - path: User/Utils/calc_crc/calc_crc.c
       folders: []
     - name: CMSIS
       files: []
@@ -186,7 +186,7 @@ targets:
               isChecked: true
               isStartup: true
               mem:
-                size: "0x00080000"
+                size: "0x00100000"
                 startAddr: "0x08000000"
               tag: IROM
         useCustomScatterFile: false
@@ -237,14 +237,4 @@ targets:
         otherCmds: ""
         proType: 1
         speed: 4000
-      STLink:
-        address: "0x08000000"
-        bin: ""
-        elFile: None
-        optionBytes: .eide/debug.st.option.bytes.ini
-        otherCmds: ""
-        proType: SWD
-        resetMode: default
-        runAfterProgram: true
-        speed: 4000
-    uploader: STLink
+    uploader: JLink
