@@ -92,10 +92,10 @@ typedef struct __packed {
  * @brief 上报的数据包
  * 
  */
-typedef struct __packed {
-    r1_data_t r1_state;
-    r2_data_t r2_state;
-} report_data_t;
+// typedef struct __packed {
+//     r1_data_t r1_state;
+//     r2_data_t r2_state;
+// } report_data_t;
 
 /* 遥控器发送数据结构 */
 typedef struct __packed {
@@ -113,8 +113,8 @@ typedef struct {
 /* UI 消息载荷 */
 typedef union {
     remote_ctrl_msg_t remote_ctrl;
-    r1_data_t r1_state;
-    r2_data_t r2_state;
+    // r1_data_t r1_state;
+    // r2_data_t r2_state;
 } ui_msg_payload_t;
 
 typedef struct {

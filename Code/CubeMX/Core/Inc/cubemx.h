@@ -24,6 +24,7 @@ extern "C" {
 #include "stm32f4xx_it.h"
 #include "tim.h"
 #include "usart.h"
+#include "iwdg.h"
 
 #ifdef __cplusplus
 }

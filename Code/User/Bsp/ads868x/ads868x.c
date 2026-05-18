@@ -27,7 +27,7 @@ static uint16_t rs_data_limit(uint16_t data, uint8_t dead_zone,
     uint16_t adc_mid = 21000;
     uint16_t adc_min = 4000;
 
-    float dead_zone_threshold = (adc_max - adc_min) * dead_zone / 100;
+    uint16_t dead_zone_threshold = (adc_max - adc_min) * dead_zone / 100;
     uint16_t data_piece = (uint16_t)((adc_mid - adc_min - dead_zone_threshold) * 2 /
                                      data_level); /* 计算每一份的值 */
     uint8_t data_res = 0;
@@ -326,14 +326,16 @@ void ads868x_Mult_ch_Init(uint8_t range)
  */
 double get_real_data(uint16_t data, uint8_t t)
 {
-    double real_data;
     if (!t)
     {
-        real_data = (((double)data - 21000)* 102.4 / (double)65535);
+        int32_t val = (int32_t)data - 21000;
+        if (val <= 0) {
+            return 0;
+        }
+        return (uint32_t)val * 1024 / 655350;
     }else{
-        real_data = (double)data * 51.2 / 65535;
+        return (uint32_t)data * 512 / 655350;
     }
-    return real_data;
 }
 
 /**

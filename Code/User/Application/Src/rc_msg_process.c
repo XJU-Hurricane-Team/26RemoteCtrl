@@ -82,9 +82,7 @@ static void remote_send_task(void *pvParameters) {
 
     uint8_t mV = 0;
     uint8_t last_key = 0;
-    uint8_t add_key = 0;
     uint8_t ctrl_key = 0;
-    uint8_t choosepoint = 0;
     uint8_t keyboard_value = 0;
     uint32_t rs_adc_buf[5] = {0};
 
@@ -112,7 +110,6 @@ static void remote_send_task(void *pvParameters) {
         mV = (uint8_t)(rs_adc_buf[4] & 0xFF); /* 电压 */
         if (mV <= 35)
         {
-            // BEEP_SWITCH(1);
             LED1_ON();
         }else{
             LED1_OFF();
@@ -226,39 +223,39 @@ void remote_unregister_key_callback(uint8_t key, remote_key_event_t event) {
  * @param msg_id_type 消息 ID 和数据类型 (高四位为 ID, 低四位为数据类型)
  * @param[in] msg_data 消息数据接收区
  */
-void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
-                              uint8_t *msg_data) {
-    static uint32_t led_time = 0; /*!< 控制 LED 闪烁频率 */
-    report_data_t report_data = {0};
-    ui_msg_t ui_msg = {0};
+// void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
+//                               uint8_t *msg_data) {
+//     static uint32_t led_time = 0; /*!< 控制 LED 闪烁频率 */
+//     report_data_t report_data = {0};
+//     ui_msg_t ui_msg = {0};
 
-    if ((msg_data == NULL) || ((msg_id_type >> 4) != MSG_MASTER_TO_RC)) {
-        return;
-    }
+//     if ((msg_data == NULL) || ((msg_id_type >> 4) != MSG_MASTER_TO_RC)) {
+//         return;
+//     }
 
-    if ((msg_id_type & 0x0F) != NORMAL_MODE) {
-        return;
-    }
+//     if ((msg_id_type & 0x0F) != NORMAL_MODE) {
+//         return;
+//     }
 
-    if (msg_length != sizeof(report_data_t)) {
-        return;
-    }
+//     if (msg_length != sizeof(report_data_t)) {
+//         return;
+//     }
 
-    memcpy(&report_data, msg_data, sizeof(report_data_t));
+//     memcpy(&report_data, msg_data, sizeof(report_data_t));
 
-    ui_msg.type = UI_R1_STATE;
-    ui_msg.seq = ++ui_msg_seq;
-    memcpy(&ui_msg.payload.r1_state, &report_data.r1_state, sizeof(r1_data_t));
-    ui_publish_msg(&ui_msg);
+//     ui_msg.type = UI_R1_STATE;
+//     ui_msg.seq = ++ui_msg_seq;
+//     memcpy(&ui_msg.payload.r1_state, &report_data.r1_state, sizeof(r1_data_t));
+//     ui_publish_msg(&ui_msg);
 
-    ui_msg.type = UI_R2_STATE;
-    ui_msg.seq = ++ui_msg_seq;
-    memcpy(&ui_msg.payload.r2_state, &report_data.r2_state, sizeof(r2_data_t));
-    ui_publish_msg(&ui_msg);
+//     ui_msg.type = UI_R2_STATE;
+//     ui_msg.seq = ++ui_msg_seq;
+//     memcpy(&ui_msg.payload.r2_state, &report_data.r2_state, sizeof(r2_data_t));
+//     ui_publish_msg(&ui_msg);
 
-    /* LED3 闪烁判断消息接收是否正常 */
-    if (HAL_GetTick() - led_time > 200) {
-        led_time = HAL_GetTick();
-        LED3_TOGGLE();
-    }
-}
+//     /* LED3 闪烁判断消息接收是否正常 */
+//     if (HAL_GetTick() - led_time > 200) {
+//         led_time = HAL_GetTick();
+//         LED3_TOGGLE();
+//     }
+// }

@@ -54,6 +54,7 @@ virtualFolder:
     - name: Utils
       files:
         - path: User/Utils/ring_fifo/ring_fifo.c
+        - path: User/Utils/calc_crc/calc_crc.c
       folders: []
     - name: CMSIS
       files: []
