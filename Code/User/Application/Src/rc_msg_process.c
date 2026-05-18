@@ -8,11 +8,11 @@
 
 #include "includes.h"
 #include "my_math/my_math.h"
-#define REMOTE_SEND_PERIOD 10
+#define REMOTE_SEND_PERIOD 10  // 发送间隔, ms
 
-#define UI_MSG_QUEUE_LEN   8
+#define UI_MSG_QUEUE_LEN   8   // UI 消息队列深度
 
-#define REMOTE_KEY_NUM     18
+#define REMOTE_KEY_NUM     18  // 键盘矩阵按键数
 
 #define KEY_EVENT_CB(key, event)                                               \
     do {                                                                       \
@@ -29,9 +29,13 @@ static uint32_t ui_msg_seq = 0;
 /* 一维 screen 状态机: 负=红, 正=蓝, 0=info, |s|==2 为子模式 */
 static int8_t screen = SCREEN_INFO;
 static uint8_t s_preset_idx = 0;
+static int8_t last_pushed_screen = SCREEN_INFO;
+static uint8_t last_pushed_preset = 0;
 static uint8_t MSG_MODES = 0; /*!< 消息模式, 0: 普通模式, 1: 跑点模式 */
 
-/* 预设点总数 */
+/* 波轮循环的预设点数量 (前 PRESET_POINT_TOTAL 个可切换)
+Model::kPresetPointNames 里存了 kPresetPointCount 个名字
+PRESET_POINT_TOTAL <= kPresetPointCount*/
 #define PRESET_POINT_TOTAL 5
 
 static uint8_t get_preset_point(uint8_t ctrl_key) {
@@ -172,8 +176,6 @@ static void remote_send_task(void *pvParameters) {
                 {.ctrl_key = ctrl_key_for_ui, .voltage = mV, .data = remote_send_data}};
         ui_publish_msg(&ui_msg);
 
-        static int8_t last_pushed_screen = SCREEN_INFO;
-        static uint8_t last_pushed_preset = 0;
         if (screen != last_pushed_screen || s_preset_idx != last_pushed_preset) {
             ui_msg_t screen_msg = {
                 .type = UI_SCREEN_STATE,

@@ -13,7 +13,8 @@ redmapPresenter::redmapPresenter(redmapView& v)
 
 void redmapPresenter::activate()
 {
-
+    view.choosekey = model->choosepoint;
+    view.colortoggleEvent(view.choosekey);
 }
 
 void redmapPresenter::deactivate()

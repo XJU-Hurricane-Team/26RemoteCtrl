@@ -25,11 +25,11 @@ class Model {
     static const char *const kPresetPointNames[kPresetPointCount];
     static const char        kCtrlLabels[2];         /* 自动/手动 {'M', 'A'} */
     static const char        kSourceLabels[2];       /* 车体坐标系 {'S', 'W'} */
+    int8_t choosepoint;
 
   protected:
     ModelListener *modelListener;
     int8_t ctrl_keyValue;
-    int8_t choosepoint;
     int8_t keyValue;
     int8_t voltage;
     int8_t rsL_x;

@@ -23,7 +23,7 @@ static void formatFixed2(touchgfx::Unicode::UnicodeChar *buffer, uint16_t buffer
     }
 }
 
-redmapView::redmapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),in_sub(false),cur_preset_idx(0)
+redmapView::redmapView():choosekey(0),r1_halt(1),r1_state(0),r1_accel_xy(0.0f),r1_yaw_source(0),in_sub(false),last_in_sub(false),cur_preset_idx(0)
 {
 
 }
@@ -130,7 +130,6 @@ void redmapView::colortoggleEvent(uint8_t point) {
 
 
 void redmapView::update2() {
-    static bool last_in_sub = false;
     if (in_sub != last_in_sub) {
         container4.setVisible(!in_sub);
         containerTact.setVisible(in_sub);

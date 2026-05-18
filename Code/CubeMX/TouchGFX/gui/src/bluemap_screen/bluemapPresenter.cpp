@@ -13,7 +13,8 @@ bluemapPresenter::bluemapPresenter(bluemapView& v)
 
 void bluemapPresenter::activate()
 {
-
+    view.choosekey = model->choosepoint;
+    view.colortoggleEvent(view.choosekey);
 }
 
 void bluemapPresenter::deactivate()
