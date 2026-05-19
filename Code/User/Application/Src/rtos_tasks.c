@@ -40,7 +40,7 @@ void start_task(void *pvParameters) {
     UNUSED(pvParameters);
     BaseType_t ret;
     taskENTER_CRITICAL();
-                                              
+
     ret = xTaskCreate(task1, "task1", 128, NULL, 2, &task1_handle);
     if (ret != pdPASS) {
         taskEXIT_CRITICAL();
@@ -62,8 +62,8 @@ void start_task(void *pvParameters) {
     }
 
     taskEXIT_CRITICAL();
-    // Play_Music();
-    
+    Play_Music();
+
     vTaskDelete(start_task_handle);
 }
 
@@ -114,8 +114,8 @@ void message_polling_task(void *pvParameters) {
 
 #ifdef configASSERT
 /**
- * @brief FreeRTOS assert failed function. 
- * 
+ * @brief FreeRTOS assert failed function.
+ *
  * @param pcFile File name
  * @param ulLine File line
  */
@@ -141,7 +141,7 @@ void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName) {
 #if configUSE_MALLOC_FAILED_HOOK
 /**
  * @brief This hook function is called when allocation failed.
- * 
+ *
  */
 void vApplicationMallocFailedHook(void) {
     fprintf(stderr, "FreeRTOS malloc failed! \n");

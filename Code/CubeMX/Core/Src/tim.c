@@ -213,11 +213,14 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 /* USER CODE BEGIN 1 */
 
 const Note_t Sailor_Song[] = {
+    /* 纯警报 */
+    {M5_D,QUARTER}, {REST,QUARTER}, {M5_D,QUARTER}
+
     /*时刻准备着*/
-    {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {L5_D,QUARTER},
-    {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {M5_D,QUARTER},
-    {M2_D,QUARTER}, {M3_D,EIGHTH}, {M5_D,SIXTEENTH}, {M6_D,QUARTER}, {M5_D,QUARTER},
-    {M3_D,EIGHTH}, {M3_D,SIXTEENTH}, {M2_D,EIGHTH}, {M3_D,EIGHTH}, {M5_D,QUARTER}
+    // {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {L5_D,QUARTER},
+    // {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {M5_D,QUARTER},
+    // {M2_D,QUARTER}, {M3_D,EIGHTH}, {M5_D,SIXTEENTH}, {M6_D,QUARTER}, {M5_D,QUARTER},
+    // {M3_D,EIGHTH}, {M3_D,SIXTEENTH}, {M2_D,EIGHTH}, {M3_D,EIGHTH}, {M5_D,QUARTER}
 
     // /*诗*/
     // {M3_D,QUARTER}, {M2_D,QUARTER}, {M1_D,QUARTER}, {L6_D,QUARTER}, {REST,EIGHTH},
@@ -235,8 +238,8 @@ const Note_t Sailor_Song[] = {
     // {M5_D,QUARTER},
 
     // /*水手*/
-    // {M3_D, EIGHTH}, {M5_D, EIGHTH}, 
-    // {M6_D, QUARTER}, {M5_D, QUARTER}, {M3_D, QUARTER}, {M2_D, EIGHTH}, {M1_D, EIGHTH}, 
+    // {M3_D, EIGHTH}, {M5_D, EIGHTH},
+    // {M6_D, QUARTER}, {M5_D, QUARTER}, {M3_D, QUARTER}, {M2_D, EIGHTH}, {M1_D, EIGHTH},
     // {M2_D, EIGHTH}, {M3_D, SIXTEENTH}, {M2_D, SIXTEENTH},{M1_D, EIGHTH}, {L7_D, EIGHTH}, {L6_D, QUARTER},
 };
 
@@ -257,8 +260,8 @@ void Play_Music(void) {
             __HAL_TIM_SET_COMPARE(BUZZER_TIM, BUZZER_CH, arr_value / 2);
             htim5.Instance->CNT = 0;
         }
-        HAL_Delay(current_dur); 
-        __HAL_TIM_SET_COMPARE(BUZZER_TIM, BUZZER_CH, 0); 
+        HAL_Delay(current_dur);
+        __HAL_TIM_SET_COMPARE(BUZZER_TIM, BUZZER_CH, 0);
         HAL_Delay(20); // 20ms 的间隔，可根据听感微调
     }
     // 播放完毕，关闭 PWM
