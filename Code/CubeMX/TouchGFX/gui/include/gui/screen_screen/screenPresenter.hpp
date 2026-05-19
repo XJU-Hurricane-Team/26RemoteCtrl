@@ -26,7 +26,7 @@ class screenPresenter : public touchgfx::Presenter, public ModelListener {
 
     virtual ~screenPresenter() {}
     virtual void onKeyValueChanged(int8_t key);
-    virtual void onVoltageChanged(int8_t voltage);
+    virtual void onVoltageChanged(float voltage);
     virtual void onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x,
                                    int8_t rsR_y);
 

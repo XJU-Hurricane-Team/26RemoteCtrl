@@ -4,7 +4,7 @@
 
 Model::Model()
     : modelListener(nullptr), ctrl_keyValue(0), choosepoint(0),
-      keyValue(0), voltage(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0){}
+      keyValue(0), voltage(0.0f), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0){}
 
 void Model::tick() {
     /* UI在这里进行数据采集，为了不阻塞UI渲染通过消息队列进行通信 */
@@ -15,7 +15,7 @@ void Model::tick() {
         while (xQueueReceive(ui_msg_queue, &msg, 0U) == pdPASS) {
         if(msg.type == UI_REMOTE_CTRL){
             const remote_ctrl_msg_t *ctrl_msg = &msg.payload.remote_ctrl;
-            voltage = ctrl_msg->voltage;
+            voltage = ctrl_msg->voltage / 10.0f;
             rsR_x = ctrl_msg->data.rs[2];
             rsR_y = ctrl_msg->data.rs[3];
             rsL_x = ctrl_msg->data.rs[0];

@@ -157,6 +157,8 @@ static void remote_send_task(void *pvParameters) {
             led_time = xTaskGetTickCount();
             LED2_TOGGLE();
         }
+        
+        IWDG_Feed();//看门狗喂狗
 
         vTaskDelayUntil(&last_wake_time, REMOTE_SEND_PERIOD);
     }

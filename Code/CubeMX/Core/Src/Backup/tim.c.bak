@@ -211,39 +211,39 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 }
 
 /* USER CODE BEGIN 1 */
+
 const Note_t Sailor_Song[] = {
-    // /*好运来*/
+    // /*诗*/
+    // {M3_D,QUARTER}, {M2_D,QUARTER}, {M1_D,QUARTER}, {L6_D,QUARTER}, {REST,EIGHTH},
+    // {M5_D,QUARTER}, {M3_D,QUARTER}, {L1_D,QUARTER}, {REST,QUARTER},
+    // {M2_D,QUARTER}, {M3_D,QUARTER}, {M5_D,QUARTER}, {M6_D,QUARTER}, {REST,EIGHTH},
+    // {H1_D,QUARTER}, {M6_D,EIGHTH}, {M3_D,EIGHTH}, {M6_D,QUARTER}, {REST,QUARTER}
+
+    // /*兰花草*/
+    {L6_D,EIGHTH}, {M3_D,EIGHTH}, {M3_D,EIGHTH}, {M3_D,EIGHTH}, {M3_D,QUARTER}, {M2_D,QUARTER}, {M1_D,EIGHTH}, {M2_D,SIXTEENTH}, {M1_D,EIGHTH}, {L7_D,EIGHTH}, {L6_D,QUARTER}, {REST,QUARTER},
+    {M6_D,EIGHTH}, {M6_D,EIGHTH}, {M6_D,EIGHTH}, {M6_D,EIGHTH}, {M6_D,QUARTER}, {M5_D,EIGHTH}, {M3_D,EIGHTH}, {M5_D,EIGHTH}, {M5_D,EIGHTH}, {M4_D,EIGHTH}, {L3_D,QUARTER}, {REST,QUARTER},
+
+    /*好运来*/
     // {M6_D,QUARTER}, {H3_D,QUARTER}, {H2_D,QUARTER}, {H1_D,EIGHTH}, {M6_D,EIGHTH},{M5_D,QUARTER}, {H1_D,EIGHTH}, {H2_D,EIGHTH},{M6_D,QUARTER},{REST,QUARTER},
     // {M6_D,QUARTER}, {H2_D,QUARTER}, {H1_D,QUARTER}, {M6_D,EIGHTH}, {M5_D,EIGHTH},{M2_D,QUARTER}, {M5_D,EIGHTH}, {M6_D,EIGHTH},{M3_D,QUARTER}
 
-  // /*jingle bells*/
-  //   {M3_D,EIGHTH}, {M3_D,EIGHTH}, {M3_D,QUARTER}, {M3_D,EIGHTH}, {M3_D,EIGHTH}, {M3_D,QUARTER},
-  //   {M3_D,EIGHTH}, {M5_D,EIGHTH}, {M1_D,EIGHTH}, {M2_D,SIXTEENTH},{M3_D,QUARTER},{REST,EIGHTH},
-  //   {M4_D,EIGHTH},{M4_D,EIGHTH},{M4_D,EIGHTH},{M4_D,SIXTEENTH},{M4_D,EIGHTH},{M3_D,EIGHTH},
-  //   {M3_D,EIGHTH},{M3_D,SIXTEENTH},{M3_D,SIXTEENTH},
-  //   {M3_D,EIGHTH},{M2_D,EIGHTH},{M2_D,EIGHTH},{M1_D,EIGHTH},{M2_D,QUARTER},{M5_D,QUARTER}
+    // /*星星点灯*/
+    // {M6_D,QUARTER}, {M6_D,QUARTER}, {M3_D,EIGHTH}, {M6_D,QUARTER},
+    // {M6_D,SIXTEENTH}, {M6_D,SIXTEENTH}, {M5_D,EIGHTH}, {M6_D,EIGHTH},{M7_D,EIGHTH},{M5_D,EIGHTH},
+    // {M5_D,QUARTER},
 
-  // /*星星点灯*/
-  //   {M6_D,QUARTER}, {M6_D,QUARTER}, {M3_D,EIGHTH}, {M6_D,QUARTER},
-  //   {M6_D,SIXTEENTH}, {M6_D,SIXTEENTH}, {M5_D,EIGHTH}, {M6_D,EIGHTH},{M7_D,EIGHTH},{M5_D,EIGHTH},
-  //   {M5_D,QUARTER},
-  //   {M3_D,EIGHTH}, {M4_D,QUARTER}, {M4_D,QUARTER}, {M4_D,SIXTEENTH},{M5_D,EIGHTH}, {M4_D,QUARTER},
-  //   {M4_D,SIXTEENTH}, {M4_D,SIXTEENTH},{M3_D,EIGHTH},{M2_D,EIGHTH},{M3_D,EIGHTH},{M3_D,EIGHTH}
-
-  /*水手*/
-    {L6_D, SIXTEENTH}, {M2_D, EIGHTH}, {M2_D, EIGHTH}, {M2_D, EIGHTH}, {M2_D, SIXTEENTH}, {M2_D, SIXTEENTH}, {M2_D, EIGHTH}, {M2_D, EIGHTH},
-    {M1_D, EIGHTH}, {M2_D, EIGHTH}, {M3_D, EIGHTH}, {M3_D, SIXTEENTH}, {M2_D, EIGHTH}, {M1_D, EIGHTH}, {M3_D, QUARTER}, 
-    {M3_D, EIGHTH}, {M5_D, EIGHTH}, 
-    {M6_D, QUARTER}, {M5_D, QUARTER}, {M3_D, QUARTER}, {M2_D, EIGHTH}, {M1_D, EIGHTH}, 
-    {M2_D, EIGHTH}, {M3_D, SIXTEENTH}, {M2_D, SIXTEENTH},{M1_D, EIGHTH}, {L7_D, EIGHTH}, {L6_D, QUARTER}, {L6_D, EIGHTH},{L7_D, EIGHTH},
-    {M1_D, QUARTER},{M1_D, EIGHTH}, {M2_D, SIXTEENTH}, {M3_D, SIXTEENTH}, {M2_D, EIGHTH}, {L7_D, EIGHTH}, {L5_D, EIGHTH}, {L6_D, EIGHTH},{L7_D, SIXTEENTH}, {M1_D, EIGHTH},{M2_D, EIGHTH}, {M3_D, QUARTER}                      // 有梦
+    // /*水手*/
+    // {M3_D, EIGHTH}, {M5_D, EIGHTH}, 
+    // {M6_D, QUARTER}, {M5_D, QUARTER}, {M3_D, QUARTER}, {M2_D, EIGHTH}, {M1_D, EIGHTH}, 
+    // {M2_D, EIGHTH}, {M3_D, SIXTEENTH}, {M2_D, SIXTEENTH},{M1_D, EIGHTH}, {L7_D, EIGHTH}, {L6_D, QUARTER},
 };
-#define SONG_LENGTH (sizeof(Sailor_Song) / sizeof(Sailor_Song[0])) // 计算数组长度的宏
 
+#define SONG_LENGTH (sizeof(Sailor_Song) / sizeof(Sailor_Song[0])) // 计算数组长度的宏
 /**
  * @brief Sing the song.新增
  */
 void Play_Music(void) {
+    HAL_TIM_PWM_Start(BUZZER_TIM, BUZZER_CH);
     for (int i = 0; i < SONG_LENGTH; i++) {
         uint16_t current_freq = Sailor_Song[i].freq;
         uint16_t current_dur = Sailor_Song[i].duration;
@@ -257,7 +257,7 @@ void Play_Music(void) {
         }
         HAL_Delay(current_dur); 
         __HAL_TIM_SET_COMPARE(BUZZER_TIM, BUZZER_CH, 0); 
-        HAL_Delay(10); // 10ms 的间隔，可根据听感微调
+        HAL_Delay(20); // 20ms 的间隔，可根据听感微调
     }
     // 播放完毕，关闭 PWM
     HAL_TIM_PWM_Stop(BUZZER_TIM, BUZZER_CH);

@@ -21,7 +21,7 @@ void screenPresenter::onKeyValueChanged(int8_t key){
     view.keyState = key;
 }
 
-void screenPresenter::onVoltageChanged(int8_t voltage){
+void screenPresenter::onVoltageChanged(float voltage){
     view.voltage = voltage;
 }
 

@@ -136,8 +136,8 @@ targets:
       - CubeMX/TouchGFX/generated/simulator
       - CubeMX/TouchGFX/simulator
       - <virtual_root>/Application/recv_data.c
-      - CubeMX/TouchGFX/gui/src/bluemap_screen
       - CubeMX/TouchGFX/gui/src/redmap_screen
+      - CubeMX/TouchGFX/gui/src/bluemap_screen
       - CubeMX/TouchGFX/gui/include/gui/bluemap_screen
       - CubeMX/TouchGFX/gui/include/gui/redmap_screen
     settings:
@@ -190,7 +190,7 @@ targets:
               isChecked: true
               isStartup: true
               mem:
-                size: "0x00100000"
+                size: "0x00080000"
                 startAddr: "0x08000000"
               tag: IROM
         useCustomScatterFile: false

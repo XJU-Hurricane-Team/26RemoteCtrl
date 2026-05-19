@@ -50,7 +50,7 @@
 /* 转义标识 (Escape), 注意需要避开头标识和长度 */
 #define MSG_ESC               0x8F
 /* 启用 CRC8 */
-#define MSG_ENABLE_CRC8       1
+#define MSG_ENABLE_CRC8       0
 
 /* 线程安全处理, 启用后会使用互斥信号量来保护发送缓冲区, 仅支持 FreeRTOS. */
 #define MSG_ENABLE_RTOS       1

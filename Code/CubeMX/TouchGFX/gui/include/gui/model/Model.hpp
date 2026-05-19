@@ -20,7 +20,7 @@ class Model {
     int8_t ctrl_keyValue;
     int8_t choosepoint;
     int8_t keyValue; // latest sampled key value
-    int8_t voltage;
+    float  voltage;
     int8_t rsL_x;
     int8_t rsL_y;
     int8_t rsR_x;

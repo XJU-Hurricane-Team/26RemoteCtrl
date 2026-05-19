@@ -74,7 +74,7 @@
         <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="V" Alignment="Left" TypographyId="Info">
-        <Translation Language="GB">0</Translation>
+        <Translation Language="GB">0.0</Translation>
       </Text>
       <Text Id="RY" Alignment="Left" TypographyId="Info">
         <Translation Language="GB">0</Translation>
@@ -101,7 +101,7 @@
         <Translation Language="GB">Key:&lt;d&gt;</Translation>
       </Text>
       <Text Id="Battery" Alignment="Left" TypographyId="Typography3">
-        <Translation Language="GB">V:&lt;value&gt;</Translation>
+        <Translation Language="GB">V:&lt;value&gt;V</Translation>
       </Text>
     </TextGroup>
   </Texts>

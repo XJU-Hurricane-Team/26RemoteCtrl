@@ -19,7 +19,7 @@ screenViewBase::screenViewBase() :
     add(scalableImage1);
 
     container2.setPosition(0, 0, 320, 240);
-    Battery.setPosition(131, 98, 70, 30);
+    Battery.setPosition(107, 98, 83, 30);
     Battery.setColor(touchgfx::Color::getColorFromRGB(167, 247, 124));
     Battery.setLinespacing(0);
     Unicode::snprintf(BatteryBuffer, BATTERY_SIZE, "%s", touchgfx::TypedText(T_V).getText());
@@ -27,7 +27,7 @@ screenViewBase::screenViewBase() :
     Battery.setTypedText(touchgfx::TypedText(T_BATTERY));
     container2.add(Battery);
 
-    KeyNum.setPosition(14, 98, 109, 30);
+    KeyNum.setPosition(14, 98, 93, 30);
     KeyNum.setColor(touchgfx::Color::getColorFromRGB(51, 204, 181));
     KeyNum.setLinespacing(0);
     Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "%s", touchgfx::TypedText(T_KEY).getText());

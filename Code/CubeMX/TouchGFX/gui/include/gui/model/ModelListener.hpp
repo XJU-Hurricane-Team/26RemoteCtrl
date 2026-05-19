@@ -16,7 +16,7 @@ public:
     }
     virtual void onKeyValueChanged(int8_t) {}
     virtual void onCtrlKeyValueChanged(int8_t, int8_t) {}
-    virtual void onVoltageChanged(int8_t) {}
+    virtual void onVoltageChanged(float) {}
     virtual void onJoystickChanged(int8_t, int8_t, int8_t, int8_t) {}
 protected:
     Model* model;

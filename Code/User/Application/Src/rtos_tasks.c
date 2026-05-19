@@ -107,7 +107,6 @@ void message_polling_task(void *pvParameters) {
 
     while (1) {
         message_polling_data();
-        IWDG_Feed();//看门狗喂狗
         vTaskDelay(10);
     }
 }
