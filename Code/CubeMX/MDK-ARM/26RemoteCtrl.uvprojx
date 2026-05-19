@@ -752,11 +752,6 @@
               <FilePath>../touchgfx/generated/images/src/image_ky50_50.cpp</FilePath>
             </File>
             <File>
-              <FileName>image_PixPin_2025-11-26_21-33-12.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/images/src/image_pixpin_2025-11-26_21-33-12.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Kerning_verdana_10_4bpp.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/kerning_verdana_10_4bpp.cpp</FilePath>
