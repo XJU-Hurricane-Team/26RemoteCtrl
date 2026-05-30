@@ -96,7 +96,17 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
     ST77XX_CS_LOW();
 
     /* 将spi发送长度配置为16bit */
-    while (ST77xx_SPI_INSTANCE.Instance->SR & SPI_FLAG_BSY) {}
+    uint32_t timeout = HAL_GetTick() + 100;  // 100ms超时保护
+    while ((ST77xx_SPI_INSTANCE.Instance->SR & SPI_FLAG_BSY) &&
+           (HAL_GetTick() < timeout)) {}
+    if (HAL_GetTick() >= timeout) {
+        // 超时错误处理：强制恢复状态
+        IsTransmittingBlock_ = 0;
+        ST77XX_CS_HIGH();
+        DisplayDriver_TransferCompleteCallback();
+        st77xx_notify_transfer_done();
+        return;
+    }
     __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
 
     // 更新 HAL 的配置表明现在是 16-bit

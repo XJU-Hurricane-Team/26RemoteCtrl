@@ -8,6 +8,7 @@
 
 #include "includes.h"
 #include "my_math/my_math.h"
+#define V_OFFSET 0.17  // 电压测量偏移量, V
 #define REMOTE_SEND_PERIOD 10  // 发送间隔, ms
 
 #define UI_MSG_QUEUE_LEN   8   // UI 消息队列深度
@@ -22,7 +23,7 @@
         }                                                                      \
     } while (0)
 
-static TaskHandle_t remote_send_task_handle;
+TaskHandle_t remote_send_task_handle;
 QueueHandle_t ui_msg_queue = NULL;
 static remote_key_callback_t key_callback[REMOTE_KEY_NUM][REMOTE_KEY_EVENT_NUM];
 static uint32_t ui_msg_seq = 0;
@@ -139,12 +140,11 @@ static void remote_send_task(void *pvParameters) {
 
         rs_get_value(rs_adc_buf, 10, 40);
 
-        uint8_t mV = (uint8_t)(rs_adc_buf[4] & 0xFF);
-        if (mV <= 35) {
-            LED1_ON();
-        } else {
-            LED1_OFF();
-        }
+        double mV = get_real_data((uint16_t)rs_adc_buf[4], 1)/1000.0 - V_OFFSET; /* V */
+        if ( math_compare_double(mV, 3.7) == MATH_FP_LESSTHAN ) { 
+            LED1_ON(); /* 红灯作为电压过低警告 */
+            Play_Music(MUSIC_ALARM);
+        } 
 
         MSG_MODES = NORMAL_MODE;
         switch (add_key) {
@@ -158,6 +158,7 @@ static void remote_send_task(void *pvParameters) {
                 MSG_MODES = CHANGE_TO_MODE2;
                 if (keyboard) keyboard += 32;
                 break;
+            default: break;
         }
 
         remote_send_data.key = keyboard;

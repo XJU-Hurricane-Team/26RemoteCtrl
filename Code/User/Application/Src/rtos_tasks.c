@@ -62,7 +62,7 @@ void start_task(void *pvParameters) {
     }
 
     taskEXIT_CRITICAL();
-    Play_Music();
+    Play_Music(MUSIC_ALARM);
 
     vTaskDelete(start_task_handle);
 }
@@ -105,9 +105,31 @@ void message_polling_task(void *pvParameters) {
     message_register_recv_callback(MSG_MASTER_TO_RC, remote_recv_msg_callback);
     message_register_polling_uart(MSG_MASTER_TO_RC, &huart1, 128, 128);
 
+    uint32_t last_stack_check = 0;
+
     while (1) {
         message_polling_data();
-        IWDG_Feed();//看门狗喂狗
+        HAL_IWDG_Refresh(&hiwdg);//看门狗喂狗
+
+        /* 每5秒检查一次任务栈使用情况 */
+        if (HAL_GetTick() - last_stack_check > 5000) {
+            last_stack_check = HAL_GetTick();
+            /* 检查各任务栈剩余 */
+            UBaseType_t stack_remain;
+            stack_remain = uxTaskGetStackHighWaterMark(TouchGFX_Task_handle);
+            if (stack_remain < 100) {
+                // TouchGFX任务栈不足警告
+                LED1_ON(); // 视觉指示
+                Play_Music(MUSIC_ALARM);
+            }
+            stack_remain = uxTaskGetStackHighWaterMark(remote_send_task_handle);
+            if (stack_remain < 50) {
+                // 发送任务栈不足警告
+                LED1_ON();
+                Play_Music(MUSIC_ALARM);
+            }
+        }
+
         vTaskDelay(10);
     }
 }

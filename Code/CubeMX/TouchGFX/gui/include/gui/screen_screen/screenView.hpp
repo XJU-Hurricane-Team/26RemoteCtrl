@@ -14,7 +14,7 @@ class screenView : public screenViewBase {
     virtual void handleKeyEvent(uint8_t key);
     virtual void InfoUpdate1();
     int8_t keyState;
-    int8_t voltage;
+    double voltage;
     int8_t pointvalue;
     int8_t msgnum;
     int8_t rsL_x;

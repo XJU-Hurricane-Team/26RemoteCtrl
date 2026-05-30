@@ -33,7 +33,7 @@ void screenPresenter::onCtrlKeyChanged(int8_t ctrl_key){
     view.handleKeyEvent(ctrl_key);
 }
 
-void screenPresenter::onVoltageChanged(int8_t voltage){
+void screenPresenter::onVoltageChanged(double voltage){
     view.voltage = voltage;
 }
 

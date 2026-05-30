@@ -51,9 +51,6 @@ void MX_IWDG_Init(void)
 }
 
 /* USER CODE BEGIN 1 */
-void IWDG_Feed(void)
-{
-  HAL_IWDG_Refresh(&hiwdg);
-}
+
 /* USER CODE END 1 */
 

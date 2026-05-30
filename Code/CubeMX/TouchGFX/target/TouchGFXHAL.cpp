@@ -28,10 +28,25 @@ using namespace touchgfx;
 
 static SemaphoreHandle_t g_touchgfxTransferSem = NULL;
 
+/* 用户自定义DMA2D错误回调 - 替代生成文件中的死循环 */
+extern "C" void TouchGFXHAL_DMA2D_ErrorCallback(DMA2D_HandleTypeDef *handle) {
+    (void)handle;
+    // 避免死循环：中止传输并返回
+    HAL_DMA2D_Abort(handle);
+}
+
+
+// 超时：强制恢复传输状态，避免死锁
+extern volatile uint8_t IsTransmittingBlock_;
 namespace touchgfx {
 void FrameBufferAllocatorWaitOnTransfer() {
     if (g_touchgfxTransferSem != NULL) {
-        (void)xSemaphoreTake(g_touchgfxTransferSem, portMAX_DELAY);
+        // 添加超时保护，避免永久阻塞
+        if (xSemaphoreTake(g_touchgfxTransferSem, pdMS_TO_TICKS(500)) !=
+            pdPASS) {
+
+            IsTransmittingBlock_ = 0;
+        }
     } else {
         taskYIELD();
     }
@@ -84,6 +99,10 @@ void TouchGFXHAL::initialize() {
     ST77xx_Init(0, ST7789);             // 初始化屏幕
     TouchGFXGeneratedHAL::initialize(); //初始化UI框架
     HAL_TIM_Base_Start_IT(&htim2);      //启动定时器发送VSYNC信号
+
+    // 修复：重新注册DMA2D错误回调，避免生成文件中的死循环
+    extern DMA2D_HandleTypeDef hdma2d;
+    hdma2d.XferErrorCallback = TouchGFXHAL_DMA2D_ErrorCallback;
 }
 
 /**

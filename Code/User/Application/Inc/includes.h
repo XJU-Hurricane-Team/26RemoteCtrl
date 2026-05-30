@@ -27,6 +27,8 @@ extern "C" {
 #include <stdbool.h>
 #include <stdint.h>
 
+#include "my_math/my_math.h"
+
 /**
  * @brief 遥控器键盘事件
  * @note 大部分回调注册使用按键按下普通事件
@@ -108,7 +110,7 @@ typedef struct __packed {
 
 /* 遥控器控制消息结构 */
 typedef struct {
-    uint8_t voltage;
+    double voltage;
     int8_t ctrl_key;
     remote_send_data_t data;
 } remote_ctrl_msg_t;
@@ -133,6 +135,7 @@ typedef struct {
 } ui_msg_t;
 
 extern QueueHandle_t ui_msg_queue;
+extern TaskHandle_t remote_send_task_handle;
 
 /* 遥控器数据发送任务API */
 void remote_send_init(UART_HandleTypeDef *send_uart);

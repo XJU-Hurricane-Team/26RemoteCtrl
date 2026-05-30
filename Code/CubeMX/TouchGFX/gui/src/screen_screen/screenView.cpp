@@ -37,7 +37,7 @@ constexpr uint8_t kMsgCount = sizeof(kMsgTable) / sizeof(kMsgTable[0]);
 } // namespace
 
 screenView::screenView()
-    : keyState(0), voltage(0), pointvalue(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
+    : keyState(0), voltage(0.0), pointvalue(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
       r1_x_speed(0), r1_y_speed(0), r1_w_speed(0), r1_status(1),r1_state(0), r1_accel_xy(0.0f),r1_yaw_source(0),
       r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
       r1_right_adsorbed(0), r1_send_msg(0), r1_rec_msg(0), msgnum(0),
@@ -88,7 +88,6 @@ void screenView::InfoUpdate1() {
     touchgfx::Unicode::snprintf(RockRBuffer1, ROCKRBUFFER1_SIZE, "%d", rsR_x);
     touchgfx::Unicode::snprintf(RockRBuffer2, ROCKRBUFFER2_SIZE, "%d", rsR_y);
     touchgfx::Unicode::snprintf(KeyNumBuffer, KEYNUM_SIZE, "Key%d", keyState);
-    touchgfx::Unicode::snprintf(BatteryBuffer, BATTERY_SIZE, "%d", voltage);
     touchgfx::Unicode::snprintf(pointBuffer, POINT_SIZE, "%d", pointvalue);
     touchgfx::Unicode::snprintf(R1V_xBuffer, R1V_X_SIZE, "%d", r1_x_speed);
     touchgfx::Unicode::snprintf(R1V_yBuffer, R1V_Y_SIZE, "%d", r1_y_speed);
@@ -101,6 +100,7 @@ void screenView::InfoUpdate1() {
 
     touchgfx::Unicode::snprintf(ACCELBuffer, ACCEL_SIZE, "%u",
                                 static_cast<unsigned int>(r1_accel_xy));
+    formatFixed2(BatteryBuffer, BATTERY_SIZE, voltage);
     formatFixed2(L_PBuffer, L_P_SIZE, r1_left_pos);
     formatFixed2(R_PBuffer, R_P_SIZE, r1_right_pos);
     touchgfx::Unicode::snprintf(L_ABuffer, L_A_SIZE, "%u",

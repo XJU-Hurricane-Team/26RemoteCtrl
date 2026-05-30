@@ -81,7 +81,7 @@ void rs_get_value(uint32_t *data, uint8_t dead_zone, uint8_t data_level)
             rs_data_limit(g_My_AD[2], dead_zone, data_level);
         data[3] +=
             rs_data_limit(g_My_AD[3], dead_zone, data_level);
-        data[4] += get_real_data(g_My_AD[4], 1);
+        data[4] += g_My_AD[4];
 
     }
 
@@ -202,7 +202,7 @@ void Man_ch_n_mode(uint16_t ch)
 }
 
 /**
- * @brief 设置通道的范围
+ * @brief 设置通道的电压测量范围
  * 
  */
 void Set_ch_range(uint8_t ch, uint8_t range)
@@ -251,13 +251,13 @@ uint16_t Get_Man_ch_n_mode_data(void)
 
 /**
  * @brief 初始化单个通道转换数据
- * @param range
- * 参数 -> 范围
- * 0x00 -> +-2.5*ref (+-10.24V)
- * 0x01 -> +-1.25*ref (+-5.12V)
- * 0x02 -> +-0.625*ref (+-2.56V)
- * 0x05 -> +2.5*ref
- * 0x06 -> +1.25*ref
+ * @param range：设置所有通道的测量范围 
+ *               参数 -> 范围
+ *               0x00 -> +-2.5*ref (+-10.24V)
+ *               0x01 -> +-1.25*ref (+-5.122V)
+ *               0x02 -> +-0.625*ref (+-2.56V)
+ *               0x05 -> 0~+2.5*ref
+ *               0x06 -> 0~+1.25*ref
  */
 void ads868x_Single_ch_Init(uint8_t ch,uint8_t range)
 {
@@ -274,13 +274,13 @@ void ads868x_Single_ch_Init(uint8_t ch,uint8_t range)
 
 /**
  * @brief 初始化多个通道转换数据
- * @param range
- * 参数 -> 范围
- * 0x00 -> +-2.5*ref (+-10.24V)
-* 0x01 -> +-1.25*ref (+-5.122V)
- * 0x02 -> +-0.625*ref (+-2.56V)
- * 0x05 -> +2.5*ref
- * 0x06 -> +1.25*ref
+ * @param range：设置所有通道的测量范围 
+ *               参数 -> 范围
+ *               0x00 -> +-2.5*ref (+-10.24V)
+ *               0x01 -> +-1.25*ref (+-5.122V)
+ *               0x02 -> +-0.625*ref (+-2.56V)
+ *               0x05 -> 0~+2.5*ref
+ *               0x06 -> 0~+1.25*ref
  */
 void ads868x_Mult_ch_Init(uint8_t range)
 {
@@ -328,7 +328,7 @@ double get_real_data(uint16_t data, uint8_t t)
     {
         real_data = (((double)data - 21000)* 102.4 / (double)65535);
     }else{
-        real_data = (double)data * 51.2 / 65535;
+        real_data = (double)data * 5120 / 65535;
     }
     return real_data;
 }

@@ -13,7 +13,9 @@
 #   '!Application/*.c':   -O0
 #   '**/*.c':             -O2 -gnu ...
 
-version: "2.0"
+version: "2.1"
 options:
     Release: {}
-    Debug: {}
+    Debug:
+        files:
+            CubeMX/TouchGFX/**: -w

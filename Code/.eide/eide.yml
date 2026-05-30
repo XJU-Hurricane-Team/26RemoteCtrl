@@ -55,6 +55,7 @@ virtualFolder:
       files:
         - path: User/Utils/ring_fifo/ring_fifo.c
         - path: User/Utils/calc_crc/calc_crc.c
+        - path: User/Utils/my_math/my_math.c
       folders: []
     - name: CMSIS
       files: []
@@ -186,7 +187,7 @@ targets:
               isChecked: true
               isStartup: true
               mem:
-                size: "0x00100000"
+                size: "0x00080000"
                 startAddr: "0x08000000"
               tag: IROM
         useCustomScatterFile: false
@@ -247,4 +248,4 @@ targets:
         resetMode: default
         runAfterProgram: true
         speed: 4000
-    uploader: STLink
+    uploader: JLink

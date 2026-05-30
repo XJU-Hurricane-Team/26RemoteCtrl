@@ -81,7 +81,17 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE BEGIN Prototypes */
 
-void Play_Music(void);
+typedef enum {
+    MUSIC_ALARM = 0,        // 纯警报
+    MUSIC_SAILOR,           // 水手
+    MUSIC_STAR_LIGHT,       // 星星点灯
+    MUSIC_LUCKY,            // 好运来
+    MUSIC_POEM,             // 诗
+    MUSIC_READY,            // 时刻准备着
+    MUSIC_MAX
+} Music_Select_t;
+
+void Play_Music(Music_Select_t song);
 void BEEP_SWITCH(uint8_t on);
 /* USER CODE END Prototypes */
 

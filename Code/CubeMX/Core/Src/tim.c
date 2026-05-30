@@ -44,7 +44,7 @@ void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 8999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 199;
+  htim2.Init.Period = 333;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -212,48 +212,85 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* tim_baseHandle)
 
 /* USER CODE BEGIN 1 */
 
-const Note_t Sailor_Song[] = {
-    /* 纯警报 */
+/* 纯警报 */
+static const Note_t Music_Alarm[] = {
     {M5_D,QUARTER}, {REST,QUARTER}, {M5_D,QUARTER}
-
-    /*时刻准备着*/
-    // {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {L5_D,QUARTER},
-    // {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {M5_D,QUARTER},
-    // {M2_D,QUARTER}, {M3_D,EIGHTH}, {M5_D,SIXTEENTH}, {M6_D,QUARTER}, {M5_D,QUARTER},
-    // {M3_D,EIGHTH}, {M3_D,SIXTEENTH}, {M2_D,EIGHTH}, {M3_D,EIGHTH}, {M5_D,QUARTER}
-
-    // /*诗*/
-    // {M3_D,QUARTER}, {M2_D,QUARTER}, {M1_D,QUARTER}, {L6_D,QUARTER}, {REST,EIGHTH},
-    // {M5_D,QUARTER}, {M3_D,QUARTER}, {L1_D,QUARTER}, {REST,QUARTER},
-    // {M2_D,QUARTER}, {M3_D,QUARTER}, {M5_D,QUARTER}, {M6_D,QUARTER}, {REST,EIGHTH},
-    // {H1_D,QUARTER}, {M6_D,EIGHTH}, {M3_D,EIGHTH}, {M6_D,QUARTER}, {REST,QUARTER}
-
-    // /*好运来*/
-    // {M6_D,QUARTER}, {H3_D,QUARTER}, {H2_D,QUARTER}, {H1_D,EIGHTH}, {M6_D,EIGHTH},{M5_D,QUARTER}, {H1_D,EIGHTH}, {H2_D,EIGHTH},{M6_D,QUARTER},{REST,QUARTER},
-    // {M6_D,QUARTER}, {H2_D,QUARTER}, {H1_D,QUARTER}, {M6_D,EIGHTH}, {M5_D,EIGHTH},{M2_D,QUARTER}, {M5_D,EIGHTH}, {M6_D,EIGHTH},{M3_D,QUARTER}
-
-    // /*星星点灯*/
-    // {M6_D,QUARTER}, {M6_D,QUARTER}, {M3_D,EIGHTH}, {M6_D,QUARTER},
-    // {M6_D,SIXTEENTH}, {M6_D,SIXTEENTH}, {M5_D,EIGHTH}, {M6_D,EIGHTH},{M7_D,EIGHTH},{M5_D,EIGHTH},
-    // {M5_D,QUARTER},
-
-    // /*水手*/
-    // {M3_D, EIGHTH}, {M5_D, EIGHTH},
-    // {M6_D, QUARTER}, {M5_D, QUARTER}, {M3_D, QUARTER}, {M2_D, EIGHTH}, {M1_D, EIGHTH},
-    // {M2_D, EIGHTH}, {M3_D, SIXTEENTH}, {M2_D, SIXTEENTH},{M1_D, EIGHTH}, {L7_D, EIGHTH}, {L6_D, QUARTER},
 };
 
-#define SONG_LENGTH (sizeof(Sailor_Song) / sizeof(Sailor_Song[0])) // 计算数组长度的宏
+/* 时刻准备着 */
+static const Note_t Music_Ready[] = {
+    {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {L5_D,QUARTER},
+    {M1_D,QUARTER}, {M3_D,EIGHTH}, {M1_D,SIXTEENTH}, {M2_D,QUARTER}, {M5_D,QUARTER},
+    {M2_D,QUARTER}, {M3_D,EIGHTH}, {M5_D,SIXTEENTH}, {M6_D,QUARTER}, {M5_D,QUARTER},
+    {M3_D,EIGHTH}, {M3_D,SIXTEENTH}, {M2_D,EIGHTH}, {M3_D,EIGHTH}, {M5_D,QUARTER}
+};
+
+/* 诗 */
+static const Note_t Music_Poem[] = {
+    {M3_D,QUARTER}, {M2_D,QUARTER}, {M1_D,QUARTER}, {L6_D,QUARTER}, {REST,EIGHTH},
+    {M5_D,QUARTER}, {M3_D,QUARTER}, {L1_D,QUARTER}, {REST,QUARTER},
+    {M2_D,QUARTER}, {M3_D,QUARTER}, {M5_D,QUARTER}, {M6_D,QUARTER}, {REST,EIGHTH},
+    {H1_D,QUARTER}, {M6_D,EIGHTH}, {M3_D,EIGHTH}, {M6_D,QUARTER}, {REST,QUARTER}
+};
+
+/* 好运来 */
+static const Note_t Music_Lucky[] = {
+    {M6_D,QUARTER}, {H3_D,QUARTER}, {H2_D,QUARTER}, {H1_D,EIGHTH}, {M6_D,EIGHTH},{M5_D,QUARTER}, {H1_D,EIGHTH}, {H2_D,EIGHTH},{M6_D,QUARTER},{REST,QUARTER},
+    {M6_D,QUARTER}, {H2_D,QUARTER}, {H1_D,QUARTER}, {M6_D,EIGHTH}, {M5_D,EIGHTH},{M2_D,QUARTER}, {M5_D,EIGHTH}, {M6_D,EIGHTH},{M3_D,QUARTER}
+};
+
+/* 星星点灯 */
+static const Note_t Music_StarLight[] = {
+    {M6_D,QUARTER}, {M6_D,QUARTER}, {M3_D,EIGHTH}, {M6_D,QUARTER},
+    {M6_D,SIXTEENTH}, {M6_D,SIXTEENTH}, {M5_D,EIGHTH}, {M6_D,EIGHTH},{M7_D,EIGHTH},{M5_D,EIGHTH},
+    {M5_D,QUARTER}
+};
+
+/* 水手 */
+static const Note_t Music_Sailor[] = {
+    {M3_D, EIGHTH}, {M5_D, EIGHTH},
+    {M6_D, QUARTER}, {M5_D, QUARTER}, {M3_D, QUARTER}, {M2_D, EIGHTH}, {M1_D, EIGHTH},
+    {M2_D, EIGHTH}, {M3_D, SIXTEENTH}, {M2_D, SIXTEENTH},{M1_D, EIGHTH}, {L7_D, EIGHTH}, {L6_D, QUARTER}
+};
+
+/* 歌曲长度数组 */
+static const uint16_t Music_Lengths[MUSIC_MAX] = {
+    sizeof(Music_Alarm) / sizeof(Music_Alarm[0]),
+    sizeof(Music_Sailor) / sizeof(Music_Sailor[0]),
+    sizeof(Music_StarLight) / sizeof(Music_StarLight[0]),
+    sizeof(Music_Lucky) / sizeof(Music_Lucky[0]),
+    sizeof(Music_Poem) / sizeof(Music_Poem[0]),
+    sizeof(Music_Ready) / sizeof(Music_Ready[0])
+};
+
+/* 歌曲指针数组 */
+static const Note_t * const Music_Table[MUSIC_MAX] = {
+    Music_Alarm,
+    Music_Sailor,
+    Music_StarLight,
+    Music_Lucky,
+    Music_Poem,
+    Music_Ready
+};
+
 /**
- * @brief Sing the song.新增
+ * @brief Play selected music
+ * @param song: 歌曲选择，使用 Music_Select_t 枚举
  */
-void Play_Music(void) {
+void Play_Music(Music_Select_t song) {
+    if (song >= MUSIC_MAX) {
+        return; // 无效选择
+    }
+
+    const Note_t *current_song = Music_Table[song];
+    uint16_t song_length = Music_Lengths[song];
+
     HAL_TIM_PWM_Start(BUZZER_TIM, BUZZER_CH);
-    for (int i = 0; i < SONG_LENGTH; i++) {
-        uint16_t current_freq = Sailor_Song[i].freq;
-        uint16_t current_dur = Sailor_Song[i].duration;
+    for (int i = 0; i < song_length; i++) {
+        uint16_t current_freq = current_song[i].freq;
+        uint16_t current_dur = current_song[i].duration;
         if (current_freq == REST) {
-            __HAL_TIM_SET_COMPARE(BUZZER_TIM, BUZZER_CH, 0);// 休止符：占空比设为 0，停止发声
+            __HAL_TIM_SET_COMPARE(BUZZER_TIM, BUZZER_CH, 0);
         } else {
             uint32_t arr_value = (1000000 / current_freq) - 1;
             __HAL_TIM_SET_AUTORELOAD(BUZZER_TIM, arr_value);
@@ -262,9 +299,8 @@ void Play_Music(void) {
         }
         HAL_Delay(current_dur);
         __HAL_TIM_SET_COMPARE(BUZZER_TIM, BUZZER_CH, 0);
-        HAL_Delay(20); // 20ms 的间隔，可根据听感微调
+        HAL_Delay(20);
     }
-    // 播放完毕，关闭 PWM
     HAL_TIM_PWM_Stop(BUZZER_TIM, BUZZER_CH);
 }
 

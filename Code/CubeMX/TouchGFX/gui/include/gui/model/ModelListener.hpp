@@ -22,7 +22,7 @@ public:
     virtual void onIrdaMsgNumChanged(uint8_t){}
     virtual void onCtrlKeyChanged(int8_t) {}
     virtual void onChoosepointChanged(int8_t) {}
-    virtual void onVoltageChanged(int8_t) {}
+    virtual void onVoltageChanged(double) {}
     virtual void onJoystickChanged(int8_t, int8_t, int8_t, int8_t) {}
     virtual void onR1StateChanged(int16_t, int16_t, int16_t,
                                   uint8_t, uint8_t, float,
