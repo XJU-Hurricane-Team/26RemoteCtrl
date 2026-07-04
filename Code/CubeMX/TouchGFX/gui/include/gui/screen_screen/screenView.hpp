@@ -22,9 +22,9 @@ class screenView : public screenViewBase {
     int8_t rsR_x;
     int8_t rsR_y;
 
-    int16_t r1_x_speed;
-    int16_t r1_y_speed;
-    int16_t r1_w_speed;
+    int16_t r1_pose_x;
+    int16_t r1_pose_y;
+    int16_t r1_pose_yaw;
     uint8_t r1_status;
     uint8_t r1_state;
     float r1_accel_xy;
@@ -34,10 +34,11 @@ class screenView : public screenViewBase {
     uint8_t r1_right_adsorbed;
     uint8_t r1_send_msg;
     uint8_t r1_rec_msg;
-    uint8_t r1_yaw_source;  
+    uint8_t r1_yaw_source; 
+    bool r1_irda_send_mode; 
 
-    // int16_t r2_x_speed;
-    // int16_t r2_y_speed;
+    // int16_t r2_pose_x;
+    // int16_t r2_pose_y;
     // int16_t r2_angle;
     // uint8_t r2_status;
 

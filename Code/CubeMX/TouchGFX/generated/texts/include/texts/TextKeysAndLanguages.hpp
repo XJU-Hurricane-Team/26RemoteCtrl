@@ -12,6 +12,8 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T_SENDMODE,
+    T___SINGLEUSE_Y324,
     T___SINGLEUSE_NJ58,
     T_RUNPOINT,
     T_R1_SEND,

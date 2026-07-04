@@ -143,7 +143,7 @@ static void remote_send_task(void *pvParameters) {
         double mV = get_real_data((uint16_t)rs_adc_buf[4], 1)/1000.0 - V_OFFSET; /* V */
         if ( math_compare_double(mV, 3.7) == MATH_FP_LESSTHAN ) { 
             LED1_ON(); /* 红灯作为电压过低警告 */
-            Play_Music(MUSIC_ALARM);
+            // Play_Music(MUSIC_ALARM);
         } 
 
         MSG_MODES = NORMAL_MODE;

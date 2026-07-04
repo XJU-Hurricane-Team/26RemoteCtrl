@@ -30,12 +30,12 @@ public:
     virtual void deactivate();
     virtual void onCtrlKeyChanged(int8_t ctrl_Key) override;
     virtual void onChoosepointChanged(int8_t choose) override;
-    virtual void onR1StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t wSpeed,
+    virtual void onR1StateChanged(int16_t Pos_x, int16_t Pos_y, int16_t Pos_yaw,
                                   uint8_t status, uint8_t state, float accel,
                                   float leftPos, float rightPos,
                                   uint8_t leftAdsorbed, uint8_t rightAdsorbed,
                                   uint8_t sendMsg, uint8_t recMsg,
-                                  uint8_t source) override;
+                                  uint8_t source, bool sendmode) override;
     virtual void onMapSubModeChanged(bool in_sub, uint8_t preset_idx) override;
 
     virtual ~redmapPresenter() {}

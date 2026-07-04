@@ -36,12 +36,12 @@ class screenPresenter : public touchgfx::Presenter, public ModelListener {
     virtual void onVoltageChanged(double voltage) override;       // 电池电压更新
     virtual void onJoystickChanged(int8_t rsL_x, int8_t rsL_y, int8_t rsR_x,
                                    int8_t rsR_y) override;        // 摇杆数据更新
-    virtual void onR1StateChanged(int16_t xSpeed, int16_t ySpeed,
-                                  int16_t wSpeed, uint8_t status, uint8_t state, float accel,
+    virtual void onR1StateChanged(int16_t Pos_x, int16_t Pos_y,
+                                  int16_t Pos_yaw, uint8_t status, uint8_t state, float accel,
                                   float leftPos, float rightPos, uint8_t leftAdsorbed, uint8_t rightAdsorbed,
                                   uint8_t sendMsg, uint8_t recMsg,
-                                  uint8_t source) override; // R1完整状态更新
-    // virtual void onR2StateChanged(int16_t xSpeed, int16_t ySpeed, int16_t angle,
+                                  uint8_t source, bool sendmode) override; // R1完整状态更新
+    // virtual void onR2StateChanged(int16_t Pos_x, int16_t Pos_y, int16_t angle,
     //                               uint8_t status);
 
   private:

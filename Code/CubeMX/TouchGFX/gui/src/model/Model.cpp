@@ -28,13 +28,13 @@ Model::Model()
       rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
       irda_msgnum(0),
       /* R1 底盘数据 */
-      r1_x_speed(0), r1_y_speed(0), r1_w_speed(0),
+      r1_pose_x(0), r1_pose_y(0), r1_pose_yaw(0),
       r1_chassis_status(1), r1_chassis_state(0), r1_yaw_source(0),
       r1_accel_xy(0.0f),
       r1_left_pos(0.0f), r1_right_pos(0.0f),
       r1_left_adsorbed(0), r1_right_adsorbed(0),
       r1_send_msg(0), r1_rec_msg(0)
-    //   r2_x_speed(0), r2_y_speed(0), r2_angle(0), r2_status(0)
+    //   r2_pose_x(0), r2_pose_y(0), r2_angle(0), r2_status(0)
       {}
 
 void Model::tick() {
@@ -75,9 +75,9 @@ void Model::tick() {
 
                 case UI_R1_STATE: {
                     const r1_data_t *r1_msg = &msg.payload.r1_state;
-                    r1_x_speed = r1_msg->x_speed;
-                    r1_y_speed = r1_msg->y_speed;
-                    r1_w_speed = r1_msg->w_speed;
+                    r1_pose_x = r1_msg->pose_x;
+                    r1_pose_y = r1_msg->pose_y;
+                    r1_pose_yaw = r1_msg->pose_yaw;
                     r1_left_pos = r1_msg->left_pos;
                     r1_right_pos = r1_msg->right_pos;
                     r1_left_adsorbed = r1_msg->left_adsorbed;
@@ -88,6 +88,7 @@ void Model::tick() {
                     r1_send_msg = r1_msg->send_msg;
                     r1_rec_msg = r1_msg->rec_msg;
                     r1_yaw_source = r1_msg->yaw_source;
+                    r1_irda_send_mode = r1_msg->send_mode;
                     r1_changed = true;
                 } break;
 
@@ -109,9 +110,9 @@ void Model::tick() {
         }
         if (r1_changed) {
             modelListener->onR1StateChanged(
-                r1_x_speed, r1_y_speed, r1_w_speed, r1_chassis_status, r1_chassis_state, r1_accel_xy,
+                r1_pose_x, r1_pose_y, r1_pose_yaw, r1_chassis_status, r1_chassis_state, r1_accel_xy,
                 r1_left_pos, r1_right_pos, r1_left_adsorbed, r1_right_adsorbed,
-                r1_send_msg, r1_rec_msg, r1_yaw_source);
+                r1_send_msg, r1_rec_msg, r1_yaw_source, r1_irda_send_mode);
             r1_changed = false;
         }
     }

@@ -29,7 +29,7 @@ public:
                                   float, float,
                                   uint8_t, uint8_t,
                                   uint8_t, uint8_t,
-                                  uint8_t /*yaw_source*/) {}
+                                  uint8_t /*yaw_source*/,bool) {}
     virtual void onMapSubModeChanged(bool /*in_sub*/, uint8_t /*preset_idx*/) {}
 protected:
     Model* model;

@@ -32,12 +32,12 @@ void redmapPresenter::onChoosepointChanged(int8_t choose){
 }
 
 void redmapPresenter::onR1StateChanged(
-    int16_t /*xSpeed*/, int16_t /*ySpeed*/, int16_t /*wSpeed*/,
+    int16_t /*Pos_x*/, int16_t /*Pos_y*/, int16_t /*Pos_yaw*/,
     uint8_t status, uint8_t state, float accel,
     float /*leftPos*/, float /*rightPos*/,
     uint8_t /*leftAdsorbed*/, uint8_t /*rightAdsorbed*/,
     uint8_t /*sendMsg*/, uint8_t /*recMsg*/,
-    uint8_t source) {
+    uint8_t source, bool sendmode) {
     view.r1_halt = status;
     view.r1_accel_xy = accel;
     view.r1_state = state;

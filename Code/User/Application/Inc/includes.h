@@ -77,9 +77,6 @@ typedef void (*remote_key_callback_t)(uint8_t key, remote_key_event_t event);
  *
  */
 typedef struct __packed {
-    int16_t x_speed;
-    int16_t y_speed;
-    int16_t w_speed;
     uint8_t r1_chassis_status;
     uint8_t r1_chassis_state;
     float accel_xy;
@@ -90,6 +87,10 @@ typedef struct __packed {
     uint8_t rec_msg;
     uint8_t send_msg;
     uint8_t yaw_source;
+    int16_t pose_x;
+    int16_t pose_y;
+    int16_t pose_yaw;
+    bool send_mode;              /*!< 发送模式 */
 } r1_data_t;
 
 /**
