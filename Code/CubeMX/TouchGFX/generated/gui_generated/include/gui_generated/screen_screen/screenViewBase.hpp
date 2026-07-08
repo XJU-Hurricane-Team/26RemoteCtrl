@@ -55,7 +55,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard R1V_y;
     touchgfx::TextAreaWithOneWildcard R1State;
     touchgfx::TextAreaWithOneWildcard L_P;
-    touchgfx::TextAreaWithOneWildcard sendmode;
+    touchgfx::TextAreaWithOneWildcard Sendflag;
     touchgfx::TextAreaWithOneWildcard R1_MSG;
     touchgfx::TextAreaWithOneWildcard CTRL;
     touchgfx::TextAreaWithOneWildcard ACCEL;
@@ -89,8 +89,8 @@ protected:
     touchgfx::Unicode::UnicodeChar R1StateBuffer[R1STATE_SIZE];
     static const uint16_t L_P_SIZE = 10;
     touchgfx::Unicode::UnicodeChar L_PBuffer[L_P_SIZE];
-    static const uint16_t SENDMODE_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar sendmodeBuffer[SENDMODE_SIZE];
+    static const uint16_t SENDFLAG_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar SendflagBuffer[SENDFLAG_SIZE];
     static const uint16_t R1_MSG_SIZE = 20;
     touchgfx::Unicode::UnicodeChar R1_MSGBuffer[R1_MSG_SIZE];
     static const uint16_t CTRL_SIZE = 10;

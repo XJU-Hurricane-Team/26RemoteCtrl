@@ -37,7 +37,7 @@ void bluemapPresenter::onR1StateChanged(
     float /*leftPos*/, float /*rightPos*/,
     uint8_t /*leftAdsorbed*/, uint8_t /*rightAdsorbed*/,
     uint8_t /*sendMsg*/, uint8_t /*recMsg*/,
-    uint8_t source, bool sendmode) {
+    uint8_t source, bool sendflag) {
     view.r1_halt = status;
     view.r1_accel_xy = accel;
     view.r1_state = state;

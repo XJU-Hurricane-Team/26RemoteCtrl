@@ -214,7 +214,7 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "sendmode",
+                "Name": "Sendflag",
                 "X": 238,
                 "Y": 6,
                 "Width": 75,
@@ -226,7 +226,7 @@
                   "Blue": 229
                 },
                 "Wildcard1": {
-                  "TextId": "sendmode",
+                  "TextId": "Sendflag",
                   "UseBuffer": true,
                   "BufferSize": 10
                 }

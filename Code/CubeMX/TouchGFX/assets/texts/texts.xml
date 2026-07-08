@@ -7,7 +7,7 @@
     <TextGroup Id="Group1" />
     <TextGroup Id="Screen1" />
     <TextGroup Id="Unsorted">
-      <Text Id="sendmode" Alignment="Left" TypographyId="Default">
+      <Text Id="Sendflag" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">OFF</Translation>
       </Text>
       <Text Id="__SingleUse_Y324" Alignment="Center" TypographyId="Default">

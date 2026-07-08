@@ -40,7 +40,7 @@ class screenPresenter : public touchgfx::Presenter, public ModelListener {
                                   int16_t Pos_yaw, uint8_t status, uint8_t state, float accel,
                                   float leftPos, float rightPos, uint8_t leftAdsorbed, uint8_t rightAdsorbed,
                                   uint8_t sendMsg, uint8_t recMsg,
-                                  uint8_t source, bool sendmode) override; // R1完整状态更新
+                                  uint8_t source, bool sendflag) override; // R1完整状态更新
     // virtual void onR2StateChanged(int16_t Pos_x, int16_t Pos_y, int16_t angle,
     //                               uint8_t status);
 

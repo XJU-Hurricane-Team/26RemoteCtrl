@@ -35,7 +35,7 @@ public:
                                   float leftPos, float rightPos,
                                   uint8_t leftAdsorbed, uint8_t rightAdsorbed,
                                   uint8_t sendMsg, uint8_t recMsg,
-                                  uint8_t source, bool sendmode) override;
+                                  uint8_t source, bool sendflag) override;
     virtual void onMapSubModeChanged(bool in_sub, uint8_t preset_idx) override;
 
     virtual ~bluemapPresenter() {}

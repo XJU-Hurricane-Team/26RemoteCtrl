@@ -208,6 +208,8 @@ static void remote_send_task(void *pvParameters) {
             LED2_TOGGLE();
         }
 
+        iwdg_kick(IWDG_REMOTE);
+
         vTaskDelayUntil(&last_wake_time, REMOTE_SEND_PERIOD);
     }
 }

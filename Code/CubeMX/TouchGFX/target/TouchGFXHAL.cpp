@@ -215,6 +215,7 @@ bool TouchGFXHAL::beginFrame() {
 
 void TouchGFXHAL::endFrame() {
     TouchGFXGeneratedHAL::endFrame();
+    iwdg_kick(IWDG_GUI);
 }
 
 /* USER CODE END TouchGFXHAL.cpp */

@@ -12,7 +12,7 @@ enum LANGUAGES
 
 enum TEXTS
 {
-    T_SENDMODE,
+    T_SENDFLAG,
     T___SINGLEUSE_Y324,
     T___SINGLEUSE_NJ58,
     T_RUNPOINT,

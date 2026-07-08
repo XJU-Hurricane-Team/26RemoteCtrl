@@ -101,13 +101,13 @@ screenViewBase::screenViewBase() :
     L_P.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IDUM));
     robotInfo.add(L_P);
 
-    sendmode.setPosition(238, 6, 75, 23);
-    sendmode.setColor(touchgfx::Color::getColorFromRGB(0, 255, 229));
-    sendmode.setLinespacing(0);
-    Unicode::snprintf(sendmodeBuffer, SENDMODE_SIZE, "%s", touchgfx::TypedText(T_SENDMODE).getText());
-    sendmode.setWildcard(sendmodeBuffer);
-    sendmode.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y324));
-    robotInfo.add(sendmode);
+    Sendflag.setPosition(238, 6, 75, 23);
+    Sendflag.setColor(touchgfx::Color::getColorFromRGB(0, 255, 229));
+    Sendflag.setLinespacing(0);
+    Unicode::snprintf(SendflagBuffer, SENDFLAG_SIZE, "%s", touchgfx::TypedText(T_SENDFLAG).getText());
+    Sendflag.setWildcard(SendflagBuffer);
+    Sendflag.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Y324));
+    robotInfo.add(Sendflag);
 
     R1_MSG.setPosition(156, 9, 164, 40);
     R1_MSG.setColor(touchgfx::Color::getColorFromRGB(255, 181, 239));

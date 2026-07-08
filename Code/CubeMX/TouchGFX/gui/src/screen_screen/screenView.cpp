@@ -39,7 +39,7 @@ constexpr uint8_t kMsgCount = sizeof(kMsgTable) / sizeof(kMsgTable[0]);
 screenView::screenView()
     : keyState(0), voltage(0.0), pointvalue(0), rsL_x(0), rsL_y(0), rsR_x(0), rsR_y(0),
       r1_pose_x(0), r1_pose_y(0), r1_pose_yaw(0), r1_status(1),r1_state(0), r1_accel_xy(0.0f),r1_yaw_source(0),
-      r1_irda_send_mode(0), r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
+      r1_irda_send_flag(0), r1_left_pos(0.0f), r1_right_pos(0.0f), r1_left_adsorbed(0),
       r1_right_adsorbed(0), r1_send_msg(0), r1_rec_msg(0), msgnum(0),
       graphValue(0.0f), tickCounter(0), digitalHours(0),
       digitalMinutes(0), digitalSeconds(0) {}
@@ -102,10 +102,10 @@ void screenView::InfoUpdate1() {
                                 static_cast<unsigned int>(r1_accel_xy));
     formatFixed2(BatteryBuffer, BATTERY_SIZE, voltage);
 
-    if(r1_irda_send_mode){
-        touchgfx::Unicode::strncpy(sendmodeBuffer, "ON", SENDMODE_SIZE);
+    if(r1_irda_send_flag){
+        touchgfx::Unicode::strncpy(SendflagBuffer, "ON", SENDFLAG_SIZE);
     }else{
-        touchgfx::Unicode::strncpy(sendmodeBuffer, "OFF", SENDMODE_SIZE);
+        touchgfx::Unicode::strncpy(SendflagBuffer, "OFF", SENDFLAG_SIZE);
     }
 
     formatFixed2(L_PBuffer, L_P_SIZE, r1_left_pos);
@@ -137,7 +137,7 @@ void screenView::InfoUpdate1() {
     R1_MSG.invalidate();
     CTRL.invalidate();
     ACCEL.invalidate();
-    sendmode.invalidate();
+    Sendflag.invalidate();
     L_P.invalidate();
     R_P.invalidate();
     L_A.invalidate();

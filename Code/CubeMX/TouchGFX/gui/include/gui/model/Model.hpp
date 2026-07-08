@@ -51,7 +51,7 @@ class Model {
     uint8_t r1_send_msg;
     uint8_t r1_rec_msg;
     uint8_t r1_yaw_source;
-    bool r1_irda_send_mode;
+    bool r1_irda_send_flag;
 
 };
 

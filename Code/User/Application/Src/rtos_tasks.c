@@ -62,6 +62,7 @@ void start_task(void *pvParameters) {
     }
 
     taskEXIT_CRITICAL();
+    iwdg_init();
     Play_Music(MUSIC_ALARM);
 
     vTaskDelete(start_task_handle);
@@ -76,6 +77,7 @@ void task1(void *pvParameters) {
     UNUSED(pvParameters);
     while (1) {
         LED0_TOGGLE();
+        iwdg_kick(IWDG_BLINK);
         vTaskDelay(1000);
     }
 }
@@ -109,7 +111,8 @@ void message_polling_task(void *pvParameters) {
 
     while (1) {
         message_polling_data();
-        HAL_IWDG_Refresh(&hiwdg);//看门狗喂狗
+        // HAL_IWDG_Refresh(&hiwdg);//看门狗喂狗
+        iwdg_kick(IWDG_MSG);
 
         /* 每5秒检查一次任务栈使用情况 */
         if (HAL_GetTick() - last_stack_check > 5000) {

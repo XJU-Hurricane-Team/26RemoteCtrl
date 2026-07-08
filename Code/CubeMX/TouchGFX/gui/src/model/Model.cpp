@@ -88,7 +88,7 @@ void Model::tick() {
                     r1_send_msg = r1_msg->send_msg;
                     r1_rec_msg = r1_msg->rec_msg;
                     r1_yaw_source = r1_msg->yaw_source;
-                    r1_irda_send_mode = r1_msg->send_mode;
+                    r1_irda_send_flag = r1_msg->send_flag;
                     r1_changed = true;
                 } break;
 
@@ -112,7 +112,7 @@ void Model::tick() {
             modelListener->onR1StateChanged(
                 r1_pose_x, r1_pose_y, r1_pose_yaw, r1_chassis_status, r1_chassis_state, r1_accel_xy,
                 r1_left_pos, r1_right_pos, r1_left_adsorbed, r1_right_adsorbed,
-                r1_send_msg, r1_rec_msg, r1_yaw_source, r1_irda_send_mode);
+                r1_send_msg, r1_rec_msg, r1_yaw_source, r1_irda_send_flag);
             r1_changed = false;
         }
     }

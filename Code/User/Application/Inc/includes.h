@@ -90,7 +90,7 @@ typedef struct __packed {
     int16_t pose_x;
     int16_t pose_y;
     int16_t pose_yaw;
-    bool send_mode;              /*!< 发送模式 */
+    bool send_flag;              /*!< 发送模式 */
 } r1_data_t;
 
 /**
@@ -135,6 +135,18 @@ typedef struct {
     ui_msg_payload_t payload;
 } ui_msg_t;
 
+/**
+ * @brief 看门狗喂狗
+ *
+ */
+typedef enum {
+    IWDG_REMOTE = 0,
+    IWDG_GUI,
+    IWDG_MSG,
+    IWDG_BLINK,
+    IWDG_NUM
+  } iwdg_id_t;
+
 extern QueueHandle_t ui_msg_queue;
 extern TaskHandle_t remote_send_task_handle;
 
@@ -145,6 +157,10 @@ void remote_recv_msg_callback(uint32_t msg_length, uint8_t msg_id_type,
 void remote_register_key_callback(uint8_t key, remote_key_event_t event,
                                   remote_key_callback_t callback);
 void remote_unregister_key_callback(uint8_t key, remote_key_event_t event);
+
+/* 心跳汇总式看门狗喂狗任务 */
+void iwdg_init(void);
+void iwdg_kick(iwdg_id_t id);
 
 #ifdef __cplusplus
 }
