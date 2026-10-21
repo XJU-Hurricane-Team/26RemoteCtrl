@@ -63,7 +63,7 @@ void start_task(void *pvParameters) {
 
     taskEXIT_CRITICAL();
     iwdg_init();
-    Play_Music(MUSIC_ALARM);
+    // Play_Music(MUSIC_ALARM);
 
     vTaskDelete(start_task_handle);
 }

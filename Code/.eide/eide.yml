@@ -165,7 +165,7 @@ targets:
           linker:
             misc-controls: --diag_suppress=L6329
             output-format: elf
-        scatterFilePath: <YOUR_SCATTER_FILE>.sct
+        scatterFilePath: ""
         storageLayout:
           RAM:
             - id: 1
@@ -237,7 +237,7 @@ targets:
           vendor: ST
         otherCmds: ""
         proType: 1
-        speed: 4000
+        speed: 8000
       STLink:
         address: "0x08000000"
         bin: ""

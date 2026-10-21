@@ -8,7 +8,7 @@ extern const unsigned char image_alternate_theme_images_backgrounds_320x240_spot
 extern const unsigned char image_ky50_50[]; // BITMAP_KY50_50_ID = 1, Size: 50x50 pixels
 
 const touchgfx::Bitmap::BitmapData bitmap_database[] = {
-    { image_alternate_theme_images_backgrounds_320x240_spotlights, 0, 240, 320, 0, 0, 240, ((uint8_t)touchgfx::Bitmap::RGB565) >> 3, 320, ((uint8_t)touchgfx::Bitmap::RGB565) & 0x7 },
+    { image_alternate_theme_images_backgrounds_320x240_spotlights, 0, 320, 240, 0, 0, 320, ((uint8_t)touchgfx::Bitmap::RGB565) >> 3, 240, ((uint8_t)touchgfx::Bitmap::RGB565) & 0x7 },
     { image_ky50_50, 0, 50, 50, 39, 12, 3, ((uint8_t)touchgfx::Bitmap::ARGB8888) >> 3, 24, ((uint8_t)touchgfx::Bitmap::ARGB8888) & 0x7 }
 };
 

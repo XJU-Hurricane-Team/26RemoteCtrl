@@ -121,7 +121,8 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
          * in allocator state machine to avoid desynchronization/deadlock. */
         IsTransmittingBlock_ = 0;
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
-        ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
+        ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_16BIT;
+        CLEAR_BIT(ST77xx_SPI_INSTANCE.Instance->CR1, SPI_CR1_DFF);
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
         ST77XX_CS_HIGH();
         DisplayDriver_TransferCompleteCallback();
@@ -157,7 +158,6 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
         }
 
         IsTransmittingBlock_ = 0;
-        while (((ST77xx_SPI_INSTANCE.Instance->SR) & SPI_FLAG_BSY) != RESET) {}
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
         ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
         ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
@@ -395,6 +395,5 @@ void ST77xx_Init(uint8_t dir, ic_type_t st77xx) {
         ST77xx_WriteCommand(ST7789_DISPON);
         HAL_Delay(10);
     }
-    HAL_DMA_RegisterCallback(ST77xx_SPI_INSTANCE.hdmatx,
-                             HAL_DMA_XFER_ERROR_CB_ID, HAL_DMA_ErrorCallback);
+    HAL_SPI_ErrorCallback(&hspi4);
 }
