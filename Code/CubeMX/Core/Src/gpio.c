@@ -237,7 +237,7 @@ uint8_t keyboard_scan(void) {
     HAL_GPIO_WritePin(KEYBOARD_ROW_GPIO_PORT, ROW_KEY_IO, GPIO_PIN_SET);
     vTaskDelay(pdMS_TO_TICKS(15)); /* 消抖 */
     /* 读行 */
-    row_bits = (uint8_t)((~KEYBOARD_ROW_GPIO_PORT->IDR) & 0x00f0);
+    row_bits = (uint8_t)((~GPIO_ReadInputData(KEYBOARD_ROW_GPIO_PORT)) & 0x00f0);
 
     if (row_bits == 0x00) {
         return 0;
@@ -253,7 +253,7 @@ uint8_t keyboard_scan(void) {
     HAL_GPIO_WritePin(KEYBOARD_ROW_GPIO_PORT, ROW_KEY_IO, GPIO_PIN_RESET);
     vTaskDelay(pdMS_TO_TICKS(15)); /* 消抖 */
     /* 读取列 */
-    col_bits = (uint8_t)((~KEYBOARD_COL_GPIO_PORT->IDR) & 0x000f);
+    col_bits = (uint8_t)((~GPIO_ReadInputData(KEYBOARD_COL_GPIO_PORT)) & 0x000f);
     /* 多按键按下, 为避免鬼影, 产生误操作, 不做处理 */
     if (!(col_bits == 0x01 || col_bits == 0x02 || col_bits == 0x04 ||
           col_bits == 0x08)) {

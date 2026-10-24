@@ -121,7 +121,7 @@ void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
          * in allocator state machine to avoid desynchronization/deadlock. */
         IsTransmittingBlock_ = 0;
         __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
-        ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_16BIT;
+        ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
         CLEAR_BIT(ST77xx_SPI_INSTANCE.Instance->CR1, SPI_CR1_DFF);
         __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
         ST77XX_CS_HIGH();
@@ -395,5 +395,4 @@ void ST77xx_Init(uint8_t dir, ic_type_t st77xx) {
         ST77xx_WriteCommand(ST7789_DISPON);
         HAL_Delay(10);
     }
-    HAL_SPI_ErrorCallback(&hspi4);
 }

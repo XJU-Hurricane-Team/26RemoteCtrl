@@ -42,11 +42,7 @@ namespace touchgfx {
 void FrameBufferAllocatorWaitOnTransfer() {
     if (g_touchgfxTransferSem != NULL) {
         // 添加超时保护，避免永久阻塞
-        if (xSemaphoreTake(g_touchgfxTransferSem, pdMS_TO_TICKS(500)) !=
-            pdPASS) {
-
-            IsTransmittingBlock_ = 0;
-        }
+        (void)xSemaphoreTake(g_touchgfxTransferSem, pdMS_TO_TICKS(500));
     } else {
         taskYIELD();
     }
@@ -151,7 +147,38 @@ void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect &rect) {
     // use advanceFrameBufferToRect(uint8_t* fbPtr, const touchgfx::Rect& rect)
     // defined in TouchGFXGeneratedHAL.cpp
 
-    TouchGFXGeneratedHAL::flushFrameBuffer(rect);
+    touchgfx::HAL::flushFrameBuffer(rect);
+
+    const uint8_t* pixels = nullptr;
+    touchgfx::Rect transferRect;
+
+    taskENTER_CRITICAL();
+
+    frameBufferAllocator->markBlockReadyForTransfer();
+
+    if (!touchgfxDisplayDriverTransmitActive() &&
+        frameBufferAllocator->hasBlockReadyForTransfer())
+    {
+        pixels =
+            frameBufferAllocator->getBlockForTransfer(transferRect);
+
+        // 在退出临界区前占用发送状态。
+        IsTransmittingBlock_ = 1;
+    }
+
+    taskEXIT_CRITICAL();
+
+    // 设置窗口和启动 DMA 放在临界区外，
+    // 避免屏蔽中断期间执行阻塞式 SPI 操作。
+    if (pixels != nullptr)
+    {
+        touchgfxDisplayDriverTransmitBlock(
+            pixels,
+            transferRect.x,
+            transferRect.y,
+            transferRect.width,
+            transferRect.height);
+    }
 }
 
 bool TouchGFXHAL::blockCopy(void *RESTRICT dest, const void *RESTRICT src,
