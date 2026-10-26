@@ -36,16 +36,21 @@ extern "C" void TouchGFXHAL_DMA2D_ErrorCallback(DMA2D_HandleTypeDef *handle) {
 }
 
 
-// 超时：强制恢复传输状态，避免死锁
+// Display transfer state is serviced only by the GUI task.
+extern "C" {
 extern volatile uint8_t IsTransmittingBlock_;
+void ST77xx_ProcessTransfer(void);
+}
 namespace touchgfx {
 void FrameBufferAllocatorWaitOnTransfer() {
+    ST77xx_ProcessTransfer();
     if (g_touchgfxTransferSem != NULL) {
-        // 添加超时保护，避免永久阻塞
-        (void)xSemaphoreTake(g_touchgfxTransferSem, pdMS_TO_TICKS(500));
+        TickType_t ticks = pdMS_TO_TICKS(10);
+        (void)xSemaphoreTake(g_touchgfxTransferSem, ticks ? ticks : 1);
     } else {
-        taskYIELD();
+        vTaskDelay(1);
     }
+    ST77xx_ProcessTransfer();
 }
 
 void FrameBufferAllocatorSignalBlockDrawn() {
@@ -147,6 +152,7 @@ void TouchGFXHAL::flushFrameBuffer(const touchgfx::Rect &rect) {
     // use advanceFrameBufferToRect(uint8_t* fbPtr, const touchgfx::Rect& rect)
     // defined in TouchGFXGeneratedHAL.cpp
 
+    ST77xx_ProcessTransfer();
     touchgfx::HAL::flushFrameBuffer(rect);
 
     const uint8_t* pixels = nullptr;
@@ -241,7 +247,11 @@ bool TouchGFXHAL::beginFrame() {
 }
 
 void TouchGFXHAL::endFrame() {
-    TouchGFXGeneratedHAL::endFrame();
+    // Do not call generated endFrame: its busy loop cannot service events.
+    while (touchgfxDisplayDriverTransmitActive()) {
+        touchgfx::FrameBufferAllocatorWaitOnTransfer();
+    }
+    touchgfx::HAL::endFrame();
     iwdg_kick(IWDG_GUI);
 }
 

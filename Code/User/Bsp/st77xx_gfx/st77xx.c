@@ -84,49 +84,206 @@ void ST77xx_SetAddressWindow(uint16_t x0, uint16_t y0, uint16_t x1,
 }
 
 volatile uint8_t IsTransmittingBlock_;
+
+enum {
+    LCD_TX_IDLE, LCD_TX_ACTIVE, LCD_TX_DONE, LCD_TX_ERROR,
+    LCD_TX_RECOVERING, LCD_TX_FATAL
+};
+static volatile uint8_t lcdTransferState;
+static uint32_t lcdTransferStarted;
+static uint8_t lcdRetries;
+static const uint16_t *lcdPixels;
+static uint16_t lcdX, lcdY, lcdW, lcdH;
+
+/* Debugger-visible diagnostics. Failure: 1=command, 2=DMA start,
+ * 3=SPI IRQ, 4=completion timeout, 5=invalid block. */
+volatile uint32_t lcdLastFailure;
+volatile uint32_t lcdLastSpiError;
+volatile uint32_t lcdLastHalStatus;
+volatile uint32_t lcdRecoveryCount;
+volatile uint32_t lcdFatalCount;
+
+/* These bounded command writes are used only from the GUI task. */
+static HAL_StatusTypeDef lcd_write8(uint8_t dataMode,
+                                  const uint8_t *data, uint16_t size) {
+    ST77XX_CS_LOW();
+    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin,
+                      dataMode ? GPIO_PIN_SET : GPIO_PIN_RESET);
+    HAL_StatusTypeDef status = HAL_SPI_Transmit(
+        &ST77xx_SPI_INSTANCE, data, size, 20U);
+    ST77XX_CS_HIGH();
+    return status;
+}
+
+static void lcd_restore8(void) {
+    __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
+    ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
+    CLEAR_BIT(ST77xx_SPI_INSTANCE.Instance->CR1, SPI_CR1_DFF);
+    ST77XX_CS_HIGH();
+    __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
+}
+
+static void lcd_start_attempt(void) {
+    SPI_HandleTypeDef *hspi = &ST77xx_SPI_INSTANCE;
+    uint16_t x0 = lcdX + ST77xx_XSTART;
+    uint16_t y0 = lcdY + ST77xx_YSTART;
+    uint16_t x1 = x0 + lcdW - 1U;
+    uint16_t y1 = y0 + lcdH - 1U;
+    uint8_t xdata[4] = {x0 >> 8, x0 & 0xffU, x1 >> 8, x1 & 0xffU};
+    uint8_t ydata[4] = {y0 >> 8, y0 & 0xffU, y1 >> 8, y1 & 0xffU};
+    uint8_t cmd = ST7735_CASET;
+    HAL_StatusTypeDef status;
+
+    lcdTransferStarted = HAL_GetTick();
+    lcdTransferState = LCD_TX_ACTIVE;
+
+    /* A non-idle peripheral must be recovered before touching DFF. */
+    if (hspi->State != HAL_SPI_STATE_READY ||
+        __HAL_SPI_GET_FLAG(hspi, SPI_FLAG_BSY) != RESET) {
+        status = HAL_BUSY;
+        goto command_failed;
+    }
+    lcd_restore8();
+    status = lcd_write8(0U, &cmd, 1U);
+    if (status != HAL_OK) goto command_failed;
+    status = lcd_write8(1U, xdata, sizeof(xdata));
+    if (status != HAL_OK) goto command_failed;
+    cmd = ST7735_RASET;
+    status = lcd_write8(0U, &cmd, 1U);
+    if (status != HAL_OK) goto command_failed;
+    status = lcd_write8(1U, ydata, sizeof(ydata));
+    if (status != HAL_OK) goto command_failed;
+    cmd = ST7735_RAMWR;
+    status = lcd_write8(0U, &cmd, 1U);
+    if (status != HAL_OK) goto command_failed;
+
+    __HAL_SPI_DISABLE(hspi);
+    hspi->Init.DataSize = SPI_DATASIZE_16BIT;
+    SET_BIT(hspi->Instance->CR1, SPI_CR1_DFF);
+    __HAL_SPI_ENABLE(hspi);
+    ST77XX_CS_LOW();
+    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
+    status = HAL_SPI_Transmit_DMA(hspi, (const uint8_t *)lcdPixels,
+                                  (uint16_t)((uint32_t)lcdW * lcdH));
+    if (status != HAL_OK) {
+        lcdLastHalStatus = status;
+        lcdLastSpiError = hspi->ErrorCode;
+        lcdLastFailure = 2U;
+        lcdTransferState = LCD_TX_ERROR;
+    }
+    return;
+
+command_failed:
+    lcdLastHalStatus = status;
+    lcdLastSpiError = hspi->ErrorCode;
+    lcdLastFailure = 1U;
+    lcdTransferState = LCD_TX_ERROR;
+}
+
 void ST77xx_Bitmap(const uint16_t *bitmap, uint16_t posx, uint16_t posy,
                    uint16_t sizex, uint16_t sizey) {
-    IsTransmittingBlock_ = 1;
-
-    ST77XX_CS_LOW();
-
-    ST77xx_SetAddressWindow(posx, posy, posx + sizex - 1, posy + sizey - 1);
-    ST77xx_WriteCommand(ST7735_RAMWR);
-
-    ST77XX_CS_LOW();
-
-    /* 将spi发送长度配置为16bit */
-    uint32_t timeout = HAL_GetTick() + 100;  // 100ms超时保护
-    while ((ST77xx_SPI_INSTANCE.Instance->SR & SPI_FLAG_BSY) &&
-           (HAL_GetTick() < timeout)) {}
-    if (HAL_GetTick() >= timeout) {
-        // 超时错误处理：强制恢复状态
-        IsTransmittingBlock_ = 0;
-        ST77XX_CS_HIGH();
-        DisplayDriver_TransferCompleteCallback();
-        st77xx_notify_transfer_done();
+    IsTransmittingBlock_ = 1U;
+    lcdPixels = bitmap;
+    lcdX = posx;
+    lcdY = posy;
+    lcdW = sizex;
+    lcdH = sizey;
+    lcdRetries = 0U;
+    if (bitmap == NULL || sizex == 0U || sizey == 0U ||
+        (uint32_t)sizex * sizey > 65535U) {
+        lcdLastFailure = 5U;
+        lcdFatalCount++;
+        lcdTransferState = LCD_TX_FATAL;
         return;
     }
-    __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
+    lcd_start_attempt();
+}
 
-    // 更新 HAL 的配置表明现在是 16-bit
-    ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_16BIT;
-    ST77xx_SPI_INSTANCE.Instance->CR1 |= SPI_DATASIZE_16BIT;
-    __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
+/* Project-specific: LCD exclusively owns SPI4 / DMA2_Stream1.
+ * Call only in GUI task with scheduler and tick interrupts running. */
+static uint8_t lcd_recover(void) {
+    SPI_HandleTypeDef *hspi = &ST77xx_SPI_INSTANCE;
+    DMA_HandleTypeDef *hdma = hspi->hdmatx;
+    uint32_t dmaIrqEnabled = NVIC_GetEnableIRQ(DMA2_Stream1_IRQn);
+    uint32_t spiIrqEnabled = NVIC_GetEnableIRQ(SPI4_IRQn);
+    uint8_t ok = 0U;
+    uint32_t started;
 
-    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, GPIO_PIN_SET);
-    if (HAL_SPI_Transmit_DMA(&ST77xx_SPI_INSTANCE, (uint8_t *)bitmap,
-                             (uint16_t)(sizex * sizey)) != HAL_OK) {
-        /* DMA start failed, restore peripheral state and finish this block
-         * in allocator state machine to avoid desynchronization/deadlock. */
-        IsTransmittingBlock_ = 0;
-        __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
-        ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
-        CLEAR_BIT(ST77xx_SPI_INSTANCE.Instance->CR1, SPI_CR1_DFF);
-        __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
-        ST77XX_CS_HIGH();
+    NVIC_DisableIRQ(DMA2_Stream1_IRQn);
+    NVIC_DisableIRQ(SPI4_IRQn);
+    __DSB();
+    __ISB();
+    CLEAR_BIT(hspi->Instance->CR2, SPI_CR2_TXDMAEN | SPI_CR2_RXDMAEN |
+              SPI_CR2_ERRIE | SPI_CR2_TXEIE | SPI_CR2_RXNEIE);
+
+    if (hdma == NULL) goto finish;
+    /* SPI_DMAError already clears TXDMAEN. Therefore abort the DMA
+     * explicitly, instead of relying only on HAL_SPI_Abort[_IT]. */
+    if (hdma->State == HAL_DMA_STATE_BUSY) {
+        (void)HAL_DMA_Abort(hdma);
+    }
+    __HAL_DMA_DISABLE(hdma);
+    started = HAL_GetTick();
+    while ((hdma->Instance->CR & DMA_SxCR_EN) != 0U) {
+        if ((uint32_t)(HAL_GetTick() - started) >= 20U) goto finish;
+    }
+    /* No DMA can read the retained framebuffer now. Reset only SPI4,
+     * never DMA2 as a whole (other peripherals may share DMA2). */
+    ST77XX_CS_HIGH();
+    __HAL_SPI_DISABLE(hspi);
+    __HAL_RCC_SPI4_FORCE_RESET();
+    __HAL_RCC_SPI4_RELEASE_RESET();
+    if (HAL_DMA_DeInit(hdma) != HAL_OK) goto finish;
+    if (HAL_DMA_Init(hdma) != HAL_OK) goto finish;
+    hspi->Init.DataSize = SPI_DATASIZE_8BIT;
+    if (HAL_SPI_Init(hspi) != HAL_OK) goto finish;
+    ok = 1U;
+
+finish:
+    NVIC_ClearPendingIRQ(DMA2_Stream1_IRQn);
+    NVIC_ClearPendingIRQ(SPI4_IRQn);
+    if (dmaIrqEnabled) NVIC_EnableIRQ(DMA2_Stream1_IRQn);
+    if (spiIrqEnabled) NVIC_EnableIRQ(SPI4_IRQn);
+    return ok;
+}
+
+/* The only driver location allowed to release a TouchGFX block. */
+void ST77xx_ProcessTransfer(void) {
+    if (lcdTransferState == LCD_TX_ACTIVE &&
+        (uint32_t)(HAL_GetTick() - lcdTransferStarted) >= 100U) {
+        /* Claim the timeout atomically against the DMA callback. */
+        uint32_t mask = __get_PRIMASK();
+        __disable_irq();
+        if (lcdTransferState == LCD_TX_ACTIVE) {
+            lcdLastFailure = 4U;
+            lcdTransferState = LCD_TX_ERROR;
+        }
+        __set_PRIMASK(mask);
+    }
+
+    if (lcdTransferState == LCD_TX_ERROR) {
+        lcdTransferState = LCD_TX_RECOVERING;
+        lcdRecoveryCount++;
+        if (lcdRetries >= 2U || !lcd_recover()) {
+            lcdFatalCount++;
+            lcdTransferState = LCD_TX_FATAL;
+            /* Keep busy and retain the block. Existing GUI watchdog
+             * policy can reset the board; do not fake completion. */
+            return;
+        }
+        lcdRetries++;
+        /* Retry SAME block and window; do not free or advance allocator. */
+        lcd_start_attempt();
+        return;
+    }
+
+    if (lcdTransferState == LCD_TX_DONE) {
+        lcd_restore8();
+        lcdTransferState = LCD_TX_IDLE;
+        IsTransmittingBlock_ = 0U;
+        /* This may start the next block, but no completion is processed
+         * recursively. A later ProcessTransfer handles its result. */
         DisplayDriver_TransferCompleteCallback();
-        st77xx_notify_transfer_done();
     }
 }
 
@@ -151,38 +308,21 @@ int touchgfxDisplayDriverShouldTransferBlock(void) {
 //Signal TE interrupt to TouchGFX
 void touchgfxSignalVSync(void);
 
+/* IRQ callbacks report events only. Allocator operations run in GUI task. */
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi) {
-    if (hspi->Instance == ST77xx_SPI_INSTANCE.Instance) {
-        if (IsTransmittingBlock_ == 0U) {
-            return;
-        }
-
-        IsTransmittingBlock_ = 0;
-        __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
-        ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
-        ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
-        __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
-        ST77XX_CS_HIGH();
-        // Signal Transfer Complete to TouchGFX
-        DisplayDriver_TransferCompleteCallback();
-        touchgfxNotifyBlockTransferDoneFromISR();
+    if (hspi == &ST77xx_SPI_INSTANCE && lcdTransferState == LCD_TX_ACTIVE) {
+        lcdTransferState = LCD_TX_DONE;
+        st77xx_notify_transfer_done();
     }
 }
 
-void HAL_DMA_ErrorCallback(DMA_HandleTypeDef *hdma) {
-    if (hdma == ST77xx_SPI_INSTANCE.hdmatx) {
-        if (IsTransmittingBlock_ == 0U) {
-            return;
-        }
-
-        IsTransmittingBlock_ = 0;
-        __HAL_SPI_DISABLE(&ST77xx_SPI_INSTANCE);
-        ST77xx_SPI_INSTANCE.Init.DataSize = SPI_DATASIZE_8BIT;
-        ST77xx_SPI_INSTANCE.Instance->CR1 &= ~SPI_DATASIZE_16BIT;
-        __HAL_SPI_ENABLE(&ST77xx_SPI_INSTANCE);
-        ST77XX_CS_HIGH();
-        DisplayDriver_TransferCompleteCallback();
-        touchgfxNotifyBlockTransferDoneFromISR();
+void HAL_SPI_ErrorCallback(SPI_HandleTypeDef *hspi) {
+    if (hspi == &ST77xx_SPI_INSTANCE &&
+        (lcdTransferState == LCD_TX_ACTIVE || lcdTransferState == LCD_TX_DONE)) {
+        lcdLastSpiError = hspi->ErrorCode;
+        lcdLastFailure = 3U;
+        lcdTransferState = LCD_TX_ERROR;
+        st77xx_notify_transfer_done();
     }
 }
 
